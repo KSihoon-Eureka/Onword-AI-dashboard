@@ -1,0 +1,2115 @@
+﻿UDS 속성명,Gmarket/Auction 필드명,API 영역,사용 문서 수,UDS 필요도,설명
+( 계산형 ) 옵션관리코드,calculation>manageCode,Other,1,✅ 핵심 UDS,20 byte 이내 입력 가능
+( 계산형 ) 옵션명 1,calculation>name1>kor,Other,1,✅ 핵심 UDS,
+( 계산형 ) 옵션명 1 (name 1) 판매 최대값,calculation>maxValue1,Other,1,✅ 핵심 UDS,1 이상 입력 가능
+( 계산형 ) 옵션명 1 (name 1) 판매 최소값,calculation>minValue1,Other,1,✅ 핵심 UDS,1 이상 입력 가능
+( 계산형 ) 옵션명 2,calculation>name2>kor,Other,1,✅ 핵심 UDS,
+( 계산형 ) 옵션명 2 (name 2) 판매 최대값,calculation>maxValue2,Other,1,✅ 핵심 UDS,1 이상 입력 가능
+( 계산형 ) 옵션명 2 (name 2) 판매 최소값,calculation>minValue2,Other,1,✅ 핵심 UDS,1 이상 입력 가능
+( 국문 ) 선택항목코드,details>recommendedOptValueName>kor,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 조회한 추천옵션코드에 속하는 선택항목명 노출 * 텍스트형일 경우 내려가지 않음
+( 국문 ) 추천옵션명,details>recommendedOptName>kor,스타배송 API,1,✅ 핵심 UDS,카테고리별 추천옵션코드 조회 시 내려가는 정보
+( 도서상품용 ) ISBN 코드 사용여부,itemBasicInfo>book>isUseIsbnCode,스타배송 API,1,✅ 핵심 UDS,* 도서상품일 경우 필수 도서상품은 ISBN 코드를 입력하거나 도서참고가격 연동 필요 true : ISBN 코드 입력 false :ISBN 코드 미입력
+( 도서상품용 ) 참고가격,itemBasicInfo>book>price,스타배송 API,1,✅ 핵심 UDS,"* 도서상품일 경우 필수 ISBN 코드를 입력하지 않을 경우 , 참고가격 필수 참고가격 입력 시 , 상품 가격이 참고가격 로직 반영된 가격체계 노출됨"
+( 도서상품용 )ISBN 코드,itemBasicInfo>book>isbnCode,스타배송 API,1,✅ 핵심 UDS,* 도서상품일 경우 필수
+( 도서상품용 /G 마켓전용 ) 추가등록 카테고리,itemBasicInfo>book>attributeCode,스타배송 API,1,✅ 핵심 UDS,* 도서상품일 경우 필수 링크 xml 내 도서 카테고리 CLASS_VALUE 항목으로 입력 http://tpl.gmarket.co.kr/v1/Category/Category.xml
+( 선택형 ) 주문옵션 정보,itemAddtionalInfo>orderOpts>independent,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 주문옵션 사용을 지원하지 않아 null 로 호출
+( 선택형 / 조합형 ) G 마켓 재고수량,"independent>details>qty>gmkt, itemAddtionalInfo>recommendedOpts>independent>details>qty>gmkt","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 1~99999 로 설정 *3PL 상품은 입력한 값이 무시되고 해당 SKU 의 재고가 자동으로 연동됩니다 .
+( 선택형 / 조합형 ) 노출여부,"independent>details>isDisplay, itemAddtionalInfo>recommendedOpts>independent>isDisplay","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 옵션의 노출여부 제어 true : 노출 false : 미노출
+( 선택형 / 조합형 ) 옥션 재고수량,"independent>details>qty>iac, itemAddtionalInfo>recommendedOpts>independent>details>qty>iac","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 1~99999 로 설정 *3PL 상품은 입력한 값이 무시되고 해당 SKU 의 재고가 자동으로 연동됩니다 .
+( 선택형 / 조합형 ) 추천옵션코드,"independent, independent>recommendedOptNo, itemAddtionalInfo>recommendedOpts>independent>recommendedOptNo","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 추천옵션코드조회 API 에서 매칭된 코드 입력 추천옵션코드 조회 : [GET] https://sa.esmplus.com/item/v1/options/recommended-opts?catCode= {siteCatCode}
+( 선택형 / 조합형 ) 추천옵션항목 ( 국문 ) 직접입력,"independent>details>recommendedOptValue>koreanText, itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>koreanText","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션항목코드를 사용하지 않고 직접입력할 경우 * 색상 등 직접입력 허용된 추천옵션코드에서만 사용 가능
+( 선택형 / 조합형 ) 추천옵션항목 ( 영문 ) 직접입력,"independent>details>recommendedOptValue>englishText, itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>englishText","Other, 스타배송 API",3,✅ 핵심 UDS,
+( 선택형 / 조합형 ) 추천옵션항목 ( 일문 ) 직접입력,"independent>details>recommendedOptValue>japaneseText, itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>japaneseText","Other, 스타배송 API",3,✅ 핵심 UDS,
+( 선택형 / 조합형 ) 추천옵션항목 ( 중문 ) 직접입력,"independent>details>recommendedOptValue>chineseText, itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>chineseText","Other, 스타배송 API",3,✅ 핵심 UDS,
+( 선택형 / 조합형 ) 추천옵션항목코드,"independent>details>recommendedOptValueNo, itemAddtionalInfo>recommendedOpts>independent>recommendedOptValueNo","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 추천옵션선택항목코드조회 API 에서 매칭된 코드 입력 추천옵션 선택항목코드 조회 : [GET] https://sa.esmplus.com/item/v1/options/recommended-opts/ {recommendedOptNo}
+( 선택형 / 조합형 ) 판매자옵션관리코드,"independent>details>manageCode, itemAddtionalInfo>recommendedOpts>independent>details>manageCode","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 해당 옵션의 판매자가 관리하는 코드 입력
+( 선택형 / 조합형 ) 품절여부,"independent>details>isSoldOut, itemAddtionalInfo>recommendedOpts>independent>isSoldOut","Other, 스타배송 API",3,✅ 핵심 UDS,추천옵션 사용일 경우 필수 옵션의 품절여부 제어 ( 옵션 재고수량으로 제어하지 않음 ) true : 품절 false : 판매
+( 영문 ) 선택항목코드,details>recommendedOptValueName>eng,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 조회한 추천옵션코드에 속하는 선택항목명 노출 * 텍스트형일 경우 내려가지 않음
+( 영문 ) 추천옵션명,"details>recommendedOptName>eng, recommendedOptName>eng",스타배송 API,1,✅ 핵심 UDS,카테고리별 추천옵션코드 조회 시 내려가는 정보
+( 옥션상품용 ) 용량 / 규격 값,itemAddtionalInfo>capacity>vol,스타배송 API,1,✅ 핵심 UDS,주문 선택별로 용량이 다른 상품일 경우 등록함
+( 옥션상품용 ) 용량 / 규격 단위,itemAddtionalInfo>capacity>unit,스타배송 API,1,✅ 핵심 UDS,아래 단위 중 선택하여 1 개 입력 0 : 없음 / 1 : m / 2 : g / 3 : kg / 4 : 개 / 5 : 리터 / 6 : ml / 7 : mm / 8 : 마리 / 9 : 봉 / 10 : p / 11 : cm 12 : box / 13 : mg / 14 : 팩 / 15 : 단 / 16 : 캅셀 / 17 : 캡슐 / 18 : 정 / 19 : 병 / 20 : 포 / 21 : 100g
+( 옥션용 ) 가격비교사이트 쿠폰적용여부,addtionalInfo>pcs>isUseIacPcsCoupon,스타배송 API,1,✅ 핵심 UDS,"다나와 , 에누리 등 외부 가격비교사이트에 상품할인적용여부를 선택함 true : 적용 false: 미적용 가격비교사이트 상품은 등록하면서 쿠폰적용은 안되도록 설정 가능함"
+( 옥션용 ) 건강기능식품인증여부,itemAddtionalInfo>certInfo>iac>healthFood>isUse,스타배송 API,1,✅ 핵심 UDS,true : 신고대상 false: 신고대상 아님
+( 옥션용 ) 건강기능식품판매업 신고기관명,itemAddtionalInfo>certInfo>iac>healthFood>certOfficeName,스타배송 API,1,✅ 핵심 UDS,건강기능식품 인증여부 true 일 경우 필수
+( 옥션용 ) 메인 사이트상품번호,homeShoppingTimeTable>siteGoodsNo>iac,Other,1,✅ 핵심 UDS,방송 편성표용 메인 옥션 사이트 상품번호
+( 옥션용 ) 묶음 사이트상품번호,homeShoppingTimeTable>bundleGoods>iac>siteGoodsNo,Other,1,✅ 핵심 UDS,"방송 편성표용 묶음 옥션 사이트 상품번호 번들로 다수의 상품번호 일괄 입력 가능 메인 사이트상품번호는 제외하고 입력 묶음 사이트상품번호 내 , 중복된 상품번호 있을 경우에는 성공으로 Skip 하여 등록시킴"
+( 옥션용 ) 묶음상품번호 노출여부,homeShoppingTimeTable>bundleGoods>iac>bundleGoodsUseYn,Other,1,✅ 핵심 UDS,"묶음상품번호 사용여부 true 일 경우 , Front 노출여부 Checking 함 묶음상품번호 사용여부 false 이면서 노출여부 true 일 경우 Fail true : 묶음상품 노출 false : 묶음상품 비노출"
+( 옥션용 ) 묶음상품번호 사용여부,homeShoppingTimeTable>bundleGoodsYn>iac,Other,1,✅ 핵심 UDS,묶음 상품번호 없을경우 등록해도 Pass 시킴 true : 묶음 상품번호 있음 false : 묶음 상품번호 없음
+( 옥션용 ) 발송타입정책번호,itemAddtionalInfo>shipping>dispatchPolicyNo>iac,스타배송 API,1,✅ 핵심 UDS,해당 상품의 발송타입정책번호 입력 임의 값으로 입력 가능함 입력한 해당 값은 무시되고 3PL 상품의 기본값으로 자동 적용됩니다 .
+( 옥션용 ) 방송통신기기인증정보상 품상세별도표기,itemAddtionalInfo>certInfo>iac>broadcastEquipment>isAddtionalCondition,스타배송 API,1,✅ 핵심 UDS,방송통신기기 인증 사용 여부 true 일 경우 필수
+( 옥션용 ) 사이트부담 지원할인,addtionalInfo>siteDiscount>iac,스타배송 API,1,✅ 핵심 UDS,옥션에서 부담하는 사이트 할인을 적용할지 여부 true : 적용 false : 적용하지 않음
+( 옥션용 ) 사전광고 심의번호,itemAddtionalInfo>certInfo>iac>healthFood>adDeliberationNo,스타배송 API,1,✅ 핵심 UDS,건강기능식품 인증여부 true 일 경우 필수
+( 옥션용 ) 식품제조가공업 입력사항 여부,itemAddtionalInfo>certInfo>iac>food>isUse,스타배송 API,1,✅ 핵심 UDS,true : 신고대상 false: 신고대상 아님
+( 옥션용 ) 신고기관명,itemAddtionalInfo>certInfo>iac>food>certOfficeName,스타배송 API,1,✅ 핵심 UDS,식품제조가공업 입력 사용 여부 true 일 경우 필수
+( 옥션용 ) 신고번호,"itemAddtionalInfo>certInfo>iac>food>certId, itemAddtionalInfo>certInfo>iac>healthFood>certId",스타배송 API,1,✅ 핵심 UDS,식품제조가공업 입력 사용 여부 true 일 경우 필수
+( 옥션용 ) 의료기기 사전 광고 심의 번호,itemAdditionalInfo>certInfo>iac>medicalInstrument>adDeliberationId,스타배송 API,1,✅ 핵심 UDS,의료기기 인증 사용여부 true 일 경우 필수
+( 옥션용 ) 의료기기 인증 사용 여부,itemAddtionalInfo>certInfo>iac>medicalInstrument>isUse,스타배송 API,1,✅ 핵심 UDS,true : 신고대상 false: 신고대상 아님
+( 옥션용 ) 의료기기 판매신고 번호,itemAdditionalInfo>certInfo>iac>medicalInstrument>certId,스타배송 API,1,✅ 핵심 UDS,의료기기 인증 사용 여부 true 일 경우 필수
+( 옥션용 ) 의료기기 판매신고기관명,itemAddtionalInfo>certInfo>iac>medicalInstrument>certOfficeName,스타배송 API,1,✅ 핵심 UDS,의료기기 인증 사용 여부 true 일 경우 필수
+( 옥션용 ) 의료기기 품목 허가 번호,itemAdditionalInfo>certInfo>iac>medicalInstrument>itemLicenseId,스타배송 API,1,✅ 핵심 UDS,의료기기 인증 사용 여부 true 일 경우 필수
+( 옥션용 ) 친환경 인증번호,itemAddtionalInfo>certInfo>iac>environmentFriendly>certId,스타배송 API,1,✅ 핵심 UDS,친환경 인증여부 true 일 경우 필수
+( 옥션용 ) 친환경 인증여부,itemAddtionalInfo>certInfo>iac>environmentFriendly>isUse,스타배송 API,1,✅ 핵심 UDS,true : 친환경 인증상품 false: 친환경 인증상품 아님
+( 옥션용 ) 판매상태 변경,"IsSell>iac, isSell>iac",스타배송 API,2,✅ 핵심 UDS,"true : 판매가능 상태로 전환 false : 판매중지 상태로 전환 * 중지상태로 1 개월 유지할 경우 삭제되며 , 판매중지 상태로 정보 호출 시 반영되지 않음"
+( 일문 ) 선택항목코드,details>recommendedOptValueName>jpn,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 조회한 추천옵션코드에 속하는 선택항목명 노출 * 텍스트형일 경우 내려가지 않음
+( 일문 ) 추천옵션명,"details>recommendedOptName>jpn, recommendedOptName>jpn",스타배송 API,1,✅ 핵심 UDS,카테고리별 추천옵션코드 조회 시 내려가는 정보
+( 조합형 ) 주문옵션 정보,itemAddtionalInfo>orderOpts>combination,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 주문옵션 사용을 지원하지 않아 null 로 호출
+( 중문 ) 선택항목코드,details>recommendedOptValueName>chi,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 조회한 추천옵션코드에 속하는 선택항목명 노출 * 텍스트형일 경우 내려가지 않음
+( 중문 ) 추천옵션명,recommendedOptName>chi,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보
+( 텍스트형 ) 노출여부,"text>details>isDisplay, text>details>value>isDisplay","Other, 스타배송 API",2,✅ 핵심 UDS,- 텍스트형 사용할 경우 필수 - 텍스트형을 상품상세페이지에 노출할 것인지 여부 설정 true : 노출 false : 미노출
+( 텍스트형 ) 주문옵션 정보,itemAddtionalInfo>orderOpts>text,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 주문옵션 사용을 지원하지 않아 null 로 호출
+( 텍스트형 ) 추천옵션 정보,itemAddtionalInfo>recommendedOpts>text,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 텍스트형 옵션 사용불가함으로 null 로 호출
+( 텍스트형 ) 추천옵션코드,"text>details>recommendedOptNo, text>details>value>recommendedOptNo","Other, 스타배송 API",2,✅ 핵심 UDS,3PL 상품은 텍스트형 옵션 사용불가함으로 null 로 호출
+( 텍스트형 ) 텍스트형 옵션명,text>details>Value,Other,1,✅ 핵심 UDS,텍스트형 옵션명 직접입력 설정하는 경우
+(G 마켓 / 옥션용 ) 할인시작일자,"addtionalInfo>sellerDiscount>gmkt>startDate, sellerDiscount>gmkt>startDate","Other, 스타배송 API",2,✅ 핵심 UDS,판매자할인 사용여부 true 일 경우 필수 입력형식 YYYY-MM-DD 가능 ( 시간 설정은 현재 제공하지 않음 )
+(G 마켓 / 옥션용 ) 할인액 ( 율 ),"addtionalInfo>sellerDiscount>gmkt>priceOrRate1, sellerDiscount>gmkt>priceOrRate1","Other, 스타배송 API",2,✅ 핵심 UDS,"판매자할인 사용여부 true 일 경우 필수 최소 100 원 이상 , 10 원단위 입력 , 판매가 대비 70% 까지 허용"
+(G 마켓 / 옥션용 ) 할인액 ( 율 )_SD2,"addtionalInfo>sellerDiscount>gmkt>priceOrRate2, sellerDiscount>gmkt>priceOrRate2","Other, 스타배송 API",2,✅ 핵심 UDS,"권한이 있는 셀러만 사용 가능 최소 100 원 이상 , 10 원단위 입력 , 판매가 대비 70% 까지 허용"
+(G 마켓 / 옥션용 ) 할인종료일자,"addtionalInfo>sellerDiscount>gmkt>endDate, sellerDiscount>gmkt>endDate","Other, 스타배송 API",2,✅ 핵심 UDS,판매자할인 사용여부 true 일 경우 필수 입력형식 YYYY-MM-DD 또는 ( 시간 설정은 현재 제공하지 않음 )
+(G 마켓 / 옥션용 ) 할인타입,"addtionalInfo>sellerDiscount>gmkt>type, sellerDiscount>gmkt>type","Other, 스타배송 API",2,✅ 핵심 UDS,"판매자할인 사용여부 true 일 경우 필수 0 : 사용안함 1 : 정액 2 : 정률 * type 을 0 으로 지정 시 , 다른 값을 보내지 않거나 , null 로 호출 Ex. (O) ""iac"": { ""type"": ""0"", ""priceOrRate1"": 0 } (X) ""iac"": { ""type"": ""0"", ""priceOrRate1"": 0, ""priceOrRate2"": 0, ""startDate"": ""2018-06-21T03:12:47.461Z"", ""endDate"": ""2018-06-30T03:12:47.461Z"" }"
+(G 마켓용 ) G 마켓 인벤토리 코드,itemAddtionalInfo>inventoryCode,스타배송 API,1,✅ 핵심 UDS,"(G 마켓 상품용 ) 상품 정보가 변경된 시점 ( 상품정보 , 가격정보 ) 에 등록된 code 를 주문정보에 포함하여 전달함"
+(G 마켓용 ) 가격비교사이트 쿠폰적용여부,addtionalInfo>pcs>isUseGmkPcsCoupon,스타배송 API,1,✅ 핵심 UDS,G 마켓은 쿠폰적용여부 변경 불가 true 로 연동하고 상품등록 여부로 노출 여부 설정만 가능
+(G 마켓용 ) 메인 사이트상품번호,homeShoppingTimeTable>siteGoodsNo>gmkt,Other,1,✅ 핵심 UDS,방송 편성표용 메인 G 마켓 사이트 상품번호
+(G 마켓용 ) 묶음 사이트상품번호,homeShoppingTimeTable>bundleGoods>gmkt>siteGoodsNo,Other,1,✅ 핵심 UDS,"방송 편성표용 묶음 G 마켓 사이트 상품번호 번들로 다수의 상품번호 일괄 입력 가능 메인 사이트상품번호는 제외하고 입력 묶음 사이트상품번호 내 , 중복된 상품번호 있을 경우에는 성공으로 Skip 하여 등록시킴"
+(G 마켓용 ) 묶음상품번호 노출여부,homeShoppingTimeTable>bundleGoods>gmkt,Other,1,✅ 핵심 UDS,"묶음상품번호 사용여부 true 일 경우 , Front 노출여부 Checking 함 묶음상품번호 사용여부 false 이면서 노출여부 true 일 경우 Fail true : 묶음상품 노출 false : 묶음상품 비노출"
+(G 마켓용 ) 묶음상품번호 사용여부,homeShoppingTimeTable>bundleGoodsYn>gmkt,Other,1,✅ 핵심 UDS,묶음 상품번호 없을경우 등록해도 Pass 시킴 true : 묶음 상품번호 있음 false : 묶음 상품번호 없음
+(G 마켓용 ) 발송타입정책번호,itemAddtionalInfo>shipping>dispatchPolicyNo>gmkt,스타배송 API,1,✅ 핵심 UDS,해당 상품의 발송타입정책번호 입력 임의 값으로 입력 가능함 입력한 해당 값은 무시되고 3PL 상품의 기본값으로 자동 적용됩니다 .
+(G 마켓용 ) 사이트부담 지원할인,addtionalInfo>siteDiscount>gmkt,스타배송 API,1,✅ 핵심 UDS,G 마켓에서 부담하는 사이트 할인을 적용할지 여부 true : 적용 false : 적용하지 않음
+(G 마켓용 ) 상품무게 ( 단위 :kg),itemAddtionalInfo>weight,스타배송 API,1,✅ 핵심 UDS,"숫자로 입력 ( 소수점 1 자리 가능 ) 상품무게 항목은 해외에서 주문이 발생한 경우 , 해외배송비 산정에 사용됨 미입력 시 , G 마켓이 설정한 카테고리별 무게로 해외배송비 산정 최대 30kg 까지 설정 가능함"
+(G 마켓용 ) 영업허가 / 신고증,itemAddtionalInfo>certInfo>gmkt>licenseSeq,스타배송 API,1,✅ 핵심 UDS,영업허가 / 신고코드 입력
+(G 마켓용 ) 인증정보코드,itemAddtionalInfo>certInfo>gmkt>certId,스타배송 API,1,✅ 핵심 UDS,상품과 관련된 인증 / 보증 / 증명 정보 입력 의료기기 / 방송통신기기 / 식품제조가공업 / 건강식품인증 / 친환경 상품일 경우 인증정보 입력
+(G 마켓용 ) 판매상태 변경,"IsSell>gmkt, isSell>gmkt",스타배송 API,2,✅ 핵심 UDS,상품수정 API 해당 Entity 추가 true : 판매가능 상태로 전환 false : 판매중지 상태로 전환 * 중지상태로 1 개월 유지할 경우 삭제됨 판매중지 상태로 정보 호출 시 반영되지 않음
+(G 마켓용 ) 해외판매여부,addtionalInfo>overseaSales>isAgree,스타배송 API,1,✅ 핵심 UDS,"해외판매 진행 시 , 해외배송대행 / 고객응대 / 해외마케팅 지원 등 혜택이 있고 , 진행하지 않을 경우 수출 대상에서 제외됨 해외판매대행 이용료 추가 부과됨 true : 해외판매 진행 false: 해외판매 진행하지 않음"
+(G마켓)배송요청시작시간,data>AllocationStartDate,주문/배송 API,1,✅ 핵심 UDS,- 당일배송 주문에 내려가는 정보 - 고객이 선택한 배송테이블 시작시간 데이터
+(G마켓)배송요청종료시간,data>AllocationEndDate,주문/배송 API,1,✅ 핵심 UDS,- 당일배송 주문에 내려가는 정보 - 고객이 선택한 배송테이블 시작시간 데이터
+(G마켓)히스토리 코드,data>InventoryNo,주문/배송 API,1,✅ 핵심 UDS,상품 등록/수정시 입력한 히스토리코드로 주문 당시 가장 최근 업데이트 된 코드 내려감(G마켓만 제공)
+(G마켓/옥션용) 할인시작일자,addtionalInfo>sellerDiscount>gmkt>startDate,상품 API,1,✅ 핵심 UDS,입력형식 YYYY-MM-DD
+(G마켓/옥션용) 할인액(율),addtionalInfo>sellerDiscount>gmkt>priceOrRate1,상품 API,1,✅ 핵심 UDS,"판매자할인 사용여부 true일 경우 필수 - 정액 설정시 : 최소 100원 이상,10원 단위 - 정률 설정시 : 판매가대비 70%까지 허용"
+(G마켓/옥션용) 할인액(율) 2,addtionalInfo>sellerDiscount>gmkt>priceOrRate2,상품 API,1,✅ 핵심 UDS,권한이 있는 셀러만 설정 가능
+(G마켓/옥션용) 할인종료일자,addtionalInfo>sellerDiscount>gmkt>endDate,상품 API,1,✅ 핵심 UDS,입력 형식 YYYY-MM-DD
+(G마켓/옥션용) 할인타입,addtionalInfo>sellerDiscount>gmkt>type,상품 API,1,✅ 핵심 UDS,판매자할인 사용여부 true일 경우 필수 0 : 사용안함 1 : 정액 2 : 정률
+(G마켓용) G마켓 인벤토리 코드,itemAddtionalInfo>inventoryCode,상품 API,1,✅ 핵심 UDS,"(G마켓 상품용) 상품 정보가 변경된 시점(상품정보, 가격정보)에 등록된 code를 주문정보에 포함하여 전달함"
+(G마켓용) URL 안내 여부,itemAddtionalInfo>eCoupon>isInformByURL,상품 API,1,✅ 핵심 UDS,
+(G마켓용) e쿠폰 모바일용 양식 URL,itemAddtionalInfo>eCoupon>downloadImageUrl,상품 API,1,✅ 핵심 UDS,
+(G마켓용) e쿠폰 모바일용 템플릿 번호,itemAddtionalInfo>eCoupon>downloadTemplate,상품 API,1,✅ 핵심 UDS,
+(G마켓용) e쿠폰 인쇄용 양식 URL,itemAddtionalInfo>eCoupon>couponImageUrl,상품 API,1,✅ 핵심 UDS,
+(G마켓용) e쿠폰 인쇄용 템플릿 번호,itemAddtionalInfo>eCoupon>couponTemplate,상품 API,1,✅ 핵심 UDS,
+(G마켓용) e쿠폰가격,itemAddtionalInfo>eCoupon>price,상품 API,1,✅ 핵심 UDS,
+(G마켓용) e쿠폰가격 정액/정률 여부,itemAddtionalInfo>eCoupon>moneyType,상품 API,1,✅ 핵심 UDS,1 : 정액 2 : 정률
+(G마켓용) e쿠폰명,itemAddtionalInfo>eCoupon>couponName,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 고객센터,itemAddtionalInfo>eCoupon>mobileHelpDeskphoneNo,상품 API,1,✅ 핵심 UDS,판매자 고객센터 번호 노출 (ex:1588-xxxx)
+(G마켓용) 발송정책번호,itemAddtionalInfo>shipping>dispatchPolicyNo>gmkt,상품 API,1,✅ 핵심 UDS,G마켓 발송정책번호 입력 동시 등록시 옥션과 동일한 정책 번호 입력
+(G마켓용) 발행업체,itemAddtionalInfo>eCoupon>publicationCorp,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 발행업체 주소,itemAddtionalInfo>eCoupon>publicationCorpURL,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 사용안내,itemAddtionalInfo>eCoupon>mobileUseInfo,상품 API,1,✅ 핵심 UDS,사용 관련 유의사항 기재
+(G마켓용) 사용장소,itemAddtionalInfo>eCoupon>applyPlace,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 사용장소 우선 노출 선택,itemAddtionalInfo>eCoupon>applyPlacePriority,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 사용제한조건 여부,itemAddtionalInfo>eCoupon>hasRestrictCondition,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 사용제한조건 있음 경우 내용,itemAddtionalInfo>eCoupon>restrictCondition,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 사이트부담 지원할인,addtionalInfo>siteDiscount>gmkt,상품 API,1,✅ 핵심 UDS,G마켓 부담 사이트 할인 적용 여부 true : 적용 false : 적용하지 않음
+(G마켓용) 상품무게(단위:kg),itemAddtionalInfo>weight,상품 API,1,✅ 핵심 UDS,- 숫자로 입력(소수점 1자리 가능) - 최대 30kg까지 설정 가능 - 해외 주문 발생 경우 해외배송비 산정에 사용 - 미입력시 카테고리별 무게로 배송비 산정
+(G마켓용) 상품타입,itemBasicInfo>goodsType,상품 API,1,✅ 핵심 UDS,1 : 일반 배송 상품 2 : e쿠폰 상품
+(G마켓용) 안내 URL,itemAddtionalInfo>eCoupon>url,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 연락처,itemAddtionalInfo>eCoupon>telephoneNo,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 영업허가/신고증,itemAddtionalInfo>certInfo>gmkt>licenseSeq,상품 API,1,✅ 핵심 UDS,영업허가/신고코드 입력
+(G마켓용) 유효기간,itemAddtionalInfo>eCoupon>useTermType,상품 API,1,✅ 핵심 UDS,0 : 특정기간 1 : 자동기간 (구매완료 후 *일)
+(G마켓용) 유효기간 자동 구매 이후일,itemAddtionalInfo>eCoupon>useTerm2Start,상품 API,1,✅ 핵심 UDS,- 자동기간 설정 시 필수 - 0 : 오늘부터
+(G마켓용) 유효기간 자동 사용 기간,itemAddtionalInfo>eCoupon>useTerm2Duration,상품 API,1,✅ 핵심 UDS,- 자동기간 설정 시 필수
+(G마켓용) 유효기간 특정 시작일,itemAddtionalInfo>eCoupon>useTerm1StartDate,상품 API,1,✅ 핵심 UDS,특정기간 설정 시 필수
+(G마켓용) 유효기간 특정 종료일,itemAddtionalInfo>eCoupon>useTerm1EndDate,상품 API,1,✅ 핵심 UDS,특정기간 설정 시 필수
+(G마켓용) 인증정보코드,itemAddtionalInfo>certInfo>gmkt>certId,상품 API,1,✅ 핵심 UDS,상품과 관련된 인증/보증/증명 정보 입력 의료기기/방송통신기기/식품제조가공업/건강식품인증/친환경 상품일 경우 인증정보 입력
+(G마켓용) 정산기간,itemAddtionalInfo>eCoupon>expireType,상품 API,1,✅ 핵심 UDS,0 : 특정기간 1 : 자동기간 (구매완료 후 *일)
+(G마켓용) 정산기간 자동 기간,itemAddtionalInfo>eCoupon>expire2Duration,상품 API,1,✅ 핵심 UDS,자동기간 설정 시 필수
+(G마켓용) 정산기간 자동 시작일,itemAddtionalInfo>eCoupon>expire2Start,상품 API,1,✅ 핵심 UDS,- 자동기간 설정 시 필수 - 0 : 오늘부터
+(G마켓용) 정산기간 특정 시작일,itemAddtionalInfo>eCoupon>expire1StartDate,상품 API,1,✅ 핵심 UDS,특정기간 설정 시 필수
+(G마켓용) 정산기간 특정 종료일,itemAddtionalInfo>eCoupon>expire1EndDate,상품 API,1,✅ 핵심 UDS,특정기간 설정 시 필수
+(G마켓용) 주소로 안내 여부,itemAddtionalInfo>eCoupon>isInformByAddress,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 찾아가는길,itemAddtionalInfo>eCoupon>guide,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 추가혜택,itemAddtionalInfo>eCoupon>additionalBenefit,상품 API,1,✅ 핵심 UDS,
+(G마켓용) 판매상태 변경,isSell>gmkt,상품 API,1,✅ 핵심 UDS,- 상품수정/전환 API 호출 시 필수 설정 - 등록 시 상태 설정은 불가 true : 판매가능 false : 판매중지
+(G마켓용) 해외판매여부,addtionalInfo>overseaSales>isAgree,상품 API,1,✅ 핵심 UDS,true : 해외판매 진행 false : 해외판매 진행하지 않음
+(G마켓용) 회원명 노출 여부,itemAddtionalInfo>eCoupon>isCustomerNameView,상품 API,1,✅ 핵심 UDS,
+(계산형) 단가 기준값,itemAddtionalInfo>recommendedOpts>calculation>unitPrice,상품 API,1,✅ 핵심 UDS,1 이상 입력 가능
+(계산형) 옵션관리코드,itemAddtionalInfo>recommendedOpts>calculation>manageCode,상품 API,1,✅ 핵심 UDS,20byte 이내 입력 가능
+(계산형) 옵션명1,itemAddtionalInfo>recommendedOpts>calculation>name1>kor,상품 API,1,✅ 핵심 UDS,
+(계산형) 옵션명1 (name 1) 판매 최대값,itemAddtionalInfo>recommendedOpts>calculation>maxValue1,상품 API,1,✅ 핵심 UDS,1 이상 입력 가능
+(계산형) 옵션명1 (name 1) 판매 최소값,itemAddtionalInfo>recommendedOpts>calculation>minValue1,상품 API,1,✅ 핵심 UDS,1 이상 입력 가능
+(계산형) 옵션명2,itemAddtionalInfo>recommendedOpts>calculation>name2>kor,상품 API,1,✅ 핵심 UDS,
+(계산형) 옵션명2 (name 2) 판매 최대값,itemAddtionalInfo>recommendedOpts>calculation>maxValue2,상품 API,1,✅ 핵심 UDS,1 이상 입력 가능
+(계산형) 옵션명2 (name 2) 판매 최소값,itemAddtionalInfo>recommendedOpts>calculation>minValue2,상품 API,1,✅ 핵심 UDS,1 이상 입력 가능
+(계산형) 판매 단위,itemAddtionalInfo>recommendedOpts>calculation>unitType,상품 API,1,✅ 핵심 UDS,"입력 가능 단위 ""mm"", ""cm"", ""m"", ""mg"", ""g"", ""kg"", ""ml"", ""l"""
+(계산형) 판매 단위값,itemAddtionalInfo>recommendedOpts>calculation>unitValue,상품 API,1,✅ 핵심 UDS,1 이상 입력 가능
+(도서상품용) ISBN코드,itemBasicInfo>book>isbnCode,상품 API,1,✅ 핵심 UDS,도서 카테고리 등록시 isUseIsbnCode : true 로 연동하는 경우 필수
+(도서상품용) ISBN코드 사용여부,itemBasicInfo>book>isUseIsbnCode,상품 API,1,✅ 핵심 UDS,도서 카테고리 등록시 필수 true : ISBN 코드 입력 false : ISBN 코드 미입력
+(도서상품용) 도서 정가,itemBasicInfo>book>price,상품 API,1,✅ 핵심 UDS,도서 카테고리 등록시 필수
+(반품/교환 주소) 판매자주소번호,itemAddtionalInfo>shipping>returnAndExchange>addrNo,상품 API,1,✅ 핵심 UDS,
+(사용불가),"addtionalInfo>gift, itemAddtionalInfo>isYouthNotAvailable, itemAddtionalInfo>shipping>returnAndExchange>shippingCompany",상품 API,1,✅ 핵심 UDS,- 원배송 택배사와 동일하게 자동 설정 - 입력해도 처리되지 않음
+(사용불가) (G마켓용) 가격비교사이트 쿠폰적용여부,addtionalInfo>pcs>isUseGmkPcsCoupon,상품 API,1,✅ 핵심 UDS,- G마켓 쿠폰적용여부 설정 불가 - 상품 노출 여부만 가능
+(사용종료) (옥션상품용) 용량/규격 값,itemAddtionalInfo>capacity>vol,상품 API,1,✅ 핵심 UDS,주문 선택별로 용량이 다른 상품일 경우 등록함
+(사용종료) (옥션상품용) 용량/규격 단위,itemAddtionalInfo>capacity>unit,상품 API,1,✅ 핵심 UDS,아래 단위 중 선택하여 1개 입력 0 : 없음 / 1 : m / 2 : g / 3 : kg / 4 : 개 / 5 : 리터 / 6 : ml / 7 : mm / 8 : 마리 / 9 : 봉 / 10 : p / 11 : cm / 12 : box / 13 : mg / 14 : 팩 / 15 : 단 / 16 : 캅셀 / 17 : 캡슐 / 18 : 정 / 19 : 병 / 20 : 포 / 21 : 100g
+(선택형/조합형) G마켓 재고수량,itemAddtionalInfo>recommendedOpts>independent>details>qty>gmkt,상품 API,1,✅ 핵심 UDS,- G마켓 옵션 재고 수량 입력 - 옵션 재고관리 안함 설정시 0 입력 필요
+(선택형/조합형) 노출여부,itemAddtionalInfo>recommendedOpts>independent>details>isDisplay,상품 API,1,✅ 핵심 UDS,옵션의 노출 여부 제어 true : 노출 false : 미노출
+(선택형/조합형) 노출여부 - 사이트별 G마켓,"itemAddtionalInfo>recommendedOpts>independent>details>isDisplaySite>gmkt, itemAddtionalInfo>recommendedOpts>independent>details>isDisplaySite>iac",상품 API,1,✅ 핵심 UDS,G마켓 옵션의 노출 여부 제어 true : 노출 false : 미노출 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+(선택형/조합형) 옥션 재고수량,itemAddtionalInfo>recommendedOpts>independent>details>qty>iac,상품 API,1,✅ 핵심 UDS,- 옥션 옵션 재고 수량 입력 - 옵션 재고관리 안함 설정시 0 입력 필요
+(선택형/조합형) 추천옵션명 (국문) 직접입력,"independent>recommendedOptName>koreanText, itemAddtionalInfo>recommendedOpts>independent>recommendedOptName>koreanText","Other, 상품 API",2,✅ 핵심 UDS,직접입력 허용 카테고리에 옵션명 직접입력 설정하는 경우
+(선택형/조합형) 추천옵션명 (영문) 직접입력,"independent>recommendedOptName>englishText, itemAddtionalInfo>recommendedOpts>independent>recommendedOptName>englishText","Other, 상품 API",2,✅ 핵심 UDS,
+(선택형/조합형) 추천옵션명 (일문) 직접입력,"independent>recommendedOptName>japaneseText, itemAddtionalInfo>recommendedOpts>independent>recommendedOptName>japaneseText","Other, 상품 API",2,✅ 핵심 UDS,
+(선택형/조합형) 추천옵션명 (중문) 직접입력,"independent>recommendedOptName>chineseText, itemAddtionalInfo>recommendedOpts>independent>recommendedOptName>chineseText","Other, 상품 API",2,✅ 핵심 UDS,
+(선택형/조합형) 추천옵션코드,itemAddtionalInfo>recommendedOpts>independent>recommendedOptNo,상품 API,1,✅ 핵심 UDS,추천옵션 사용일 경우 필수 카테고리별 추천옵션 조회 API에서 매칭된 코드 입력 ( 참고 )
+(선택형/조합형) 추천옵션항목 (국문)직접입력,itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>koreanText,상품 API,1,✅ 핵심 UDS,추천 옵션 항목 코드를 사용하지 않고 직접 입력할 경우 * 색상 등 직접 입력이 허용된 추천 옵션 코드에서만 사용 가능
+(선택형/조합형) 추천옵션항목 (영문)직접입력,itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>englishText,상품 API,1,✅ 핵심 UDS,
+(선택형/조합형) 추천옵션항목 (일문)직접입력,itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>japaneseText,상품 API,1,✅ 핵심 UDS,
+(선택형/조합형) 추천옵션항목 (중문)직접입력,itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>chineseText,상품 API,1,✅ 핵심 UDS,
+(선택형/조합형) 추천옵션항목코드,itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValueNo,상품 API,1,✅ 핵심 UDS,추천옵션 사용일 경우 필수 추천옵션별 선택항목 조회 API에서 매칭된 코드 입력 ( 참고 )
+(선택형/조합형) 판매자옵션관리코드,itemAddtionalInfo>recommendedOpts>independent>details>manageCode,상품 API,1,✅ 핵심 UDS,- 관리하는 옵션 코드 입력 - 20byte 이내 입력 가능
+(선택형/조합형) 품절여부,itemAddtionalInfo>recommendedOpts>independent>details>isSoldOut,상품 API,1,✅ 핵심 UDS,옵션의 품절 여부 제어 (옵션 재고 수량으로 제어하지 않음) true : 품절 false : 판매
+(선택형/조합형) 품절여부 - 사이트별 G마켓,itemAddtionalInfo>recommendedOpts>independent>details>isSoldOutSite>gmkt,상품 API,1,✅ 핵심 UDS,G마켓 옵션의 품절 여부 제어 (옵션 재고 수량으로 제어하지 않음) true : 품절 false : 판매 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+(선택형/조합형) 품절여부 - 사이트별 옥션,itemAddtionalInfo>recommendedOpts>independent>details>isSoldOutSite>iac,상품 API,1,✅ 핵심 UDS,옥션 옵션의 품절 여부 제어 (옵션 재고 수량으로 제어하지 않음) true : 품절 false : 판매 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+(옥션) 거래완료 후 환불 (송금 후 취소) 여부,Data>CancelAfterRemitYN,정산조회 API,1,✅ 핵심 UDS,Y : 거래완료 후 환불 (송금 후 취소) N : 정상
+(옥션)배송요청시간,data>AllocationDate,주문/배송 API,1,✅ 핵심 UDS,- 당일배송 주문에 내려가는 정보 - 고객이 선택한 배송테이블 시작시간 데이터 (추후 G마켓 형태로 변경 예정)
+(옥션)복수구매할인,data>MultiBuyDcAmnt,주문/배송 API,1,✅ 핵심 UDS,복수구매할인 적용금액
+(옥션)우수구매할인,data>GreatMembDcAmnt,주문/배송 API,1,✅ 핵심 UDS,(우수할인 종료로 사용되지 않음)
+(옥션용) 가격비교사이트 쿠폰적용여부,addtionalInfo>pcs>isUseIacPcsCoupon,상품 API,1,✅ 핵심 UDS,- 가격비교사이트에 상품할인적용 여부 - 가격비교사이트 상품 노출하지만 쿠폰 적용 안되도록 설정 가능 true : 적용 false : 미적용
+(옥션용) 건강기능식품인증여부,itemAddtionalInfo>certInfo>iac>healthFood>isUse,상품 API,1,✅ 핵심 UDS,true : 신고대상 false : 신고대상 아님
+(옥션용) 건강기능식품판매업 신고기관명,itemAddtionalInfo>certInfo>iac>healthFood>certOfficeName,상품 API,1,✅ 핵심 UDS,건강기능식품 인증여부 true일 경우 필수
+(옥션용) 발송정책번호,itemAddtionalInfo>shipping>dispatchPolicyNo>iac,상품 API,1,✅ 핵심 UDS,옥션 발송정책번호 입력 동시 등록시 지마켓과 동일한 정책 번호 입력
+(옥션용) 방송통신기기인증정보상 품상세별도표기,itemAddtionalInfo>certInfo>iac>broadcastEquipment>isAddtionalCondition,상품 API,1,✅ 핵심 UDS,방송통신기기 인증 사용 여부 true일 경우 필수
+(옥션용) 사이트부담 지원할인,addtionalInfo>siteDiscount>iac,상품 API,1,✅ 핵심 UDS,옥션 부담 사이트 할인 적용 여부 true : 적용 false : 적용하지 않음
+(옥션용) 사전광고 심의번호,itemAddtionalInfo>certInfo>iac>healthFood>adDeliberationNo,상품 API,1,✅ 핵심 UDS,건강기능식품 인증여부 true일 경우 필수
+(옥션용) 식품제조가공업 입력사항 여부,itemAddtionalInfo>certInfo>iac>food>isUse,상품 API,1,✅ 핵심 UDS,true : 신고대상 false : 신고대상 아님
+(옥션용) 신고기관명,itemAddtionalInfo>certInfo>iac>food>certOfficeName,상품 API,1,✅ 핵심 UDS,
+(옥션용) 신고번호,"itemAddtionalInfo>certInfo>iac>food>certId, itemAddtionalInfo>certInfo>iac>healthFood>certId",상품 API,1,✅ 핵심 UDS,건강기능식품 인증여부 true일 경우 필수
+(옥션용) 유효기간,itemAddtionalInfo>eCoupon>period,상품 API,1,✅ 핵심 UDS,- 옥션 등록시에만 설정 가능 - 최대 365 까지 설정 가능
+(옥션용) 의료기기 사전 광고 심의 번호,itemAddtionalInfo>certInfo>iac>medicalInstrument>adDeliberationId,상품 API,1,✅ 핵심 UDS,의료기기 인증 사용여부 true일 경우 필수
+(옥션용) 의료기기 인증 사용 여부,itemAddtionalInfo>certInfo>iac>medicalInstrument>isUse,상품 API,1,✅ 핵심 UDS,true : 신고대상 false : 신고대상 아님
+(옥션용) 의료기기 판매신고 번호,itemAddtionalInfo>certInfo>iac>medicalInstrument>certId,상품 API,1,✅ 핵심 UDS,의료기기 인증 사용 여부 true일 경우 필수
+(옥션용) 의료기기 판매신고기관명,itemAddtionalInfo>certInfo>iac>medicalInstrument>certOfficeName,상품 API,1,✅ 핵심 UDS,의료기기 인증 사용 여부 true일 경우 필수
+(옥션용) 의료기기 품목 허가 번호,itemAddtionalInfo>certInfo>iac>medicalInstrument>itemLicenseId,상품 API,1,✅ 핵심 UDS,의료기기 인증 사용 여부 true일 경우 필수
+(옥션용) 친환경 인증번호,itemAddtionalInfo>certInfo>iac>environmentFriendly>certId,상품 API,1,✅ 핵심 UDS,친환경 인증여부 true일 경우 필수
+(옥션용) 친환경 인증여부,itemAddtionalInfo>certInfo>iac>environmentFriendly>isUse,상품 API,1,✅ 핵심 UDS,true : 친환경 인증상품 false : 친환경 인증상품 아님
+(옥션용) 판매상태 변경,isSell>iac,상품 API,1,✅ 핵심 UDS,- 상품수정/전환 API 호출 시 필수 설정 - 등록 시 상태 설정은 불가 true : 판매가능 false : 판매중지
+(옥션용)Unique코드,BizRuleCode,클레임 API,13,✅ 핵심 UDS,ResultCode가 8668(비즈니스에러)일 경우 사유별 처리 가능하도록 Unique 코드 내려감
+(청소년) 미성년자 구매 여부,itemAddtionalInfo>isAdultProduct,상품 API,1,✅ 핵심 UDS,true : 성인상품 false : 일반상품
+(텍스트형) 노출여부,itemAddtionalInfo>recommendedOpts>text>details>value>isDisplay,상품 API,1,✅ 핵심 UDS,true : 노출 false : 미노출
+(텍스트형) 추천옵션코드,itemAddtionalInfo>recommendedOpts>text>details>value>recommendedOptNo,상품 API,1,✅ 핵심 UDS,추천옵션별 선택항목 조회 API에서 매칭된 코드 입력 ( 참고 )
+1.0→2.0 전환여부,isConverted,상품 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+AcntMoney,AcntMoney,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+AddReturnShippingFee,AddReturnShippingFee,클레임 API,1,✅ 핵심 UDS,JSON sample key
+AddReturnShippingFeeWay,AddReturnShippingFeeWay,클레임 API,1,✅ 핵심 UDS,JSON sample key
+AddShippingFee,AddShippingFee,클레임 API,1,✅ 핵심 UDS,JSON sample key
+AddressBack,AddressBack,클레임 API,2,✅ 핵심 UDS,JSON sample key
+AddressFront,AddressFront,클레임 API,2,✅ 핵심 UDS,JSON sample key
+AdultYn,AdultYn,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+AllocationDate,AllocationDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+AllocationEndDate,AllocationEndDate,"주문/배송 API, 클레임 API",2,✅ 핵심 UDS,JSON sample key
+AllocationStartDate,AllocationStartDate,"주문/배송 API, 클레임 API",2,✅ 핵심 UDS,JSON sample key
+ApproveDate,ApproveDate,클레임 API,3,✅ 핵심 UDS,JSON sample key
+ApproveUser,ApproveUser,클레임 API,3,✅ 핵심 UDS,JSON sample key
+BOX 수량 / 운송장수량,Data>BoxCnt,스타배송 API,1,✅ 핵심 UDS,합포일 경우 1 로 Return 분리포일경우 분리포된 전체 운송장 수량 내려감
+BackwoodsAddDeliveryFee,BackwoodsAddDeliveryFee,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+BarcodeServiceYn,BarcodeServiceYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+BasicCommission,BasicCommission,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+BasicServiceFee,BasicServiceFee,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+BizRuleCode,BizRuleCode,클레임 API,13,✅ 핵심 UDS,JSON sample key
+Bonus,Bonus,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+BonusCode,BonusCode,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+BoxCnt,BoxCnt,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+BoxQty,BoxQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+BoxSize,BoxSize,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+BranchCode,BranchCode,"서비스 API, 정산조회 API, 주문/배송 API, 클레임 API",5,✅ 핵심 UDS,JSON sample key
+BranchPrice,BranchPrice,"정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+BranchServiceType,BranchServiceType,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+BrandName,BrandName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+BrandNo,BrandNo,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+BsStockQty,BsStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+BundleType,BundleType,스타배송 API,5,✅ 핵심 UDS,JSON sample key
+BuyDecisionDate,BuyDecisionDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+BuyDecisonDate,BuyDecisonDate,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+BuyerId,BuyerId,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+BuyerMobileTel,BuyerMobileTel,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+BuyerPayAmt,BuyerPayAmt,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+CancelAfterRemitYN,CancelAfterRemitYN,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+CancelComment,CancelComment,클레임 API,1,✅ 핵심 UDS,JSON sample key
+CancelDate,CancelDate,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+CargoCapacity,CargoCapacity,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+CategoryCode,CategoryCode,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+CategoryCode1,CategoryCode1,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+CategoryCode2,CategoryCode2,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+CategoryCode3,CategoryCode3,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+CategoryName1,CategoryName1,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+CategoryName2,CategoryName2,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+CategoryName3,CategoryName3,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+ChannelCode,ChannelCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ChannelOrderNo,ChannelOrderNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ClaimCancelType,ClaimCancelType,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ClaimDate,ClaimDate,"스타배송 API, 클레임 API",2,✅ 핵심 UDS,JSON sample key
+ClaimDetailReason,ClaimDetailReason,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ClaimInvoiceNo,ClaimInvoiceNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ClaimReason,ClaimReason,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ClaimSeqNo,ClaimSeqNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ClaimSkuDetail,ClaimSkuDetail,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ClaimSolveDate,ClaimSolveDate,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ClaimStatus,ClaimStatus,"스타배송 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+Color,Color,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+CompleteDate,CompleteDate,"Other, 스타배송 API, 클레임 API",5,✅ 핵심 UDS,JSON sample key
+Condition,Condition,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ContrAmount,ContrAmount,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+CorpDiscountTotalPrice,CorpDiscountTotalPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+CostPrice,CostPrice,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Currency,Currency,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+CurrencyTransferAmountForeign,CurrencyTransferAmountForeign,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DailyTplKeepGradeCode,DailyTplKeepGradeCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+Data>PageIndex,Data>PageIndex,"Other, 스타배송 API",9,✅ 핵심 UDS,조회시 입력한 PageNo
+Data>PageSize,Data>PageSize,"Other, 스타배송 API",9,✅ 핵심 UDS,조회시 입력한 PageSize
+DeductNontaxPrice,DeductNontaxPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DeductTaxPrice,DeductTaxPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelBackAddress,DelBackAddress,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+DelFeeAmt,DelFeeAmt,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelFeeCommission,DelFeeCommission,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelFeeNo,DelFeeNo,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelFeeOverseaAmt,DelFeeOverseaAmt,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelFeePayWay,DelFeePayWay,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelFeeType,DelFeeType,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DelFrontAddress,DelFrontAddress,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+DelFullAddress,DelFullAddress,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+DelMemo,DelMemo,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+DeliveryCompName,DeliveryCompName,클레임 API,3,✅ 핵심 UDS,JSON sample key
+DeliveryCompanyCode,DeliveryCompanyCode,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryDueDate,DeliveryDueDate,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+DeliveryDueTime,DeliveryDueTime,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+DeliveryExpense,DeliveryExpense,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryFeeCondition,DeliveryFeeCondition,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryGroupNo,DeliveryGroupNo,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryNoticeCode,DeliveryNoticeCode,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryPayType,DeliveryPayType,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+DeliveryPickupCode,DeliveryPickupCode,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryPickupDetail,DeliveryPickupDetail,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+DeliveryReqDate,DeliveryReqDate,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+DeliverySlotId,DeliverySlotId,"서비스 API, 주문/배송 API, 클레임 API",3,✅ 핵심 UDS,JSON sample key
+DeliveryWishDate,DeliveryWishDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+DepositDueDate,DepositDueDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Details,Details,"CS API, 정산조회 API",4,✅ 핵심 UDS,JSON sample key
+DhStockQty,DhStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+DirectDiscountPrice,DirectDiscountPrice,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+DistrCenterClaimCode,DistrCenterClaimCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+DividePackingYn,DividePackingYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ESM 상품번호,data>GoodsNo,주문/배송 API,1,✅ 핵심 UDS,null로만 내려감 (추후 적용예정)
+ESM 상품분류코드,"independent>details>epinCode, itemBasicInfo>catalog>epinCode",스타배송 API,2,✅ 핵심 UDS,현재 API 제공하지 않아 null 로 호출
+ESM 카테고리 코드,"category>esm, itemBasicInfo>category>esm>catCode","상품 API, 스타배송 API",3,✅ 핵심 UDS,ESM 카테고리 코드 등록 * ESM 카테고리 조회 API 참고
+ESM 카테고리명,items>category>esm>catName,상품 API,1,✅ 핵심 UDS,
+ESM 카테고리코드,"items>category>esm>catCode, sdCatCode, siteCatCode","Other, 상품 API",3,✅ 핵심 UDS,조회한 카테고리코드 기준 하위 카테고리 확인 가능
+ESM상품번호,"Data>GoodsNo, data>GoodsNo, data>RequestOrders>GoodsNo","정산조회 API, 주문/배송 API, 클레임 API",4,✅ 핵심 UDS,(추후 적용예정) 현재 null 로만 확인 가능
+EaQty,EaQty,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+EfmCartSeqNo,EfmCartSeqNo,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+EfmOrderNo,EfmOrderNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+EfmSeqNo,EfmSeqNo,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+EhStockQty,EhStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+Eng,Eng,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+EscrowDt,EscrowDt,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+EscrowType,EscrowType,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+ExchangeRate,ExchangeRate,정산조회 API,3,✅ 핵심 UDS,JSON sample key
+ExchangeShippingFee,ExchangeShippingFee,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ExchangeShippingFeeWay,ExchangeShippingFeeWay,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ExpireDate,ExpireDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ExpireDateDays,ExpireDateDays,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+ExpireDateNearDays,ExpireDateNearDays,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ExpireDateRiskDays,ExpireDateRiskDays,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ExpireDaysLimitCode,ExpireDaysLimitCode,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+FailCode,FailCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+FailMessage,FailMessage,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+FailReasons,FailReasons,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+FastRefundRewardStatus,FastRefundRewardStatus,클레임 API,1,✅ 핵심 UDS,JSON sample key
+FeeAmnt,FeeAmnt,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+FeeDiscountPrice,FeeDiscountPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+FreeDate,FreeDate,클레임 API,2,✅ 핵심 UDS,JSON sample key
+FreeGift,FreeGift,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+FreeGiftCode,FreeGiftCode,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+FreeGiftYn,FreeGiftYn,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+G 마켓 / 옥션 카테고리 사이트구분,itemBasicInfo>category>site,스타배송 API,1,✅ 핵심 UDS,G 마켓 / 옥션 카테고리 등록을 위한 사이트 선택 1. 옥션 2. G 마켓
+G 마켓 / 옥션 카테고리코드,itemBasicInfo>category>site>catCode,스타배송 API,1,✅ 핵심 UDS,G 마켓 / 옥션에서 제공하는 최하위 (Leaf) 카테고리 코드 등록 *G 마켓 / 옥션 카테고리 조회 API 참고
+G 마켓 Site 상품번호,ORDER_INFO>GD_NO,서비스 API,1,✅ 핵심 UDS,
+G 마켓 재고,itemBasicInfo>Stock>Gmkt,상품 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+G 마켓 재고수량,"itemAddtionalInfo>stock>Gmkt, itemBasicInfo>Stock>gmkt",스타배송 API,2,✅ 핵심 UDS,"G 마켓에서 판매할 재고 입력 1~99999 까지 입력 가능 3PL 상품은 해당 항목값 입력 필수이나 , 연동된 SKU 의 재고로 자동 연동됨"
+G 마켓 판매가격,"itemAddtionalInfo>price>Gmkt, itemBasicInfo>Price>Gmkt, itemBasicInfo>Price>gmkt","상품 API, 스타배송 API",3,✅ 핵심 UDS,"G 마켓에서 판매될 금액 입력 ( 십억이상 입력 불가 ) 10 원단위로 등록 판매자할인 등록 시 , 판매가격 기준으로 할인 적용됨"
+G 마켓 판매기간,"itemAddtionalInfo>sellingPeriod>Gmkt, itemBasicInfo>SellingPeriod>Gmkt, itemBasicInfo>SellingPeriod>gmkt","상품 API, 스타배송 API",3,✅ 핵심 UDS,"G 마켓에서 판매할 기간 입력 -1: 무제한 3PL 상품은 -1: 무제한 만 입력 가능 단 , 해당 API GET 조회시 , YYYYMMDD 판매종료날짜가 99991231 로 내려감"
+G 마켓 판매상태,IsSell>gmkt,스타배송 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+G 마켓 판매여부,isSell>gmkt,상품 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+G 마켓메시지,siteDetail>gmkt>SiteGoodsComment,상품 API,1,✅ 핵심 UDS,마스터 상품 기준으로 각 Site 에 등록된 상품번호를 조회 한 정보
+G 마켓상품번호,siteDetail>gmkt>SiteGoodsNo,상품 API,1,✅ 핵심 UDS,마스터 상품 기준으로 각 Site 에 등록된 상품번호를 조회 한 정보
+GiftConfirmDate,GiftConfirmDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+GiftConfirmDueDate,GiftConfirmDueDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+GiftOrderStatus,GiftOrderStatus,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+GlobalSellerYn,GlobalSellerYn,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Gmkt,Gmkt,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+GoodsCost,GoodsCost,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+GoodsRegYn,GoodsRegYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+GoodsStatus,GoodsStatus,클레임 API,1,✅ 핵심 UDS,JSON sample key
+GreatMembDcAmnt,GreatMembDcAmnt,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+GroupNo,GroupNo,"주문/배송 API, 클레임 API",5,✅ 핵심 UDS,JSON sample key
+G마켓 1.0 상품번호,siteGoodsNo>gmkt,상품 API,1,✅ 핵심 UDS,- 전환 API 사용시 해당 Entity 추가 - 전환하는 G마켓 1.0 상품번호 입력 - 1개의 상품번호만 입력하여 전환 가능 - 전환시 마스터번호 신규 생성 및 1.0 사이트 상품번호 그대로 유지
+G마켓 재고수량,"ItemBasicInfo>stock>gmkt, itemAddtionalInfo>stock>Gmkt",상품 API,2,✅ 핵심 UDS,"G마켓에서 판매할 재고 입력 1~99999까지 입력 가능함 * 옵션 등록 시 옵션재고관리(true)로 선택하면, 본판매수량은 입력해도 무시되고 옵션의 합산 재고로 산정됨"
+G마켓 판매가격,"ItemBasicInfo>price>gmkt, itemAddtionalInfo>price>Gmkt",상품 API,2,✅ 핵심 UDS,"G마켓에서 판매될 금액 입력(십억이상 입력 불가) 10원단위로 등록 판매자할인 등록 시, 판매가격 기준으로 할인 적용됨"
+G마켓 판매기간,"ItemBasicInfo>sellingPeriod>gmkt, itemAddtionalInfo>sellingPeriod>Gmkt",상품 API,2,✅ 핵심 UDS,"G마켓에서 판매할 기간 입력 기간 만료시 판매중지되고 상품 수정시 연장 필요 아래 기간 호출 시 호출 시점부터 기간만큼 연장 입력 가능 기간 : -1 (무제한), 0, 15, 30, 60, 90, 365 * 수정(PUT) 시 판매기간을 0으로 입력하면 기존 판매기간 유지 * 조회(GET) 시 판매종료일 조회 (YYYYMMDD) * ESM+ 판매기간 노출 (Beta) 상품 조회/수정 : 설정안함 상품관리2.0 : 9999-12-31 (365일+)"
+G마켓 판매상태 변경,isSell>gmkt,상품 API,1,✅ 핵심 UDS,true : 판매가능 상태로 전환 false : 판매중지 상태로 전환 * 판매중지 상태로 1개월 유지하면 상품삭제 * 판매중지 상태로 정보 호출 시 반영되지 않음
+G마켓/옥션 카테고리 사이트구분,itemBasicInfo>category>site>siteType,상품 API,1,✅ 핵심 UDS,1 : 옥션 2 : G마켓
+G마켓/옥션 카테고리코드,"itemBasicInfo>category>site>catCode, siteCatCode","Other, 상품 API",2,✅ 핵심 UDS,대분류 전체 카테고리 조회시 아래 URL로 호출 [GET] https://sa2.esmplus.com/item/v1/categories/site-cats 조회한 카테고리코드 기준 하위 카테고리 확인 가능
+Height,Height,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+HoldDate,HoldDate,클레임 API,2,✅ 핵심 UDS,JSON sample key
+HoldInfo,HoldInfo,클레임 API,2,✅ 핵심 UDS,JSON sample key
+HoldReason,HoldReason,클레임 API,2,✅ 핵심 UDS,JSON sample key
+HoldReasonDetail,HoldReasonDetail,클레임 API,1,✅ 핵심 UDS,JSON sample key
+HoldStockQty,HoldStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+HpNo,HpNo,"주문/배송 API, 클레임 API",4,✅ 핵심 UDS,JSON sample key
+HsStockQty,HsStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+Iac,Iac,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+ImageUrl1,ImageUrl1,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ImageUrl2,ImageUrl2,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ImageUrl3,ImageUrl3,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ImageUrl4,ImageUrl4,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ImageUrl5,ImageUrl5,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+InfoCin,InfoCin,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+InsDate,InsDate,"Other, 스타배송 API",7,✅ 핵심 UDS,JSON sample key
+InspectMthdType,InspectMthdType,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+InstallDate,InstallDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+InstallMakerId,InstallMakerId,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+InstallModelCode,InstallModelCode,"스타배송 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+InventoryNo,InventoryNo,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+InvoiceGoodsName,InvoiceGoodsName,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+InvoiceIssueDate,InvoiceIssueDate,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+IsChanged,IsChanged,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+IsFastRefund,IsFastRefund,클레임 API,1,✅ 핵심 UDS,JSON sample key
+IsGiftOrder,IsGiftOrder,"주문/배송 API, 클레임 API",5,✅ 핵심 UDS,JSON sample key
+IsHold,IsHold,클레임 API,2,✅ 핵심 UDS,JSON sample key
+IsInstall,IsInstall,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+IsInstallOrder,IsInstallOrder,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+IsReporting,IsReporting,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+IsSell,IsSell,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+ItemManageCode,ItemManageCode,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+ItemOptionAdditionList,ItemOptionAdditionList,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+ItemOptionCode,ItemOptionCode,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+ItemOptionCodes,ItemOptionCodes,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ItemOptionOrderCnt,ItemOptionOrderCnt,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+ItemOptionSelectList,ItemOptionSelectList,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+ItemOptionValue,ItemOptionValue,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+IwDetail,IwDetail,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+IwDetrmQty,IwDetrmQty,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+IwMthdType,IwMthdType,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+IwReasonCode,IwReasonCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+IwReasonMsg,IwReasonMsg,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+IwScheduledDate,IwScheduledDate,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+IwScheduledDateType,IwScheduledDateType,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+IwScheduledQty,IwScheduledQty,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+JejuAddDeliveryFee,JejuAddDeliveryFee,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Kind,Kind,정산조회 API,2,✅ 핵심 UDS,JSON sample key
+MakerName,MakerName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+MakerNo,MakerNo,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+Memo,Memo,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+ModelName,ModelName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+MultiBuyDcAmnt,MultiBuyDcAmnt,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Name,Name,클레임 API,2,✅ 핵심 UDS,JSON sample key
+NoSongjang,NoSongjang,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+NormalStockQty,NormalStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+OnedayDeliveryYn,OnedayDeliveryYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+OptAddPrice,OptAddPrice,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+OptSelPrice,OptSelPrice,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+OptValue,OptValue,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+OptionCommission,OptionCommission,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+OptionCost,OptionCost,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+OptionPrice,OptionPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+OrderAmount,OrderAmount,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+OrderCancelDate,OrderCancelDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+OrderConfirmDate,OrderConfirmDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+OrderDate,OrderDate,"스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",8,✅ 핵심 UDS,JSON sample key
+OrderDetail,OrderDetail,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+OrderQty,OrderQty,"스타배송 API, 정산조회 API",3,✅ 핵심 UDS,JSON sample key
+OrderStatus,OrderStatus,"스타배송 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+OrderUnitPrice,OrderUnitPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+OutGoodsNo,OutGoodsNo,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+OutItemNo,OutItemNo,클레임 API,1,✅ 핵심 UDS,JSON sample key
+OutOrderNo,OutOrderNo,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+OuterCartNo,OuterCartNo,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+OuterGoodsNo,OuterGoodsNo,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+OuterOrderNo,OuterOrderNo,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+OutsidePrice,OutsidePrice,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+OverProfitDiscountPrice,OverProfitDiscountPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+OverseaTransYn,OverseaTransYn,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+OwQty,OwQty,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+OwUnitCode,OwUnitCode,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+OwUnitQty,OwUnitQty,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+PackQty,PackQty,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+PackingNeedYn,PackingNeedYn,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+Page,Page,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+PageIndex,PageIndex,"Other, 스타배송 API, 주문/배송 API",11,✅ 핵심 UDS,JSON sample key
+PageNo,PageNo,정산조회 API,3,✅ 핵심 UDS,JSON sample key
+PageRowCnt,PageRowCnt,정산조회 API,3,✅ 핵심 UDS,
+PageSize,PageSize,"Other, 스타배송 API, 정산조회 API, 주문/배송 API",14,✅ 핵심 UDS,JSON sample key
+ParcelCapacity,ParcelCapacity,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+PayDate,PayDate,"정산조회 API, 주문/배송 API, 클레임 API",6,✅ 핵심 UDS,JSON sample key
+PayNo,PayNo,"주문/배송 API, 클레임 API",5,✅ 핵심 UDS,JSON sample key
+PcsQty,PcsQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+PickupInfo,PickupInfo,클레임 API,2,✅ 핵심 UDS,JSON sample key
+PromotionCode1,PromotionCode1,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+PromotionCode2,PromotionCode2,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+PromotionNo,PromotionNo,상품 API,1,✅ 핵심 UDS,JSON sample key
+RcverInfoAd1,RcverInfoAd1,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+RcverInfoAd2,RcverInfoAd2,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+RcverInfoCp,RcverInfoCp,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+RcverInfoHt,RcverInfoHt,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+RcverInfoNa,RcverInfoNa,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+Reason,Reason,클레임 API,3,✅ 핵심 UDS,JSON sample key
+ReasonCode,ReasonCode,클레임 API,2,✅ 핵심 UDS,JSON sample key
+ReasonDetail,ReasonDetail,"주문/배송 API, 클레임 API",4,✅ 핵심 UDS,JSON sample key
+ReceiverInfo,ReceiverInfo,클레임 API,2,✅ 핵심 UDS,JSON sample key
+RefContrNo,RefContrNo,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+RefundDate,RefundDate,정산조회 API,2,✅ 핵심 UDS,JSON sample key
+RemitDate,RemitDate,정산조회 API,2,✅ 핵심 UDS,JSON sample key
+RepBarcode,RepBarcode,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+ReplaceYn,ReplaceYn,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Reporting,Reporting,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+Reporting 등록일시,Data>Reporting>ReportingInsDate,스타배송 API,1,✅ 핵심 UDS,
+Reporting 수정일시,Data>Reporting>ReportingUpdDate,스타배송 API,1,✅ 핵심 UDS,
+Reporting등록여부,Data>IsReporting,스타배송 API,1,✅ 핵심 UDS,검수리포팅이 등록되었는지 여부 1.등록 2.미등록
+RequestDate,RequestDate,"서비스 API, 클레임 API",4,✅ 핵심 UDS,JSON sample key
+RequestOrders,RequestOrders,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+RequestUser,RequestUser,클레임 API,3,✅ 핵심 UDS,JSON sample key
+ResendDate,ResendDate,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ResendExpectDate,ResendExpectDate,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ResendInfo,ResendInfo,클레임 API,1,✅ 핵심 UDS,JSON sample key
+RestockYn,RestockYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+RetCode,RetCode,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ReturnChangeBlame,ReturnChangeBlame,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+ReturnShippingFee,ReturnShippingFee,클레임 API,2,✅ 핵심 UDS,JSON sample key
+ReturnShippingFeeWay,ReturnShippingFeeWay,클레임 API,1,✅ 핵심 UDS,JSON sample key
+ReturnStatus,ReturnStatus,클레임 API,1,✅ 핵심 UDS,JSON sample key
+RevenueBaseDate,RevenueBaseDate,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+RevenueDate,RevenueDate,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+RhStockQty,RhStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SKU ID,SkuId,"Other, 스타배송 API",12,✅ 핵심 UDS,상태변경 대상 SKU코드 입력 복수 개 SKU 병렬로 입력 가능
+SKU 공급원가,Data>Data>SkuSupplyPrice,스타배송 API,1,✅ 핵심 UDS,-1: 미관리 정수 : 공급원가
+SKU 관리코드,Data>Data>SkuManageCode,스타배송 API,1,✅ 핵심 UDS,"최대 50byte 로 , 판매자가 입력한 SKU 관리코드 내려감 EFM 의 "" 관리코드 "" 항목"
+SKU 명,Data>Data>SkuName,스타배송 API,1,✅ 핵심 UDS,"최대 50byte 로 , 판매자가 입력한 SKU 명 내려감"
+SKU 번호,"Data>Data>SkuId, independent>details>skuInfo>skuId","Other, 스타배송 API",3,✅ 핵심 UDS,- 풀필먼트 스타배송 경우만 사용 - 해당 추천옵션의 SKU 코드 입력
+SKU 상태,Data>Data>SkuStatusCode,스타배송 API,1,✅ 핵심 UDS,SN100 : 정상 ST200 : 품절 ST299 : 출고중지 SI302 : 입고대기 SI300 : 검수대기 SI301 : 검수거부
+SKU 체적가높이(cm),Data>Data>Height,스타배송 API,1,✅ 핵심 UDS,"판매자가 입력했거나, 지마켓에서 측정한 체적 높이값 내려감"
+SKU 체적가로(cm),"Data>Data>Width, Width",스타배송 API,2,✅ 핵심 UDS,"숫자만 입력 최대 삼변합(가로+세로+높이) 190cm까지, 중량 20,000g까지 입력 가능"
+SKU 체적높이(cm),Height,스타배송 API,1,✅ 핵심 UDS,"숫자만 입력 최대 삼변합(가로+세로+높이) 190cm까지, 중량 20,000g까지 입력 가능"
+SKU 체적세로(cm),"Data>Data>Vertical, Vertical",스타배송 API,2,✅ 핵심 UDS,"숫자만 입력 최대 삼변합(가로+세로+높이) 190cm까지, 중량 20,000g까지 입력 가능"
+SKU 체적중량(g),"Data>Data>Weight, Weight",스타배송 API,2,✅ 핵심 UDS,"숫자만 입력 최대 삼변합(가로+세로+높이) 190cm까지, 중량 20,000g까지 입력 가능"
+SKU 출고방식,"independent>details>skuInfo>owQty, itemAddtionalInfo>skuInfo>owQty","Other, 스타배송 API",3,✅ 핵심 UDS,- 풀필먼트 스타배송 상품 경우만 사용 - 해당 추천옵션 SKU 당 출고수 입력
+SKU 코드,itemAddtionalInfo>skuInfo>skuId,스타배송 API,1,✅ 핵심 UDS,상품에 연동할 SKU 코드 입력 * 최대 5 개까지 SKU 입력가능 * 합포장가능 SKU 와 합포장 불가능 SKU 동시 매칭 불가 * 과세 SKU 는 과세끼리 / 면세 SKU 는 면세끼리 / 미설정 SKU 는 미설정끼리 복수 매핑 가능
+SKUNo,SKUNo,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+SKU공급원가,SkuSupplyPrice,스타배송 API,1,✅ 핵심 UDS,"10원 이상부터 숫자입력 -1 입력 시, SKU공급원가 미관리로 분류"
+SKU관리코드,"Data>SkuManageCode, SkuManageCode",스타배송 API,2,✅ 핵심 UDS,재고현황 대상 SKU관리코드 내려감
+SKU명,Data>SkuName,스타배송 API,1,✅ 핵심 UDS,재고현황 대상 SKU명 내려감
+SKU번호,data>SKUNo,주문/배송 API,1,✅ 핵심 UDS,- 풀필먼트 스타배송 주문 경우 내려가는 정보 - SKU번호/N개 형식으로 내려감
+SKU상세설명,"Data>Data>SkuDesc, SkuDesc",스타배송 API,2,✅ 핵심 UDS,SKU 세부설명 Text로 입력 최대 300byte까지 입력
+SKU상태,"Data>SkuStatusCode, SkuStatusCode",스타배송 API,3,✅ 핵심 UDS,ALL : 전체 SN100 : 정상 ST200 : 품절 ST299 : 출고중지 SI302 : 입고대기 SI300 : 검수대기 SI301 : 검수거부
+SKU정보URL,Data>Data>SkuUrl,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 SKU정보URL 내려감
+SKU코드,Data>SkuId,스타배송 API,3,✅ 핵심 UDS,재고현황 대상 SKU코드 내려감
+SKU타이틀,SkuTitle,스타배송 API,1,✅ 핵심 UDS,"API로 SKU등록 시, [브랜드명]제조사명/SKU타이틀/중량/색상/모델명 각 항목별로 데이터 받은 후 Back에서 조합하여 SKU명으로 관리함 최대 20byte까지 등록가능하며, 전체 조합된 SKU명은 50byte까지 등록 조합 시, 분리된 데이터 표시를 위해 ""/""로 구분하여 등록됨"
+SaStockQty,SaStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SalePrice,SalePrice,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+ScanDate,ScanDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SearchString,SearchString,"Other, 스타배송 API",6,✅ 핵심 UDS,JSON sample key
+SellOrderPrice,SellOrderPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+SellerCashbackMoney,SellerCashbackMoney,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+SellerDiscountPrice,SellerDiscountPrice,"정산조회 API, 주문/배송 API",3,✅ 핵심 UDS,JSON sample key
+SellerDiscountPrice1,SellerDiscountPrice1,"정산조회 API, 주문/배송 API",3,✅ 핵심 UDS,JSON sample key
+SellerDiscountPrice2,SellerDiscountPrice2,"정산조회 API, 주문/배송 API",3,✅ 핵심 UDS,JSON sample key
+SellerDiscountTotalPrice,SellerDiscountTotalPrice,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+SellerFundingDiscountPrice,SellerFundingDiscountPrice,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+SellerId,SellerId,"CS API, 정산조회 API, 주문/배송 API, 클레임 API",9,✅ 핵심 UDS,JSON sample key
+SellerItemNo,SellerItemNo,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+SellerPcsFee,SellerPcsFee,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+SellerQty,SellerQty,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+SellingPeriod,SellingPeriod,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+SenderInfo,SenderInfo,클레임 API,2,✅ 핵심 UDS,JSON sample key
+ServiceFee,ServiceFee,"정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+SettleExceptName,SettleExceptName,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+SettleExpectDate,SettleExpectDate,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+SettleType,SettleType,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+SettlementPrice,SettlementPrice,"정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+ShippingCmplDate,ShippingCmplDate,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+ShippingDate,ShippingDate,"정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+ShippingFee,ShippingFee,"주문/배송 API, 클레임 API",4,✅ 핵심 UDS,JSON sample key
+ShippingInfo,ShippingInfo,클레임 API,2,✅ 핵심 UDS,JSON sample key
+SinglePayDcAmnt,SinglePayDcAmnt,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Site 상품번호,"Data>SiteGoodsNo, SiteGoodsNo, StieGoodsNo","CS API, 상품 API",3,✅ 핵심 UDS,이슈 되는 대표 Site 상품번호 내려감
+Site 카테고리코드,catCode,스타배송 API,1,✅ 핵심 UDS,카테고리별 추천옵션코드 조회 request Path 값 G 마켓 or 옥션 사이트카테고리 코드 입력
+Site 피딩관리코드,innerResultCode,상품 API,1,✅ 핵심 UDS,마스터 상품 기준으로 각 Site 에 등록된 상품번호를 조회 한 정보
+Site 피딩관리코드메시지,innerMessage,상품 API,1,✅ 핵심 UDS,마스터 상품 기준으로 각 Site 에 등록된 상품번호를 조회 한 정보
+SiteGoodsComment,SiteGoodsComment,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+SiteGoodsNo,SiteGoodsNo,"CS API, 상품 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",10,✅ 핵심 UDS,JSON sample key
+SiteUserInput,SiteUserInput,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+SkuDesc,SkuDesc,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+SkuDetail,SkuDetail,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SkuManageCode,SkuManageCode,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+SkuName,SkuName,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+SkuPerPcsQty,SkuPerPcsQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SkuQty,SkuQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SkuStatusCode,SkuStatusCode,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+SkuStockRatioStatusCode,SkuStockRatioStatusCode,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+SkuSupplyPrice,SkuSupplyPrice,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+SkuTitle,SkuTitle,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+SkuUrl,SkuUrl,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+SlotInfo,SlotInfo,클레임 API,1,✅ 핵심 UDS,JSON sample key
+SrchType,SrchType,정산조회 API,2,✅ 핵심 UDS,JSON sample key
+Status,Status,"주문/배송 API, 클레임 API",3,✅ 핵심 UDS,JSON sample key
+StatusChangeDate,StatusChangeDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+Stock,Stock,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+StockQty,StockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+StorageDesc,StorageDesc,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+StorageType,StorageType,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+SuccessList,SuccessList,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+SuccessNos,SuccessNos,스타배송 API,3,✅ 핵심 UDS,JSON sample key
+TakbaeName,TakbaeName,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+TaxYn,TaxYn,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TelNo,TelNo,"주문/배송 API, 클레임 API",4,✅ 핵심 UDS,JSON sample key
+TotCommission,TotCommission,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TotalDelFeeAmt,TotalDelFeeAmt,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TotalSettlementAmount,TotalSettlementAmount,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TotalTransferAmountForeign,TotalTransferAmountForeign,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TplKeepGradeCode,TplKeepGradeCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+TrackingUrl,TrackingUrl,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+TransCompleteDate,TransCompleteDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+TransDate,TransDate,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+TransInfoAd1,TransInfoAd1,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+TransInfoAd2,TransInfoAd2,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+TransInfoHt,TransInfoHt,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+TransType,TransType,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+TransferAmountForeign,TransferAmountForeign,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TransferAmountKr,TransferAmountKr,정산조회 API,1,✅ 핵심 UDS,JSON sample key
+TransferDate,TransferDate,정산조회 API,3,✅ 핵심 UDS,JSON sample key
+UpStockQty,UpStockQty,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+UpdDate,UpdDate,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+Value,Value,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+VatTaxfreeYn,VatTaxfreeYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+Vertical,Vertical,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+VolumnGradeCode,VolumnGradeCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+WarehouseInDate,WarehouseInDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+WarehouseName,WarehouseName,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+WarehouseNo,WarehouseNo,스타배송 API,5,✅ 핵심 UDS,JSON sample key
+WarehouseOutDate,WarehouseOutDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+WarehouseOutNo,WarehouseOutNo,"Other, 클레임 API",3,✅ 핵심 UDS,JSON sample key
+WarehouseReqDate,WarehouseReqDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+WarehouseStatus,WarehouseStatus,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+WarehouseStatusCode,WarehouseStatusCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+Weight,Weight,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+WeightText,WeightText,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+WhoAddReturnShippingFee,WhoAddReturnShippingFee,클레임 API,1,✅ 핵심 UDS,JSON sample key
+WhoExchangeShippingFee,WhoExchangeShippingFee,클레임 API,1,✅ 핵심 UDS,JSON sample key
+WhoReturnShippingFee,WhoReturnShippingFee,클레임 API,1,✅ 핵심 UDS,JSON sample key
+WhoShippingFee,WhoShippingFee,클레임 API,2,✅ 핵심 UDS,JSON sample key
+Width,Width,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+WithdrawDate,WithdrawDate,클레임 API,3,✅ 핵심 UDS,JSON sample key
+[ ] 우편번호,zipcodes,서비스 API,1,✅ 핵심 UDS,"- 우편번호는 지점별 우편번호 관리로 등록된 리스트 내에서만 지점별 설정 가능 - 한 지점의 서비스타입 : 권역 : 우편번호는 1 : 1 : N 관계 - 지점에 우편번호가 원거리와 같은 기존 정보가 설정 된 경우에도 , 서비스 및 권역이 설정 된 경우 해당 정보가 우선 함 - 우편번호는 List 로 등록"
+[ ]우편번호,zipcodes,서비스 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+[] 그룹번호,groupNo,상품 API,1,✅ 핵심 UDS,
+[] 사이트 구분,siteId,상품 API,1,✅ 핵심 UDS,1 : 옥션 2 : 지마켓
+[] 제품 StockNo,Data>Data>OrderDetail>StockNo,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 제품 StockNo 내려감
+[] 출고된 박스사이즈,Data>Data>OrderDetail>BoxSize,스타배송 API,1,✅ 핵심 UDS,출고된 박스사이즈 내려감
+[] 출고송장발급일시,Data>Data>OrderDetail>InvoiceIssueDate,스타배송 API,1,✅ 핵심 UDS,해당 SKU 출고송장번호 발급일시 내려감
+[] 출고송장번호,Data>Data>OrderDetail>InvoiceNo,스타배송 API,1,✅ 핵심 UDS,해당 SKU 출고송장번호 내려감
+[] 택배사코드,Data>Data>OrderDetail>DeliveryCompCode,스타배송 API,1,✅ 핵심 UDS,택배사별 5 자리 코드 아래 url 내 코드 참조 https://etapi.gmarket.com/142
+[] 판매상태,sellStatus,상품 API,1,✅ 핵심 UDS,11 : 판매 중 21 : 판매 중지 22 : 직권 중지 31 : SKU 품절
+[] 판매자 ID,siteSellerId,상품 API,1,✅ 핵심 UDS,
+[] 판매자 관리코드,managedCode,상품 API,1,✅ 핵심 UDS,
+[]SKU 관리코드,Data>Data>OrderDetail>SKUManageCode,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 SKU 관리코드 내려감
+[]SKU 총출고수량,Data>Data>OrderDetail>OwQty,스타배송 API,1,✅ 핵심 UDS,판매자가 등록한 SKU 총출고수량
+[]SKU관리코드,Data>Data>OrderDetail>InvoiceIssueDate,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 SKU관리코드 내려감
+[]SKU명,Data>IwDetail>SkuName,스타배송 API,1,✅ 핵심 UDS,입고된 SKU명 내려감
+[]SKU반출수량,Data>OutDetail>OutDetrmQty,Other,1,✅ 핵심 UDS,반출된 SKU반출수량 내려감
+[]SKU반출요청수량,Data>OutDetail>OutReqQty,Other,1,✅ 핵심 UDS,반출된 SKU반출요청수량 내려감
+[]SKU반품/교환입고 예정수량,Data>Reporting>ClaimSkuDetail>IwScheduledQty,스타배송 API,1,✅ 핵심 UDS,0 또는 정수
+[]SKU반품/교환입고 확정수량,Data>Reporting>ClaimSkuDetail>IwDetrmQty,스타배송 API,1,✅ 핵심 UDS,0 또는 정수
+[]SKU번호,"Data>IwDetail>SkuId, Data>OutDetail>SkuId, Data>Reporting>ClaimSkuDetail>SkuId, IwDetail>SkuId, OutDetail>SkuId, SkuDetail>skuId","Other, 스타배송 API",6,✅ 핵심 UDS,"입고요청할 SKU ID입력 택배입고는 1SKU : 1BOX로 분할되어 입고번호가 채번됨 송장별로 분할하여 중복 SKU 입력이 가능하나 1송장 안에 N SKU혼적 불가 택배입고는 입고요청 시, 20box이상 입고불가"
+[]SKU재고유형,Data>OutDetail>SkuStockCode,Other,1,✅ 핵심 UDS,반출된 SKU재고유형 내려감 SA : 판매가능재고 UP : 신규주문재고 HS : 일반보류재고 RH : 반품보류재고 EH : 소비기한보류재고
+[]SKU총출고수량,"Data>Data>OrderDetail>OwQty, SkuDetail>OwQty",스타배송 API,2,✅ 핵심 UDS,해당 SKU의 출고 수량을 카운팅하여 연동 정수만 입력 가능 0입력불가
+[]Sku 번호,Data>Data>OrderDetail>SkuId,스타배송 API,1,✅ 핵심 UDS,지마켓에서 채번한 SKU 번호 내려감
+[]Sku번호,Data>Data>OrderDetail>SkuId,스타배송 API,1,✅ 핵심 UDS,지마켓에서 채번한 SKU번호 내려감
+[]바코드부착,IwDetail>BarcodeServiceYn,스타배송 API,1,✅ 핵심 UDS,유료서비스 Y : 서비스신청 N : 서비스신청 안 함
+[]반출요청수량,OutDetail,Other,1,✅ 핵심 UDS,SKU직접입력시 수량 설정 필요
+[]상품관리코드,Data>Data>OrderDetail>InvoiceIssueDate,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 상품관리코드 내려감
+[]성공한SKU번호,"Data>SuccessList>IwDetail>SkuId, Data>SuccessList>OutDetail>SkuId","Other, 스타배송 API",2,✅ 핵심 UDS,입고요청 성공한 SKU번호 리스트
+[]성공한SKU번호의입고층명,Data>SuccessList>IwDetail>StorageDesc,스타배송 API,1,✅ 핵심 UDS,입고요청 성공한 SKU번호의 물류센터입고층명
+[]성공한SKU코드,Data>SuccessNos,스타배송 API,1,✅ 핵심 UDS,상태변경 성공한 SKU ID 리스트
+[]성공한스마일주문번호,Data>SuccessNos,스타배송 API,2,✅ 핵심 UDS,출고요청 성공한 주문번호 리스트
+[]성공한입고번호,Data>SuccessList>WarehouseNo,스타배송 API,1,✅ 핵심 UDS,입고요청 성공한 입고번호 리스트
+[]성공한입고일자,Data>SuccessList>IwScheduledDate,스타배송 API,1,✅ 핵심 UDS,입고요청 성공한 입고의 입고예정일시
+[]소비기한,IwDetail>ExpireDate,스타배송 API,1,✅ 핵심 UDS,"소비기한 입력 상미(소비)기한 관리 SKU일 경우 필수입력 '화물입고'의 경우, 1SKU 당 최대 3개 까지의 소비기한 등록 가능 '택배입고'의 경우, 박스 별 소비기한을 입력 1Box 안 SKU의 소비기한은 동일해야함"
+[]송장번호,"Data>OutDetail>InvoiceNo, IwDetail>InvoiceNo","Other, 스타배송 API",2,✅ 핵심 UDS,스타배송 물류센터에서 발송한 송장번호 내려감
+[]실패사유,Data>FailReasons>Message,"Other, 스타배송 API",5,✅ 핵심 UDS,출고요청 실패한 주문번호의 실패사유 Error Code 참고
+[]실패한SKU번호,Data>FailReasons>IwDetail>SkuId,"Other, 스타배송 API",2,✅ 핵심 UDS,입고요청 실패한 SKU번호 리스트
+[]실패한SKU번호입고층명,Data>SuccessList>IwDetail>StorageDesc,스타배송 API,1,✅ 핵심 UDS,입고요청 실패한 SKU번호의 물류센터입고층명
+[]실패한SKU코드,Data>FailReasons>SkuId,스타배송 API,1,✅ 핵심 UDS,상태변경 실패한 SKU ID 리스트
+[]실패한스마일주문번호,Data>FailReasons>FailNos,스타배송 API,2,✅ 핵심 UDS,출고요청 실패한 주문번호 리스트
+[]실패한입고번호,Data>FailReasons>WarehouseNo,스타배송 API,1,✅ 핵심 UDS,입고요청 실패한 입고번호 리스트
+[]실패한입고일자,Data>FailReasons>IwScheduledDate,스타배송 API,1,✅ 핵심 UDS,입고요청 실패한 입고의 입고예정일시
+[]양품화 가능여부,Data>Reporting>ClaimSkuDetail>RestockYn,스타배송 API,1,✅ 핵심 UDS,Y: 가능 N: 불가
+[]이미지1,Data>Reporting>ImageUrl1,스타배송 API,1,✅ 핵심 UDS,
+[]이미지2,Data>Reporting>ImageUrl2,스타배송 API,1,✅ 핵심 UDS,
+[]이미지3,Data>Reporting>ImageUrl3,스타배송 API,1,✅ 핵심 UDS,
+[]이미지4,Data>Reporting>ImageUrl4,스타배송 API,1,✅ 핵심 UDS,
+[]이미지5,Data>Reporting>ImageUrl5,스타배송 API,1,✅ 핵심 UDS,
+[]입고예정수량,"Data>IwDetail>IwScheduledQty, IwDetail>IwScheduledQty",스타배송 API,2,✅ 핵심 UDS,입고예정수량은 입수량 단위로 숫자로만 입력 가능 (입고예정수량과 실제 수량이 다른 경우 입고가 거부될 수 있음) 예) 판매단위 = 낱개이면 낱개 입수량으로 입력
+[]입고오류사유,Data>IwDetail>IwReasonMsg,스타배송 API,1,✅ 핵심 UDS,해당 SKU의 입고오류사유 내려감
+[]입고오류코드,Data>IwDetail>IwReasonCode,스타배송 API,1,✅ 핵심 UDS,해당 SKU의 입고오류코드 내려감 OR : 과입고 PR : 부분 미입고 NR : 전체 미입고 ES : 바코드스캔오류 EB : 바코드오류 ER : 오입고(타상품 입고) EE : 소비기한오류 EU :입수오류 ET : 출고타입오류 D : 파손 EC : 기타 CR : 입고취소
+[]입고완료수량,Data>IwDetail>IwDetrmQty,스타배송 API,1,✅ 핵심 UDS,해당 SKU의 입고완료수량 내려감
+[]출고된 박스사이즈,Data>Data>OrderDetail>BoxSize,스타배송 API,1,✅ 핵심 UDS,출고된 박스사이즈 내려감
+[]출고된 택배사코드,Data>Data>OrderDetail>DeliveryCompCode,스타배송 API,1,✅ 핵심 UDS,택배사별 5자리 코드 아래 택배사코드 참고
+[]출고송장발급일시,Data>Data>OrderDetail>InvoiceIssueDate,스타배송 API,1,✅ 핵심 UDS,해당 SKU 출고송장번호 발급일시 내려감
+[]출고송장번호,Data>Data>OrderDetail>InvoiceNo,스타배송 API,1,✅ 핵심 UDS,해당 SKU 출고송장번호 내려감
+[]택배사명,Data>OutDetail>DeliveryCompCode,Other,1,✅ 핵심 UDS,스타배송 물류센터에서 발송한 택배사명 내려감(택배사코드는 나중에 적용됨)
+[]택배사코드,IwDetail>DeliveryCompCode,스타배송 API,1,✅ 핵심 UDS,택배입고일 경우 필수입력 입고요청 시 아래 택배사만 제공 CJ대한통운 : 10013 우체국택배 : 10005 한진택배 : 10007 로젠택배 : 10003 롯데택배 : 10008 합동택배 : 10074 경동택배 : 10016 일양로지스 : 10015 기타택배 : 10034 화물입고일 경우 해당컬럼 입력하지 않음(null)
+[]현재수량,Data>IwDetail>StockQty,스타배송 API,1,✅ 핵심 UDS,해당 SKU의 현재수량 내려감
+adDeliberationId,adDeliberationId,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+adDeliberationNo,adDeliberationNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonService,addonService,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceAmnt,addonServiceAmnt,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceList,addonServiceList,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceName,addonServiceName,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+addonServiceSeq,addonServiceSeq,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceType,addonServiceType,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceUseType,addonServiceUseType,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceValueName,addonServiceValueName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addonServiceValueSeq,addonServiceValueSeq,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addrNo,addrNo,"Other, 상품 API, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+addtionalImg1URL,addtionalImg1URL,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addtionalImg2URL,addtionalImg2URL,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addtionalImg3URL,addtionalImg3URL,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+addtionalInfo,addtionalInfo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+alreadySent,alreadySent,클레임 API,1,✅ 핵심 UDS,JSON sample key
+attributeCode,attributeCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+backwoodsAdditionalShippingFee,backwoodsAdditionalShippingFee,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+backwoodsDeliveryYn,backwoodsDeliveryYn,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+barCode,barCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+baseFee,baseFee,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+basicImgURL,basicImgURL,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+book,book,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+branchCode,branchCode,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+brand,brand,상품 API,1,✅ 핵심 UDS,JSON sample key
+brandCode,brandCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+brandName,brandName,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+brandNo,brandNo,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+broadcastEquipment,broadcastEquipment,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+bundle,bundle,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+bundleDeliveryTmplId,bundleDeliveryTmplId,상품 API,1,✅ 핵심 UDS,JSON sample key
+buyableQuantity,buyableQuantity,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+capacity,capacity,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+catCode,catCode,"Other, 상품 API, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+catName,catName,"Other, 상품 API, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+catalog,catalog,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+category,category,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+certId,certId,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+certInfo,certInfo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+certOfficeName,certOfficeName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+certTargetCode,certTargetCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+chi,chi,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+child,child,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+chineseText,chineseText,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+code,code,"Other, 서비스 API, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+combination,combination,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+companyName,companyName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+companyNo,companyNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+condition,condition,"Other, 상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+contentId,contentId,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+createdDate,createdDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+customSchedules,customSchedules,스타배송 API,1,✅ 핵심 UDS,
+dailyOrderCutoff,dailyOrderCutoff,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+data,data,"Other, 상품 API, 스타배송 API",11,✅ 핵심 UDS,JSON sample key
+data>PageIndex,data>PageIndex,주문/배송 API,2,✅ 핵심 UDS,조회시 입력한 PageNo
+data>PageSize,data>PageSize,주문/배송 API,2,✅ 핵심 UDS,조회시 입력한 PageSize
+date,date,"서비스 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+dayOfWeek,dayOfWeek,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+dayOrderClosingTime,dayOrderClosingTime,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+deliveryTmplId,deliveryTmplId,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+descriptions,descriptions,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+detail,detail,상품 API,1,✅ 핵심 UDS,JSON sample key
+details,details,"CS API, Other, 스타배송 API",6,✅ 핵심 UDS,JSON sample key
+discount,discount,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+discountAmt,discountAmt,상품 API,1,✅ 핵심 UDS,JSON sample key
+dispEndDate,dispEndDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+dispatchCloseTime,dispatchCloseTime,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+dispatchPolicies,dispatchPolicies,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+dispatchPolicyName,dispatchPolicyName,"상품 API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+dispatchPolicyNo,dispatchPolicyNo,"상품 API, 스타배송 API, 주문/배송 API",3,✅ 핵심 UDS,JSON sample key
+dispatchType,dispatchType,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+dutyIncludedYn,dutyIncludedYn,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+each,each,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+electric,electric,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+endDate,endDate,"CS API, Other, 상품 API, 스타배송 API",9,✅ 핵심 UDS,JSON sample key
+eng,eng,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+englishText,englishText,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+environmentFriendly,environmentFriendly,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+epinCode,epinCode,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+epinName,epinName,상품 API,1,✅ 핵심 UDS,JSON sample key
+esm,esm,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+expiryDate,expiryDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+exposeLanguage,exposeLanguage,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+exposeYN,exposeYN,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+exposureDate,exposureDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+fee,fee,"상품 API, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+feePayType,feePayType,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+feeType,feeType,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+food,food,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+from,from,상품 API,1,✅ 핵심 UDS,JSON sample key
+generalPost,generalPost,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+gift,gift,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+giftOrderStatus,giftOrderStatus,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+gifts,gifts,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+goodsCount,goodsCount,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+goodsType,goodsType,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+groupNo,groupNo,"Other, 상품 API",3,✅ 핵심 UDS,JSON sample key
+harmful,harmful,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+hasGoods,hasGoods,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+healthFood,healthFood,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+html,html,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+images,images,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+imgUrl,imgUrl,상품 API,1,✅ 핵심 UDS,JSON sample key
+imposeType,imposeType,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+independent,independent,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+innerMessage,innerMessage,상품 API,1,✅ 핵심 UDS,JSON sample key
+innerResultCode,innerResultCode,상품 API,1,✅ 핵심 UDS,JSON sample key
+insertDate,insertDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+install,install,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+inventoryCode,inventoryCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+invoiceNo,invoiceNo,클레임 API,1,✅ 핵심 UDS,JSON sample key
+is3PL,is3PL,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+is3plDeliveryFeeFree,is3plDeliveryFeeFree,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isAddtionalCondition,isAddtionalCondition,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isAdultProduct,isAdultProduct,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isAgree,isAgree,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isApplyAll,isApplyAll,상품 API,1,✅ 핵심 UDS,JSON sample key
+isCashOnDelivery,isCashOnDelivery,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isConverted,isConverted,상품 API,1,✅ 핵심 UDS,JSON sample key
+isDefault,isDefault,"상품 API, 스타배송 API, 주문/배송 API",3,✅ 핵심 UDS,JSON sample key
+isDefaultShippingPlace,isDefaultShippingPlace,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isDisplay,isDisplay,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+isDisplayExclude,isDisplayExclude,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isEditable,isEditable,상품 API,1,✅ 핵심 UDS,JSON sample key
+isEventGoods,isEventGoods,상품 API,1,✅ 핵심 UDS,JSON sample key
+isExposure,isExposure,상품 API,1,✅ 핵심 UDS,JSON sample key
+isExtraMark,isExtraMark,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isGift,isGift,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isGiftOrder,isGiftOrder,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+isHoliday,isHoliday,스타배송 API,2,✅ 핵심 UDS,JSON sample key
+isLowestPrice,isLowestPrice,상품 API,1,✅ 핵심 UDS,JSON sample key
+isMultipleOrigin,isMultipleOrigin,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isPrepayment,isPrepayment,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isSell,isSell,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+isSetAdditionalShippingFee,isSetAdditionalShippingFee,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isSoldOut,isSoldOut,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+isStarDelivery,isStarDelivery,상품 API,1,✅ 핵심 UDS,JSON sample key
+isStockManage,isStockManage,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+isTextOption,isTextOption,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+isUse,isUse,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+isUseGmkPcsCoupon,isUseGmkPcsCoupon,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isUseIacPcsCoupon,isUseIacPcsCoupon,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isUseIsbnCode,isUseIsbnCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isVatFree,isVatFree,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isYouthNotAvailable,isYouthNotAvailable,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+isbnCode,isbnCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+itemAddtionalInfo,itemAddtionalInfo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+itemBasicInfo,itemBasicInfo,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+itemLicenseId,itemLicenseId,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+itemStatus,itemStatus,클레임 API,1,✅ 핵심 UDS,JSON sample key
+items,items,상품 API,1,✅ 핵심 UDS,JSON sample key
+japaneseText,japaneseText,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+jejuAdditionalShippingFee,jejuAdditionalShippingFee,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+jpn,jpn,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+keyword,keyword,상품 API,1,✅ 핵심 UDS,JSON sample key
+kor,kor,"Other, 상품 API, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+korEng,korEng,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+koreanText,koreanText,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+largeCatCode,largeCatCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+licenseSeq,licenseSeq,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+life,life,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+lowestPrice,lowestPrice,상품 API,1,✅ 핵심 UDS,JSON sample key
+maker,maker,상품 API,1,✅ 핵심 UDS,JSON sample key
+manageCode,manageCode,"Other, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+managedCode,managedCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+mandatorySafetySign,mandatorySafetySign,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+manufacturedDate,manufacturedDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+medicalInstrument,medicalInstrument,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+message,message,"CS API, Other, 상품 API, 서비스 API, 스타배송 API, 주문/배송 API",53,✅ 핵심 UDS,JSON sample key
+middleCatCode,middleCatCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+modelName,modelName,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+name,name,"Other, 상품 API, 서비스 API, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+name1,name1,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+name2,name2,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+officialNotice,officialNotice,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+officialNoticeItemelementCode,officialNoticeItemelementCode,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+officialNoticeNo,officialNoticeNo,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+orderClosingTime,orderClosingTime,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+orderOpts,orderOpts,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+orderType,orderType,"CS API, 주문/배송 API",2,✅ 핵심 UDS,JSON sample key
+origin,origin,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+overseaSales,overseaSales,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+owQty,owQty,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+pageIndex,pageIndex,"Other, 상품 API, 스타배송 API, 주문/배송 API",5,✅ 핵심 UDS,JSON sample key
+pageSize,pageSize,"Other, 상품 API, 스타배송 API, 주문/배송 API",5,✅ 핵심 UDS,JSON sample key
+payNo,payNo,"CS API, 주문/배송 API, 클레임 API",4,✅ 핵심 UDS,JSON sample key
+pcs,pcs,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+phoneNo,phoneNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+pickupCompCode,pickupCompCode,클레임 API,1,✅ 핵심 UDS,JSON sample key
+placeName,placeName,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+placeNo,placeNo,"상품 API, 스타배송 API",7,✅ 핵심 UDS,JSON sample key
+plusOne,plusOne,상품 API,1,✅ 핵심 UDS,JSON sample key
+policies,policies,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+policy,policy,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+policyNo,policyNo,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+priceOrRate1,priceOrRate1,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+priceOrRate2,priceOrRate2,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+prmtGoodsName,prmtGoodsName,상품 API,1,✅ 핵심 UDS,JSON sample key
+prmtGoodsNameType,prmtGoodsNameType,상품 API,1,✅ 핵심 UDS,JSON sample key
+productBrand,productBrand,상품 API,1,✅ 핵심 UDS,JSON sample key
+promotion,promotion,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+promotionIac,promotionIac,상품 API,1,✅ 핵심 UDS,JSON sample key
+promotionNo,promotionNo,상품 API,2,✅ 핵심 UDS,JSON sample key
+promotionType,promotionType,상품 API,1,✅ 핵심 UDS,JSON sample key
+qty,qty,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+qtyInfo,qtyInfo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+query,query,상품 API,1,✅ 핵심 UDS,JSON sample key
+quickService,quickService,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+readyDurationDay,readyDurationDay,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+reason,reason,클레임 API,1,✅ 핵심 UDS,JSON sample key
+recommendedOptName,recommendedOptName,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptNo,recommendedOptNo,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+recommendedOptNo1,recommendedOptNo1,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptNo2,recommendedOptNo2,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptTypeName,recommendedOptTypeName,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+recommendedOptValue,recommendedOptValue,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptValue1,recommendedOptValue1,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptValue2,recommendedOptValue2,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptValueName,recommendedOptValueName,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+recommendedOptValueNo,recommendedOptValueNo,"Other, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+recommendedOptValueNo1,recommendedOptValueNo1,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOptValueNo2,recommendedOptValueNo2,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+recommendedOpts,recommendedOpts,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+registrationDate,registrationDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+requestDateType,requestDateType,주문/배송 API,1,✅ 핵심 UDS,JSON sample key
+resultCode,resultCode,"CS API, Other, 상품 API, 서비스 API, 스타배송 API, 주문/배송 API",53,✅ 핵심 UDS,JSON sample key
+returnAndExchange,returnAndExchange,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+safetyCerts,safetyCerts,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+sellEndDate,sellEndDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+sellManageCode,sellManageCode,상품 API,1,✅ 핵심 UDS,JSON sample key
+sellStatus,sellStatus,"CS API, 상품 API",2,✅ 핵심 UDS,JSON sample key
+sellStopDate,sellStopDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+sellerDiscount,sellerDiscount,"Other, 상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+sellerShop,sellerShop,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+sellingPeriod,sellingPeriod,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+shipmentPlaceNo,shipmentPlaceNo,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+shipping,shipping,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+shippingCompany,shippingCompany,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+shippingEnableRegionCode,shippingEnableRegionCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+shippingFee,shippingFee,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+shippingPlaces,shippingPlaces,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+shop,shop,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+site,site,"상품 API, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+siteCatCode,siteCatCode,상품 API,1,✅ 핵심 UDS,JSON sample key
+siteDetail,siteDetail,"상품 API, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+siteDiscount,siteDiscount,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+siteGoodsNos,siteGoodsNos,상품 API,1,✅ 핵심 UDS,JSON sample key
+siteId,siteId,상품 API,1,✅ 핵심 UDS,JSON sample key
+siteSellerId,siteSellerId,상품 API,1,✅ 핵심 UDS,JSON sample key
+skuId,skuId,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+skuInfo,skuInfo,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+smallCatCode,smallCatCode,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+sortField,sortField,상품 API,1,✅ 핵심 UDS,JSON sample key
+sortOrder,sortOrder,상품 API,1,✅ 핵심 UDS,JSON sample key
+sortSeq,sortSeq,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+startDate,startDate,"CS API, Other, 상품 API, 스타배송 API",9,✅ 핵심 UDS,JSON sample key
+text,text,"Other, 스타배송 API",3,✅ 핵심 UDS,JSON sample key
+totalCount,totalCount,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+totalItems,totalItems,상품 API,1,✅ 핵심 UDS,JSON sample key
+typeName,typeName,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+unit,unit,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+unitDate,unitDate,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+updateDate,updateDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+updatedDate,updatedDate,상품 API,1,✅ 핵심 UDS,JSON sample key
+useAddonService,useAddonService,상품 API,1,✅ 핵심 UDS,JSON sample key
+useDiscount,useDiscount,상품 API,1,✅ 핵심 UDS,JSON sample key
+useOption,useOption,상품 API,1,✅ 핵심 UDS,JSON sample key
+useOrderOption,useOrderOption,상품 API,1,✅ 핵심 UDS,JSON sample key
+value,value,"Other, 스타배송 API",2,✅ 핵심 UDS,JSON sample key
+value1,value1,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+value2,value2,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+visitAndTake,visitAndTake,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+vol,vol,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+weight,weight,스타배송 API,1,✅ 핵심 UDS,JSON sample key
+가격,"Price, price","상품 API, 스타배송 API",4,✅ 핵심 UDS,JSON sample key
+가격비교사이트 상품 노출 여부,addtionalInfo>pcs>isUse,상품 API,1,✅ 핵심 UDS,true : 노출함 false : 노출하지 않음
+가격비교사이트 상품등록여부,addtionalInfo>pcs>isUse,스타배송 API,1,✅ 핵심 UDS,가격비교사이트 노출여부 true : 등록 ( 노출됨 ) false : 등록하지 않음 ( 미노출 )
+가격확인여부,STOCK_REMAIN_INFO>PRICE_YN,서비스 API,1,✅ 핵심 UDS,제휴사 상품번호 (PRODUCT > NO) 에 해당하는 상품 판매 가격 ( 옥션 전송 XML: PRODUCT > PRICE) 의 가격 확인여부
+개인통관번호,data>InfoCin,주문/배송 API,1,✅ 핵심 UDS,고객이 주문 시 입력한 개인통관번호 데이터
+검색 키워드,keyword,상품 API,1,✅ 핵심 UDS,"- 상품명, 브랜드명, 제조사명, 관리코드 검색 가능 - 키워드는 1개씩만 입력 가능"
+검색어,SearchString,"Other, 스타배송 API",2,✅ 핵심 UDS,SKU검색조건 > SKU_ID or BARCODE 값일 경우 필수 조회하고자 하는 SKU 정보 입력
+검색용 국문상품명,itemBasicInfo>goodsName>kor,스타배송 API,1,✅ 핵심 UDS,구매자에게 ESM 브랜드명 + 검색용 상품명 + 프로모션용 상품명순으로 노출됨 검색용 + 프로모션용 최대 50byte 까지 입력 가능하며 ESM 브랜드는 입력글자수 제한에 미포함됨 검색용 상품명은 10 일 이내 판매이력이 없을 경우만 수정 가능하고 그 이후에는 수정 불가함
+검색용 상품명 (국문),itemBasicInfo>goodsName>kor,상품 API,1,✅ 핵심 UDS,- 검색용+프로모션용 최대 100byte 까지 가능 - 일부 카테고리 제외 수정 가능
+검수방식,InspectMthdType,스타배송 API,1,✅ 핵심 UDS,검수방식 입력 1. 위탁검수 2. 판매자(화주)직접검수
+결과,resultCode,"CS API, 클레임 API",2,✅ 핵심 UDS,0 : 성공 그외 : 실패
+결과상세,Data>Reporting>Memo,스타배송 API,1,✅ 핵심 UDS,
+결과코드,"ResultCode, resultCode","CS API, Other, 상품 API, 서비스 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",101,✅ 핵심 UDS,"성공 : Success 실패 : Error Code 참고 옥션의 경우, 아래규칙으로 내려감 Result Code 1000 (데이터 조회 없음) Result Code 2000 (파라미터 유효하지 않음) Result Code 8000 (처리결과 실패) Result Code 8668 (비즈니스 에러) >> 원인별 상세 “BizRuleCode” 값 내려감"
+결제금액,data>AcntMoney,주문/배송 API,1,✅ 핵심 UDS,- (판매단가 * 수량) + 옵션가 - 판매자 할인 총액 - 판매자 지급 스마일캐시 - 지마켓 또는 옥션 할인금액 + 배송비 - 결제금액 (배송비 포함) G마켓은 장바구니 내 1개의 주문번호에만 배송비 Sum 내려감 옥션은 장바구니 내 모든 주문번호에 배송비 Sum으로 내려감
+결제기한,data>RequestOrders>DepositDueDate,주문/배송 API,1,✅ 핵심 UDS,주문일 +1일
+결제예정금액,data>RequestOrders>AcntMoney,주문/배송 API,1,✅ 핵심 UDS,- (판매단가 * 수량) + 옵션가 - 판매자 할인금액 총액 - 판매자 지급 스마일캐시 - 사이트 할인금액 + 배송비 - G마켓은 장바구니 내 1개의 주문번호에만 배송비 Sum 내려감 - 옥션은 장바구니 내 모든 주문번호에 배송비 Sum으로 내려감
+결제일자,"Data>PayDate, PayDate, data>PayDate","정산조회 API, 주문/배송 API, 클레임 API",5,✅ 핵심 UDS,
+고객배송희망일자,DeliveryWishDate,스타배송 API,1,✅ 핵심 UDS,외부채널에서 고객이 배송희망일자 선택했을 경우 연동
+고시정보 상품 상세설명 참조 표기 여부,itemAddtionalInfo>officialNotice>isExtraMark,상품 API,1,✅ 핵심 UDS,true : 상품 상세설명 참조로 표기 false : 고시 정보 직접 입력 (value 입력 필요)
+공급원가,"Data>GoodsCost, data>CostPrice","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,공급원가
+공제환급금,Data>DeductNontaxPrice,정산조회 API,1,✅ 핵심 UDS,옥션 - 판매자쿠폰수수료/복수구매할인수수료
+과세구분,Data>TaxYn,정산조회 API,1,✅ 핵심 UDS,0 : 과세 1 : 면세 2 : 영세 8 : 영세 9 : 영세
+관부과세포함 여부,dutyIncludedYn,주문/배송 API,1,✅ 핵심 UDS,(26년 4월16일 부터 설정 가능) 해외발송 경우만 설정 가능 Y : 관부과세 포함 N : 관부과세 미포함
+교환배송비,data>ExchangeShippingFee,클레임 API,1,✅ 핵심 UDS,교환신청 시 구매자에게 부과된 금액
+교환배송비 결제수단,data>ExchangeShippingFeeWay,클레임 API,1,✅ 핵심 UDS,1 : 지금결제함(카드결제/핸드폰결제 등) 2 : 환불금 차감 대기 3 : 판매자 직접 결제 4 : 상품에 동봉함 5 : 스마일캐시 결제 6 : 기타
+교환배송비 지불주체,data>WhoExchangeShippingFee,클레임 API,1,✅ 핵심 UDS,1 : 사이트 부담 2 : 구매자 부담 3 : 판매자 부담 4 : 무료반품쿠폰사용
+교환사유,data>Reason,클레임 API,1,✅ 핵심 UDS,0 : 판매자귀책 1 : 구매자귀책 2 : 기타
+교환사유직접입력,data>ReasonDetail,클레임 API,1,✅ 핵심 UDS,구매자가 교환신청 시 입력한 교환 사유 및 상품 내려감
+교환상태,"ExchangeStatus, data>ExchangeStatus",클레임 API,1,✅ 핵심 UDS,"조회한 주문의 현재 교환상태 0 : 배송중/배송완료(재발송 처리후) 1 : 교환요청/교환물품반송중 2 : 교환수거완료 3 : 교환보류 4 : 교환완료(G마켓만) 5 : 교환철회 교환 물품 반송 중이면서 보류 중일 경우, 교환보류(3번)에 포함"
+교환승인일자,data>ApproveDate,클레임 API,1,✅ 핵심 UDS,
+교환신청일자,data>RequestDate,클레임 API,1,✅ 핵심 UDS,
+교환신청자,data>RequestUser,클레임 API,1,✅ 핵심 UDS,교환신청한 주체 0 : 없음 1 : 구매자 2 : 판매자 3 : 고객센터 4 : 기타 5 : 선물수령인 (G마켓 주문만)
+교환요청사유코드,data>ReasonCode,클레임 API,1,✅ 핵심 UDS,"12월 23일부터 제공 반품/교환요청 시, 고객이 선택한 클레임요청 사유코드 추가 [구매자귀책] 1 : 단순변심 2 : 사이즈/색상 등 옵션 변경 [판매자귀책] 3 : 오배송 4 : 상품미도착 5 : 상품불량 6 : 판매자요청 [기타] 0 : 선택없음"
+교환처리일자,data>CompleteDate,클레임 API,1,✅ 핵심 UDS,내부 시스템 처리 Update 일자
+교환처리자,data>ApproveUser,클레임 API,1,✅ 핵심 UDS,"교환처리한 주체 0 : 없음 1 : 구매자 2 : 판매자 3 : 고객센터 4 : 기타 * 옥션의 경우, 반품에서 교환 전환 시 재발송까지 진행되므로 처리자가 판매자로 내려감"
+교환철회일자,data>WithdrawDate,클레임 API,1,✅ 핵심 UDS,
+구매결정일자,"Data>BuyDecisonDate, data>BuyDecisionDate","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,구매자 구매결정 또는 자동 구매결정된 날짜
+구매수량제한 타입,itemAddtionalInfo>buyableQuantity>type,스타배송 API,1,✅ 핵심 UDS,"구매수량제한 타입 설정 0. nolimit : 구매수량 제한 없음 , 1. OneTime : 1 회당 최대 구매수량 , 2.max : ID 당 최대 구매수량 , 3.Day : 기간당 최대 구매수량 ,"
+구매자 연락처,BuyerTel,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+구매자 이미 보냄 여부,alreadySent,클레임 API,1,✅ 핵심 UDS,"true : 고객이미 보냄 false : 수거요청 *발송 택배사가 CJ, 한진, 우체국, 롯데, 로젠 경우만 수거요청 가능"
+구매자ID,"data>BuyerID, data>RequestOrders>BuyerId",주문/배송 API,2,✅ 핵심 UDS,앞 3자리 외 마스킹처리
+구매자결제금,Data>BuyerPayAmt,정산조회 API,1,✅ 핵심 UDS,판매금액 + 옵션 - 판매자할인총액 - 사이트할인총액
+구매자명,"BuyerName, data>BuyerName, data>RequestOrders>BuyerName",주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+구매자전화번호,"data>BuyerTel, data>RequestOrders>BuyerTel",주문/배송 API,2,✅ 핵심 UDS,전화번호 없는 경우에도 주문 생성되도록 고려 필요 1) 고객이 전화번호 입력하지 않을 경우 내려가지 않음 2) 고객이 안심번호로 설정시 부과될 때까지 내려가지 않음 3) 약 5분 정도 소요되며 5분 후 재조회 시 안심번호 받을 수 있음 * G마켓은 결제 후 안심번호 채번되므로 무통장입금 주문시 고객의 연락처는 null로 내려감
+구매자휴대폰번호,"data>BuyerMobileTel, data>RequestOrders>BuyerMobileTel",주문/배송 API,2,✅ 핵심 UDS,전화번호 없는 경우에도 주문 생성되도록 고려 필요 1) 고객이 전화번호 입력하지 않을 경우 내려가지 않음 2) 고객이 안심번호로 설정시 부과될 때까지 내려가지 않음 3) 약 5분 정도 소요되며 5분 후 재조회 시 안심번호 받을 수 있음 * G마켓은 결제 후 안심번호 채번되므로 무통장입금 주문시 고객의 연락처는 null로 내려감
+글로벌셀러 예치금 송금번호,Data>TransferNumber,정산조회 API,2,✅ 핵심 UDS,
+글로벌셀러 예치금 송금시 환율,Data>ExchangeRate,정산조회 API,2,✅ 핵심 UDS,
+글로벌셀러 예치금 송금일,Data>TransferDate,정산조회 API,1,✅ 핵심 UDS,
+글로벌셀러 예치금 송금일자,Data>TransferDate,정산조회 API,1,✅ 핵심 UDS,
+글로벌셀러 주소 여부,isGlobalSeller,Other,1,✅ 핵심 UDS,
+글로벌셀러여부,data>GlobalSellerYn,주문/배송 API,1,✅ 핵심 UDS,글로벌 판매 셀러인지 여부 Y : 글로벌 판매 등록된 셀러 N : 글로벌 판매 미등록된 셀러
+기간검색 구분,SrchType,정산조회 API,2,✅ 핵심 UDS,"D1 : 입금확인일 -정상 D2 : 배송일 -정상 D3 : 배송완료일 -정상 D4 : 구매결정일 -정상 D5 : 정산예정일 D6 : 송금일(당일데이터는 영업일 기준 D+1일 조회가능함) D7 : 환불일 -환불 D8 : 입금확인일+환불일(지마켓), 송금일 + 송금취소일 (옥션) D9 : 배송완료일(옥션은 매출기준일) + 배송완료일 있는 환불일 D10 : 글로벌셀러 예치금 송금일"
+기간검색구분,SearchDateConditionType,주문/배송 API,1,✅ 핵심 UDS,1 : 결제일자 2 : 주문확인일자 3 : 최초발송일자 4 : 최초배송완료일자 5 : 구매결정일자 6 : 송금일자 7 : 반품승인일자 8 : 교환승인일자 9 : 취소일자
+기본 주문 마감 시간,orderClosingTime,스타배송 API,1,✅ 핵심 UDS,"- hh:mm 형식으로 입력 가능 - 분은 30분 단위로 입력 가능 - 월~금까지 주문 마감 시간 적용 - 토, 일 휴무 자동 설정"
+기본반품배송지주소여부,isReturnAddr,Other,1,✅ 핵심 UDS,
+기본배송비여부,isDefault,"상품 API, 스타배송 API",2,✅ 핵심 UDS,true : 기본배송비 정책 false : 기본배송비 정책 아님
+기본수수료,data>BasicServiceFee,주문/배송 API,1,✅ 핵심 UDS,(옥션 주문만) 기본수수료 : 판매자 즉시할인 적용되지 않은 카테고리수수료 또는 판매자 수수료 또는 아이템 수수료
+기본이용료,Data>BasicCommission,정산조회 API,1,✅ 핵심 UDS,사이트 즉시할인 전 수수료금액
+기본출하지 여부,"isDefaultShippingPlace, shippingPlaces>isDefaultShippingPlace","상품 API, 스타배송 API",2,✅ 핵심 UDS,기본출하지 여부 설정 true : 설정 false : 미설정
+기타이용료,Data>DeductTaxPrice,정산조회 API,1,✅ 핵심 UDS,공제환급금 판매자할인 및 옵션 추가금액 이용료 제외한 나머지 금액 이용료 - 해외판매 대행 이용료(G마켓 전용) - 제휴 프로모션 대행 서비스 이용료 - 지원할인(사이트 즉시할인) 이용료
+긴급알리미 문의번호,EmerMessageNo,CS API,2,✅ 핵심 UDS,조회에서 발급받은 문의번호 연동
+낱개당 입수량,"Data>Data>EaQty, EaQty",스타배송 API,2,✅ 핵심 UDS,"판매단위가 낱개일 경우, 박스 or 팩 안에 낱개가 몇 개가 들어가는지 입력 최대 100000이하까지 입력가능 박스일 경우 1 고정 필수입력 해당 SKU가 낱개일 경우, OwUnitQty와 동일값"
+내부장바구니관리번호,Data>EfmCartSeqNo,스타배송 API,2,✅ 핵심 UDS,내부장바구니관리번호 내려감
+내부주문관리번호,Data>EfmSeqNo,스타배송 API,2,✅ 핵심 UDS,내부주문관리번호 내려감
+노출 시작일,exposureDate>startDate,상품 API,1,✅ 핵심 UDS,- YYYY-MM-DD hh:mm 입력 가능 - 분은 00 으로만 입력 가능
+노출 여부,isExposure,상품 API,1,✅ 핵심 UDS,이벤트 홍보 노출 여부
+노출 종료일,exposureDate>endDate,상품 API,1,✅ 핵심 UDS,- YYYY-MM-DD hh:mm 입력 가능 - 분은 00 으로만 입력 가능
+노출대기 여부,items>isDisplayExclude,상품 API,1,✅ 핵심 UDS,
+노출대기여부,isDisplayExclude,"상품 API, 스타배송 API",2,✅ 핵심 UDS,상품조회 API 에서만 내려가는 항목 true : 노출대기상태 false : 노출대기상태 아님 ( 정상상태 )
+노출언어 선택,"independent>details>recommendedOptValue>exposeLanguage, independent>recommendedOptName>exposeLanguage, itemAddtionalInfo>recommendedOpts>independent>details>recommendedOptValue>exposeLanguage, itemAddtionalInfo>recommendedOpts>independent>recommendedOptName>exposeLanguage","Other, 상품 API, 스타배송 API",4,✅ 핵심 UDS,"옵션 다국어 중 , 구매자에게 노출되고 싶은 언어 선택 * 조회 시 , 무조건 0 으로 내려감 1 : 한국어 2: 영어한글표시 3: 영어 직접입력한 경우 , 영어한글표시가 없기때문에 한국어가 영어한글표시로 들어감"
+담당자전화번호,RcverInfoHt,Other,1,✅ 핵심 UDS,담당자전화번호 입력
+답변내용,"Comments, answer, comments",CS API,3,✅ 핵심 UDS,JSON sample key
+답변상태,answerStatus,CS API,2,✅ 핵심 UDS,보내는 답변의 처리상태 연동 1 : 처리중 2 : 처리완료
+답변제목,title,CS API,1,✅ 핵심 UDS,답변 제목 연동
+당월보관등급,Data>Data>DailyTplKeepGradeCode,스타배송 API,1,✅ 핵심 UDS,지마켓 에서 지정한 당월보관등급 내려감
+당일배송 배송슬롯번호,SlotInfo>DeliverySlotId,클레임 API,1,✅ 핵심 UDS,일반 배송 주문은 데이터 없음
+당일배송 배송시작시간,SlotInfo>AllocationStartDate,클레임 API,1,✅ 핵심 UDS,일반 배송 주문은 데이터 없음
+당일배송 배송종료시간,SlotInfo>AllocationEndDate,클레임 API,1,✅ 핵심 UDS,일반 배송 주문은 데이터 없음
+당일배송 지점코드,SlotInfo>BranchCode,클레임 API,1,✅ 핵심 UDS,일반 배송 주문은 데이터 없음
+당일출고여부,Data>OnedayDeliveryYn,스타배송 API,1,✅ 핵심 UDS,당일 출고되었는지여부 Y : 당일출고 N : 당일출고 아님
+대분류카테고리명,Data>Data>CategoryName1,"Other, 스타배송 API",2,✅ 핵심 UDS,SKU 등록된 물류 대분류카테고리명 내려감
+대체상품동의여부,data>ReplaceYn,주문/배송 API,1,✅ 핵심 UDS,- 당일배송 주문에 내려가는 정보 - 주문 시 품절 대체 상품 받을지 여부 선택값 확인 가능 Y : 대체상품 발송(동의함) N : 대체상품 받지 않음(미동의)
+대표 주문번호,Data>RefContrNo,정산조회 API,1,✅ 핵심 UDS,- (G마켓만 제공) 해당 배송비의 대표주문번호 값 내려감 - 배송비 유형에 따라 대표 주문번호가 있는 경우 내려가고 송금일/환불일 기준으로만 조회됨
+대표배송정책번호,deliveryTmplId,Other,1,✅ 핵심 UDS,배송비정책번호
+덤,items>plusOne,상품 API,1,✅ 핵심 UDS,덤 텍스트 정보 확인 가능
+덤 관리 코드,"data>BonusCode, manageCode","Other, 주문/배송 API",2,✅ 핵심 UDS,영문/숫자만 입력 가능
+덤 기준 주문수량,base,Other,1,✅ 핵심 UDS,1~99까지 입력 가능
+덤 제공 개수,data>Bonus,주문/배송 API,1,✅ 핵심 UDS,덤 제공 개수
+덤 제공 수량,bonus,Other,1,✅ 핵심 UDS,1~99까지 입력 가능
+데이터,data,"CS API, Other, 상품 API, 스타배송 API",17,✅ 핵심 UDS,실패 시 내려가는 정보
+도서 및 기타 산간지방 추가배송비,"backwoodsAdditionalShippingFee, jejuAdditionalShippingFee, shippingPlaces>jejuAdditionalShippingFee","상품 API, 스타배송 API",2,✅ 핵심 UDS,- 금액 입력 - 판매자가 해당 지역 우편번호 설정은 불가
+도서산간지방 추가배송비,data>BackwoodsAddDeliveryFee,주문/배송 API,1,✅ 핵심 UDS,고객 결제한 도서산간지방 추가배송비 금액
+등록 시작일,registrationDate>from,상품 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+등록 종료일,registrationDate>to,상품 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+등록일,insertDate,상품 API,1,✅ 핵심 UDS,조회시 내려가는 항목
+등록일시,Data>Data>InsDate,스타배송 API,1,✅ 핵심 UDS,YYYY-MM-DD hh:mm:ss 형식
+등록일자,"Data>Data>InsDate, Data>InsDate","Other, 스타배송 API",3,✅ 핵심 UDS,물류최하위카테고리 코드의 등록일자 내려감
+마스터 상품번호,"GoodsNo, goodsNo","CS API, Other, 상품 API, 서비스 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",35,✅ 핵심 UDS,- 생성시 그룹 기준 상품번호 등록 - 수정 시 파라미터 호출하지 않음
+마스터번호,items>goodsNo,상품 API,1,✅ 핵심 UDS,
+마스터상품번호,Data>GoodsNo,CS API,1,✅ 핵심 UDS,마스터상품번호 내려감 (12/16 일적용 )
+마켓,G,"CS API, Other, 상품 API",5,✅ 핵심 UDS,"G마켓, 옥션 2.0 상품 등록/수정 합니다. 양사이트 동시 등록/수정 및 사이트별 개별 등록/수정 모두 가능합니다. 2.0 상품은 마스터상품번호(goodsNo) 하위로 사이트(G마켓/옥션)별 상품번호 생성되며 수정시에는 마스터상품번호로만 수정 하셔야 합니다. 주문/배송/클레임/정산 API는 사이트 상품번호 내려가기 때문에 마스터번호, 사이트별 상품번호를 관리해야 합니다. 상품수정 API는 전체 정보 일괄 수정 경우만 사용하고 그 외 기능별 API 로 수정 해주시면 됩니다. 전환 API는 전환 하는 사이트별 1.0 상품번호를 개별로 추가해서 모든 정보 입력하여 전환 가능 합니다."
+마켓 / 옥션 판매자 미니샵 카테고리를 상품등록/수정 시 설정할,G,Other,1,✅ 핵심 UDS,G마켓 / 옥션 판매자 미니샵 카테고리를 상품등록/수정 시 설정할 수 있습니다. ESM에서 G마켓 / 옥션 판매자 미니샵을 설정하시고 조회하시면 코드가 조회 가능합니다. 카테고리 관리는 Plus Shop (유료) 신청한 경우 가능하며 해당 신청은 ESM+ 내 Plus Shop 이용현황에서 신청 가능합니다.
+마켓 상품에 대해 복수 구매할 경우 추가 할인 적용되도록 설정할,G,Other,1,✅ 핵심 UDS,G마켓 상품에 대해 복수 구매할 경우 추가 할인 적용되도록 설정할 수 있습니다. 할인은 구매수량별 할인 또는 N개 구매시 무료 제공 혜택 설정 가능 합니다.
+마켓/옥션 2,G,스타배송 API,1,✅ 핵심 UDS,"G마켓/옥션 2.0 풀필먼트 스타배송 상품을 등록합니다. 상품등록 성공시 바로 판매 가능한 상태로 진행되고, 실패시 실패 사유에 따라 정보 확인 및 수정 통해 재등록 필요합니다. 상품이 등록되면 일괄 수정으로 수정 진행할 수 있고 기능별 수정 API를 사용하여 부분 정보 수정이 가능합니다. 수정 API는 전체 정보 일괄 수정할 경우에만 사용하도록 하고 그 외는 기능별 수정 가능한 Partial API로 각 정보를 수정합니다."
+매출 마감일,Data>RevenueDate,정산조회 API,1,✅ 핵심 UDS,
+매출기준일자,Data>RevenueBaseDate,정산조회 API,1,✅ 핵심 UDS,"- 정상 건일 경우 배송완료일 - 환불 건일 경우 환불일과 동일 ※ 옥션 주문 경우 배송완료일과 차이 발생할 수 있음 (배송 송장 Tracking과 판매자가 배송완료 처리한 일자 차이 발생으로 정산월 넘어갈 경우 주문번호 당월에 정산해주기 위함) 값이 없으면 ""0001-01-01T00:00:00"" 로 내려감"
+메시지,"Message, message","CS API, Other, 상품 API, 서비스 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",102,✅ 핵심 UDS,성공: Success 실패: Error Massage 참고
+메인 사이트상품번호,getHomeShoppingList>siteGoodsNo,Other,1,✅ 핵심 UDS,방송 편성표용 메인 사이트 상품번호
+모델명,"ModelName, itemBasicInfo>catalog>modelName","상품 API, 스타배송 API",3,✅ 핵심 UDS,SKU의 모델명 입력
+무료배송 설정여부,itemAddtionalInfo>shipping>policy>is3plDeliveryFeeFree,스타배송 API,1,✅ 핵심 UDS,상품을 무료배송으로 설정할지 선택 true: 무료배송 false: 유료배송 ※ 25년 4월 18일 부터 무료 설정 불가
+묶음 사이트상품번호,getHomeShoppingList>bundleGoods>siteGoodsNo,Other,1,✅ 핵심 UDS,"방송 편성표용 묶음 사이트 상품번호 번들로 다수의 상품번호 일괄 입력 가능 메인 사이트상품번호는 제외하고 입력 묶음 사이트상품번호 내, 중복된 상품번호 있을 경우에는 성공으로 Skip하여 등록시킴"
+묶음계산방식,"imposeType, shippingPlaces>imposeType","상품 API, 스타배송 API",2,✅ 핵심 UDS,"1 : 최소 부과 (기본) (배송비 중 가장 작은 값으로 부과, 등록/수정시 항목 미입력 경우 해당 값으로 입력됨) 2 : 최대 부과 (배송비 중 가장 큰 값으로 부과)"
+묶음배송번호,DeliveryGroupNo,정산조회 API,1,✅ 핵심 UDS,"SiteType > ""옥션""일 경우는 묶음배송번호, 장바구니번호 모두 입력 후 조회"
+묶음배송비 정책 번호,"policies>policyNo, policyNo","상품 API, 스타배송 API",2,✅ 핵심 UDS,조회 시 내려가는 정보
+묶음배송비정책번호,"GroupNo, data>GroupNo, data>RequestOrders>GroupNo, itemAddtionalInfo>shipping>policy>bundle>deliveryTmplId","상품 API, 스타배송 API, 주문/배송 API, 클레임 API",7,✅ 핵심 UDS,해당 상품의 묶음배송비 정책번호 입력 임의 값으로 입력 가능함 입력한 해당 값은 무시되고 3PL 상품의 기본값으로 자동 적용됩니다 .
+묶음배송비코드,deliveryTmplId,Other,1,✅ 핵심 UDS,
+묶음상품번호 노출여부,getHomeShoppingList>bundleGoods>bundleGoodsUseYn,Other,1,✅ 핵심 UDS,"묶음상품번호 사용여부 true일 경우, Front 노출여부 Checking함 묶음상품번호 사용여부 false이면서 노출여부 true일 경우 Fail true : 묶음상품 노출 false : 묶음상품 비노출"
+묶음상품번호 사용여부,getHomeShoppingList>bundleGoodsYn,Other,1,✅ 핵심 UDS,묶음 상품번호 없을경우 등록해도 Pass 시킴 true : 묶음 상품번호 있음 false : 묶음 상품번호 없음
+문의내용,Details,CS API,1,✅ 핵심 UDS,"문의 내용 옥션은 채팅 형으로 판매자가 답변하기 이전 문의를 묶어서 채팅 순으로 조회됨 판매자가 답변 후 재문의한 경우 ""[처리완료내역][문의번호:최신문의번호]History내용"" 으로 기존 문의한 내용이 내려감(판매자 답변 내용은 내려가지 않으므로 문의번호로 조회 필요) 미처리된 내용은 [미처리][문의번호:]로 내려감"
+문의답변상태,"Data>InformStatus, InformStatus",CS API,2,✅ 핵심 UDS,"문의에 답변이 처리되었는지 여부 미처리 , 처리중 , 처리완료"
+문의번호,"Data>EmerMessageNo, MessageNo, messageNo",CS API,4,✅ 핵심 UDS,문의번호 기준으로 답변 처리 필요 중복문의 동일건 문의에 대해 No 별 관리 필요
+문의유형,"Data>ContactType, contractType",CS API,2,✅ 핵심 UDS,* 옥션 코드 0101 : 판매_배송_발송전 0102 : 판매_배송_발송후 0103 : 판매_배송_미수령 0104 : 판매_배송_누락 0105 : 판매_반품/교환_협의 0106 : 판매_반품_부분반품 0107 : 판매_반품/교환_판매자연불 0108 : 판매_반품_승인지연 0109 : 판매_교환_재발송지연 0110 : 판매_반품(교환변경) 0111 : 판매_반품_제휴직권환불 0112 : 판매_취소/환불 0113 : 판매_송금완료 후 취소 0114 : 판매_기타 0122 : 판매_글로벌셀러_무단수집 0123 : 판매_E쿠폰_취소/환불 0124 : 판매_E쿠폰_송금완료 후 취 0125 : 판매_결제도용취소 0126 : 판매_스타배송_배송사고 0127 : 판매_스타배송_무상반품 0201 : 구매_배송 0202 : 구매_반품 0203 : 구매_교환/취소 0204 : 구매_취소/환불 0205 : 구매_기타 0301 : 안전거래_안전거래 0401 : 권리침해_권리침해 0501 : 상품검수_상품이
+문의자 연락처,InquirerPhone,CS API,1,✅ 핵심 UDS,문의자 전화번호
+문의자명,InquirerName,CS API,1,✅ 핵심 UDS,문의자 이름
+물류대분류카테고리코드,Data>Data>CategoryCode1,스타배송 API,1,✅ 핵심 UDS,SKU 등록된 물류대분류 카테고리코드 내려감
+물류중분류카테고리코드,Data>Data>CategoryCode2,스타배송 API,1,✅ 핵심 UDS,SKU 등록된 물류중분류 카테고리코드 내려감
+물류최하위카테고리코드,"CategoryCode, Data>Data>CategoryCode, Data>Data>CategoryCode3","Other, 스타배송 API",3,✅ 핵심 UDS,물류 Leaf 카테고리 코드 입력 물류카테고리 조회 API를 통해 등록 가능한 전체 카테고리 코드 조회 가능
+미니샵 대카테고리코드,itemBasicInfo>category>shop>largeCatCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,미니샵 대카테고리 코드 등록 * 미니샵 카테고리 조회 API ( 참고 )
+미니샵 소카테고리코드,itemBasicInfo>category>shop>smallCatCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,미니샵 소카테고리 코드 등록 * 미니샵 카테고리 조회 API ( 참고 )
+미니샵 중카테고리코드,itemBasicInfo>category>shop>middleCatCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,미니샵 중카테고리 코드 등록 * 미니샵 카테고리 조회 API ( 참고 )
+미니샵 카테고리 사이트구분,itemBasicInfo>category>shop>siteType,"상품 API, 스타배송 API",2,✅ 핵심 UDS,미니샵 카테고리 등록을 위한 사이트 선택 미니샵 카테고리 세팅은 ESM 에서 판매자가 설정 가능하고 API 로 미니샵 카테고리 지정 시 반영됨 1. 옥션 2. G 마켓
+미수령신고사유,Data>ClaimReason,클레임 API,1,✅ 핵심 UDS,*고정 Text로 값 내려감 [G마켓] 배송지연7일이상 [옥션] 일부상품 누락 상품전체 미도착
+미수령신고일자,Data>ClaimDate,클레임 API,1,✅ 핵심 UDS,
+미수령철회요청일,Data>ClaimSolveDate,클레임 API,1,✅ 핵심 UDS,
+바코드,"Data>Data>RepBarcode, RepBarcode, itemBasicInfo>catalog>barCode, items>catalog>barCode","상품 API, 스타배송 API",5,✅ 핵심 UDS,"SKU의 바코드 입력(실제 제품 표시된 바코드와 동일해야함) 숫자 또는 영문 최대 20byte까지 입력 바코드 중복 등록 및 수정불가 바코드 신규생성 요청할 경우 등록 시 ""0""으로 입력하고, 등록 후 SKU조회 API에서 채번된 바코드정보 ('5891~)로 입력하여 수정 13/14자리 숫자 바코드는 EAN 공인바코드가 아닐 경우 SKU입고 불가할 수 있음 판매단위 '박스'일 경우 14자리 바코드 입력 필요"
+박스입수량,Data>Data>BoxQty,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 박스당 입수량 내려감
+반출담당자연락처,Data>RcverInfoHt,Other,1,✅ 핵심 UDS,판매자가 입력한 담당자연락처 내려감
+반출등록일시,Data>InsDate,Other,1,✅ 핵심 UDS,
+반출번호,"Data>WarehouseOutNo, WarehouseOutNo","Other, 클레임 API",2,✅ 핵심 UDS,처리성공한 반출번호 Return
+반출상태,"Data>WarehouseStatus, WarehouseStatus",Other,1,✅ 핵심 UDS,반출번호의 반출진행상태 ALL : 전체 1 : 반출신청완료 2 : 반출진행중 3 : 반출완료 4 : 반출요청취소
+반출완료일시,Data>CompleteDate,Other,1,✅ 핵심 UDS,
+반출취소일시,Data>CancelDate,Other,1,✅ 핵심 UDS,
+반출택배주소,Data>RcverAddress,Other,1,✅ 핵심 UDS,판매자가 입력한 반출할 주소 내려감
+반출택배주소 우편번호,Data>ZipCode,Other,1,✅ 핵심 UDS,판매자가 입력한 반출할 주소 우편번호 내려감
+반출희망일시,Data>OutWishDate,Other,1,✅ 핵심 UDS,
+반품 / 교환 정보,itemAddtionalInfo>shipping>returnAndExchange,스타배송 API,1,✅ 핵심 UDS,null 로 호출 가능 *null 입력 시 스타배물류센터 정보로 자동 적용됩니다.
+반품 사유,reason,클레임 API,1,✅ 핵심 UDS,NC : 구매자변심 BG : 선택사항 변경 RG : 상품 파손 OG : 다른 상품 오배송 DD : 상품 미도착
+반품/교환 편도배송비,itemAddtionalInfo>shipping>returnAndExchange>fee,상품 API,1,✅ 핵심 UDS,"- 미입력, 0 : 무료 - 금액입력 : 편도배송비로 반영 (카테고리별 배송비 예외 파일)"
+반품/교환입고일시,Data>ClaimDate,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 외부주문 반품/교환입고요청한 일시 YYYY-MM-DD hh:mm:ss형식
+반품/교환정보 업데이트일시,Data>UpdDate,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 외부주문 반품/교환입고정보 업데이트된 일시 YYYY-MM-DD hh:mm:ss형식
+반품배송비,ReturnShippingFee,클레임 API,1,✅ 핵심 UDS,반품신청 시 구매자에게 부과된 금액
+반품배송비 결제수단,ReturnShippingFeeWay,클레임 API,1,✅ 핵심 UDS,"1 : 지금결제함(카드결제, 핸드폰결제등) 2 : 환불금 차감 대기 3 : 판매자 직접 결제 4 : 상품에 동봉함 5 : 스마일캐시 결제 6 : 기타"
+반품배송비 지불주체,WhoReturnShippingFee,클레임 API,1,✅ 핵심 UDS,1 : 사이트 부담 2 : 구매자 부담 3 : 판매자 부담 4 : 구매자 부분 부담(G마켓 또는 옥션 지원 쿠폰 사용하고 남은차액 고객이 결제할 경우)
+반품사유,Reason,클레임 API,1,✅ 핵심 UDS,"0 : 판매자 귀책 1 : 구매자 귀책 2 : 기타 (고객센터, CS 에서만 해당 사유 처리 가능)"
+반품사유직접입력,ResonDetail,클레임 API,1,✅ 핵심 UDS,고객이 직접입력한 사유 텍스트로 내려감
+반품상태,ReturnStatus,클레임 API,1,✅ 핵심 UDS,"1 : 반품요청 2 : 반품수거완료 3 : 반품환불보류 4 : 반품환불완료 5 : 반품철회 6 : 사이트 직권 환불건(반품완료건 중, 고객센터에서 환불처리한 Case)"
+반품송장번호,"PickupInfo>InvoiceNo, data>PickupInfo>InvoiceNo",클레임 API,2,✅ 핵심 UDS,
+반품수거상태,"PickupInfo>Status, data>PickupInfo>Status",클레임 API,2,✅ 핵심 UDS,"(G마켓 지정 택배)사이트 에서 직접 택배사에 수거지시를 내리는 주문건인지, (판매자 자체배송)판매자가 직접 택배사에 수거지시를 내렸는 지 여부 0 : 없음 1 : 사이트 수거지시 2 : 사이트 수거지시 아님"
+반품수거완료일자,"PickupInfo>CompleteDate, data>PickupInfo>CompleteDate",클레임 API,2,✅ 핵심 UDS,
+반품수거택배사명,"PickupInfo>DeliveryCompName, data>PickupInfo>DeliveryCompName",클레임 API,2,✅ 핵심 UDS,
+반품승인일자,ApproveDate,클레임 API,1,✅ 핵심 UDS,
+반품신청일자,RequestDate,클레임 API,1,✅ 핵심 UDS,
+반품신청자,RequestUser,클레임 API,1,✅ 핵심 UDS,반품신청한 주체 0 : 없음 1 : 구매자 2 : 판매자 3 : 고객센터 4 : 기타 5 : 선물수령인 ( G마켓 주문만)
+반품요청사유코드,ReasonCode,클레임 API,1,✅ 핵심 UDS,"12월 23일부터 제공 반품/교환요청 시, 고객이 선택한 클레임요청 사유코드 추가 [구매자귀책] 1 : 단순변심 2 : 사이즈/색상 등 옵션 변경 [판매자귀책] 3 : 오배송 4 : 상품미도착 5 : 상품불량 6 : 판매자요청 [기타] 0 : 선택없음"
+반품처리일자,CompleteDate,클레임 API,1,✅ 핵심 UDS,내부 시스템 처리 Update 일자
+반품처리자,ApproveUser,클레임 API,1,✅ 핵심 UDS,"반품처리 주체 0 : 없음 1 : 구매자 2 : 판매자 3 : 고객센터 4 : 기타 ※ 옥션의 경우, 교환에서 반품전환 시 환불승인까지 진행되므로 처리자가 판매자로 내려감"
+반품철회일자,WithdrawDate,클레임 API,1,✅ 핵심 UDS,
+발송마감 시간) 필수,A,주문/배송 API,1,✅ 핵심 UDS,dispatchCloseTime (발송마감 시간) 필수 입력 11:00 ~ 18:00 시간 단위 입력 가능
+발송마감시간,dispatchCloseTime,주문/배송 API,1,✅ 핵심 UDS,"- 00:00 (시:분) 형태로 연동 - 타입 : A 경우 11 ~ 18시 연동 가능 - 타입 : B, E 경우 00:00 고정"
+발송마감일,"TransDueDate, data>TransDueDate",주문/배송 API,1,✅ 핵심 UDS,- 상품 발송정책 따라 자동 계산됨 - 주문 이후 계산되어 1~2분 뒤 확인 가능함 - 발송 마감일까지 발송 처리 하지 못할 경우 페널티 부과 - 마감일까지 처리 어려운 경우 발송예정일 등록 필요
+발송예정일,ShippingExpectedDate,주문/배송 API,1,✅ 핵심 UDS,등록 및 갱신하고자 하는 발송예정일 YYYY-MM-DD형태 예정일은 호출일 기준 +1일 부터 등록 가능
+발송일시,ShippingDate,주문/배송 API,1,✅ 핵심 UDS,실제 발송된 일시 입력 YYYY-MM-DDThh:mm:ss 입력 호출시점 2일 이내로 입력 필요
+발송일자,Data>ShippingDate,정산조회 API,1,✅ 핵심 UDS,
+발송정책,data>TransType,주문/배송 API,1,✅ 핵심 UDS,A : 당일발송 B : 순차발송 C : 해외발송 D : 요청일발송 E : 주문제작발송 F : 발송일미정 G~Z : 풀필먼트 스타배송
+발송정책명,items>shipping>dispatchPolicyName,상품 API,1,✅ 핵심 UDS,
+발송정책번호,"dispatchPolicyNo, items>shipping>dispatchPolicyNo","상품 API, 주문/배송 API",2,✅ 핵심 UDS,조회 시 내려가는 정보
+발송정책타입,dispatchType,주문/배송 API,1,✅ 핵심 UDS,A : 당일배송 B : 순차발송 C : 해외발송 D : 요청일 발송 E : 주문제작 발송 F : 발송일 미정
+발송처정보 > 연락처,TransInfoHt,스타배송 API,1,✅ 핵심 UDS,
+발송처정보 > 주소1,TransInfoAd1,스타배송 API,1,✅ 핵심 UDS,
+발송처정보 > 주소상세,TransInfoAd2,스타배송 API,1,✅ 핵심 UDS,
+발송타입정책 조회,dispatchPolicyNo,주문/배송 API,1,✅ 핵심 UDS,기본 정책 설정 및 정책별 조회시 필수
+방문수령 가격할인,itemAddtionalInfo>shipping>visitAndTake>discount,상품 API,1,✅ 핵심 UDS,방문수령혜택 > 2 : 가격할인 일 경우 필수 가격할인(금액환불)할 금액 입력
+방문수령 사은품,itemAddtionalInfo>shipping>visitAndTake>gifts,상품 API,1,✅ 핵심 UDS,방문수령혜택 > 3 : 사은품 일 경우 필수 사은품으로 제공할 혜택 텍스트입력
+방문수령 정보,itemAddtionalInfo>shipping>visitAndTake,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 지원하지 않아 null 로 호출
+방문수령 제공여부,itemAddtionalInfo>shipping>visitAndTake>isUse,상품 API,1,✅ 핵심 UDS,방문수령 서비스 가능한 상품 여부 입력 true : 방문수령 가능 false : 방문수령 불가
+방문수령 주소번호,itemAddtionalInfo>shipping>visitAndTake>addrNo,상품 API,1,✅ 핵심 UDS,
+방문수령혜택,itemAddtionalInfo>shipping>visitAndTake>type,상품 API,1,✅ 핵심 UDS,1 : 구매자 혜택없음 2 : 가격할인 3 : 사은품
+배송 Slot 코드,SlotNo,서비스 API,1,✅ 핵심 UDS,고객이 선택한 배송 Slot 코드가 내려감
+배송Slot코드,"data>DeliverySlotId, deliverySlotId","서비스 API, 주문/배송 API",2,✅ 핵심 UDS,- 당일배송 주문에 내려가는 정보 - 고객이 선택한 배송시간(Slot)코드 데이터
+배송slot코드,deliverySlotId,서비스 API,1,✅ 핵심 UDS,
+배송가능 거리,location>distance,서비스 API,1,✅ 핵심 UDS,
+배송가능거리,location>distance,서비스 API,1,✅ 핵심 UDS,location 입력 시 필수 연동
+배송가능건수,remainderCount,서비스 API,1,✅ 핵심 UDS,숫자만입력
+배송가능여부,"DeliveryEnableYn, deliverable",서비스 API,2,✅ 핵심 UDS,"Y : 배송가능 N : 배송불가 배송불가 시 주문 진행시키지 않음 무응답이거나 읍답 지연 시 , 주문진행함"
+배송날짜,RequestDate,서비스 API,1,✅ 핵심 UDS,고객이 선택한 배송날짜가 내려감
+배송방법 타입,itemAddtionalInfo>shipping>type,"상품 API, 스타배송 API",2,✅ 핵심 UDS,배송방식 타입 입력 1 : 택배소포
+배송비,"data>RequestOrders>ShippingFee, data>ShippingFee, items>shipping>fee","상품 API, 주문/배송 API",3,✅ 핵심 UDS,
+배송비 결제번호,Data>DelFeeNo,정산조회 API,1,✅ 핵심 UDS,
+배송비 구분,Data>DelFeeType,정산조회 API,1,✅ 핵심 UDS,10 : 원배송비 20 : 추가배송비 30 : (G)사용한원배송비환불금차감 (A)원배송비(최초배송비)외 추가배송비 등 환불금 금액과 거래완료 후 환불에 따른 배송비 집계 40 : 반품배송비 50 : 추가반품배송비 60 : 무료반품배송비 70 : 교환배송비
+배송비 그룹번호,Data>DeliveryGroupNo,정산조회 API,1,✅ 핵심 UDS,
+배송비 금액,Data>DelFeeAmt,정산조회 API,1,✅ 핵심 UDS,
+배송비 금액 합계,TotalDelFeeAmt,정산조회 API,1,✅ 핵심 UDS,전체 조회 내역 내 DelFeeAmt 합계
+배송비 선결제여부,"isPrepayment, policies>isPrepayment","상품 API, 스타배송 API",2,✅ 핵심 UDS,true : 선결제 false : 선결제 아님
+배송비 송금일,Data>RemitDate,정산조회 API,1,✅ 핵심 UDS,
+배송비 수수료 금액,Data>DelFeeCommission,정산조회 API,1,✅ 핵심 UDS,
+배송비 지급수단,Data>DelFeePayWay,정산조회 API,1,✅ 핵심 UDS,A : 계좌송금 B : 판매자예치금 S : 스마일캐시
+배송비 타입,itemAddtionalInfo>shipping>policy>feeType,"상품 API, 스타배송 API",2,✅ 핵심 UDS,묶음배송비 또는 상품별 배송비 여부 설정 1 : 묶음배송비 2 : 상품별배송비
+배송비 환불일,Data>RefundDate,정산조회 API,1,✅ 핵심 UDS,
+배송비금액,"fee, policies>fee","상품 API, 스타배송 API",2,✅ 핵심 UDS,조회 시 내려가는 정보
+배송시요구사항,"data>DelMemo, data>RequestOrders>DelMemo",주문/배송 API,2,✅ 핵심 UDS,* giftOrderStatus : 1(선물수락대기) 경우 null 확인 * giftOrderStatus : 2(선물수락완료) 경우 확인 가능 * 해외주문 경우 해외묶음번호 확인 가능
+배송시작시간,deliveryStartDate,서비스 API,1,✅ 핵심 UDS,YYYY-MM-DD hh:mm
+배송신청마감시간,requestDueDate,서비스 API,1,✅ 핵심 UDS,YYYY-MM-DD hh:mm
+배송완료일자,"Data>ShippingCmplDate, data>TransCompleteDate","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,- 송장 Tracking을 통해 주문확인한 날짜 - 배송완료 API 로 완료처리한 날짜
+배송정보등록일자,data>TransDate,주문/배송 API,1,✅ 핵심 UDS,발송처리한 일자
+배송정책,data>DeliveryFeeCondition,주문/배송 API,1,✅ 핵심 UDS,"M : 조건부 배송정책 R : 판매자가 착불/선결제로 선택한 배송정책 > 선결제 F : 판매자가 선결제로 선택한 > 고정배송비(선결제) D : 착불 X : 무료 W : 방문수령 Q : 퀵서비스 옥션은 F,D,Q,W,X로만 내려감"
+배송정책번호,items>shipping>bundleDeliveryTmplId,상품 API,1,✅ 핵심 UDS,0 인 경우 상품별 배송비
+배송종료시간,deliveryEndDate,서비스 API,1,✅ 핵심 UDS,YYYY-MM-DD hh:mm
+배송준비소요일,readyDurationDay,주문/배송 API,1,✅ 핵심 UDS,- 타입 : B 경우 2 ~ 4 입력 가능 - 타입 : E 경우 10 입력 가능 - 타입 : C 경우 2 입력 가능
+배송준비소요일) 필수,"B, C, E",주문/배송 API,1,✅ 핵심 UDS,readyDurationDay (배송준비소요일) 필수 입력 2 ~ 4 사이 입력 가능
+배수 구매 설정,itemAddtionalInfo>buyableQuantityPolicy>BuyableUnitCount,상품 API,1,✅ 핵심 UDS,- 당일배송 상품에서만 사용 가능 - 2 이상 설정 시 배수 설정 가능
+병행수입여부,"itemAddtionalInfo>certInfo>safetyCerts>electric>mandatorySafetySign, itemAddtionalInfo>certInfo>safetyCerts>life>mandatorySafetySign","상품 API, 스타배송 API",2,✅ 핵심 UDS,0: UnknownOrNone 해당사항없음 1: ParallelImport 병행수입 2: BuyingAgent 구매대행
+보류 여부,HoldInfo>IsHold,클레임 API,1,✅ 핵심 UDS,true : 보류설정된 상태 false : 보류설정되지 않은 상태 * 보류 설정된 상태인지 여부
+보류 해제일자,HoldInfo>FeeDate,클레임 API,1,✅ 핵심 UDS,
+보류사유,"HoldInfo>Reason, HoldReason, data>HoldInfo>Reason",클레임 API,4,✅ 핵심 UDS,"보류사유 코드 입력 0 : 기타유보사유 1 : 교환배송비청구 4 : 교환입고미확인 * 교환 배송비 청구 시, G마켓은 Front에서 배송비 청구 요청되지만 옥션은 되지 않음"
+보류상세사유,HoldReasonDetail,클레임 API,1,✅ 핵심 UDS,구매자가 확인할 수 보류사유 구체적으로 입력 구매자 Front에서 노출됨
+보류여부,data>HoldInfo>IsHold,클레임 API,1,✅ 핵심 UDS,보류 설정된 상태인지 여부 true : 보류설정된 상태 false : 보류설정되지 않은 상태
+보류일자,"HoldInfo>HoldDate, data>HoldInfo>HoldDate",클레임 API,2,✅ 핵심 UDS,
+보류재고_반품,Data>RhStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 반품된 재고 카운팅 내려감
+보류재고_소비기한만료,Data>EhStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 소비기한만료된 재고 카운팅 내려감
+보류재고_일반,Data>HsStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 일반보류재고(주문취소재고/출고대기재고/반품입고예정재고) 카운팅 내려감
+보류재고_파손(셀러귀책),Data>DhStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 파손(셀러귀책)인 재고 카운팅 내려감
+보류재고_합계,Data>HoldStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 보류재고 전체 합계 카운팅 내려감
+보류해제일자,data>HoldInfo>FreeDate,클레임 API,1,✅ 핵심 UDS,
+복수구매할인금액,multiplePurchaseDiscountAmount,Other,1,✅ 핵심 UDS,구매수량당 N원 할인(100원 단위 입력)
+복수원산지 여부,itemAddtionalInfo>origin>isMultipleOrigin,"상품 API, 스타배송 API",2,✅ 핵심 UDS,단순 복수원산지 여부 체크 기능 / 추가 입력 정보 받지 않음 true : 복수원산지 상품 false : 단일원산지 상품
+부가세 면세여부,Data>Data>VatTaxfreeYn,스타배송 API,1,✅ 핵심 UDS,Y : 면세 N : 과세 null : 설정안됨
+부가세여부,itemAddtionalInfo>isVatFree,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"반드시 면세상품일 경우에만 true 로 설정하고 , 일반 과세상품은 false 로 설정 true: 부가세 면세상품 false: 부가세 과세상품"
+불량재고,Data>BsStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 불량재고 카운팅 내려감
+브랜드 ID,items>brand>id,상품 API,1,✅ 핵심 UDS,
+브랜드명,"Data>Data>BrandName, brandName, items>brand>name","Other, 상품 API, 스타배송 API",3,✅ 핵심 UDS,SKU 등록시 브랜드코드입력한 브랜드의 브랜드 국문명 내려감
+브랜드코드,"BrandNo, brandNo, itemBasicInfo>catalog>brandNo","Other, 상품 API, 스타배송 API",4,✅ 핵심 UDS,"상품API > 브랜드코드 조회 API로 조회한 브랜드코드 입력 바코드 등록한 경우, 바코드에 해당되는 브랜드코드 자동으로 우선 매칭됨"
+빠른환불보상상태,FastRefundRewardStatus,클레임 API,1,✅ 핵심 UDS,0 : 상태없음 1 : 보상요청 2 : 보상검토중 3 : 보상완료 4 : 보상불가 5 : 보상요청취소
+빠른환불여부,IsFastRefund,클레임 API,1,✅ 핵심 UDS,"true : 빠른 환불 대상 false : 빠른 환불 대상 아님 * 빠른 환불 주문 대상건인지 여부 * 빠른 환불 주문 대상건이면, 송장 Tracking 또는 수거여부에 따라 바로 환불완료 가능"
+사용하지 않음,itemBasicInfo>book>attributeCode,상품 API,1,✅ 핵심 UDS,
+사유 코드,ReasonType,주문/배송 API,1,✅ 핵심 UDS,1 : 상품준비중 (재고 부족) 2 : 고객요청 3 : 기타
+사은품,"data>FreeGift, data>OptionGoods, items>gift","상품 API, 주문/배송 API",2,✅ 핵심 UDS,사은품 텍스트 정보 확인 가능
+사은품관리코드,data>FreeGiftCode,주문/배송 API,1,✅ 핵심 UDS,사은품 관리코드
+사은품여부,"Data>Data>FreeGiftYn, FreeGiftYn",스타배송 API,2,✅ 핵심 UDS,해당 SKU가 사은품인지 본품인지 여부 입력 Y : 사은품 N : 본품
+사이트 ID,category>site>siteId,상품 API,1,✅ 핵심 UDS,1 : 옥션 2 : 지마켓
+사이트 구분,"QnaType, SiteType, data>SiteType, siteId, siteType","CS API, Other, 상품 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",30,✅ 핵심 UDS,조회된 게시판 1 : 옥션(일반) 2 : 옥션(비밀글) 3 : 전체
+사이트 상품번호,"data>SiteGoodsNo, siteGoodsNo, siteGoodsNos","CS API, Other, 상품 API, 주문/배송 API",6,✅ 핵심 UDS,최대 1000개까지 등록/수정 가능
+사이트 이용료할인,Data>FeeDiscountPrice,정산조회 API,1,✅ 핵심 UDS,사이트 즉시할인
+사이트 카테고리 코드,"category>site>siteCatCode, siteCatCode","Other, 상품 API",2,✅ 핵심 UDS,- 사이트 카테고리 코드 입력 - 최종 상품 등록된 리프 카테고리로 입력 - 지마켓은 9자리 카테고리 코드 입력
+사이트 카테고리코드,siteCatCode,"Other, 상품 API",2,✅ 핵심 UDS,상품 등록 최종 카테고리 기준으로 조회 가능
+사이트 코드,SiteId,스타배송 API,3,✅ 핵심 UDS,아래 url 내 사이트 코드 참조 https://etapi.gmarket.com/97
+사이트 할인초과금,Data>OverProfitDiscountPrice,정산조회 API,1,✅ 핵심 UDS,
+사이트 할인총액,Data>CorpDiscountTotalPrice,정산조회 API,1,✅ 핵심 UDS,사이트 즉시할인 + 할인초과금
+사이트구분,data>SiteType,"주문/배송 API, 클레임 API",3,✅ 핵심 UDS,조회한 조건에 따라 조회한 주문 건의 사이트가 내려감 1 : 옥션 2 : G마켓
+사이트별 할인금액총액,data>RequestOrders>DirectDiscountPrice,주문/배송 API,1,✅ 핵심 UDS,사이트에서 할인 지원하는 금액
+사이트상품번호,"Data>SiteGoodsNo, SiteGoodsNo, data>RequestOrders>SiteGoodsNo, data>SiteGoodsNo","상품 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",7,✅ 핵심 UDS,Object : gmkt 이면 G 마켓 관련 정보 / iac 면 옥션 관련 정보 상품이 정상적으로 생성되면 사이트상품번호가 채번됨 사이트상품번호 기준으로 주문 ~ 정산까지 데이터 묶임
+사이트상품정보반영 결과,SiteGoodsComment,"상품 API, 스타배송 API",2,✅ 핵심 UDS,
+사이트직접입력,"Data>SiteUserInput, SiteUserInput",스타배송 API,3,✅ 핵심 UDS,사이트코드 23(기타/직접입력)일 경우 필수값
+사이트코드,Data>SiteId,스타배송 API,2,✅ 핵심 UDS,해당 스타배송 주문번호의 사이트코드 내려감
+상미 (소비 ) 기한,Data>Data>ExpireDateDays,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 해당 SKU 의 상미 ( 소비 ) 기한 내려감
+상미(소비)기일 구간코드,ExpireDaysLimitCode,스타배송 API,1,✅ 핵심 UDS,카테고리별 소비기한에 따른 유효한 코드만 입력 가능 카테고리별 소비 기한 조회 API를 통해 입력 가능한 값 조회 가능 -1: 자동입력(해당 카테고리의 최소상미기일 구간으로 자동 등록됨) 0: 미관리 1~:상미기일구간코드
+상미(소비)기한,ExpireDateDays,스타배송 API,1,✅ 핵심 UDS,상미( 소비 )기일구간 '필수' 카테고리의 경우 필수입력 상미기일( 소비 기한) API에서 조회된 소비기한 코드 숫자 입력 카테고리 따른 소비 기한(상미기일) 유효성 체크 -1 : 자동입력 0 : 미관리 상미기일( 소비 기한) 제조일로부터 N일 입력 최대 9999일까지 입력 가능
+상세검색,SearchString,"Other, 스타배송 API",2,✅ 핵심 UDS,"검색조건 > WAREHOUSE_NO / SKU_ID 선택 시 필수 이 때, 날짜검색조건 무시"
+상세내용,detail,상품 API,1,✅ 핵심 UDS,"- 외부 링크, 일부 스크립트 및 태그는 자동으로 삭제될 수 있습니다. - 이미지 권장크기 : 가로 860px"
+상세취소사유,data>ReasonDetail,클레임 API,1,✅ 핵심 UDS,
+상품 등록일,items>createdDate,상품 API,1,✅ 핵심 UDS,
+상품 브랜드 ID,items>productBrand>id,상품 API,1,✅ 핵심 UDS,
+상품 브랜드명,items>productBrand>name,상품 API,1,✅ 핵심 UDS,
+상품 상태,itemStatus,클레임 API,1,✅ 핵심 UDS,OP : 개봉후 미사용 NP : 미개봉 UP : 개봉 후 사용
+상품 수정일,items>updatedDate,상품 API,1,✅ 핵심 UDS,
+상품관리코드,Data>StockNo,스타배송 API,1,✅ 핵심 UDS,재고현황 대상 제품StockNo 내려감
+상품관리코드 ( 제품 StockNo),Data>Data>StockNo,스타배송 API,1,✅ 핵심 UDS,"최대 100byte 로 , 판매자가 입력한 제품 StockNo 내려감 EFM 의 "" 제품 StockNo"" 항목 1P 등 SKU 와 상품이 1:1 매칭되는 경우 상품을 관리하기 코드로 사용가능 SKU 등록 / 수정 시 , 중복체크 대상"
+상품군 코드,officialNoticeNo,Other,1,✅ 핵심 UDS,1 ~ 41 내 조회 가능
+상품군명,officialNoticeName,Other,1,✅ 핵심 UDS,
+상품금액 ( 판매가 ),ORDER_INFO>PRICE,서비스 API,2,✅ 핵심 UDS,할인금액 미포함 **.0000 소수점 이하 .0000 포함하여 전달하고 있으니 가격 체크시에는 삭제하신 후 체크 필요
+상품기본이미지,"imageModel>BasicImage>URL, itemAddtionalInfo>images>basicImgURL","Other, 상품 API, 스타배송 API",3,✅ 핵심 UDS,"최소 600x600 / 권장 1000x1000 http:// or https:// 형식의 완전한 이미지 URL이어야 하고, 만약 이미지가 없거나 만료된 이미지일 경우 이미지 수정 실패됨"
+상품당 항목개수 제한,limitCount,Other,1,✅ 핵심 UDS,상품당 입력 가능 항목수
+상품등록여부,"Data>Data>GoodsRegYn, GoodsRegYn",스타배송 API,1,✅ 핵심 UDS,ALL : 전체 Y : SKU매칭상품 등록되어있음 N : SKU매칭상품 미등록
+상품명,"Data>GoodsName, GoodsName, data>GoodsName, data>RequestOrders>GoodsName, goodsName, items>goodsName","상품 API, 스타배송 API, 주문/배송 API",7,✅ 핵심 UDS,판매자가 입력한 상품명 내려감
+상품명 수정 가능 여부,isEditableGoodsName,상품 API,1,✅ 핵심 UDS,"true : 수정 가능 false : 수정 불가능 ※ 조회시 확인 가능, false 인 경우 상품명 수정해서 입력시 처리되지 않으며 별도 에러 처리 없음"
+상품별배송비 조건,itemAddtionalInfo>shipping>policy>each>details>Condition,상품 API,1,✅ 핵심 UDS,수량별차등인 경우 5단계까지 설정 가능
+상품별배송비 타입,"itemAddtionalInfo>shipping>policy>each, itemAddtionalInfo>shipping>policy>each>feeType","상품 API, 스타배송 API",2,✅ 핵심 UDS,1 : 무료 2 : 유료 3 : 조건부무료 4 : 수량별차등
+상품별배송비금액,itemAddtionalInfo>shipping>policy>each>fee,상품 API,1,✅ 핵심 UDS,
+상품별배송비조건부금액,itemAddtionalInfo>shipping>policy>each>details>FeeAmnt,상품 API,1,✅ 핵심 UDS,수량별 차등 경우 양사 등록 or G마켓 단일 등록 시 배송비할증 설정만 가능 카테고리별 최대 배송비까지만 입력 가능
+상품별배송비지불방법,itemAddtionalInfo>shipping>policy>each>feePayType,상품 API,1,✅ 핵심 UDS,"1 : 선결제/착불 모두 가능 2 : 선결제만 가능 3 : 착불만 가능(옥션만 등록 시 설정 가능, 동시등록 또는 지마켓만 등록 시 불가)"
+상품상세정보 html,itemAddtionalInfo>descriptions>kor>html,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"ESM+ 가이드 ( 참고 ) iframe, Script, 및 max-width 등은 사용 불가"
+상품상세정보 코드,itemAddtionalInfo>descriptions>kor>contentId,"상품 API, 스타배송 API",2,✅ 핵심 UDS,상품상세정보 타입 1 일 경우 필수 ( 추후제공 )
+상품상세정보 타입,itemAddtionalInfo>descriptions>kor>type,"상품 API, 스타배송 API",2,✅ 핵심 UDS,1 : contentID (추후제공) 2 : html
+상품상태,"GoodsStatus, itemAddtionalInfo>goodsStatus","상품 API, 클레임 API",2,✅ 핵심 UDS,0 : 알수없음 1 : 포장 개봉 미사용 2 : 포장 개봉 사용 3 : 미개봉 * 구매자가 표시한 상품상태 * 현재는 반품 신청 시 선택하는 부분은 없으나 반품 사유 or CS와 협의된 상품 상태 값 내려감
+상품수,policies>goodsCount,스타배송 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+상품식별코드,items>catalog>epinCode,상품 API,1,✅ 핵심 UDS,
+상품식별코드명,items>catalog>epinName,상품 API,1,✅ 핵심 UDS,
+상품정보고시 값,itemAddtionalInfo>officialNotice>details>value,"상품 API, 스타배송 API",2,✅ 핵심 UDS,상품정보고시 값
+상품정보고시 상품군코드,itemAddtionalInfo>officialNotice>officialNoticeNo,"상품 API, 스타배송 API",2,✅ 핵심 UDS,아래 url 내 조회 API 로 확인 https://etapi.gmarket.com/161
+상품정보고시 추가입력여부,itemAddtionalInfo>officialNotice>isExtraMark,스타배송 API,1,✅ 핵심 UDS,true : 추가입력고시 false : 추가입력 없음
+상품정보고시 항목코드,itemAddtionalInfo>officialNotice>details>officialNoticeItemelementCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,아래 url 내 조회 API 로 확인 https://etapi.gmarket.com/161
+상품종류 (3PL),itemBasicInfo>is3PL,스타배송 API,1,✅ 핵심 UDS,상품등록을 위한 상품종류 선택 true: 풀필먼트 스타배송 상품 false: 일반상품
+상품추가이미지 1,itemAddtionalInfo>images>addtionalImg1URL,스타배송 API,1,✅ 핵심 UDS,
+상품추가이미지 2,itemAddtionalInfo>images>addtionalImg2URL,스타배송 API,1,✅ 핵심 UDS,
+상품추가이미지 3,itemAddtionalInfo>images>addtionalImg3URL,스타배송 API,1,✅ 핵심 UDS,
+상품추가이미지1,imageModel>AdditionalImage1>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지10,imageModel>AdditionalImage10>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지11,imageModel>AdditionalImage11>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지12,imageModel>AdditionalImage12>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지13,imageModel>AdditionalImage13>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지14,imageModel>AdditionalImage14>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지1~14,itemAddtionalInfo>images>addtionalImg1URL,상품 API,1,✅ 핵심 UDS,추가 이미지는 1 ~ 14 까지 설정 가능 옥션 경우 동일이미지 중복 사용 불가
+상품추가이미지2,imageModel>AdditionalImage2,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지3,imageModel>AdditionalImage3>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지4,imageModel>AdditionalImage4>URL,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지5,imageModel>AdditionalImage,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지6,imageModel>AdditionalImage,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지7,imageModel>AdditionalImage,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지8,imageModel>AdditionalImage,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+상품추가이미지9,imageModel>AdditionalImage,Other,1,✅ 핵심 UDS,최소 600x600 / 권장 1000x1000
+색상,Color,스타배송 API,1,✅ 핵심 UDS,SKU의 색상 입력
+서비스 이용료,data>ServiceFee,주문/배송 API,1,✅ 핵심 UDS,서비스이용료 금액
+서비스이용료,Data>ServiceFee,정산조회 API,1,✅ 핵심 UDS,수수료 - 사이트즉시할인
+선물수락기한,data>giftConfirmDueDate,주문/배송 API,1,✅ 핵심 UDS,선물 수락 기한 (YYYY-MM-DD hh:mm:ss) * 기한 종료 후 주문 취소됨
+선물수락일,data>giftConfirmDate,주문/배송 API,1,✅ 핵심 UDS,선물수락 완료된 날짜 (YYYY-MM-DD hh:mm:ss) * giftOrderStatus : 1(선물수락대기) 경우 null 확인 * giftOrderStatus : 2(선물수락완료) 경우 확인 가능
+선물하기 상태별 조회구분,giftOrderStatus,주문/배송 API,1,✅ 핵심 UDS,"1 : 선물수락대기 2 : 선물수락완료 * 미입력 / skip 시 전체 주문 조회, G 마켓만 가능"
+선물하기 상품 여부,itemAddtionalInfo>isGift,"상품 API, 스타배송 API",2,✅ 핵심 UDS,선물하기 상품 여부 선택 true : 선물하기 가능 false : 선물하기 불가능 * 미입력/skip 시 default = true 로 등록됨
+선물하기 여부,"isGift, items>isGift",상품 API,1,✅ 핵심 UDS,지마켓 경우만 조회 가능
+선물하기 주문 구분,"IsGiftOrder, data>IsGiftOrder, data>isGiftOrder, isGiftOrder","주문/배송 API, 클레임 API",5,✅ 핵심 UDS,Y : 선물하기 주문 N : 일반 주문 null : 모든 주문 * 미입력 / skip 시 전체 취소 모두 조회 * G마켓만 구분 조회 가능
+선물하기 주문 상태,data>giftOrderStatus,주문/배송 API,1,✅ 핵심 UDS,0 : 일반주문 1 : 선물수락대기 2 : 선물수락완료
+선불/착불여부,"Data>DeliveryPayType, DeliveryPayType",스타배송 API,2,✅ 핵심 UDS,회수될 택배사 선불로 반품배송비 결제된 건인지 착불요청된 건인지 구분코드 입력 Y : 선불 N : 착불
+선택항목코드,details>recommendedOptValueNo,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 사용할 선택항목명의 코드를 옵션 등록 시 입력 * 텍스트형일 경우 내려가지 않음
+"선택형(2, 3개 조합) 자율 옵션 사용 가능 여부",customOptionUseYn,Other,1,✅ 핵심 UDS,Y : 사용 가능 N : 사용 불가
+설정상품 여부,hasGoods,스타배송 API,1,✅ 핵심 UDS,출하지 등록된 상품 여부 조회시 내려가는 정보
+성공건수,"Data>SuccessCount, SuccessCount","Other, 스타배송 API",5,✅ 핵심 UDS,출고요청 성공한 건수 실제 출고처리 성공여부 및 이후 배송처리 현황은 외부주문 조회 API를 통해 확인 가능
+성인상품여부,itemAddtionalInfo>isAdultProduct,스타배송 API,1,✅ 핵심 UDS,"성인인증을 하기 전까지 상품이미지 비노출 처리됨 true: 성인상품 , false : 일반상품 *ESM> 청소년구매불가 상품이면 성인상품여부 무조건 true 로 연동"
+세부상태변경시간,StatusChangeDate,주문/배송 API,1,✅ 핵심 UDS,
+소분류카테고리명,Data>Data>CategoryName3,"Other, 스타배송 API",2,✅ 핵심 UDS,SKU 등록된 물류 소분류카테고리명 내려감
+송금번호,"Data>TransferNumber, TransferNumber",정산조회 API,3,✅ 핵심 UDS,조회하고자 하는 송금번호 입력 일자로 조회시 제외 또는 null 입력 후 조회
+송금액(외화),Data>TransferAmountForeign,정산조회 API,1,✅ 핵심 UDS,
+송금액(원화),Data>TransferAmountKr,정산조회 API,1,✅ 핵심 UDS,
+송금일,Data>TransferDate,정산조회 API,1,✅ 핵심 UDS,
+송금일자,Data>RemitDate,정산조회 API,1,✅ 핵심 UDS,
+송장번호,"Data>InvoiceNo, InvoiceNo, data>NoSongjang","Other, 스타배송 API, 주문/배송 API, 클레임 API",16,✅ 핵심 UDS,ClaimCancelType > 1 일 경우 필수
+송장출력용 상품명,Data>InvoiceGoodsName,스타배송 API,1,✅ 핵심 UDS,판매자가 입력한 송장출력용 상품명 내려감
+송장출력용상품명,InvoiceGoodsName,스타배송 API,1,✅ 핵심 UDS,송장출력용 상품명을 판매자가 등록하면 해당 상품명으로 송장출력됨 성인용품 등 상품명 변경하여 출고되어야 하는 상품에 사용 Goods_Name에 등록된 상품명은 송장출력되지 않음
+수거 송장 번호,invoiceNo,클레임 API,1,✅ 핵심 UDS,
+수거 송장번호,Data>ClaimInvoiceNo,스타배송 API,1,✅ 핵심 UDS,수거한 송장번호 내려감
+수거 택배사 코드,pickupCompCode,클레임 API,1,✅ 핵심 UDS,
+수거 택배사코드,Data>DeliveryCompCode,스타배송 API,1,✅ 핵심 UDS,수거한 택배사코드 내려감
+수거/배송 완료일,PickupCompleteDate,클레임 API,2,✅ 핵심 UDS,배송완료된 일자 YYYY-MM-DD 형식
+수거일시,Data>WarehouseInDate,스타배송 API,1,✅ 핵심 UDS,스타배송 센터에 수거 도착한 일시
+수거지우편번호,"PickupInfo>SenderInfo>ZipCode, data>PickupInfo>SenderInfo>ZipCode",클레임 API,2,✅ 핵심 UDS,5자리/6자리 모두 내려갈 수 있음
+수거지주소1,"PickupInfo>SenderInfo>AddressFront, data>PickupInfo>SenderInfo>AddressFront",클레임 API,2,✅ 핵심 UDS,
+수거지주소1+2,"PickupInfo>SenderInfo>Address, data>PickupInfo>SenderInfo>Address",클레임 API,2,✅ 핵심 UDS,
+수거지주소2,"PickupInfo>SenderInfo>AddressBack, data>PickupInfo>SenderInfo>AddressBack",클레임 API,2,✅ 핵심 UDS,고객이 직접 입력한 수거지주소 고객이 작성하지 않을 경우 안내려갈 수 있음
+수령인/발송인일반전화번호,"PickupInfo>SenderInfo>TelNo, data>PickupInfo>SenderInfo>TelNo",클레임 API,2,✅ 핵심 UDS,휴대폰 번호 고객이 입력했을 경우 휴대폰 번호도 내려갈 수 있음
+수령인/발송인휴대폰번호,"PickupInfo>SenderInfo>HpNo, data>PickupInfo>SenderInfo>HpNo",클레임 API,2,✅ 핵심 UDS,일반전화번호 고객이 입력했을 경우 일반전화번호도 내려갈 수 있음
+수령인기본주소,"Data>RcverInfoAd1, RcverInfoAd1",스타배송 API,3,✅ 핵심 UDS,"66byte까지 입력 우편번호 입력 시, 자동생성되는 Address1 입력"
+수령인명,"Data>RcverInfoNa, RcverInfoNa, data>ReceiverName, data>RequestOrders>ReceiverName","스타배송 API, 주문/배송 API",5,✅ 핵심 UDS,외부채널의 배송수령인명 입력 최대 50byte까지 입력
+수령인명/발송인명,"PickupInfo>SenderInfo>Name, data>PickupInfo>SenderInfo>Name",클레임 API,2,✅ 핵심 UDS,
+수령인배송메모,"Data>Memo, Memo",스타배송 API,3,✅ 핵심 UDS,외부사이트에서 고객이 입력한 배송기재사항 입력
+수령인상세주소,"Data>RcverInfoAd2, RcverInfoAd2",스타배송 API,3,✅ 핵심 UDS,"66byte까지 입력 고객 직접입력한 상세주소 입력 아래 특수기호 및 키보드 + 한자 기호는 입력 불가 ! $ % ^ * \ [ ] "" = ; ? < > ` { } | ※ 빈값 입력 가능, 단 null 은 불가함"
+수령인우편번호,Data>ZipCode,스타배송 API,2,✅ 핵심 UDS,판매자가 입력한 수령인우편번호 내려감
+수령인일반전화번호,"Data>RcverInfoHt, RcverInfoHt",스타배송 API,3,✅ 핵심 UDS,"하이픈 포함하여 입력 ""2자리/3자리 - 3자리/4자리 - 4자리"" 로 자릿수 체크"
+수령인전화번호,"data>RequestOrders>TelNo, data>TelNo",주문/배송 API,2,✅ 핵심 UDS,전화번호 없는 경우에도 주문 생성되도록 고려 필요 1) 고객이 전화번호 입력하지 않을 경우 내려가지 않음 2) 고객이 안심번호로 설정시 부과될 때까지 내려가지 않음 3) 약 5분 정도 소요되며 5분 후 재조회 시 안심번호 받을 수 있음 * G마켓은 결제 후 안심번호 채번되므로 무통장입금 주문시 고객의 연락처는 null로 내려감
+수령인주소1,"data>DelFrontAddress, data>RequestOrders>DelFrontAddress",주문/배송 API,2,✅ 핵심 UDS,우편번호 기준 주소 * giftOrderStatus : 1(선물수락대기) 경우 null 확인 * giftOrderStatus : 2(선물수락완료) 경우 확인 가능
+수령인주소1+2,"data>DelFullAddress, data>RequestOrders>DelFullAddress",주문/배송 API,2,✅ 핵심 UDS,* giftOrderStatus : 1(선물수락대기) 경우 null 확인 * giftOrderStatus : 2(선물수락완료) 경우 확인 가능
+수령인주소2,"data>DelBackAddress, data>RequestOrders>DelBackAddress",주문/배송 API,2,✅ 핵심 UDS,상세주소(고객입력) * giftOrderStatus : 1(선물수락대기) 경우 null 확인 * giftOrderStatus : 2(선물수락완료) 경우 확인 가능
+수령인휴대폰번호,"Data>RcverInfoCp, RcverInfoCp, data>HpNo, data>RequestOrders>HpNo","스타배송 API, 주문/배송 API",5,✅ 핵심 UDS,전화번호 없는 경우에도 주문 생성되도록 고려 필요 1) 고객이 전화번호 입력하지 않을 경우 내려가지 않음 2) 고객이 안심번호로 설정시 부과될 때까지 내려가지 않음 3) 약 5분 정도 소요되며 5분 후 재조회 시 안심번호 받을 수 있음 * G마켓은 결제 후 안심번호 채번되므로 무통장입금 주문시 고객의 연락처는 null로 내려감
+수용가능한 SKU 수,Data>ParcelCapacity>SkuQty,스타배송 API,1,✅ 핵심 UDS,0 : 등록마감일 경우 N : 수용가능한 숫자
+수용가능한 SKU당 PCS수,Data>CargoCapacity>SkuPerPcsQty,스타배송 API,1,✅ 핵심 UDS,0 : 등록마감일 경우 N : 수용가능한 숫자
+수용가능한 셀러 수,Data>ParcelCapacity>SellerQty,"Other, 스타배송 API",2,✅ 핵심 UDS,0 : 등록마감일 경우 N : 수용가능한 숫자
+수용가능한 화물입고 PCS 수,Data>CargoCapacity>PcsQty,스타배송 API,1,✅ 핵심 UDS,0 : 등록마감일 경우 N : 수용가능한 숫자
+수용가능한 화물입고 SKU 수,Data>CargoCapacity>SkuQty,스타배송 API,1,✅ 핵심 UDS,0 : 등록마감일 경우 N : 수용가능한 숫자
+수정 가능 여부,isEditable,상품 API,1,✅ 핵심 UDS,Y : 사용 가능 N : 사용 불가
+수정 시작일,updatedDate>from,상품 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+수정 종료일,updatedDate>to,상품 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+수정일,updateDate,상품 API,1,✅ 핵심 UDS,조회시 내려가는 항목
+수정일시,Data>Data>UpdDate,스타배송 API,1,✅ 핵심 UDS,YYYY-MM-DD hh:mm:ss 형식
+수취인명,ReceiverName,주문/배송 API,2,✅ 핵심 UDS,JSON sample key
+순번,items>no,상품 API,1,✅ 핵심 UDS,
+스마일주문번호,"Data>SmileOrderNo, SmileOrderNo",스타배송 API,7,✅ 핵심 UDS,반품/교환입고요청 하려는 대상 스마일주문번호 입력
+스타배송 도착보장일,data>ArrivalScheduledDate,주문/배송 API,1,✅ 핵심 UDS,스타배송 주문에 대한 도착보장일
+스타배송주문번호,Data>SmileOrderNo,스타배송 API,1,✅ 핵심 UDS,스타배송 주문번호 내려감
+실패건수,"Data>FailCount, FailCount","Other, 스타배송 API",5,✅ 핵심 UDS,"출고요청 실패한 건수 출고요청 실패할 경우 자동으로 출고취소 되므로, 별도로 출고취소 API를 호출하지 않아도 됨"
+에러상세,Details,정산조회 API,2,✅ 핵심 UDS,에러 발생 시 상세 사유
+영문상품명,itemBasicInfo>goodsName>eng,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"다국어 상품명은 검색용 , 프로모션용 상품명 구분없이 100byte 까지 입력 가능"
+예약설치 모델코드,data>InstallModelCode,주문/배송 API,1,✅ 핵심 UDS,예약설치상품 모델 코드
+예약설치 상품 모델코드,itemAddtionalInfo>Install>InstallModelCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"설치예약 상품 여부 true 일 경우 필수 * 설치예약상품 모델 코드가 없을 경우 , 판매자 관리코드 ( managedCode ) 와 동일 값으로 입력"
+예약설치 상품 여부,"itemAddtionalInfo>Install>InstallMakerId, itemAddtionalInfo>Install>IsInstall","상품 API, 스타배송 API",2,✅ 핵심 UDS,"설치예약 상품 여부 선택 true: 설치예약 상품 f alse: 설치예약 상품 아님 * 예약설치 상품 권한 있을경우에만 설정 가능 * 상품등록시 해당 항목 미입력/skip 시, default IsInstall: false 로 등록됨"
+예약설치 상품 제조사코드,"itemAddtionalInfo>Install>InstallMakerId, itemAddtionalInfo>Install>InstallModelCode","상품 API, 스타배송 API",2,✅ 핵심 UDS,설치예약 상품 여부 true 일 경우 필수 LG: 15405 삼성 : 1897
+예약설치 주문 여부,data>IsInstallOrder,주문/배송 API,1,✅ 핵심 UDS,Y : 예약설치 주문 N : 예약설치 주문 아님
+예약설치일,data>InstallDate,주문/배송 API,1,✅ 핵심 UDS,"고객이 선택한 예약설치일 정보가 해당 항목으로 내려감 YYYY-MM-DDThh:mm:ss:ss형태 * 예약설치 주문이나, 예약설치일 정보가 없는 경우 null로 내려감 * 예약설치일자 없는 경우는 아래로, 이 경우 해피콜로 고객과 직접 커뮤니케이션한 날짜로 예약설치일을 지정해야함 1. 선물 주문일 때 2. 고객이 설치 예약 일을 30일 이후로 지정하고 싶을 때 3. 무통장 주문일 때 4. CAPA 초과 등으로 가능한 설치 예약 일을 불러오지 못했을 때"
+옥션,iac,"Other, 상품 API, 스타배송 API",12,✅ 핵심 UDS,옥션에서 판매될 금액 입력(십억이상 입력 불가) 10원단위로 등록
+옥션 1.0 상품번호,siteGoodsNo>iac,상품 API,1,✅ 핵심 UDS,- 전환 API 사용시 해당 Entity 추가 - 전환하는 옥션 1.0 상품번호 입력 - 1개의 상품번호만 입력하여 전환 가능 - 전환시 마스터번호 신규 생성 및 1.0 사이트 상품번호 그대로 유지
+옥션 그룹번호,items>groupNo>iac,상품 API,1,✅ 핵심 UDS,
+옥션 빅스마일데이 참여 여부,isEventGoods>iac,상품 API,1,✅ 핵심 UDS,
+옥션 상품번호,items>siteGoodsNo>iac,상품 API,1,✅ 핵심 UDS,
+옥션 예약판매 (예약 배송일),itemAddtionalInfo>preSaleShippingDate,상품 API,1,✅ 핵심 UDS,"- 옥션만 설정 가능 - 등록시 설정 가능, 수정시 설정 및 수정 불가 - 발송정책 당일발송, 순차발송 경우 설정 가능 - 등록일 이후 5일 ~ 1년 이내 설정이 가능"
+옥션 재고,"itemBasicInfo>Stock>Iac, stock>iac",상품 API,2,✅ 핵심 UDS,"G마켓 판매 재고 입력 1 ~ 99,999 내 입력 가능"
+옥션 재고수량,"ItemBasicInfo>stock>iac, itemAddtionalInfo>stock>Iac, itemBasicInfo>Stock>iac, items>stock>iac","상품 API, 스타배송 API",5,✅ 핵심 UDS,"옥션에서 판매할 재고 입력 1~99999까지 입력 가능함 * 옵션 등록 시 옵션재고관리(true)로 선택하면, 본판매수량은 입력해도 무시되고 옵션의 합산 재고로 산정됨"
+옥션 최저가,lowestPrice>iac,상품 API,1,✅ 핵심 UDS,빅스마일데이 참여 기준가
+옥션 최저가 여부,isLowestPrice>iac,상품 API,1,✅ 핵심 UDS,(추후 제공 예정)
+옥션 추가구성 재고 수량,itemAddtionalInfo>addonService>addonServiceList>qtyInfo>qty>iac,상품 API,1,✅ 핵심 UDS,
+옥션 카테고리명,items>category>site>iac>catName,상품 API,1,✅ 핵심 UDS,
+옥션 카테고리코드,items>category>site>iac>catCode,상품 API,1,✅ 핵심 UDS,
+옥션 판매가,items>price>iac,상품 API,1,✅ 핵심 UDS,
+옥션 판매가격,"ItemBasicInfo>price>iac, itemAddtionalInfo>price>Iac, itemBasicInfo>Price>Iac, itemBasicInfo>Price>iac","상품 API, 스타배송 API",4,✅ 핵심 UDS,"옥션에서 판매될 금액 입력 ( 십억이상 입력 불가 ) 10 원단위로 등록 판매자할인 등록 시 , 판매가격 기준으로 할인 적용됨"
+옥션 판매기간,"ItemBasicInfo>sellingPeriod>iac, itemAddtionalInfo>sellingPeriod>Iac, itemBasicInfo>SellingPeriod>Iac, itemBasicInfo>SellingPeriod>iac","상품 API, 스타배송 API",4,✅ 핵심 UDS,"옥션에서 판매할 기간 입력 기간 만료시 판매중지되고 상품 수정시 연장 필요 아래 기간 호출 시 호출 시점부터 기간만큼 연장 입력 가능 기간 : -1 (무제한), 0, 15, 30, 60, 90, 365 * 수정(PUT) 시 판매기간을 0으로 입력하면 기존 판매기간 유지 * 조회(GET) 시 판매종료일 조회 (YYYYMMDD) * ESM+ 판매기간 노출 (Beta) 상품 조회/수정 : 설정안함 상품관리2.0 : 9999-12-31 (365일+)"
+옥션 판매상태,"IsSell>iac, items>sellStatus>iac","상품 API, 스타배송 API",2,✅ 핵심 UDS,01 : 등록 대기 11 : 판매 중 21 : 판매 중지 22 : 직권 중지 31 : SKU 품절
+옥션 판매상태 변경,isSell>iac,상품 API,1,✅ 핵심 UDS,true : 판매가능 상태로 전환 false : 판매중지 상태로 전환 * 판매중지 상태로 1개월 유지하면 상품삭제 * 판매중지 상태로 정보 호출 시 반영되지 않음
+옥션 판매여부,isSell>iac,상품 API,1,✅ 핵심 UDS,조회 시 내려가는 정보
+옥션 판매자ID,items>siteSellerId>iac,상품 API,1,✅ 핵심 UDS,
+옥션 판매자할인 금액(률),items>sellerDiscount>iac>discountAmt,상품 API,1,✅ 핵심 UDS,
+옥션 판매자할인 타입,items>sellerDiscount>iac>type,상품 API,1,✅ 핵심 UDS,1 : 정액 2 : 정률
+옥션 판매중지일,items>sellStopDate>iac,상품 API,1,✅ 핵심 UDS,
+옥션 프로모션명,items>prmtGoodsName>iac,상품 API,1,✅ 핵심 UDS,
+옥션메시지,siteDetail>iac>SiteGoodsComment,상품 API,1,✅ 핵심 UDS,마스터 상품 기준으로 각 Site 에 등록된 상품번호를 조회 한 정보
+옥션상품번호,siteDetail>iac>SiteGoodsNo,상품 API,1,✅ 핵심 UDS,마스터 상품 기준으로 각 Site 에 등록된 상품번호를 조회 한 정보
+옵션 사용 여부,"items>useOption, optionUseYn","Other, 상품 API",2,✅ 핵심 UDS,Y : 사용 가능 N : 사용 불가
+옵션 사이트별 설정 여부,"inputType, itemAddtionalInfo>recommendedOpts>inputType","Other, 상품 API",2,✅ 핵심 UDS,0 : 공통 1 : 사이트별
+옵션 이미지 url,independent>details>imageUrl,Other,1,✅ 핵심 UDS,"사용하지 않음, 입력 불가"
+옵션 재고 수량,STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>REMAIN_YN,서비스 API,1,✅ 핵심 UDS,
+옵션 타입 (ESM 상 주문옵션 ),itemAddtionalInfo>orderOpts>type,스타배송 API,1,✅ 핵심 UDS,주문옵션 사용여부 0: 옵션미사용 * 3PL 상품은 주문옵션 사용 불가하여 0 으로 입력
+옵션 판매자관리번호,"ORDER_INFO>ORDER_OPTION>OPTION_INFO>QTY>STOCK_NO, STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>STOCK_NO",서비스 API,1,✅ 핵심 UDS,
+옵션값,"ORDER_INFO>ORDER_OPTION>OPTION_INFO>VALUE, STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO",서비스 API,2,✅ 핵심 UDS,옵션정보가 있을 경우
+옵션공급원가,Data>OptionCost,정산조회 API,1,✅ 핵심 UDS,
+옵션금액,"Data>OptionPrice, ORDER_INFO>ORDER_OPTION>OPTION_INFO>PRICE","서비스 API, 정산조회 API",3,✅ 핵심 UDS,옵션정보가 있을 경우 **.0000 소수점 이하 .0000 포함하여 전달하고 있으니 가격 체크시에는 삭제하신 후 체크 필요
+옵션명,"Data>OptValue, ORDER_INFO>ORDER_OPTION>OPTION_INFO>NAME, STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>NAME","서비스 API, 스타배송 API",4,✅ 핵심 UDS,판매자가 입력한 옵션명 내려감
+옵션별 가격확인여부,STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>PRICE_YN,서비스 API,1,✅ 핵심 UDS,해당 상품의 옵션번호 (OPTION_INFO >> STOCK_NO) 에 해당하는 옵션 상품의 선택정보 재고 여부
+옵션별 재고확인여부,STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>REMAIN_YN,서비스 API,1,✅ 핵심 UDS,해당 상품의 옵션번호 (OPTION_INFO >> STOCK_NO) 에 해당하는 옵션 상품의 선택정보 재고 여부
+옵션별 주문가능여부,STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>REMAIN_YN,서비스 API,1,✅ 핵심 UDS,옵션정보가 있을 경우
+옵션수량,"ORDER_INFO>ORDER_OPTION>OPTION_INFO>AMT, ORDER_INFO>ORDER_OPTION>OPTION_INFO>QTY, STOCK_REMAIN_INFO>GOODS_QTY, STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>GOODS_QTY",서비스 API,2,✅ 핵심 UDS,옵션정보가 있을 경우
+옵션이용료,Data>OptionCommission,정산조회 API,1,✅ 핵심 UDS,필수옵션 + 추가옵션
+옵션재고관리,"isStockManage, itemAddtionalInfo>orderOpts>isStockManage, itemAddtionalInfo>recommendedOpts>isStockManage","Other, 상품 API, 스타배송 API",4,✅ 핵심 UDS,- 추천옵션 사용일 경우 필수 - 텍스트형 경우 false 로 연동
+옵션추가금액,"data>OptSelPrice, data>RequestOrders>OptSelPrice",주문/배송 API,2,✅ 핵심 UDS,옵션단가 * 수량
+옵션타입명,typeName,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 추천옵션 관련 내부 구분명
+외부 주문 구분,data>OutOrderNo,주문/배송 API,1,✅ 핵심 UDS,101 : G마켓 국문 주문 102 : G마켓 글로벌 주문 301 : SSG 주문 401 : Lazada (라자다) 주문
+외부상품번호,"Data>OuterGoodsNo, OuterGoodsNo",스타배송 API,3,✅ 핵심 UDS,판매자가 입력한 외부상품 번호 내려감
+외부장바구니번호,"Data>OuterCartNo, OuterCartNo",스타배송 API,3,✅ 핵심 UDS,판매자가 출고요청한 스마일장바구니번호 내려감
+외부주문배송기한시간,Data>DeliveryDueTime,스타배송 API,1,✅ 핵심 UDS,외부주문배송기한시간 내려감 hh:mm:ss 형식
+외부주문배송기한일시,DeliveryDueTime,스타배송 API,1,✅ 핵심 UDS,hh:mm:ss형식 외부사이트에서 판매자에게 요구하는 배송기한시간 입력(판매자 패널티대상되는 시간) G마켓/옥션의 '발송마감일' 기능과 동일한 일자
+외부주문배송기한일자,"Data>DeliveryDueDate, DeliveryDueDate",스타배송 API,2,✅ 핵심 UDS,YYYY-MM-DD 외부사이트에서 판매자에게 요구하는 배송기한일자 입력(판매자 패널티대상되는 일자) G마켓/옥션의 '발송마감일' 기능과 동일한 일자
+외부주문번호,"Data>OuterOrderNo, OuterOrderNo",스타배송 API,3,✅ 핵심 UDS,판매자가 출고요청한 스마일주문번호 내려감
+외부주문수량,"Data>OrderQty, OrderQty",스타배송 API,2,✅ 핵심 UDS,"외부채널의 주문수량 해당 주문의 SKU별 출고수량을 계산 가능할 경우 해당 값은 ""1""로 고정 주의!! ""출고수량 = 외부주문수량(OrderQty) X SKU총출고수량(OwQty) "" 각 SKU별로 해당 계산식으로 계산되어 출고요청됨(아래 'Sample Code_출고수량계산' 참고)"
+외부주문옵션명,OptValue,스타배송 API,1,✅ 핵심 UDS,외부채널의 주문옵션명
+요일,dailyOrderCutoff>dayOfWeek,스타배송 API,1,✅ 핵심 UDS,(2025년 11월 12일 부터 사용 가능) 1 : 월 / 2 : 화 / 3 : 수 / 4 : 목 / 5 : 금 / 6 : 토 / 7 : 일
+요일별 마감시간/휴일 설정,dailyOrderCutoff,스타배송 API,1,✅ 핵심 UDS,"(2025년 11월 12일 부터 사용 가능) - 요일별 마감시간, 휴일 여부 설정시 사용 - 해당 항목으로 설정시 상단 orderClosingTime 는 제거 후 호출 필요"
+요청건수,"Data>RequestCount, RequestCount","Other, 스타배송 API",5,✅ 핵심 UDS,판매자가 판매상태 변경요청한 전체 건수
+우편번호,"ZipCode, Zipcode, data>RequestOrders>ZipCode, data>ZipCode, zipCode, zipcode","Other, 서비스 API, 스타배송 API, 주문/배송 API, 클레임 API",12,✅ 핵심 UDS,* giftOrderStatus : 1(선물수락대기) 경우 null 확인 * giftOrderStatus : 2(선물수락완료) 경우 확인 가능
+원배송 송장번호,"ShippingInfo>InvoiceNo, data>ShippingInfo>InvoiceNo",클레임 API,2,✅ 핵심 UDS,
+원배송 택배사코드,"ShippingInfo>DeliveryCompCode, data>ShippingInfo>DeliveryCompCode",클레임 API,2,✅ 핵심 UDS,택배사코드는 5자리 숫자 ( 택배사 코드 참고 )
+원배송완료일자,"ShippingInfo>CompleteDate, data>ShippingInfo>CompleteDate",클레임 API,2,✅ 핵심 UDS,
+원산지 구분,itemAddtionalInfo>origin>goodsType,상품 API,1,✅ 핵심 UDS,0 : 원산지 의무표시 대상 아님 1 : 상품 상세설명 참조 2 : 가공품 3 : 농산물 4 : 수산물
+원산지 지역 코드,itemAddtionalInfo>origin>code,상품 API,1,✅ 핵심 UDS,아래 조회 API 로 확인 https://etapi.gmarket.com/162
+원산지 지역설정,itemAddtionalInfo>origin>type,상품 API,1,✅ 핵심 UDS,1 : 국내산 2 : 수입산 * 원산지 구분 상세 설명 참조일 경우 0 입력 * 상품 조회시 상세 설명 참조는 0 으로 조회됨
+원산지상품 타입,itemAddtionalInfo>origin>goodsType,스타배송 API,1,✅ 핵심 UDS,"해당 상품 유형 타입 입력 0: 원산지표시대상아님 ( 식품이외 ), 1: 상세설명참조 , 2: 가공품 , 3: 농산물 , 4: 수산물"
+원산지지역 코드,itemAddtionalInfo>origin>code,스타배송 API,1,✅ 핵심 UDS,원산지지역 상세코드 입력 원산지 코드 리스트 다운로드
+원산지지역 타입,itemAddtionalInfo>origin>type,스타배송 API,1,✅ 핵심 UDS,"원산지지역 타입 입력 0: 없음 , 1: 국내산 , 2: 수입산 , 3: 기타 * 상세설명참조일 경우 0~3 모두 입력 가능함 단 , 상품조회 시 , 상세설명참조는 0 으로 내려감"
+월,month,스타배송 API,1,✅ 핵심 UDS,조회 [GET] 경우 필수
+위해우려제품인증 타입,itemAddtionalInfo>certInfo>safetyCerts>harmful>type,상품 API,1,✅ 핵심 UDS,설정 없을 경우 기본 상세설명 별도표기 설정 0 : 인증대상 1 : 인증대상아님 2 : 상세설명 별도표기
+유효일,itemAddtionalInfo>expiryDate,"상품 API, 스타배송 API",2,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+응답 데이터,Data,"CS API, Other, 상품 API, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",63,✅ 핵심 UDS,JSON sample key
+이미지 url,items>imgUrl,상품 API,1,✅ 핵심 UDS,ESM+ 상품관리 내 목록 보기시 나오는 이미지 Url
+이벤트 홍보 번호,promotionNo,상품 API,2,✅ 핵심 UDS,"수정, 조회, 삭제시 필수 입력"
+이벤트 홍보명,name,상품 API,1,✅ 핵심 UDS,50 byte 이내 입력 가능
+이용료부담주체,Data>Reporting>ReturnChangeBlame,스타배송 API,1,✅ 핵심 UDS,반품교환배송비귀책 1:판매자 (센터사유 3~11 매칭) 2:지마켓 스타배송 센터 (센터사유 1~2 매칭 센터사유 1 (택배파손) : 사이트_택배사귀책 센터사유 2 (센터파손) : 사이트_운영사귀책) 3:기타 4:협의후 결정 5:미정 (Reporting 검수중으로 정해지지 않은 경우)
+이용료총액,Data>TotCommission,정산조회 API,1,✅ 핵심 UDS,
+일문상품명,itemBasicInfo>goodsName>jpn,스타배송 API,1,✅ 핵심 UDS,"다국어 상품명은 검색용 , 프로모션용 상품명 구분없이 100byte 까지 입력 가능"
+일반우편 정보,itemAddtionalInfo>shipping>generalPost,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 지원하지 않아 null 로 호출
+일반전화번호,homeTel,Other,1,✅ 핵심 UDS,하이픈 구분 입력 필요
+일시불할인,data>SinglePayDcAmnt,주문/배송 API,1,✅ 핵심 UDS,
+일자,customSchedules>date,스타배송 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력 가능 수정일 기준 다음달말까지 입력 가능
+입고등록일시,Data>InsDate,스타배송 API,1,✅ 핵심 UDS,
+입고명,"Data>WarehouseName, WarehouseName",스타배송 API,2,✅ 핵심 UDS,판매자가 입력한 입고명 내려감
+입고방식,"Data>IwMthdType, IwMthdType",스타배송 API,2,✅ 핵심 UDS,판매자가 선택한 입고방식 내려감 1. 화물입고 2. 택배입고 3. 밀크런
+입고번호,"Data>WarehouseNo, WarehouseNo",스타배송 API,2,✅ 핵심 UDS,처리성공한 입고번호 Return
+입고상태,"Data>WarehouseStatus, WarehouseStatus",스타배송 API,1,✅ 핵심 UDS,입고번호의 현재 입고진행상태 ALL : 전체 1 : 입고대기 2 : 입고완료 3 : 하차스캔 4 : 검수 5 : 반송 6 : 취소 7 : 등록중(EFM 미노출)
+입고예정일시,Data>IwScheduledDate,스타배송 API,2,✅ 핵심 UDS,"오전일 경우 09시, 오후일 경우 13시로 내려감"
+입고예정일자,IwScheduledDate,스타배송 API,1,✅ 핵심 UDS,"입고예정일자유형>2: '직접입력'일 경우 필수 일시 직접입력 (DateTime) 오전에 입고 시 09시, 오후는 13시로 입력필요"
+입고예정일자유형,IwScheduledDateType,스타배송 API,1,✅ 핵심 UDS,입고예정일자를 시스템에서 가능한 날짜로 자동 선택받을 것인지 직접선택할 것인지 여부 1 : 가장 빠른 날짜 자동선택 2 : 직접입력
+입고완료일시,Data>CompleteDate,스타배송 API,1,✅ 핵심 UDS,
+입고제한일,"Data>Data>ExpireDateNearDays, Data>Data>IwLimitDay","Other, 스타배송 API",2,✅ 핵심 UDS,판매자가 입력한 상미기일구간에 따른 입고제한일 내려감
+입고취소일시,Data>CancelDate,스타배송 API,1,✅ 핵심 UDS,
+입금 확인일,Data>PayDate,정산조회 API,1,✅ 핵심 UDS,옥션 주문 경우 DelFeeType > 30이면 데이터 내려가지 않고 Default 값 내려감 (0001-01-01T00:00:00) G마켓 주문일 경우 DelFeeType > 70이면 데이터 내려가지 않고 Default 값 내려감 (0001-01-01T00:00:00)
+장바구니 번호,"Data>PackNo, data>PayNo","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,정산데이터에서 장바구니 번호는 PackNo
+장바구니 번호(결제번호),PayNo,클레임 API,2,✅ 핵심 UDS,
+장바구니(결제) 번호,payNo,클레임 API,1,✅ 핵심 UDS,
+장바구니(결제)번호,payNo,주문/배송 API,1,✅ 핵심 UDS,장바구니(결제)번호 조회시 필수 (G마켓만 가능)
+장바구니번호,"Data>PackNo, Data>PayNo, PackNo, PayNo, data>PayNo, data>RequestOrders>PayNo","CS API, 정산조회 API, 주문/배송 API, 클레임 API",8,✅ 핵심 UDS,"SiteType > ""G마켓""일 경우는 장바구니번호 입력 후 조회"
+재고,stock,"상품 API, 서비스 API, 스타배송 API",5,✅ 핵심 UDS,JSON sample key
+재고번호,StockNo,스타배송 API,5,✅ 핵심 UDS,"영문/숫자만 가능하며 최대 100byte까지 등록 ESM의 ""제품 stockNo""에 해당 중복여부 체크하며, 중복 값은 등록 불가함"
+재고상태,"Data>Data>SkuStockRatioStatusCode, Data>SkuStockRatioStatusCode, SkuStockRatioStatusCode",스타배송 API,2,✅ 핵심 UDS,재고상태별 재고기간에 따라 아래와 같이 분리되어 내려감 ENOUGH : 충분(14일이상~90일미만) REFILL : 재고보충(5일이상~14일미만) SOON-SOLDOUT : 소진임박(1일이상~5일미만) SOLDOUT : 품절(재고 없음) LT-SOLDOUT : 장기품절(재고가 없으면서 품절경과일이 14일 이상) INACTIVITY : 부진(재고 예상소진일이 90일이상) ETC : 기타(일 평균 출고량 없음 or 관리범위 외 SKU)
+재고현황을,SKU,스타배송 API,1,✅ 핵심 UDS,SKU 재고현황을 조회합니다.
+재고확인여부,STOCK_REMAIN_INFO>REMAIN_YN,서비스 API,1,✅ 핵심 UDS,제휴사 상품번호 (PRODUCT > NO) 에 해당하는 상품 주문 수량 ( 옥션 전송 XML: PRODUCT > ORDER_QTY) 의 상품 재고 확인 여부
+재발송 배송완료일,data>ResendInfo>CompleteDate,클레임 API,1,✅ 핵심 UDS,재발송한 송장의 배송 완료 일자 택배 Tracking 또는 API를 통해 업데이트
+재발송 송장번호,data>ResendInfo>InvoiceNo,클레임 API,1,✅ 핵심 UDS,재발송한 송장의 송장번호
+재발송 수령인 주소1+2,data>ResendInfo>ReceiverInfo>Address,클레임 API,1,✅ 핵심 UDS,
+재발송 택배사명,data>ResendInfo>DeliveryCompName,클레임 API,1,✅ 핵심 UDS,재발송한 송장의 택배사명
+재발송수령인 우편번호,data>ResendInfo>ReceiverInfo>ZipCode,클레임 API,1,✅ 핵심 UDS,
+재발송수령인 일반전화번호,data>ResendInfo>ReceiverInfo>TelNo,클레임 API,1,✅ 핵심 UDS,
+재발송수령인 주소1,data>ResendInfo>ReceiverInfo>AddressFront,클레임 API,1,✅ 핵심 UDS,
+재발송수령인 주소2,data>ResendInfo>ReceiverInfo>AddressBack,클레임 API,1,✅ 핵심 UDS,
+재발송수령인 휴대폰번호,data>ResendInfo>ReceiverInfo>HpNo,클레임 API,1,✅ 핵심 UDS,
+재발송수령인명,data>ResendInfo>ReceiverInfo>Name,클레임 API,1,✅ 핵심 UDS,
+재발송예정일,ResendExpectDate,클레임 API,1,✅ 핵심 UDS,재발송할 예정일 입력
+재발송일자,data>ResendInfo>ResendDate,클레임 API,1,✅ 핵심 UDS,재발송 송장처리한 날짜
+재포장여부,"Data>Data>PackingNeedYn, Data>PackingNeedYn",스타배송 API,2,✅ 핵심 UDS,"센터에서 검수 후 , 해당 SKU 재포장 필요여부 내려감 Y: 재포장필요 N: 재포장불필요"
+저장코드,Data>RetCode,클레임 API,1,✅ 핵심 UDS,내부 처리값 코드
+전월보관등급,Data>Data>TplKeepGradeCode,스타배송 API,1,✅ 핵심 UDS,지마켓 에서 지정한 전월보관등급 내려감
+전체 적용 여부,isApplyAll,상품 API,1,✅ 핵심 UDS,Y 로 설정시 전체 상품에 노출
+전체검수결과코드,Data>Reporting>DistrCenterClaimCode,스타배송 API,1,✅ 핵심 UDS,담당자 별도 코드 문의(엑셀로 제공)
+전체대상건수,"Data>TotalCount, data>TotalCount","Other, 스타배송 API, 주문/배송 API",11,✅ 핵심 UDS,조회조건 범위 전체 건수
+접수일시,"Data>ReceiveDate, ReceiveDate",CS API,2,✅ 핵심 UDS,- 판매자문의 발생 시간 - YYYY-MM-DD hh:mm:ss+09:00 형식으로 조회됨
+정렬 순서,sortOrder,상품 API,1,✅ 핵심 UDS,0 : 오름차순 ( 미입력시 default) 1 : 내림차순
+정렬 조건,sortField,상품 API,1,✅ 핵심 UDS,0 : 등록일 (미입력시 default) 1 : 판매중지일 2 : 재고 3 : 가격 4 : 마스터번호 5 : 카테고리코드 7 : 그룹번호
+정렬순번,itemAddtionalInfo>addonService>addonServiceList>sortSeq,상품 API,1,✅ 핵심 UDS,1부터 양수로 노출순서 설정 가능
+정보를 등록/수정합니다,SKU,스타배송 API,1,✅ 핵심 UDS,SKU 정보를 등록/수정합니다.
+정보수정여부,Data>IsChanged,주문/배송 API,1,✅ 핵심 UDS,- 주문확인 전 구매자가 수령지(주소)변경 했는지 여부 - 변경시 주문 조회(orderStatus > 2) 로 변경 정보 조회하여 주문정보 갱신 필요 1: 변경됨 0: 변경없음
+정산금액합계,TotalSettlementAmount,정산조회 API,1,✅ 핵심 UDS,전체 조회 내역 내 SettlementPrice 합계
+정산방식,Data>SettleType,정산조회 API,1,✅ 핵심 UDS,A : 계좌 B : 판매예치금 C : 판매예치금선차감 D : 조기정산예치금 S : 스마일캐시
+정산보류사유,Data>SettleExceptName,정산조회 API,1,✅ 핵심 UDS,1991-01-01 장기미배송 1988-01-01 정산서류 미제출 1998-01-01 지급보류(정산중지) 1999-01-01 취소/반품진행 1997-01-01 이벤트경품 1990-12-31 배송중취소 1999-01-01 환불미결정 1993-01-01 미수취신고 1992-01-01 벤더 1800-01-01 일반미정산
+정산예정금액,data>SettlementPrice,주문/배송 API,1,✅ 핵심 UDS,
+정산예정금액/송금액,Data>SettlementPrice,정산조회 API,1,✅ 핵심 UDS,판매금액 + 옵션금액 - 수수료 - 공제환급금
+정산예정일자,Data>SettleExpectDate,정산조회 API,1,✅ 핵심 UDS,
+정상재고_신규주문,Data>UpStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 신규주문 카운팅 내려감
+정상재고_판매가능,Data>SaStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 판매가능 카운팅 내려감
+정상재고_합계,Data>NormalStockQty,스타배송 API,1,✅ 핵심 UDS,해당SKU 정상재고 합계 카운팅 내려감
+정책구분,"feeType, policies>feeType","상품 API, 스타배송 API",2,✅ 핵심 UDS,묶음배송비 정책 구분 1 : 무료 2 : 유료 3 : 조건부
+제조사 ID,items>maker>id,상품 API,1,✅ 핵심 UDS,
+제조사명,"Data>Data>MakerName, items>maker>name, makerName","Other, 상품 API, 스타배송 API",3,✅ 핵심 UDS,SKU 등록시 제조사코드입력한 제조사 국문명 내려감
+제조사코드,"MakerNo, makerNo","Other, 스타배송 API",2,✅ 핵심 UDS,상품API > 브랜드코드 조회 API로 조회한 제조사코드 입력
+제조일,itemAddtionalInfo>manufacturedDate,스타배송 API,1,✅ 핵심 UDS,"카테고리에 따라 필수 입력 도서상품일 경우 , 도서출판년월일을 제조일에 입력"
+제조일(발행일),itemAddtionalInfo>manufacturedDate,상품 API,1,✅ 핵심 UDS,- YYYY-MM-DD 형태로 입력 - 도서 경우 출판 발행일 제조일에 입력 필요
+제주 / 도서산간배송불가여부,itemAddtionalInfo>shipping>backwoodsDeliveryYn,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 지원하지 않아 null 로 호출
+제주/도서산간배송불가여부,itemAddtionalInfo>shipping>backwoodsDeliveryYn,상품 API,1,✅ 핵심 UDS,Y : 배송가능 N : 배송불가 * 권한 부여 경우만 설정 가능
+제주도 및 부속도서 추가배송비,"backwoodsAdditionalShippingFee, jejuAdditionalShippingFee, shippingPlaces>backwoodsAdditionalShippingFee","상품 API, 스타배송 API",2,✅ 핵심 UDS,- 금액 입력 - 판매자가 해당 지역 우편번호 설정은 불가
+제주도/부속도서추가배송비,data>JejuAddDeliveryFee,주문/배송 API,1,✅ 핵심 UDS,고객 결제한 제주도/부속도서 추가배송비
+제한 기간,itemAddtionalInfo>buyableQuantity>unitDate,상품 API,1,✅ 핵심 UDS,최대구매수량 허용 기간 설정 (type : 3 일 경우 필수) 1 ~ 209 입력 가능
+제한기간,itemAddtionalInfo>buyableQuantity>unitDate,스타배송 API,1,✅ 핵심 UDS,구매수량제한 타입이 3 일 경우 필수
+제휴사이트 연동 불가 여부,itemAddtionalInfo>isExceptExttrSync>gmkt,상품 API,1,✅ 핵심 UDS,"true : 연동 불가 false : 연동 가능 ※ SSG, Lazada 사이트 연동 여부 설정 가능 ※ 사이트별 개별 연동 여부 설정은 불가"
+제휴사프로모션이용료,Data>SellerPcsFee,정산조회 API,1,✅ 핵심 UDS,가격비교사이트 통한 주문 경우
+조건부 기준금액,"policies>shippingFee>condition, shippingFee>condition","상품 API, 스타배송 API",2,✅ 핵심 UDS,"- feeType > 3 인 경우 필수 - 1,000 이상 ~ 10,000,000 원 미만 설정 가능"
+조회 시작일,"FromDate, SrchStartDate, StartDate","CS API, Other, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",17,✅ 핵심 UDS,검색조건 > ORDER_DATE / WAREHOUSE_REQ_DATE / WAREHOUSE_OUT_DATE 일 경우 필수
+조회 시작일시,requestDateFrom,주문/배송 API,2,✅ 핵심 UDS,- 오늘 날짜 조회시 조회 기간 오늘 ~ 내일로 조회 - YYYY-MM-DD hh:mm 로 분단위 조회 가능 - 31일 이내 조회 가능
+조회 조건 전체 상품수,totalItems,상품 API,1,✅ 핵심 UDS,
+조회 종료일,"EndDate, SrchEndDate, ToDate","CS API, Other, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",17,✅ 핵심 UDS,검색조건 > ORDER_DATE / WAREHOUSE_REQ_DATE / WAREHOUSE_OUT_DATE 일 경우 필수
+조회 종료일시,requestDateTo,주문/배송 API,2,✅ 핵심 UDS,- 오늘 날짜 조회시 조회기간 오늘 ~ 내일로 조회 - YYYY-MM-DD hh:mm 형태로 분단위 조회 가능 - 31일 이내 조회 가능
+조회기준 구분,requestDateType,주문/배송 API,1,✅ 핵심 UDS,1 : 주문일 2 : 결제완료일 3 : 발송마감일 ( orderStatus : 2 배송준비중 한해서 조회) 4 : 선물수락일 ( G마켓만 가능) 5 : 일반주문 = 결제완료일 / 선물하기 주문=선물수락일 ( G마켓만 가능)
+조회기준구분,ClaimCancelType,클레임 API,1,✅ 핵심 UDS,"원송장에서 송장번호가 잘 못 되어 미수령신고가 들어온 경우 송장번호 재입력타입으로 정상 송장을 재연동하며 , 원송장이 이슈 없고 고객 커뮤니케이션이 끝났을 경우 2 번타입을 통해 철회신청 1 : 송장번호 재입력 2 : 철회요청 메시지입력"
+조회조건,SearchType,"Other, 스타배송 API, 클레임 API",7,✅ 핵심 UDS,OUTER_CART_NO : 외부장바구니번호 OUTER_ORDER_NO : 외부주문번호 SMILE_ORDER_NO : 스타배송주문번호 CLAIM_DATE : 클레임등록일날짜로조회 WAREHOUSE_IN_DATE : 반품입고일날짜로조회 REPORTING_INS_DATE : 클레임리포팅등록일날짜로 조회 REPORTING_UPD_DATE : 클레임리포팅수정일날짜로 조회
+주문 구분,"Data>Kind, orderType","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,1 : 일반 주문 2 : 풀필먼트 스타배송 주문 3 : 판매자 스타배송 주문 ※ 입력하지 않는 경우 전체 주문 조회 가능
+주문 마감 시간,"customSchedules>dayOrderClosingTime, dailyOrderCutoff>dayOrderClosingTime, orderClosingTime",스타배송 API,2,✅ 핵심 UDS,(2025년 11월 12일 부터 사용 가능) - hh:mm 형식으로 입력 가능 - 분은 30분 단위로 입력 가능
+주문가능여부,ORDER_INFO>REMAIN_YN,서비스 API,1,✅ 핵심 UDS,Y : 주문가능 N : 주문불가 주문불가로 Return 할 경우 주문불가 관련 알럿 띄우고 주문 진행시키지 않음 응답이 지연될 경우 ( 약 5 초 ) 무응답으로 간주하여 주문진행
+주문구분,"Data>Kind, data>DistrType","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,NL : 일반 주문 TL : 풀필먼트 스타배송 SL : 판매자 스타배송
+주문금액,Data>SellOrderPrice,정산조회 API,1,✅ 핵심 UDS,
+주문번호,"ContrNo, Data>ContrNo, Data>OrderNo, OrderNo, data>OrderNo, data>RequestOrders>OrderNo, orderNo","CS API, 정산조회 API, 주문/배송 API, 클레임 API",30,✅ 핵심 UDS,조회하고자 하는 주문번호 입력 정산데이터에서는 OrderNo 대신 ContrNo가 주문번호임
+주문상세검색,SearchString,스타배송 API,2,✅ 핵심 UDS,"검색조건 > OUTER_CART_NO / OUTER_ORDER_NO / SMILE_ORDER_NO 선택 시 필수 이 때, 날짜검색조건 무시"
+주문상태,"Status, data>OrderStatus, orderStatus",주문/배송 API,2,✅ 핵심 UDS,0 : 입금확인중 1 : 신규주문 2 : 배송준비중 3 : 배송중 (교환 재발송 처리시 배송중 으로 변경) 4 : 배송완료 5 : 구매결정 6 : 취소 7 : 반품 8 : 교환 9 : 미수령신고 10 : (옥션) 거래완료 후 환불 (송금 후 취소)
+주문수량,"Data>OrderQty, ORDER_INFO>ORDER_AMT, ORDER_INFO>ORDER_QTY, data>ContrAmount, data>RequestOrders>ContrAmount","서비스 API, 정산조회 API, 주문/배송 API",5,✅ 핵심 UDS,주문한 수량
+주문옵션,"data>ItemOptionSelectList>ItemOptionValue, data>RequestOrders>ItemOptionSelectList>ItemOptionValue",주문/배송 API,2,✅ 핵심 UDS,"선택옵션값으로 옵션명:옵션값 (ex-77:파랑, 용량:0.5kg)"
+주문옵션 사용 여부,useOrderOption,상품 API,1,✅ 핵심 UDS,
+주문옵션 추가금,"independent>details>addAmnt, itemAddtionalInfo>recommendedOpts>independent>details>addAmnt","Other, 상품 API",2,✅ 핵심 UDS,"- 2천원 미만 (0 ~ 100%) - 1만원 미만 (-50 ~ 100%) - 1만원이상 (기본값 -50 ~ 50%, 일부 카테고리 별도 정책)"
+주문옵션 추가금 - 사이트별 G마켓,"independent>details>addAmntSite>gmkt, itemAddtionalInfo>recommendedOpts>independent>details>addAmntSite>gmkt","Other, 상품 API",2,✅ 핵심 UDS,"- 2천원 미만 (0 ~ 100%) - 1만원 미만 (-50 ~ 100%) - 1만원이상 (기본값 -50 ~ 50%, 일부 카테고리 별도 정책) ※ 사이트별 설정 (inputType : 1)인 경우 제어 가능"
+주문옵션 추가금 - 사이트별 옥션,"independent>details>addAmntSite>iac, itemAddtionalInfo>recommendedOpts>independent>details>addAmntSite>iac","Other, 상품 API",2,✅ 핵심 UDS,"- 2천원 미만 (0 ~ 100%) - 1만원 미만 (-50 ~ 100%) - 1만원이상 (기본값 -50 ~ 50%, 일부 카테고리 별도 정책) ※ 사이트별 설정 (inputType : 1)인 경우 제어 가능"
+주문옵션개수,"data>ItemOptionSelectList>ItemOptionOrderCnt, data>RequestOrders>ItemOptionSelectList>ItemOptionOrderCnt",주문/배송 API,2,✅ 핵심 UDS,주문 옵션 개수
+주문옵션코드,"data>ItemOptionSelectList>ItemOptionCode, data>RequestOrders>ItemOptionSelectList>ItemOptionCode",주문/배송 API,2,✅ 핵심 UDS,주문 옵션 코드
+주문일시,Data>OrderDate,스타배송 API,1,✅ 핵심 UDS,판매자가 등록한 주문일시 내려감
+주문일자,"Data>OrderDate, OrderDate, data>OrderDate, data>RequestOrders>OrderDate","스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",7,✅ 핵심 UDS,주문일자 (결제 전)
+주문종류,"Data>OrderType, orderType",CS API,2,✅ 핵심 UDS,"참고용 데이터로, 아래 텍스트로 내려감 일반주문, 물류주문, 상품문의는 null"
+주문처리상태,"Data>OrderStatus, OrderStatus",스타배송 API,1,✅ 핵심 UDS,0: 전체 1: 발송요청대기 2: 발송요청중 3. 발송요청완료 4: 발송요청실패 5: 판매자출고취소주문
+주문취소일시,Data>OrderCancelDate,스타배송 API,1,✅ 핵심 UDS,주문취소일시 내려감
+주문확인일자,data>OrderConfirmDate,주문/배송 API,1,✅ 핵심 UDS,주문확인한 일자
+주소,Address,클레임 API,2,✅ 핵심 UDS,JSON sample key
+주소1,addr1,Other,1,✅ 핵심 UDS,우편번호 기준 주소
+주소2,addr2,Other,1,✅ 핵심 UDS,주소 상세
+주소명,addrName,Other,1,✅ 핵심 UDS,판매자가 관리하려는 주소명 입력
+중량,WeightText,스타배송 API,1,✅ 핵심 UDS,SKU의 중량 입력
+중량당가격,unitPrice,서비스 API,1,✅ 핵심 UDS,
+중문상품명,itemBasicInfo>goodsName>chi,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"다국어 상품명은 검색용 , 프로모션용 상품명 구분없이 100byte 까지 입력 가능"
+중분류카테고리명,Data>Data>CategoryName2,"Other, 스타배송 API",2,✅ 핵심 UDS,SKU 등록된 물류 중분류카테고리명 내려감
+지마켓,gmkt,"Other, 상품 API, 스타배송 API",12,✅ 핵심 UDS,G마켓에서 판매될 금액 입력(십억이상 입력 불가) 10원단위로 등록
+지마켓 그룹번호,items>groupNo>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 또는 옥션 할인 금액 총액,data>DirectDiscountPrice,주문/배송 API,1,✅ 핵심 UDS,지마켓 또는 옥션 할인 지원하는 금액
+지마켓 빅스마일데이 참여 여부,isEventGoods>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 상품번호,items>siteGoodsNo>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 재고,stock>gmkt,상품 API,1,✅ 핵심 UDS,"G마켓 판매 재고 입력 1 ~ 99,999 내 입력 가능"
+지마켓 재고수량,items>stock>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 지불 반품/교환배송비,Data>DeliveryExpense,스타배송 API,1,✅ 핵심 UDS,"착불일 경우, 사이트 에서 지불한 반품/교환배송비 금액 내려감(추후제공)"
+지마켓 최저가,lowestPrice>gmkt,상품 API,1,✅ 핵심 UDS,빅스마일데이 참여 기준가
+지마켓 최저가 여부,isLowestPrice>gmkt,상품 API,1,✅ 핵심 UDS,(추후 제공 예정)
+지마켓 추가구성 재고 수량,itemAddtionalInfo>addonService>addonServiceList>qtyInfo>qty>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 카테고리명,items>category>site>gmkt>catName,상품 API,1,✅ 핵심 UDS,
+지마켓 카테고리코드,items>category>site>gmkt>catCode,상품 API,1,✅ 핵심 UDS,
+지마켓 판매가,items>price>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 판매상태,items>sellStatus>gmkt,상품 API,1,✅ 핵심 UDS,01 : 등록 대기 11 : 판매 중 21 : 판매 중지 22 : 직권 중지 31 : SKU 품절
+지마켓 판매자ID,items>siteSellerId>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 판매자할인 금액(률),items>sellerDiscount>gmkt>discountAmt,상품 API,1,✅ 핵심 UDS,
+지마켓 판매자할인 타입,items>sellerDiscount>gmkt>type,상품 API,1,✅ 핵심 UDS,1 : 정액 2 : 정률
+지마켓 판매중지일,items>sellStopDate>gmkt,상품 API,1,✅ 핵심 UDS,
+지마켓 프로모션명,items>prmtGoodsName>gmkt,상품 API,1,✅ 핵심 UDS,
+지연 사유 직접입력,ReasonDetail,주문/배송 API,1,✅ 핵심 UDS,"Text 직접 입력 최대 한글 150자, 영문/숫자 300자까지 입력 가능"
+지점연락처,contact,서비스 API,1,✅ 핵심 UDS,지점 연락처
+지점추가금,Data>BranchPrice,정산조회 API,1,✅ 핵심 UDS,당일배송 서비스 주문 건일 경우 내려감
+지점추가금액,data>BranchPrice,주문/배송 API,1,✅ 핵심 UDS,- 당일배송 주문에 내려가는 정보 - 지점추가금 X 주문수량금액 (마이너스값 내려갈 수 있음)
+지점코드,"BranchCode, Data>BranchCode, branchCode, branchId, data>BranchCode, data>RequestOrders>BranchCode","CS API, 서비스 API, 정산조회 API, 주문/배송 API",12,✅ 핵심 UDS,당일배송 서비스 주문 건일 경우 내려감
+착불여부,"isCashOnDelivery, policies>isCashOnDelivery","상품 API, 스타배송 API",2,✅ 핵심 UDS,true : 착불 false : 착불 아님
+창고구분,"Data>StorageType, StorageType","Other, 스타배송 API",4,✅ 핵심 UDS,조회할 창고구분코드 입력 VF창고코드는 담당자별도문의 3: 스타배송 제2물류센터 1층 4: 스타배송 제2물류센터 3층 6: 스타배송 제3물류센터 1층 7: 스타배송 제3물류센터 2층 13: 스타배송 동탄메가센터 3층 3L 14: 스타배송 동탄메가센터 3층 3R 15: 스타배송 동탄메가센터 4층 4L 16: 스타배송 동탄메가센터 4층 4R
+창고구분명,Data>StorageDesc,스타배송 API,1,✅ 핵심 UDS,스타배송 물류센터 창고구분명 내려감
+창고구분설명,Data>Data>StorageDesc,스타배송 API,1,✅ 핵심 UDS,지마켓에서 지정한 대표창고명 내려감
+창고구분코드,Data>Data>StorageType,스타배송 API,1,✅ 핵심 UDS,지마켓에서 지정한 대표창고코드 내려감
+창고명,Data>StorageDesc,"Other, 스타배송 API",2,✅ 핵심 UDS,입고된 창고명 내려감
+채널주문번호,ChannelOrderNo,스타배송 API,1,✅ 핵심 UDS,지마켓에서 사용하는 외부채널 코드
+채널코드,ChannelCode,스타배송 API,1,✅ 핵심 UDS,지마켓에서 사용하는 외부채널 코드
+처리구분,Data>EscrowType,주문/배송 API,1,✅ 핵심 UDS,
+처리상태,status,CS API,2,✅ 핵심 UDS,문의 답변 처리상태 관련 조회 1 : 전체 2 : 미처리 3 : 처리완료 4 : 처리중(G마켓용) 5 : 중복문의(G마켓용)
+처리일시,"AnswerDate, Data>AnswerDate, Data>EscrowDt","CS API, 주문/배송 API",3,✅ 핵심 UDS,- 판매자문의 답변처리 시간 - YYYY-MM-DD hh:mm:ss+09:00 형식으로 조회됨
+철회요청메시지,CancelComment,클레임 API,1,✅ 핵심 UDS,ClaimCancelType > 2 일 경우 필수 고객에게 노출되는 메시지로 최대 125 자까지만 노출됨
+청소년구매불가 성인상품여부,"AdultYn, Data>AdultYn",스타배송 API,2,✅ 핵심 UDS,성인상품인지 여부 입력 Y: 청소년구매불가성인상품 N: 성인상품 아님
+청소년구매불가여부,itemAddtionalInfo>isYouthNotAvailable,스타배송 API,1,✅ 핵심 UDS,"""\ 성인인증을 하기 전에도 상품이미지는 노출처리 되나 , 구매시점 성인인증 필요 Ex) 주류 등 true: 청소년구매불가상품 , false : 일반상품"
+체적등급,Data>Data>VolumnGradeCode,스타배송 API,1,✅ 핵심 UDS,지마켓 에서 지정한 체적등급 내려감
+총 조회건수,TotalCount,"Other, 스타배송 API, 정산조회 API, 주문/배송 API, 클레임 API",16,✅ 핵심 UDS,JSON sample key
+최대구매수량,itemAddtionalInfo>buyableQuantity>qty,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"구매수량제한 타입이 1~3 일 경우 필수 *3PL 상품일 경우 , 매핑된 SKU 의 합포장 여부에 따라 상품의 최대구매구매수량제한 타입이 1~3 일 경우 필수 * 최대구매허용수량 미설정 시 , 최대구매허용수량은 SKU 판매단위 입수량으로 자동 제한됨 . 허용수량이 결정됨 합포장 가능 SKU 시 , 최대구매허용수량은 판매자 직접 설정 / 미설정 가능 . 합포장 불가 SKU 시 , 최대구매허용수량은 SKU 판매단위 입수량으로 자동 제한됨 ."
+최대구매수량 허용 설정,itemAddtionalInfo>buyableQuantity>type,상품 API,1,✅ 핵심 UDS,0 : 구매수량 제한 없음 1 : 1회당 최대구매수량 2 : ID당 최대구매수량 3 : 기간당 최대구매수량 * 최소구매수량 설정 별도 API 설정 ( 참고 )
+최소구매수량,qty,Other,1,✅ 핵심 UDS,
+최종변경일자,"Data>Data>UpdDate, Data>UpdDate","Other, 스타배송 API",3,✅ 핵심 UDS,물류최하위카테고리 코드 정보의 변경일자 내려감
+최초배송비 지불주체,"ShippingInfo>WhoShippingFee, data>ShippingInfo>WhoShippingFee",클레임 API,2,✅ 핵심 UDS,1 : 구매자 부담 2 : 판매자 부담 3 : 사이트 부담
+최초배송비금액,"ShippingInfo>ShippingFee, data>ShippingInfo>ShippingFee",클레임 API,2,✅ 핵심 UDS,
+추가구성 관리코드,itemAddtionalInfo>addonService>manageCode,상품 API,1,✅ 핵심 UDS,
+추가구성 노출여부,itemAddtionalInfo>addonService>addonServiceList>qtyInfo>exposeYN,상품 API,1,✅ 핵심 UDS,true : 노출 false : 노출하지 않음
+추가구성 사용 여부,items>useAddonService,상품 API,1,✅ 핵심 UDS,
+추가구성 사용여부,"itemAddtionalInfo>addonService, itemAddtionalInfo>addonService>addonServiceUseType","상품 API, 스타배송 API",2,✅ 핵심 UDS,0 : 사용하지 않음 1 : 사용 - 재고 관리 안 함 2 : 사용 - 재고 관리함
+추가구성 추가금,itemAddtionalInfo>addonService>addonServiceList>addonServiceAmnt,상품 API,1,✅ 핵심 UDS,추가구성 항목별 추가금(원)입력
+추가구성 품절여부,itemAddtionalInfo>addonService>addonServiceList>qtyInfo>isSoldOut,상품 API,1,✅ 핵심 UDS,true : 품절 false : 품절 아님
+추가구성 항목 이름,itemAddtionalInfo>addonService>addonServiceList>addonServiceName,상품 API,1,✅ 핵심 UDS,"추가구성 선택형, 판매자 입력형 항목 이름 추가"
+추가구성 항목 코드,"addonServiceNameId, itemAddtionalInfo>addonService>addonServiceList>addonServiceSeq","Other, 상품 API",2,✅ 핵심 UDS,추가구성 항목 코드 입력 ( 참고 )
+추가구성 항목값 이름,itemAddtionalInfo>addonService>addonServiceList>addonServiceValueName,상품 API,1,✅ 핵심 UDS,"판매자 텍스트형일 경우, 추가구성 항목값 직접입력"
+추가구성 항목값 코드,"addonServiceValues>valueId, itemAddtionalInfo>addonService>addonServiceList>addonServiceValueSeq","Other, 상품 API",2,✅ 핵심 UDS,추가구성 항목값 코드 입력 ( 참고 )
+추가구성 항목타입,itemAddtionalInfo>addonService>addonServiceList>addonServiceType,상품 API,1,✅ 핵심 UDS,1 : 선택형 2 : 판매자 입력형 3 : 텍스트형 4 : 직접입력
+추가구성개수,data>ItemOptionAdditionList>ItemOptionOrderCnt,주문/배송 API,1,✅ 핵심 UDS,주문 추가구성 개수
+추가구성옵션,data>ItemOptionAdditionList>ItemOptionValue,주문/배송 API,1,✅ 핵심 UDS,"추가구성옵션값으로 옵션명:옵션값 (ex-77:파랑, 용량:0.5kg)"
+추가구성추가금액,"data>OptAddPrice, data>RequestOrders>OptAddPrice",주문/배송 API,2,✅ 핵심 UDS,추가구성단가 * 수량
+추가구성코드,data>ItemOptionAdditionList>ItemOptionCode,주문/배송 API,1,✅ 핵심 UDS,주문 추가구성 코드
+추가금 최대 금액 범위,addAmnt>maxRate,Other,1,✅ 핵심 UDS,
+추가금액,addPrice,서비스 API,1,✅ 핵심 UDS,대표가 ( 판매가 ) 기준 (-) 80% ~ (+) 110% 설정 가능
+추가반품배송비,"AddReturnShippingFee, ReturnShippingFee",클레임 API,2,✅ 핵심 UDS,HoldReason > 2일 경우 필수 구매자에게 추가로 결제시키고 싶은 반품배송비 금액 입력 고객 주문확인 페이지에서 추가 결제 요청됨 *옥션은 1000원이상 입력 가능
+추가반품배송비 결제수단,AddReturnShippingFeeWay,클레임 API,1,✅ 핵심 UDS,"1 : 지금결제함(카드결제, 핸드폰결제등) 2 : 환불금 차감 대기 3 : 판매자 직접 결제 4 : 상품에 동봉함 5 : 스마일캐시 결제 6 : 기타"
+추가반품배송비 지불주체,WhoAddReturnShippingFee,클레임 API,1,✅ 핵심 UDS,1 : 구매자 부담 2 : 판매자 부담 3 : 사이트 부담
+추가배송비 설정여부,"isSetAdditionalShippingFee, shippingPlaces>isSetAdditionalShippingFee","상품 API, 스타배송 API",2,✅ 핵심 UDS,"제주도, 도서 및 기타산간지방 추가배송비 설정 여부 true : 설정 false : 미설정"
+추가정보URL,SkuUrl,스타배송 API,1,✅ 핵심 UDS,"SKU검수 시, 내부 관리자가 세부정보 확인가능한 URL입력 http://~ full URL 입력 http, https, ftp, mms 까지 허용"
+추천구성개수,data>RequestOrders>ItemOptionAdditionList>ItemOptionOrderCnt,주문/배송 API,1,✅ 핵심 UDS,
+추천구성옵션,data>RequestOrders>ItemOptionAdditionList>ItemOptionValue,주문/배송 API,1,✅ 핵심 UDS,
+추천구성코드,data>RequestOrders>ItemOptionAdditionList>ItemOptionCode,주문/배송 API,1,✅ 핵심 UDS,
+추천옵션 영문명,recommendedOptName>eng,Other,1,✅ 핵심 UDS,
+추천옵션 유형명,"recommendedOptTypeName, typeName",Other,1,✅ 핵심 UDS,
+추천옵션 일문명,recommendedOptName>jpn,Other,1,✅ 핵심 UDS,
+추천옵션 중문명,recommendedOptName>chi,Other,1,✅ 핵심 UDS,
+추천옵션 코드,recommendedOptNo,Other,1,✅ 핵심 UDS,
+추천옵션 타입 (ESM 상 주문옵션 ),itemAddtionalInfo>recommendedOpts>type,스타배송 API,1,✅ 핵심 UDS,"추천옵션 사용여부 0: 옵션미사용 1: 선택형 ( 최대 20 개까지 가능 )/independent 2: 2 개조합형 ( 최대 200 개까지 가능 )/combination * 추천옵션 타입이 선택형일 경우 , independent / 2 개 조합형일 경우 , combination 항목값으로 필수 연동 * 추천옵션은 상품의 G/A 카테고리가 모두 추천옵션 허용 될 경우만 등록 / 수정 가능 * 3PL 상품은 텍스트형 옵션 사용 불가 * 옵션 가능개수는 추후 변경될 수 있음"
+추천옵션 타입 (옵션별 샘플은 https://etapi.gmarket.c,itemAddtionalInfo>recommendedOpts>type,상품 API,1,✅ 핵심 UDS,"0 : 옵션 미사용 1 : 선택형, independent로 입력 (2개 이상은 independents) 2 : 2개 조합형, combination으로 입력 3 : 3개 조합형, combination으로 입력 4 : 계산형, calculation 로 입력 5 : 텍스트형 6 : 선택형 + 텍스트형 7 : 2개 조합형 + 텍스트형 8 : 3개 조합형 + 텍스트형 9 : 선택형 + 계산형 * 선택형 50개, 조합형 500개까지 등록 가능"
+추천옵션 한글명,recommendedOptName>kor,Other,1,✅ 핵심 UDS,
+추천옵션값 영문명,recommendedOptValueName>eng,Other,1,✅ 핵심 UDS,
+추천옵션값 일문명,ecommendedOptValueName>jpn,Other,1,✅ 핵심 UDS,
+추천옵션값 중문명,ecommendedOptValueName>chi,Other,1,✅ 핵심 UDS,
+추천옵션값 코드,recommendedOptValueNo,Other,1,✅ 핵심 UDS,"""recommendedOptValueNo"": 0 이 포함된 경우만 옵션값 직접입력 가능"
+추천옵션값 한글명,recommendedOptValueName>kor,Other,1,✅ 핵심 UDS,
+추천옵션구분명,details>recommendedOptTypeName,스타배송 API,1,✅ 핵심 UDS,카테고리별 추천옵션코드 조회 시 내려가는 정보
+추천옵션그룹코드,recommendedOptNo,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 request Path 값
+추천옵션명,recommendedOptName>kor,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 조회한 추천옵션코드의 추천옵션명
+추천옵션코드,"details>recommendedOptNo, recommendedOptNo","Other, 스타배송 API",2,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 조회한 추천옵션코드
+출고분리포여부,Data>DividePackingYn,스타배송 API,1,✅ 핵심 UDS,Y : 분리포 N : 합포
+출고실패사유,Data>FailMessage,스타배송 API,1,✅ 핵심 UDS,출고실패코드별 상세사유 내려감 01 : SKU 상태 및 재고 확인이 필요합니다 02 : 장바구니내 재고가 부족한 SKU 가 존재합니다 03 : 창고구분 값이 다른 SKU 가 존재합니다 04 : 연동 처리에 실패하였습니다 05 : 발송요청 처리를 실패하였습니다
+출고실패코드,Data>FailCode,스타배송 API,1,✅ 핵심 UDS,출고실패코드내려감 실패코드 발생된 주문을 재출고요청 하려면 주문 신규생성 후 출고처리 해야함 01 : 재고부족 _SKU 상태이상 02 : 재고부족 _ 장바구니 03 : 멀티창고주문 04 : 시스템오류 05 : 기타
+출고요청일시,"Data>DeliveryReqDate, Data>WarehouseReqDate",스타배송 API,2,✅ 핵심 UDS,판매자가 출고요청처리한 일시 내려감
+출고일시,Data>WarehouseOutDate,스타배송 API,1,✅ 핵심 UDS,출고일시 내려감
+출고제한일,"Data>Data>ExpireDateRiskDays, Data>Data>OwLimitDay","Other, 스타배송 API",2,✅ 핵심 UDS,판매자가 입력한 상미기일구간에 따른 출고제한일 내려감
+출고진행상태,"Data>WarehouseStatusCode, WarehouseStatusCode",스타배송 API,1,✅ 핵심 UDS,ALL : 전체 OR : 출고요청 OA : 할당 OP : Picking OI : 검수 OS : 출고완료 OC : 취소
+출하지명,"items>shipping>placeName, placeName, shippingPlaces>placeName","상품 API, 스타배송 API",3,✅ 핵심 UDS,조회시 내려가는 정보
+출하지번호,"itemAddtionalInfo>shipping>policy>placeNo, placeNo, policies>placeNo, shipmentPlaceNo, shippingPlaces>placeNo","상품 API, 스타배송 API",7,✅ 핵심 UDS,출하지 번호 입력 임의 값으로 입력 가능함 입력한 값은 무시되고 스타배송 물류센터 정보로 자동 적용됩니다 .
+출하지정보,items>shipping>placeNo,상품 API,1,✅ 핵심 UDS,
+취소배송비,data>AddShippingFee,클레임 API,1,✅ 핵심 UDS,"조건부배송정책으로 무료로 구입한 상품을 취소할 경우, 무료배송 조건이 깨질경우 추가금액을 고객에게 부과함"
+취소사유,data>Reason,클레임 API,1,✅ 핵심 UDS,0 : 판매자귀책 1 : 구매자귀책 2 : 기타 고객이 Front에서 취소신청할 경우 '1 : 구매자귀책'으로 내려감
+취소상태,"CancelStatus, data>CancelStatus",클레임 API,1,✅ 핵심 UDS,"조회한 주문의 현재 취소상태 1 : 취소요청 2 : 취소중 3 : 취소완료 4 : 취소철회 5 : 사이트 직권환불건(취소완료건 중, 고객센터에서 환불처리한 Case) 6 : 옥션송금후취소"
+취소승인일자,data>ApproveDate,클레임 API,1,✅ 핵심 UDS,
+취소신청일자,data>RequestDate,클레임 API,1,✅ 핵심 UDS,
+취소신청자,data>RequestUser,클레임 API,1,✅ 핵심 UDS,취소신청한 주체 0 : 없음 1 : 구매자 2 : 판매자 3 : 고객센터 4 : 기타 5 : 선물수령인
+취소완료일자,data>CompleteDate,클레임 API,1,✅ 핵심 UDS,
+취소요청사유코드,data>ReasonCode,클레임 API,1,✅ 핵심 UDS,0 : 기타 1 : 단순변심 2 : 사이즈/색상 등 변경 3 : 오배송 4 : 상품미도착 5 : 상품불량 6 : 재고없음(판매자요청) 7 : 선물수락기한만료 8 : 선물거절 11 : 구매자 취소요청 - 스마일프레시 전용 고객이 Front에서 취소신청할 경우 '1: 단순변심'으로 내려감
+취소처리자,data>ApproveUser,클레임 API,1,✅ 핵심 UDS,취소처리한 주체 0 : 없음 1 : 구매자 2 : 판매자 3 : 고객센터 4 : 기타
+취소철회일자,data>WithdrawDate,클레임 API,1,✅ 핵심 UDS,
+"카탈로그 코드(구, ESM 상품식별코드)",itemBasicInfo>catalog>epinCode,상품 API,1,✅ 핵심 UDS,"- 입력된 경우 카테고리와 브랜드, 속성정보 자동 입력 - 등록된 이후 카탈로그 코드 수정 불가 ※ 카탈로그는 관리자에 의해 매칭될 수 있습니다."
+퀵서비스 업체명,itemAddtionalInfo>shipping>quickService>companyName,상품 API,1,✅ 핵심 UDS,퀵서비스 업체 텍스트 입력
+퀵서비스 연락처,itemAddtionalInfo>shipping>quickService>phoneNo,상품 API,1,✅ 핵심 UDS,숫자만 입력
+퀵서비스 정보,itemAddtionalInfo>shipping>quickService,스타배송 API,1,✅ 핵심 UDS,3PL 상품은 지원하지 않아 null 로 호출
+퀵서비스 제공여부,itemAddtionalInfo>shipping>quickService>isUse,상품 API,1,✅ 핵심 UDS,true : 가능 false : 불가
+퀵서비스 제공지역,itemAddtionalInfo>shipping>quickService>shippingEnableRegionCode,상품 API,1,✅ 핵심 UDS,"Code 복수입력 가능 0100:서울, 0200:경기(전체), 0201 : 고양, 0202 : 고촌, 0203 : 곤지암, 0204 : 과천, 0205 : 광명, 0206 : 광주, 0207 : 교문리, 0208 : 구리, 0209 : 구성, 0210 : 군포, 0211 : 김포, 0212 : 부천, 0213 : 분당, 0214 : 성남, 0215 : 수원, 0216 : 수지, 0217 : 시흥, 0218 : 안산, 0219 : 안양, 0220 : 용인, 0221 : 의왕, 0222 : 의정부, 0223 : 이천, 0224 : 일산, 0225 : 지축, 0226 : 파주, 0227 : 하남, 0300:광주, 0400:대구, 0500:대전, 0600:부산, 0700:울산, 0800:인천"
+클레임 slot 여부,isClaimSlot,서비스 API,1,✅ 핵심 UDS,(이마트몰 전용)
+클레임 구분,ClaimType,스타배송 API,2,✅ 핵심 UDS,반품건인지 교환건인지 구분코드 입력 RT : 반품 EX : 교환
+클레임관리번호,Data>ClaimSeqNo,스타배송 API,1,✅ 핵심 UDS,내부클레임관리번호 내려감
+클레임상태,"ClaimStatus, Data>ClaimStatus, Data>ClaimType",스타배송 API,1,✅ 핵심 UDS,0 : 전체 1 : 반품입고신청 2 : 반품입고완료 3 : 교환입고신청 4 : 교환입고완료 5 : 클레임입고미신청 & 반품입고완료(5번은 추후 제공예정)
+클레임세부상태,ClaimStatus,주문/배송 API,1,✅ 핵심 UDS,"Status > 6번 취소일 경우 1: 취소신청, 2: 취소중, 3: 취소완료 Status > 7번 반품일 경우 1: 반품신청, 2: 반품처리중, 3: 반품완료 Status > 8번 교환일 경우 1: 교환신청, 2: 교환수거완료, 3:교환재발송중, 4:교환재발송완료 (교환수거 및 재발송 완료)"
+택배반출주소1,RcverInfoAd1,Other,1,✅ 핵심 UDS,택배반출일 경우에만 필수입력 (최대 200Byte)
+택배반출주소2,RcverInfoAd2,Other,1,✅ 핵심 UDS,택배반출일 경우에만 필수입력 (최대 250Byte)
+택배사 코드,"DeliveryCompCode, deliveryCompanies>deliveryCompCode","Other, 스타배송 API, 클레임 API",15,✅ 핵심 UDS,ClaimCancelType > 1 일 경우 필수 택배사코드 참고( https://etapi.gmarket.com/142 )
+택배사명,"data>TakbaeName, deliveryCompanies>deliveryCompName","Other, 주문/배송 API",2,✅ 핵심 UDS,발송 택배사명
+택배사코드,"Data>DeliveryCompCode, DeliveryCompanyCode, itemAddtionalInfo>shipping>companyNo","상품 API, 스타배송 API, 주문/배송 API",4,✅ 핵심 UDS,택배사 리스트 조회 API - [GET] https://sa2.esmplus.com/item/v1/shipping/delivery-company (참조 - https://etapi.gmarket.com/142 )
+택배송장URL,Data>TrackingUrl,주문/배송 API,1,✅ 핵심 UDS,
+텍스트형 옵션여부,isTextOption,스타배송 API,1,✅ 핵심 UDS,추천옵션별 선택항목코드 조회 시 내려가는 정보 해당 추천옵션그룹이 텍스트형인지 여부 true: 텍스트형 false: 텍스트형 아님
+텍스트형 자율 옵션 사용 가능 여부,customTextOptionUseYn,Other,1,✅ 핵심 UDS,Y : 사용 가능 N : 사용 불가
+통합생활용품인증 타입,itemAddtionalInfo>certInfo>safetyCerts>life>type,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"통합인증대상 상품 아닐경우 "" 인증대상아님 "" 으로 입력 0: 인증대상 , 1: 인증대상아님 , 2: 상품상세별도표기"
+통합생활용품인증코드,itemAddtionalInfo>certInfo>safetyCerts>life>details>certId,"상품 API, 스타배송 API",2,✅ 핵심 UDS,인증코드 입력
+통합생활용품인증품목,itemAddtionalInfo>certInfo>safetyCerts>life>details>certTargetCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"통합생활용품인증 타입 0 번일 경우 필수 아래 인증품목중 해당하는 품목 입력 0: 안전인증 , 1: 안전확인 , 3: 공급자적합성확인"
+통합어린이인증 타입,itemAddtionalInfo>certInfo>safetyCerts>child>type,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"통합인증대상 상품 아닐경우 "" 인증대상아님 "" 으로 입력 0: 인증대상 , 1: 인증대상아님 , 2: 상품상세별도표기"
+통합어린이인증코드,itemAddtionalInfo>certInfo>safetyCerts>child>details>certId,"상품 API, 스타배송 API",2,✅ 핵심 UDS,인증코드 입력
+통합어린이인증품목,itemAddtionalInfo>certInfo>safetyCerts>child>details>certTargetCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"통합어린이인증 타입 0 번일 경우 필수 아래 인증품목중 해당하는 품목 입력 0: 안전인증 , 1: 안전확인 , 3: 공급자적합성확인"
+통합위해우려제품인증 타입,itemAddtionalInfo>certInfo>safetyCerts>harmful>type,스타배송 API,1,✅ 핵심 UDS,"설정 없을 경우 , 해당 카테고리는 무조건 Default 로 "" 상세설명에 별도표기 "" 로 설정됨 0: 인증대상 , 1: 인증대상아님 , 2: 상품상세별도표기"
+통합자가검사번호,itemAddtionalInfo>certInfo>safetyCerts>harmful>certId,"상품 API, 스타배송 API",2,✅ 핵심 UDS,type > 0 번일 경우 필수 인증코드 입력 100byte
+통합전기인증 타입,itemAddtionalInfo>certInfo>safetyCerts>electric>type,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"통합인증대상 상품 아닐경우 "" 인증대상아님 "" 으로 입력 0: 인증대상 , 1: 인증대상아님 , 2: 상품상세별도표기"
+통합전기인증코드,itemAddtionalInfo>certInfo>safetyCerts>electric>details>certId,"상품 API, 스타배송 API",2,✅ 핵심 UDS,인증코드 입력
+통합전기인증품목,itemAddtionalInfo>certInfo>safetyCerts>electric>details>certTargetCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,"통합전기인증 타입 0 번일 경우 필수 아래 인증품목중 해당하는 품목 입력 0: 안전인증 , 1: 안전확인 , 3: 공급자적합성확인"
+통화,"Data>Currency, TotalTransferAmountForeign>Currency",정산조회 API,1,✅ 핵심 UDS,송금된 통화
+통화 기준 외화 금액 합계,TotalTransferAmountForeign>CurrencyTransferAmountForeign,정산조회 API,1,✅ 핵심 UDS,조회 내역 내 해당 통화 기준 TransferAmountForeign 합계 금액
+판매 기간 종료일,items>dispEndDate,상품 API,1,✅ 핵심 UDS,
+판매금액,"data>OrderAmount, data>RequestOrders>OrderAmount",주문/배송 API,2,✅ 핵심 UDS,- G마켓 : (판매단가 * 수량) - 옥션 : (판매단가 * 수량) - 사이트 할인금액
+판매단가,"Data>OrderUnitPrice, data>RequestOrders>SalePrice, data>SalePrice","정산조회 API, 주문/배송 API",3,✅ 핵심 UDS,주문 시점 연동된 판매가
+판매단위,"Data>Data>OwUnitCode, OwUnitCode",스타배송 API,2,✅ 핵심 UDS,판매자가 입력한 해당 SKU 의 판매단위 내려감 4 : 낱개 14 : 팩 12 : 박스
+판매단위 입수량,"Data>Data>OwUnitQty, OwUnitQty",스타배송 API,2,✅ 핵심 UDS,"판매단위 낱개 / 팩 선택 시, 박스당 입수량 숫자입력 최대 100000이하까지 입력가능 박스일 경우 1 고정 필수입력"
+판매상태를 변경합니다,SKU,스타배송 API,1,✅ 핵심 UDS,SKU 판매상태를 변경합니다.
+판매자 공지사항을,ESM,CS API,1,✅ 핵심 UDS,ESM 판매자 공지사항을 조회합니다.
+판매자 관리코드,"data>OutGoodsNo, itemAddtionalInfo>managedCode","상품 API, 주문/배송 API",2,✅ 핵심 UDS,- 판매자 관리 코드 or 자사몰 상품번호 입력 - 100byte 이내 입력 가능
+판매자 브랜드명,itemAddtionalInfo>sellerShop>brandName,"상품 API, 스타배송 API",2,✅ 핵심 UDS,판매자 자사몰 브랜드명 * 추후 카테고리 자동 재분류를 위한 기준으로 정확하게 입력
+판매자 브랜드코드,itemAddtionalInfo>sellerShop>brandCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,판매자 자사몰 브랜드코드 * 추후 카테고리 자동 재분류를 위한 기준으로 정확하게 입력
+판매자 사이트 ID,Data>SellerId,CS API,1,✅ 핵심 UDS,
+판매자 사이트ID,SellerId,CS API,1,✅ 핵심 UDS,
+판매자 상품코드,"itemAddtionalInfo>managedCode, sellManageCode","상품 API, 스타배송 API",2,✅ 핵심 UDS,해당 상품의 판매자가 관리할 고유 코드 입력 or 자사몰 상품번호 입력
+판매자 스타배송 여부,"isStarDelivery, itemBasicInfo>isStarDelivery, items>isStarDelivery",상품 API,2,✅ 핵심 UDS,판매자 스타배송 경우 true 로 설정 ※ 판매자 스타배송 권한 있는 경우만 설정 가능
+판매자 옵션관리 번호,"ORDER_INFO>ORDER_OPTION>OPTION_INFO>STOCK_NO, STOCK_REMAIN_INFO>ORDER_OPTION>OPTION_INFO>STOCK_NO",서비스 API,1,✅ 핵심 UDS,
+판매자 자사몰 상품번호,SellerItemNo,주문/배송 API,2,✅ 핵심 UDS,최대 30byte까지 입력가능 G마켓/옥션 주문번호와 매칭되는 판매자 자사몰의 상품번호 판매자 자사몰의 CS와 커뮤니케이션 시 이용하는 정보로 자사몰CS에서 확인가능한 실제 번호 연동
+판매자 주문번호,SellerOrderNo,주문/배송 API,2,✅ 핵심 UDS,최대 30byte까지 입력가능 G마켓/옥션 주문번호와 매칭되는 판매자 자사몰의 주문번호 판매자 자사몰의 CS와 커뮤니케이션 시 이용하는 정보로 자사몰CS에서 확인가능한 실제 번호 연동
+판매자 지급 스마일캐시,data>SellerCashBackMoney,주문/배송 API,1,✅ 핵심 UDS,판매자 지급 스마일 캐시 적용금액
+판매자 카테고리명,itemAddtionalInfo>sellerShop>catName,"상품 API, 스타배송 API",2,✅ 핵심 UDS,판매자 자사몰 카테고리 대 / 중 / 소 / 상세 합쳐서 전체 텍스트명 입력 * 추후 카테고리 자동 재분류를 위한 기준으로 정확하게 입력
+판매자 카테고리코드,itemAddtionalInfo>sellerShop>catCode,"상품 API, 스타배송 API",2,✅ 핵심 UDS,판매자 자사몰 카테고리 대 / 중 / 소 / 상세 코드 입력 * 추후 카테고리 자동 재분류를 위한 기준으로 정확하게 입력
+판매자 펀딩할인,data>SellerFundingDiscountPrice,주문/배송 API,1,✅ 핵심 UDS,(G마켓만 주문만)
+판매자 할인금액,data>SellerDiscountPrice1,주문/배송 API,1,✅ 핵심 UDS,- 판매자할인금액 1과 2 나누어서 연동한 1 적용한 금액
+판매자ID,"SellerId, data>SellerId","정산조회 API, 주문/배송 API, 클레임 API",8,✅ 핵심 UDS,해당주문건의 판매자ID
+판매자공제금액,data>OutsidePrice,주문/배송 API,1,✅ 핵심 UDS,제휴수수료등 정산금액에서 추가 공제될 금액
+판매자관리번호,"ORDER_INFO>PRODUCT, STOCK_REMAIN_INFO>PRODUCT",서비스 API,2,✅ 핵심 UDS,
+판매자관리코드,"data>OutItemNo, data>RequestOrders>OutGoodsNo, items>managedCode","상품 API, 주문/배송 API, 클레임 API",3,✅ 핵심 UDS,판매자관리코드(판매자상품번호) 해당 주문 상품 등록 시 판매자가 입력했던 관리코드
+판매자명,representativeName,Other,1,✅ 핵심 UDS,고객에게 반품수취인으로 노출되는 판매자명
+판매자번호,SellCustNo,서비스 API,1,✅ 핵심 UDS,관리자에게 확인 필요
+판매자상세관리코드,data>ItemOptionCodes,클레임 API,1,✅ 핵심 UDS,판매자가 해당 상품의 옵션관리코드로 등록한 번호
+판매자주소록번호,addrNo,Other,1,✅ 핵심 UDS,수정[PUT] / 조회[GET]일 경우만 필수 등록시 response로 자동채번된 번호
+판매자주소번호,"addrNo, shippingPlaces>addrNo","상품 API, 스타배송 API",2,✅ 핵심 UDS,주소번호는 기등록된 주소번호 사용 가능
+판매자할인 사용 여부,useDiscount,상품 API,1,✅ 핵심 UDS,
+판매자할인 사용여부,"addtionalInfo>sellerDiscount>isUse, sellerDiscount>isUse","Other, 상품 API, 스타배송 API",3,✅ 핵심 UDS,"상품가격에서 추가로 판매자 할인 적용할 경우 입력 위에 등록한 G 판매가격 /A 판매가격에서 할인 적용됨 true : 할인적용 , false : 할인미적용 * 옥션 할인일 경우 , 아래 """"gmkt"""" Entity 대신 """"iac"""" 입력"
+판매자할인금액1,"Data>SellerDiscountPrice1, data>RequestOrders>SellerDiscountPrice1","정산조회 API, 주문/배송 API",2,✅ 핵심 UDS,판매자할인금액 1과 2로 나누어서 연동한 1번 적용된 할인금액
+판매자할인금액2,"Data>SellerDiscountPrice2, data>RequestOrders>SellerDiscountPrice2, data>SellerDiscountPrice2","정산조회 API, 주문/배송 API",3,✅ 핵심 UDS,- 판매자할인금액1과 2로 나누어서 연동한 2번 적용된 할인금액 - 옥션 경우 판매자할인2 연동 불가시 할인금액 구분되지 않음
+판매자할인금액총액,"data>RequestOrders>SellerDiscountPrice, data>SellerDiscountPrice",주문/배송 API,2,✅ 핵심 UDS,판매자할인금액 1+2로 적용된 최종 금액
+판매자할인총액,"Data>SellerDiscountPrice, Data>SellerDiscountTotalPrice",정산조회 API,1,✅ 핵심 UDS,
+판매종료 시작일,sellEndDate>from,상품 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+판매종료 종료일,sellEndDate>to,상품 API,1,✅ 핵심 UDS,YYYY-MM-DD 형태로 입력
+판매진행상태,"Data>SellStatus, SellStatus",CS API,2,✅ 핵심 UDS,"참고용 데이터 ( 현재 옥션만 지원 ) 긴급알리미 접수 시점 해당 주문의 최종 주문상태 예 ) 교환물품도착 , 반품보류 등"
+팩입수량,"Data>Data>PackQty, PackQty",스타배송 API,2,✅ 핵심 UDS,"판매단위가 팩일 경우, 박스 안에 몇 개가 들어가는지 입력 최대 100000이하까지 입력가능 박스일 경우 1 고정 필수입력 해당 SKU가 팩일 경우, OwUnitQty와 동일값"
+페이지 번호,PageNo,정산조회 API,1,✅ 핵심 UDS,
+페이지 사이즈,"PageSize, pageSize","상품 API, 스타배송 API, 정산조회 API",4,✅ 핵심 UDS,- 전체 조회시 사용 가능 - 최대 500 까지 입력 가능
+페이지 인덱스,pageIndex,"상품 API, 스타배송 API",3,✅ 핵심 UDS,- 전체 조회시 사용 가능
+페이지No,Page,주문/배송 API,1,✅ 핵심 UDS,1 이상 입력 가능
+페이지Size,pageSize,Other,1,✅ 핵심 UDS,전체조회 시 내려가는 정보
+페이지번호,"PageIndex, PageNo, pageIndex","Other, 스타배송 API, 정산조회 API",13,✅ 핵심 UDS,전체조회 시 내려가는 정보
+페이지사이즈,"PageSize, pageSize","Other, 스타배송 API, 정산조회 API",11,✅ 핵심 UDS,1페이지에 출력하려는 리스트 Max값 1000까지 지원 가능
+풀필먼트 스타배송 무료배송 여부,items>shipping>is3plDeliveryFeeFree,상품 API,1,✅ 핵심 UDS,
+풀필먼트 스타배송 여부,"is3PL, items>is3PL",상품 API,1,✅ 핵심 UDS,
+프로모션 상품명,promotion,상품 API,1,✅ 핵심 UDS,- 검색용 + 프로모션용 최대 100byte 까지 입력 가능 - 프로모션용은 상시 수정 가능 - 사이트별 입력시 지마켓 프로모션명
+"프로모션명 (공통, 지마켓)","itemBasicInfo>goodsName>promotion, kor",상품 API,2,✅ 핵심 UDS,- 검색용 + 프로모션용 최대 100byte 까지 입력 가능 - 프로모션용은 상시 수정 가능 - 사이트별 입력시 지마켓 프로모션명
+프로모션명 (옥션),"itemBasicInfo>goodsName>promotionIac, promotionIac",상품 API,2,✅ 핵심 UDS,- 검색용 + 프로모션용 최대 100byte 까지 입력 가능 - 프로모션용은 상시 수정 가능 - 사이트별 입력시 옥션 프로모션명
+프로모션명 타입,"itemBasicInfo>goodsName>promotionType, items>prmtGoodsNameType, promotionType",상품 API,3,✅ 핵심 UDS,0 : 공통 1 : 사이트별 미입력시 공통 입력으로 처리
+프로모션용 국문상품명,itemBasicInfo>goodsName>promotion,스타배송 API,1,✅ 핵심 UDS,
+필수 설정 값 없음,D,주문/배송 API,1,✅ 핵심 UDS,필수 설정 값 없음
+필수 설정 값 없음 - 발송마감일,F,주문/배송 API,1,✅ 핵심 UDS,- 필수 설정 값 없음 - 발송마감일 +30일로 자동 계산
+하차스캔일시,Data>ScanDate,스타배송 API,1,✅ 핵심 UDS,
+할인금액 / 할인율,discount>value,Other,1,✅ 핵심 UDS,조회 시 내려가는 정보 숫자입력 type : 2 일 경우 파라미터 삭제후 호출
+할인금액/할인율,discount>value,Other,1,✅ 핵심 UDS,숫자입력 type : 2일 경우 파라미터 삭제후 호출
+합포장여부,"BundleType, Data>BundleType, Data>Data>BundleType",스타배송 API,5,✅ 핵심 UDS,"센터에서 검수 후, 해당 SKU 합포장 가능여부 내려감 B : 합포장가능 I : 합포장불가능"
+해외배송비,Data>DelFeeOverseaAmt,정산조회 API,1,✅ 핵심 UDS,
+해외배송여부,data>OverseaTransYn,주문/배송 API,1,✅ 핵심 UDS,Y : 해외배송주문 N : 국내배송주문
+환불일자,Data>RefundDate,정산조회 API,1,✅ 핵심 UDS,
+환율,Data>ExchangeRate,정산조회 API,1,✅ 핵심 UDS,
+회수인명(판매자정보),"PickupInfo>ReceiverInfo>Name, data>PickupInfo>ReceiverInfo>Name",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+회수인전화번호(판매자정보),"PickupInfo>ReceiverInfo>TelNo, data>PickupInfo>ReceiverInfo>TelNo",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+회수인휴대폰(판매자정보),"PickupInfo>ReceiverInfo>HpNo, data>PickupInfo>ReceiverInfo>HpNo",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+회수지우편번호(판매자정보),"PickupInfo>ReceiverInfo>ZipCode, data>PickupInfo>ReceiverInfo>ZipCode",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+회수지주소1(판매자정보),"PickupInfo>ReceiverInfo>AddressFront, data>PickupInfo>ReceiverInfo>AddressFront",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+회수지주소1+2(판매자정보),"PickupInfo>ReceiverInfo>Address, data>PickupInfo>ReceiverInfo>Address",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+회수지주소2(판매자정보),"PickupInfo>ReceiverInfo>AddressBack, data>PickupInfo>ReceiverInfo>AddressBack",클레임 API,2,✅ 핵심 UDS,판매자가 해당 상품의 반품 배송지로 등록한 정보 내려감
+후원금액,gmarket>amount,Other,1,✅ 핵심 UDS,100원 이상 등록가능 판매가 80% 까지 설정 가능
+휴일여부,"customSchedules>isHoliday, dailyOrderCutoff>isHoliday",스타배송 API,2,✅ 핵심 UDS,(2025년 11월 12일 부터 사용 가능)
+( 선택형 / 조합형 ) 노출여부 - 사이트별 G마켓,independent>details>isDisplaySite>gmkt,Other,1,🟡 후보,지마켓 옵션 노출여부 제어 true : 노출 false : 미노출 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+( 선택형 / 조합형 ) 노출여부 - 사이트별 옥션,independent>details>isDisplaySite>iac,Other,1,🟡 후보,옥션 옵션 노출여부 제어 true : 노출 false : 미노출 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+( 선택형 / 조합형 ) 품절여부 - 사이트별 G마켓,independent>details>isSoldOutSite>gmkt,Other,1,🟡 후보,지마켓 옵션 품절여부 제어 - 옵션 재고수량으로 제어하지 않음 true : 품절 false : 판매 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+( 선택형 / 조합형 ) 품절여부 - 사이트별 옥션,independent>details>isSoldOutSite>iac,Other,1,🟡 후보,옥션 옵션 품절여부 제어 - 옵션 재고수량으로 제어하지 않음 true : 품절 false : 판매 ※ 사이트별 설정 ( inputType : 1)인 경우 제어 가능
+ESM 카테고리코드 (최하위 카테고리코드),sdCatCode,Other,1,🟡 후보,ESM 카테고리 기준 G마켓/옥션 카테고리가 매칭되어 있음 ESM 카테고리 입력시 매칭 G마켓/옥션 카테고리 입력하여 등록/수정 조회한 카테고리 기준 매칭 카테고리 확인 가능
+SKU대상유형,SkuStockType,Other,1,🟡 후보,반출할 SKU 대상 선택(SKU상태별 각각 요청 등록) 1: 판매가능재고 SKU직접입력 2: 반품보류재고 전체 반출 3: 파손보류재고 전체 반출 4: 소비기한보류재고 전체 반출 동일한 상태의 SKU만 요청 가능
+SkuStockCode,SkuStockCode,Other,1,🟡 후보,JSON sample key
+SkuStockType,SkuStockType,Other,2,🟡 후보,JSON sample key
+[ ]지점서비스형태,service>Types,서비스 API,1,🟡 후보,조회 시 내려가는 정보
+공지구분,boardType,CS API,1,🟡 후보,"일반공지, 안전거래공지, 카테고리공지, 광고공지, 이벤트공지, 시스템공지, 위해상품공지, API공지"
+공지내용,details,CS API,1,🟡 후보,html로 제공
+공지등록일,requestDate,CS API,1,🟡 후보,
+공지제목,title,CS API,1,🟡 후보,
+그룹카테고리코드,giCategoryCode,Other,2,🟡 후보,그룹대표 카테고리코드 ( 대중소전체 내려감 )
+당배관 지점코드,ORDER_INFO>BRANCHID,서비스 API,1,🟡 후보,당일배송 ( 장보기 ) 상품만 해당된 일반 상품은 해당 없음
+미니샵 카테고리코드,shopCatCode,Other,1,🟡 후보,조회한 카테고리코드 기준 하위 카테고리 확인 가능
+브랜드 코드,ESM,Other,1,🟡 후보,ESM 브랜드 코드 조회하여 상품등록시 입력합니다. ESM 브랜드 코드는 등록 가능한 코드가 지정되어 있고 브랜드가 조회되지 않을 경우 브랜드코드 추가 요청할 수 있습니다.
+상세브랜드명,productBrandName,Other,1,🟡 후보,
+상세브랜드코드,productBrandNo,Other,1,🟡 후보,
+지점명,name,서비스 API,1,🟡 후보,지점명
+지점위치 경도,location>longitude,서비스 API,1,🟡 후보,location 입력 시 필수 연동
+지점위치 위도,location>latitude,서비스 API,1,🟡 후보,location 입력 시 필수 연동
+최하위 카테고리 여부,subCats>isLeaf,Other,1,🟡 후보,조회 시 내려가는 정보 true : 최하위 카테고리 false : 하위 카테고리가 있음 * 상품 등록/수정시 최하위 카테고리
+최하위 카테고리여부,"isLeaf, sdCategoryTree>IsLeafCategory",Other,3,🟡 후보,true : 최하위 카테고리인 경우 false : 하위 카테고리가 있을 경우 subCats Object는 하위카테고리의 최하위카테고리 여부 상품 등록/수정 시 최하위 카테고리를 연동해야함
+카테고리,ESM,Other,1,🟡 후보,"ESM 카테고리 조회하여 상품 등록/수정 시 필수 입력합니다. (상품 등록/수정 시에는 최종 leaf 카테고리로 입력) 조회된 ESM 카테고리 기준으로 매칭된 지마켓, 옥션 카테고리 확인할 수 있습니다."
+카테고리 기준으로 등록,ESM,Other,1,🟡 후보,ESM 카테고리 기준으로 등록 가능 추가구성 유형과 항목을 조회 합니다.
+카테고리구분,Data>Data>CategoryLevel,Other,1,🟡 후보,리프카테고리가 대/중/소분류 중 무엇인지 구분값 내려감 1 : 대분류 2 : 중분류 3 : 소분류
+카테고리는 등록,ESM,Other,1,🟡 후보,ESM 카테고리는 등록 가능한 G마켓/옥션 카테고리가 지정되어 있습니다. Site 카테고리와 매칭된 ESM 카테고리를 조회하여 입력해주세요.
+카테고리명,"CatName, catName, sdCategoryTree>SDCategoryName, subCats>catName",Other,4,🟡 후보,조회대상 카테고리명 subCats Object는 하위카테고리명
+카테고리코드,"catCode, sdCategoryTree>SDCategoryCode, subCats>catCode",Other,4,🟡 후보,조회대상 카테고리 코드 Gmkt Object에 묶여있으면 G마켓 카테고리 IAC Object에 묶여있으면 옥션 카테고리
+프로모션 등록여부,"getHomeShoppingList>homeShoppingSubInfo>useYn, homeShoppingSubInfo>useYn",Other,1,🟡 후보,프로모션 정보 등록할지 여부 설정 true : 프로모션 등록 false : 프로모션 등록하지 않음
+프로모션 문구,"getHomeShoppingList>homeShoppingSubInfo>promotionText, homeShoppingSubInfo>promotionText",Other,1,🟡 후보,방송 편성표용 프로모션 메인 문구
+프로모션 스펙문구,"getHomeShoppingList>homeShoppingSubInfo>promotionSpecText, homeShoppingSubInfo>promotionSpecText",Other,1,🟡 후보,방송 편성표용 프로모션 스펙 문구
+프로모션 이미지,"getHomeShoppingList>homeShoppingSubInfo>promotionImageUrl, homeShoppingSubInfo>promotionImageUrl",Other,1,🟡 후보,방송 편성표용 프로모션 딜카드 이미지 URL
+( 계산형 ) 단가 기준값,calculation>unitPrice,Other,1,⚪ 선택,1 이상 입력 가능
+( 계산형 ) 판매 단위,calculation>unitType,Other,1,⚪ 선택,"""mm"", ""cm"", ""m"", ""mg"", ""g"", ""kg"", ""ml"", ""l“ 만 입력 가능"
+( 계산형 ) 판매 단위값,calculation>unitValue,Other,1,⚪ 선택,1 이상 입력 가능
+( 국문 ) 상세설명,descNew,Other,1,⚪ 선택,"상품상세 Html 입력 iframe, Script 및 max-width 등은 사용 불가"
+( 영문 ) 상세설명,descNewEng,Other,1,⚪ 선택,
+( 옥션용 ) 프로그램고유번호 사용여부,homeShoppingTimeTable>useYn>iac,Other,1,⚪ 선택,옥션 프로그램고유번호 사용여부 설정 true : 프로그램고유번호 사용 false : 프로그램고유번호 사용하지 않음
+( 일문 ) 상세설명,descNewJpn,Other,1,⚪ 선택,
+( 중문 ) 상세설명,descNewChn,Other,1,⚪ 선택,
+(G 마켓용 ) 프로그램고유번호 사용여부,homeShoppingTimeTable>useYn>gmkt,Other,1,⚪ 선택,G 마켓 프로그램고유번호 사용여부 설정 true : 프로그램고유번호 사용 false : 프로그램고유번호 사용하지 않음
+2개 조합형 가능 여부,optionType>twoCmbtUseYn,Other,1,⚪ 선택,Y : 사용 가능 N : 사용 불가
+3개 조합형 가능 여부,optionType>threeCmbtUseYn,Other,1,⚪ 선택,Y : 사용 가능 N : 사용 불가
+AdditionalImage1,AdditionalImage1,Other,1,⚪ 선택,JSON sample key
+AdditionalImage10,AdditionalImage10,Other,1,⚪ 선택,JSON sample key
+AdditionalImage11,AdditionalImage11,Other,1,⚪ 선택,JSON sample key
+AdditionalImage12,AdditionalImage12,Other,1,⚪ 선택,JSON sample key
+AdditionalImage13,AdditionalImage13,Other,1,⚪ 선택,JSON sample key
+AdditionalImage14,AdditionalImage14,Other,1,⚪ 선택,JSON sample key
+AdditionalImage2,AdditionalImage2,Other,1,⚪ 선택,JSON sample key
+AdditionalImage3,AdditionalImage3,Other,1,⚪ 선택,JSON sample key
+AdditionalImage4,AdditionalImage4,Other,1,⚪ 선택,JSON sample key
+AdditionalImage5,AdditionalImage5,Other,1,⚪ 선택,JSON sample key
+AdditionalImage6,AdditionalImage6,Other,1,⚪ 선택,JSON sample key
+AdditionalImage7,AdditionalImage7,Other,1,⚪ 선택,JSON sample key
+AdditionalImage8,AdditionalImage8,Other,1,⚪ 선택,JSON sample key
+AdditionalImage9,AdditionalImage9,Other,1,⚪ 선택,JSON sample key
+AnswerDate,AnswerDate,CS API,1,⚪ 선택,JSON sample key
+BasicImage,BasicImage,Other,1,⚪ 선택,JSON sample key
+CatCode,CatCode,Other,1,⚪ 선택,JSON sample key
+CatName,CatName,Other,1,⚪ 선택,JSON sample key
+CategoryLevel,CategoryLevel,Other,1,⚪ 선택,JSON sample key
+ContactType,ContactType,CS API,1,⚪ 선택,JSON sample key
+DeliveryEnableYn,DeliveryEnableYn,서비스 API,1,⚪ 선택,JSON sample key
+ExceptionMessage,ExceptionMessage,CS API,1,⚪ 선택,JSON sample key
+ExceptionType,ExceptionType,CS API,1,⚪ 선택,JSON sample key
+ExpireDateLimitCode,ExpireDateLimitCode,Other,1,⚪ 선택,JSON sample key
+ExpireDateLimitName,ExpireDateLimitName,Other,1,⚪ 선택,JSON sample key
+ExpireDateManageCode,ExpireDateManageCode,Other,2,⚪ 선택,JSON sample key
+ExpireDaysLimitCodeList,ExpireDaysLimitCodeList,Other,1,⚪ 선택,JSON sample key
+ExpireDaysLimitList,ExpireDaysLimitList,Other,1,⚪ 선택,JSON sample key
+ExpireDaysMax,ExpireDaysMax,Other,1,⚪ 선택,JSON sample key
+ExpireDaysMin,ExpireDaysMin,Other,1,⚪ 선택,JSON sample key
+G마켓 적립률,gmarketRatio,Other,1,⚪ 선택,- 적립률 범위 : 0.5%~50% - 0.1% 단위로 입력 가능
+InformStatus,InformStatus,CS API,1,⚪ 선택,JSON sample key
+IsLeaf,IsLeaf,Other,1,⚪ 선택,JSON sample key
+IsLeafCategory,IsLeafCategory,Other,1,⚪ 선택,JSON sample key
+IwLimitDay,IwLimitDay,Other,1,⚪ 선택,JSON sample key
+MatchedCategory,MatchedCategory,Other,1,⚪ 선택,JSON sample key
+OrderType,OrderType,CS API,1,⚪ 선택,JSON sample key
+OutCode,OutCode,Other,2,⚪ 선택,JSON sample key
+OutDetail,OutDetail,Other,2,⚪ 선택,JSON sample key
+OutDetrmQty,OutDetrmQty,Other,1,⚪ 선택,JSON sample key
+OutReqQty,OutReqQty,Other,2,⚪ 선택,JSON sample key
+OutWishDate,OutWishDate,Other,3,⚪ 선택,JSON sample key
+OwLimitDay,OwLimitDay,Other,1,⚪ 선택,JSON sample key
+RcverAddress,RcverAddress,Other,1,⚪ 선택,JSON sample key
+ReceiveDate,ReceiveDate,CS API,1,⚪ 선택,JSON sample key
+SDCategoryCode,SDCategoryCode,Other,1,⚪ 선택,JSON sample key
+SDCategoryName,SDCategoryName,Other,1,⚪ 선택,JSON sample key
+SellCustNo,SellCustNo,서비스 API,1,⚪ 선택,JSON sample key
+SellStatus,SellStatus,CS API,1,⚪ 선택,JSON sample key
+Slot 코드,SlotNo,서비스 API,1,⚪ 선택,
+SlotNo,SlotNo,서비스 API,1,⚪ 선택,JSON sample key
+StackTrace,StackTrace,CS API,1,⚪ 선택,JSON sample key
+Title,Title,CS API,1,⚪ 선택,JSON sample key
+VOD URL 등록여부,"getHomeShoppingList>homeShoppingAlternativeUrl>useYn, homeShoppingAlternativeUrl>useYn",Other,1,⚪ 선택,VOD URL 등록할지 여부 true : URL 등록 false : URL 미등록
+[ ] 서비스형태,service>types,서비스 API,2,⚪ 선택,"지점 관리시 미 설정한 서비스 형태는 등록 불가 reserve : 당일배송 ( 예약 ), dawn : 새벽배송"
+[ ]서비스형태,service>types,서비스 API,1,⚪ 선택,
+[]메모,Data>OutDetail>Memo,Other,1,⚪ 선택,스타배송 물류센터에서 입력한 메모 내려감
+[]성공한반출번호,Data>SuccessList>WarehouseOutNo,Other,1,⚪ 선택,반출요청 성공한 반출번호 리스트
+[]실패한반출번호,Data>FailReasons>WarehouseOutNo,Other,1,⚪ 선택,반출요청 실패한 반출번호 리스트
+[]요청사항,OutDetail,Other,1,⚪ 선택,각 SKU별 반출요청사항 입력가능
+addAmnt,addAmnt,Other,2,⚪ 선택,JSON sample key
+addAmntSite,addAmntSite,Other,1,⚪ 선택,JSON sample key
+addAmntUseYn,addAmntUseYn,Other,1,⚪ 선택,JSON sample key
+addPrice,addPrice,서비스 API,1,⚪ 선택,JSON sample key
+addonServiceNameId,addonServiceNameId,Other,1,⚪ 선택,JSON sample key
+addonServiceValues,addonServiceValues,Other,1,⚪ 선택,JSON sample key
+addr1,addr1,Other,1,⚪ 선택,JSON sample key
+addr2,addr2,Other,1,⚪ 선택,JSON sample key
+addrName,addrName,Other,1,⚪ 선택,JSON sample key
+alternativeVodUrl,alternativeVodUrl,Other,1,⚪ 선택,JSON sample key
+amount,amount,Other,1,⚪ 선택,JSON sample key
+answer,answer,CS API,1,⚪ 선택,JSON sample key
+answerDate,answerDate,CS API,1,⚪ 선택,JSON sample key
+applyPeriod,applyPeriod,Other,1,⚪ 선택,JSON sample key
+auction,auction,Other,1,⚪ 선택,JSON sample key
+auctionRatio,auctionRatio,Other,1,⚪ 선택,JSON sample key
+autoExtendAmountDay,autoExtendAmountDay,Other,1,⚪ 선택,JSON sample key
+autoExtendEndDate,autoExtendEndDate,Other,1,⚪ 선택,JSON sample key
+autoExtendType,autoExtendType,Other,1,⚪ 선택,JSON sample key
+base,base,Other,1,⚪ 선택,JSON sample key
+boardType,boardType,CS API,1,⚪ 선택,JSON sample key
+bonus,bonus,Other,1,⚪ 선택,JSON sample key
+branchId,branchId,"CS API, 서비스 API",4,⚪ 선택,JSON sample key
+brands,brands,Other,1,⚪ 선택,JSON sample key
+broadcastDate,broadcastDate,Other,1,⚪ 선택,JSON sample key
+broadcastEndDate,broadcastEndDate,Other,1,⚪ 선택,JSON sample key
+broadcastHour,broadcastHour,Other,1,⚪ 선택,JSON sample key
+broadcastProgramDetailType,broadcastProgramDetailType,Other,1,⚪ 선택,JSON sample key
+broadcastProgramType,broadcastProgramType,Other,1,⚪ 선택,JSON sample key
+broadcastStartDate,broadcastStartDate,Other,1,⚪ 선택,JSON sample key
+bundleGoods,bundleGoods,Other,1,⚪ 선택,JSON sample key
+bundleGoodsUseYn,bundleGoodsUseYn,Other,1,⚪ 선택,JSON sample key
+bundleGoodsYn,bundleGoodsYn,Other,1,⚪ 선택,JSON sample key
+calcUseYn,calcUseYn,Other,1,⚪ 선택,JSON sample key
+calculation,calculation,Other,1,⚪ 선택,JSON sample key
+cellPhone,cellPhone,Other,1,⚪ 선택,JSON sample key
+codes,codes,Other,2,⚪ 선택,JSON sample key
+contact,contact,서비스 API,1,⚪ 선택,JSON sample key
+contactType,contactType,CS API,1,⚪ 선택,JSON sample key
+contractType,contractType,CS API,2,⚪ 선택,JSON sample key
+customOptionUseYn,customOptionUseYn,Other,1,⚪ 선택,JSON sample key
+customTextOptionUseYn,customTextOptionUseYn,Other,1,⚪ 선택,JSON sample key
+dailyExposeUrl,dailyExposeUrl,Other,1,⚪ 선택,JSON sample key
+deliverable,deliverable,서비스 API,1,⚪ 선택,JSON sample key
+deliveryEndDate,deliveryEndDate,서비스 API,1,⚪ 선택,JSON sample key
+deliverySlotId,deliverySlotId,서비스 API,2,⚪ 선택,JSON sample key
+deliveryStartDate,deliveryStartDate,서비스 API,1,⚪ 선택,JSON sample key
+descNew,descNew,Other,1,⚪ 선택,JSON sample key
+descNewChn,descNewChn,Other,1,⚪ 선택,JSON sample key
+descNewEng,descNewEng,Other,1,⚪ 선택,JSON sample key
+descNewJpn,descNewJpn,Other,1,⚪ 선택,JSON sample key
+distance,distance,서비스 API,1,⚪ 선택,JSON sample key
+emerMessageNo,emerMessageNo,CS API,1,⚪ 선택,JSON sample key
+field,field,Other,1,⚪ 선택,JSON sample key
+genrlUseYn,genrlUseYn,Other,1,⚪ 선택,JSON sample key
+getHomeShoppingList,getHomeShoppingList,Other,1,⚪ 선택,JSON sample key
+giCategoryCode,giCategoryCode,Other,1,⚪ 선택,JSON sample key
+gmarket,gmarket,Other,1,⚪ 선택,JSON sample key
+gmarketRatio,gmarketRatio,Other,1,⚪ 선택,JSON sample key
+groupListType,groupListType,Other,2,⚪ 선택,JSON sample key
+groupName,groupName,Other,2,⚪ 선택,JSON sample key
+groups,groups,Other,1,⚪ 선택,JSON sample key
+guideText,guideText,Other,1,⚪ 선택,JSON sample key
+homeShoppingAlternativeUrl,homeShoppingAlternativeUrl,Other,1,⚪ 선택,JSON sample key
+homeShoppingDailyExposeProgram,homeShoppingDailyExposeProgram,Other,1,⚪ 선택,JSON sample key
+homeShoppingSubInfo,homeShoppingSubInfo,Other,1,⚪ 선택,JSON sample key
+homeShoppingTimeTable,homeShoppingTimeTable,Other,1,⚪ 선택,JSON sample key
+homeTel,homeTel,Other,1,⚪ 선택,JSON sample key
+hostName,hostName,Other,1,⚪ 선택,JSON sample key
+iacPremium,iacPremium,Other,1,⚪ 선택,JSON sample key
+iacPremiumPlus,iacPremiumPlus,Other,1,⚪ 선택,JSON sample key
+imageInfo,imageInfo,Other,1,⚪ 선택,JSON sample key
+imageLevel,imageLevel,Other,1,⚪ 선택,JSON sample key
+imageModel,imageModel,Other,1,⚪ 선택,JSON sample key
+imageUrl,imageUrl,Other,1,⚪ 선택,JSON sample key
+independents,independents,Other,1,⚪ 선택,JSON sample key
+informStatus,informStatus,CS API,1,⚪ 선택,JSON sample key
+inputType,inputType,Other,1,⚪ 선택,JSON sample key
+inquirerName,inquirerName,CS API,1,⚪ 선택,JSON sample key
+inquirerPhone,inquirerPhone,CS API,1,⚪ 선택,JSON sample key
+introImageFile,introImageFile,Other,2,⚪ 선택,JSON sample key
+isClaimSlot,isClaimSlot,서비스 API,1,⚪ 선택,JSON sample key
+isDisplaySite,isDisplaySite,Other,1,⚪ 선택,JSON sample key
+isGlobalSeller,isGlobalSeller,Other,1,⚪ 선택,JSON sample key
+isLeaf,isLeaf,Other,2,⚪ 선택,JSON sample key
+isReturnAddr,isReturnAddr,Other,1,⚪ 선택,JSON sample key
+isSoldOutSite,isSoldOutSite,Other,1,⚪ 선택,JSON sample key
+isVisitAndTakeAddr,isVisitAndTakeAddr,Other,1,⚪ 선택,JSON sample key
+latitude,latitude,서비스 API,1,⚪ 선택,JSON sample key
+limitCount,limitCount,Other,1,⚪ 선택,JSON sample key
+lname,lname,Other,1,⚪ 선택,JSON sample key
+location,location,서비스 API,1,⚪ 선택,JSON sample key
+locationDescription,locationDescription,Other,1,⚪ 선택,JSON sample key
+longDistance,longDistance,서비스 API,1,⚪ 선택,JSON sample key
+longDistanceEnable,longDistanceEnable,서비스 API,1,⚪ 선택,JSON sample key
+longitude,longitude,서비스 API,1,⚪ 선택,JSON sample key
+makerName,makerName,Other,1,⚪ 선택,JSON sample key
+makerNo,makerNo,Other,1,⚪ 선택,JSON sample key
+maxAmount,maxAmount,Other,1,⚪ 선택,JSON sample key
+maxPrice,maxPrice,Other,1,⚪ 선택,JSON sample key
+maxRate,maxRate,Other,1,⚪ 선택,JSON sample key
+maxValue1,maxValue1,Other,1,⚪ 선택,JSON sample key
+maxValue2,maxValue2,Other,1,⚪ 선택,JSON sample key
+messageNo,messageNo,CS API,2,⚪ 선택,JSON sample key
+minPrice,minPrice,Other,1,⚪ 선택,JSON sample key
+minRate,minRate,Other,1,⚪ 선택,JSON sample key
+minValue1,minValue1,Other,1,⚪ 선택,JSON sample key
+minValue2,minValue2,Other,1,⚪ 선택,JSON sample key
+mname,mname,Other,1,⚪ 선택,JSON sample key
+multiplePurchaseDiscount,multiplePurchaseDiscount,Other,1,⚪ 선택,JSON sample key
+multiplePurchaseDiscountAmount,multiplePurchaseDiscountAmount,Other,1,⚪ 선택,JSON sample key
+multiplePurchaseDiscountQuantity,multiplePurchaseDiscountQuantity,Other,1,⚪ 선택,JSON sample key
+officialNoticeItemelementName,officialNoticeItemelementName,Other,1,⚪ 선택,JSON sample key
+officialNoticeName,officialNoticeName,Other,1,⚪ 선택,JSON sample key
+onSale,onSale,서비스 API,1,⚪ 선택,JSON sample key
+optSeq,optSeq,Other,1,⚪ 선택,JSON sample key
+optionType,optionType,Other,1,⚪ 선택,JSON sample key
+optionUseYn,optionUseYn,Other,1,⚪ 선택,JSON sample key
+priceType,priceType,Other,1,⚪ 선택,JSON sample key
+productBrandName,productBrandName,Other,1,⚪ 선택,JSON sample key
+productBrandNo,productBrandNo,Other,1,⚪ 선택,JSON sample key
+programId,programId,Other,1,⚪ 선택,JSON sample key
+programName,programName,Other,1,⚪ 선택,JSON sample key
+programType,programType,Other,1,⚪ 선택,JSON sample key
+promotionCode1,promotionCode1,서비스 API,2,⚪ 선택,JSON sample key
+promotionCode2,promotionCode2,서비스 API,2,⚪ 선택,JSON sample key
+promotionCode3,promotionCode3,서비스 API,1,⚪ 선택,JSON sample key
+promotionCode4,promotionCode4,서비스 API,1,⚪ 선택,JSON sample key
+promotionFreeGiftYn,promotionFreeGiftYn,Other,1,⚪ 선택,JSON sample key
+promotionImageUrl,promotionImageUrl,Other,1,⚪ 선택,JSON sample key
+promotionSpecText,promotionSpecText,Other,1,⚪ 선택,JSON sample key
+promotionText,promotionText,Other,1,⚪ 선택,JSON sample key
+qnaType,qnaType,CS API,1,⚪ 선택,JSON sample key
+reAsking,reAsking,CS API,1,⚪ 선택,JSON sample key
+receiveDate,receiveDate,CS API,1,⚪ 선택,JSON sample key
+recommendedOptName1,recommendedOptName1,Other,1,⚪ 선택,JSON sample key
+recommendedOptName2,recommendedOptName2,Other,1,⚪ 선택,JSON sample key
+recommendedOptName3,recommendedOptName3,Other,1,⚪ 선택,JSON sample key
+recommendedOptNo3,recommendedOptNo3,Other,1,⚪ 선택,JSON sample key
+recommendedOptValue3,recommendedOptValue3,Other,1,⚪ 선택,JSON sample key
+recommendedOptValueName>korEng,recommendedOptValueName>korEng,Other,1,⚪ 선택,
+recommendedOptValueNo3,recommendedOptValueNo3,Other,1,⚪ 선택,JSON sample key
+remainderCount,remainderCount,서비스 API,1,⚪ 선택,JSON sample key
+representativeName,representativeName,Other,1,⚪ 선택,JSON sample key
+requestDate,requestDate,CS API,1,⚪ 선택,JSON sample key
+requestDueDate,requestDueDate,서비스 API,1,⚪ 선택,JSON sample key
+sdCategoryTree,sdCategoryTree,Other,1,⚪ 선택,JSON sample key
+sellerAddressBookList,sellerAddressBookList,Other,1,⚪ 선택,JSON sample key
+sellerId,sellerId,CS API,2,⚪ 선택,JSON sample key
+service,service,서비스 API,3,⚪ 선택,JSON sample key
+serviceType,serviceType,서비스 API,1,⚪ 선택,JSON sample key
+subCats,subCats,Other,2,⚪ 선택,JSON sample key
+textUseYn,textUseYn,Other,1,⚪ 선택,JSON sample key
+threeCmbtUseYn,threeCmbtUseYn,Other,1,⚪ 선택,JSON sample key
+title,title,CS API,3,⚪ 선택,JSON sample key
+totalWeight,totalWeight,서비스 API,1,⚪ 선택,JSON sample key
+twoCmbtUseYn,twoCmbtUseYn,Other,1,⚪ 선택,JSON sample key
+types,types,서비스 API,2,⚪ 선택,JSON sample key
+unitPrice,unitPrice,"Other, 서비스 API",2,⚪ 선택,JSON sample key
+unitType,unitType,Other,1,⚪ 선택,JSON sample key
+unitValue,unitValue,Other,1,⚪ 선택,JSON sample key
+useYn,useYn,Other,1,⚪ 선택,JSON sample key
+valueId,valueId,Other,1,⚪ 선택,JSON sample key
+valueLimitCount,valueLimitCount,Other,1,⚪ 선택,JSON sample key
+valueName,valueName,Other,1,⚪ 선택,JSON sample key
+weightUnit,weightUnit,서비스 API,1,⚪ 선택,JSON sample key
+zipCode,zipCode,Other,1,⚪ 선택,JSON sample key
+zipcode,zipcode,서비스 API,2,⚪ 선택,JSON sample key
+zipcodes,zipcodes,서비스 API,1,⚪ 선택,JSON sample key
+zone,zone,서비스 API,1,⚪ 선택,JSON sample key
+가이드,guideText,Other,1,⚪ 선택,
+계산형 가능 여부,optionType>calcUseYn,Other,1,⚪ 선택,Y : 사용 가능 N : 사용 불가
+고시 상세 코드,officialNoticeItemelementCode,Other,1,⚪ 선택,
+고시 상세명,officialNoticeItemelementName,Other,1,⚪ 선택,
+구분자,ORDER_INFO>EXT_GB,서비스 API,1,⚪ 선택,"EXT_GB=""02"" 로 전달 받으면 옥션에서의 재고체크 Request 로 판단하시라는 의미의 Attribute"
+권역코드,"code, zone>code, zone>codes",서비스 API,2,⚪ 선택,지점에 서비스타입이 null 이 아닌 경우 필수 입력 원거리 제한여부 설정하지 않은 경우 필수 입력 zone > code 1 개만 입력 가능
+그룹리스트타입,groupListType,Other,2,⚪ 선택,0: 리스트형 1: 이미지형
+그룹명,groupName,Other,2,⚪ 선택,50byte 까지 입력 가능
+그룹번호,groupNo,Other,2,⚪ 선택,적용하고자 하는 그룹번호 입력
+기본방문수령지여부,isVisitAndTakeAddr,Other,1,⚪ 선택,
+기획성 짤방 VOD URL,"getHomeShoppingList>homeShoppingDailyExposeProgram>dailyExposeUrl, homeShoppingDailyExposeProgram>dailyExposeUrl",Other,1,⚪ 선택,
+기획성 짤방 VOD URL 등록여부,"getHomeShoppingList>homeShoppingDailyExposeProgram>useYn, homeShoppingDailyExposeProgram>useYn",Other,1,⚪ 선택,기획성 짤방 URL 등록할지 여부 true : URL 등록 false : URL 미등록
+나눔 시작일,auction>startDate,Other,1,⚪ 선택,YYYY-MM-DD 형태로 입력 가능
+나눔 종료일,auction>endDate,Other,1,⚪ 선택,YYYY-MM-DD 형태로 입력 가능
+나눔쇼핑 사용 여부,auction>isUse,Other,1,⚪ 선택,
+내용,Data>Details,CS API,1,⚪ 선택,긴급알리미 내용
+누적적립한도액,gmarket>maxAmount,Other,1,⚪ 선택,"10,000원 이상만 등록 가능"
+담당자성함,RcverInfoNa,Other,1,⚪ 선택,담당자성함 입력(최대 50Byte)
+담당자휴대폰번호,RcverInfoCp,Other,1,⚪ 선택,담당자휴대폰번호 입력
+모두 VOD URL 이 있을 수 있음 ),homeShoppingAlternativeUrl>alternativeVodUrl,Other,1,⚪ 선택,Live / Alternative 모두 VOD URL 이 있을 수 있음 )
+모두 VOD URL이 있을 수 있음),getHomeShoppingList>homeShoppingAlternativeUrl>alternativeVodUrl,Other,1,⚪ 선택,Live / Alternative 모두 VOD URL이 있을 수 있음)
+반출담당자성함,Data>RcverInfoNa,Other,1,⚪ 선택,판매자가 입력한 담당자성함 내려감
+반출담당자휴대폰번호,Data>RcverInfoCp,Other,1,⚪ 선택,판매자가 입력한 담당자휴대폰번호 내려감
+반출명,"Data>WarehouseName, WarehouseName",Other,2,⚪ 선택,반출명 입력(최대 50Byte)
+반출방식,"Data>OutCode, OutCode",Other,2,⚪ 선택,판매자가 선택한 반출방식 내려감 1. 택배반출 2. 차량반출(AJU) 3. 차량반출(KPP) 4. 방문(직접회수)
+반출희망일,OutWishDate,Other,1,⚪ 선택,"반출요청일은 영업일 기준 최소 D+5일부터 가능 (단, VF 판매자 당일반출 가능) YYYY-MM-DD hh:mm:ss 유형으로 입력하면 입력된 시간의 오전, 오후에 따라 자동으로 오전/오후로 입력됨 주말은 반출 불가"
+반출희망일자,Data>OutWishDate,Other,1,⚪ 선택,"오전일 경우 00시, 오후일 경우 12시로 내려감"
+방송시간대,"broadcastHour, getHomeShoppingList>broadcastHour",Other,1,⚪ 선택,방송 편성표용 시간대 숫자 입력 오후 1 시일 경우 13 으로 입력
+방송시작시간,"broadcastStartDate, getHomeShoppingList>broadcastStartDate",Other,1,⚪ 선택,방송 편성표용 시작시간 입력 방송일자 / 방송시간대와 일치하는지 Check 함
+방송일자,"broadcastDate, getHomeShoppingList>broadcastDate",Other,1,⚪ 선택,방송편성표용 방송일자 등록 YYYY-MM-DD 형식
+방송종료시간,"broadcastEndDate, getHomeShoppingList>broadcastEndDate",Other,1,⚪ 선택,방송 편성표용 시작시간 입력 방송일자 / 방송시간대와 일치하는지 Check 함
+방송프로그램 구분,"broadcastProgramType, getHomeShoppingList>programType",Other,1,⚪ 선택,프로그램구분 설정 1 : Live ( 정규홈쇼핑상품) 2 : Alternative ( 대체상품) - 수정(PUT)시 값 변경불가
+방송프로그램상세,"broadcastProgramDetailType, getHomeShoppingList>broadcastProgramDetailType",Other,1,⚪ 선택,"프로그램 상세구분 설정 1. LiveItem : 라이브 방송용 상품 2. AlwaysOnItem : 상시 방송용 상품 LiveItem : - 방송 시간대에만 판매 가능 상품 - 방송 시간대 외에는 품절 처리되고 편성표 Front 상에도 비노출 됨 - 방송 시작 3시간 전까지는 판매가능 상태로 사전 연동 필요. (방송 시작 전까지 편성표 비노출 및 상품 URL 유입 시 block 처리하는 Front 로직 있음) AlwaysOnItem : - 방송 시간을 포함하여 이전, 이후 시간대에도 판매 가능 상품 - 방송 시작 전에 미리 주문하거나, 지난 방송 상품 주문 가능(즉, 상품 코드가 상시 판매 가능 상태로 열려있음)"
+복수구매할인기준,multiplePurchaseDiscountQuantity,Other,1,⚪ 선택,"주문수량 N개 이상(단위설정) 2 ,3, 4, 5 중 선택"
+복수구매할인여부,multiplePurchaseDiscount,Other,1,⚪ 선택,true : 사용함 할인 해제 경우 DELETE 로 호출하여 처리
+사용일,"iacPremium>applyPeriod, iacPremiumPlus>applyPeriod",Other,1,⚪ 선택,"7, 15, 30, 60, 90 입력 가능"
+사은품 관리 코드,manageCode,Other,1,⚪ 선택,영문/숫자만 입력 가능
+사은품 제공가능 여부,"getHomeShoppingList>homeShoppingSubInfo>promotionFreeGiftYn, homeShoppingSubInfo>promotionFreeGiftYn",Other,1,⚪ 선택,사은품 제공가능 여부 true : 사은품 제공 false : 사은품 미제공
+사은품명,name,Other,1,⚪ 선택,특수문자/기호 입력 불가
+서비스형태,"ServiceType>type, service>type",서비스 API,1,⚪ 선택,"reserve : 당일배송 ( 예약 ), dawn : 새벽배송"
+선택형 가능 여부,optionType>genrlUseYn,Other,1,⚪ 선택,Y : 사용 가능 N : 사용 불가
+소비기한(상미기일)구간코드,Data>Data>ExpireDaysLimitCode,Other,1,⚪ 선택,해당카테고리에 설정가능한 소비기한(상미기일) 코드 내려감
+소비기한(상미기일)명,Data>Data>ExpireDateLimitName,Other,1,⚪ 선택,소비기한(상미기일)명 내려감
+소비기한(상미기일)최대일,Data>Data>ExpireDaysMax,Other,1,⚪ 선택,소비기한(상미기일)코드의 최대일값 내려감
+소비기한(상미기일)최소일,Data>Data>ExpireDaysMin,Other,1,⚪ 선택,소비기한(상미기일)코드의 최소일값 내려감
+소비기한(상미기일)코드,ExpireDaysLimitCode,Other,2,⚪ 선택,소비기한(상미기일) 특정코드를 보유한 카테고리 조회 ALL : 전체 단일코드 입력 가능
+소비기한(상미기일)코드리스트,Data>Data>ExpireDaysLimitCodeList,Other,1,⚪ 선택,해당카테고리에 설정가능한 소비기한(상미기일) 코드 리스트 내려감
+소비기한관리구분,"Data>Data>ExpireDateManageCode, ExpireDateManageCode",Other,2,⚪ 선택,"카테고리 조회 시, 소비기한 관리구분에 따른 조회 가능 필수 or 선택 시 소비기한(상미기일)구간 중 택1하여 입력 ALL : 전체 1 : 소비기한 관리필수 2 : 소비기한 미관리 3 : 소비기한 관리선택"
+쇼호스트명,"getHomeShoppingList>hostName, hostName",Other,1,⚪ 선택,방송 편성표용 쇼호스트명 20byte 까지 입력
+옥션 적립률,auctionRatio,Other,1,⚪ 선택,- 적립률 범위 : 0.5%~50% - 0.1% 단위로 입력 가능
+옥션프리미엄사용여부,iacPremium>isUse,Other,1,⚪ 선택,true : 사용 false : 미사용
+옥션프리미엄플러스사용여부,iacPremiumPlus>isUse,Other,1,⚪ 선택,true: 사용 false : 미사용
+원거리여부,"deliverySlotId, longDistance",서비스 API,3,⚪ 선택,- 우편번호 원거리 배송 관리 여부 설정 - true : 원거리 지역 - false : 일반
+원거리제한여부,longDistanceEnable,서비스 API,1,⚪ 선택,원거리 우편번호를 배송주소로 설정된 고객에 대해 배송불가 ( 마감 등으로 표기 ) false : 원거리제한 true : 원거리제공
+원산지 코드,code,Other,1,⚪ 선택,
+위치설명,locationDescription,Other,1,⚪ 선택,방문수령의 상품일 경우 자세하게 기재 필요
+인트로이미지,introImageFile,Other,2,⚪ 선택,"- 사이즈 860*600 로 등록 가능 - jpg, png 파일만 등록 가능"
+자동연장사용일,"iacPremium>autoExtendAmountDay, iacPremiumPlus>autoExtendAmountDay",Other,1,⚪ 선택,"7, 15, 30, 60, 90 입력 가능"
+자동연장설정,"iacPremium>autoExtendType, iacPremiumPlus>autoExtendType",Other,1,⚪ 선택,1 : 자동 연장 미사용 2 : 무제한 연장 3 : 기간 내 연장
+재질문여부,ReAsking,CS API,1,⚪ 선택,옥션/G마켓 기준 재질문 여부 체크 true : 재질문 false : 재질문 아님
+적용시작일자,startDate,Other,2,⚪ 선택,YYYY-MM-DD
+적용종료일자,endDate,Other,2,⚪ 선택,YYYY-MM-DD
+전체,sellerAddressBookList,Other,1,⚪ 선택,전체조회 시 내려가는 정보 위 판매자 주소록 정보가 해당 root로 배열로 내려감
+전체조회 개수,totalCount,Other,1,⚪ 선택,전체조회 시 내려가는 정보
+제목,"Data>Title, Title",CS API,2,⚪ 선택,"긴급알리미 타이틀 옥션의 경우 , 내용의 20byte 까지 끊어서 내려감 ( 별도 타이틀이 없음 )"
+제한기간일자,"iacPremium>autoExtendEndDate, iacPremiumPlus>autoExtendEndDate",Other,1,⚪ 선택,- AutoExtendType=3 경우 종료기간 날짜 설정 - YYYY-MM-DD 형식으로 입력
+조건 > 개수,condition>value,Other,1,⚪ 선택,조회 시 내려가는 정보
+조건 > 단위,condition>unit,Other,1,⚪ 선택,"조회 시 내려가는 정보 1. 개 ( 수량 ) 2. 원 ( 금액 ) type 2 일 경우 , unit 1 로 고정"
+조건>개수,condition>value,Other,1,⚪ 선택,숫자입력
+조건>단위,condition>unit,Other,1,⚪ 선택,1 : 개(수량) 2 : 원(금액) type 2일 경우 unit : 1로 고정
+조회구분,qnaType,CS API,1,⚪ 선택,조회 구분 1 : 옥션(일반) 2 : 옥션(비밀글) 3 : 전체(G마켓은 해당 구분만 사용)
+조회기준 시작일,startDate,CS API,2,⚪ 선택,- YYYY-MM-DD 형식으로 입력 - 7일 단위로 조회 가능
+조회기준 종료일,endDate,CS API,2,⚪ 선택,- YYYY-MM-DD 형식으로 입력 - 7일 단위로 조회 가능 - 당일 조회 시 시작일 +1일로 조회
+중량단위,weightUnit,서비스 API,1,⚪ 선택,"Ex) g, kg, EA, L, ml, cc"
+지역,lname,Other,1,⚪ 선택,"국내 - 도, 시 해외 - 국가"
+지역 상세,sname,Other,1,⚪ 선택,"국내 - 시, 군, 구 해외 - 도시"
+총중량,totalWeight,서비스 API,1,⚪ 선택,
+추가구성 항목값명,addonServiceValues>valueName,Other,1,⚪ 선택,
+추가구성 항목명,addonServiceName,Other,1,⚪ 선택,
+추가금 사용 가능 여부,addAmnt>addAmntUseYn,Other,1,⚪ 선택,Y : 사용 가능 N : 사용 불가
+추가금 유형,priceType,Other,1,⚪ 선택,1 : 판매가 기준 2 : 특정금액 기준
+추가금 최대입력값,maxPrice,Other,1,⚪ 선택,최대 입력 가능한 추가금액
+추가금 최소 설정 범위,addAmnt>minRate,Other,1,⚪ 선택,
+추가금 최소 입력값,minPrice,Other,1,⚪ 선택,최소 입력 가능한 추가금액
+택스트형 가능 여부,optionType>textUseYn,Other,1,⚪ 선택,Y : 사용 가능 N : 사용 불가
+텍스트형 여부,isTextOption,Other,1,⚪ 선택,
+토큰,token,CS API,2,⚪ 선택,답변 작성 시 문의번호와 token 함께 요청되어야 함
+판매여부,onSale,서비스 API,1,⚪ 선택,지점별 판매 가능 여부
+프로그램고유번호,"getHomeShoppingList>programId, programId",Other,1,⚪ 선택,BroadcastTimetableInfo.UseYn > true 일 경우 필수 최대 30byte 까지 입력 가능 존재하지 않는 프로그램 번호일 경우 신규생성 존재하는 프로그램 번호일 경우 정보갱신
+프로그램고유번호 사용여부,getHomeShoppingList>useYn,Other,1,⚪ 선택,프로그램고유번호 사용여부 설정 true : 프로그램고유번호 사용 false : 프로그램고유번호 사용하지 않음
+프로그램구분,"getHomeShoppingList>broadcastProgramType, programType",Other,1,⚪ 선택,"프로그램 구분 설정 1 : Broadcasting ( 일반방송) 2 : DailyExpose ( 기획성 짤방) 2 번일 경우 , 방송일 / 방송시간대 / 방송시작시간 / 방송종료시간 Check 하지 않음"
+프로그램명,"getHomeShoppingList>programName, programName",Other,1,⚪ 선택,방송 편성표용 프로그램 명 100byte 까지 입력
+필수 여부,isExtraMark,Other,1,⚪ 선택,
+할인단위,discount>unit,Other,1,⚪ 선택,1 : % 2 : 원 type : 2일 경우 파라미터 삭제후 호출
+항목값 개수 제한,valueLimitCount,Other,1,⚪ 선택,최대 입력 가능 항목수
+행사코드 1,promotionCode1,서비스 API,1,⚪ 선택,
+행사코드 2,promotionCode2,서비스 API,1,⚪ 선택,
+행사코드1,promotionCode1,서비스 API,1,⚪ 선택,(이마트몰 전용)
+행사코드2,promotionCode2,서비스 API,1,⚪ 선택,(이마트몰 전용)
+행사코드3,promotionCode3,서비스 API,1,⚪ 선택,(이마트몰 전용)
+행사코드4,promotionCode4,서비스 API,1,⚪ 선택,(이마트몰 전용)
+후원 시작일,gmarket>startDate,Other,1,⚪ 선택,YYYY-MM-DD 형태로 입력 가능
+후원 종료일,gmarket>endDate,Other,1,⚪ 선택,YYYY-MM-DD 형태로 입력 가능
+후원분야,gmarket>field,Other,1,⚪ 선택,1 : 아동복지 2 : 여성권익 3 : 환경보호 4 : 국제구호 5 : 소비자권익 6 : 기타 (조회시 99 로 확인 가능)
+후원쇼핑 사용 여부,gmkt>isUse,Other,1,⚪ 선택,
+휴대폰번호,cellPhone,Other,1,⚪ 선택,하이픈 구분 입력 필요
+휴무일,date,서비스 API,1,⚪ 선택,YYYY-MM-DD 형식으로 등록

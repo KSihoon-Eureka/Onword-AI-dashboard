@@ -1,0 +1,36 @@
+---
+title: Category Table — 공지사항 조회 (18 attributes)
+channel: SSG Mall
+type: notion-table-migration
+source_notion_page_id: 369559dfde8580d38e38d7a0019a37aa
+source_table_id: 369559df-de85-8172-a8f6-c51b55e7863b
+rows_including_header: 19
+csv_backup: ../../_csv/SSG Mall/14 - Category Table — 공지사항 조회 (18 attributes).csv
+---
+
+# Category Table — 공지사항 조회 (18 attributes)
+
+- Channel: [[SSG Mall Index|SSG Mall]]
+- Rows including header: **19**
+- CSV backup: `../../_csv/SSG Mall/14 - Category Table — 공지사항 조회 (18 attributes).csv`
+
+| UDS 속성명 | SSG 필드명 | API 카테고리 | 사용 API 문서 수 | 공통/반복 | UDS 필요도 | 설명 |
+| --- | --- | --- | --- | --- | --- | --- |
+| API 인증키 | Authorization | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | Authorization: 샘플코드에서 확인된 필드 \| Authorization: 샘플코드에서 확인된 필드 \| Authorization: 샘플코드에서 확인된 필드 |
+| DATE | modifyDate / registDate | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | registDate: DATE \| modifyDate: DATE |
+| NUMBER | seq | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | seq: NUMBER \| seq: NUMBER |
+| VARCHAR2(10) | noticeType | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | noticeType: VARCHAR2(10) \| noticeType: VARCHAR2(10) |
+| Y | seq | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | seq: Y |
+| modifyDate | modifyDate | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | modifyDate: modifyDate |
+| notices | notices | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS |  |
+| postingEndDate | postingEndDate | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | postingEndDate: postingEndDate |
+| postingStartDate | postingStartDate | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | postingStartDate: postingStartDate |
+| registDate | registDate | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | registDate: registDate |
+| requestNotice | requestNotice | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS |  |
+| 결과 | result | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | result: 샘플코드에서 확인된 필드 \| result: 샘플코드에서 확인된 필드 |
+| 결과 메시지 | resultMessage | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | resultMessage: Y \| resultMessage: Y \| resultMessage: 샘플코드에서 확인된 필드 |
+| 결과 설명 | resultDesc | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | resultDesc: Y \| resultDesc: Y \| resultDesc: 샘플코드에서 확인된 필드 |
+| 결과코드 | resultCode | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | resultCode: Y \| resultCode: Y \| resultCode: 샘플코드에서 확인된 필드 |
+| 내용 | content | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | content: content |
+| 샘플코드에서 확인된 필드 | accept / modifyDate / notice / noticeType / notices / postngEndDate / postngStartDate / registDate / requestNotice / seq | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | accept: 샘플코드에서 확인된 필드 \| accept: 샘플코드에서 확인된 필드 \| accept: 샘플코드에서 확인된 필드 |
+| 제목 | title | 공지사항 조회 | 1 | 단일 | ✅ 핵심 UDS | title: VARCHAR2(10) \| title: VARCHAR2(10) \| title: 샘플코드에서 확인된 필드 |

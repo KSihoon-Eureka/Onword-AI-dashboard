@@ -1,0 +1,69 @@
+﻿UDS 속성명,SSG 필드명,API 카테고리,사용 API 문서 수,공통/반복,UDS 필요도,설명
+API 인증키,Authorization,정산 API 조회,1,단일,✅ 핵심 UDS,Authorization: Vendor API Authentication Key | Authorization: 샘플코드에서 확인된 필드 | Authorization: 샘플코드에서 확인된 필드
+Accumulation Type Code,accumTypeCd,정산 API 조회,1,단일,✅ 핵심 UDS,accumTypeCd: Accumulation Type Code
+Alliance Type,allnTypeNm,정산 API 조회,1,단일,✅ 핵심 UDS,allnTypeNm: Alliance Type | allnTypeNm: Alliance Type
+BigDecimal,allnPaymtAmt / bascFee / crdPaymtAmt / cshPaymtAmt / ctaxAmt / dvCstmrAmt / dvShppcstAmt / dvShppcstVat / etcPaymtAmt / feert / freeShppCpnOwncoBdnAmt / freeShppCpnVenBdnAmt / frgSellVat / lastSellFee / mobilPaymtAmt / netAmt / owncoBdnDcAmt / owncoDvShppcst / paymtAmt / prcAmt / sellFee / sellUprc / settlTgtFee / settlTgtFeeVat / splVenBdnDcAmt / totDcAmt / totSellAmt / venDvShppcst / venDvShppcstVat,정산 API 조회,1,단일,✅ 핵심 UDS,sellUprc: BigDecimal | totSellAmt: BigDecimal | splVenBdnDcAmt: BigDecimal
+Buy Type Division Code,buyTypeDivCd,정산 API 조회,1,단일,✅ 핵심 UDS,buyTypeDivCd: Buy Type Division Code
+Buy Type Division Code 30 : Co,buyTypeDivCd,정산 API 조회,1,단일,✅ 핵심 UDS,buyTypeDivCd: Buy Type Division Code 30 : Consignment 31 : Consignment(Flight) 32 : Consignment(Hotel) 40 : Open market
+Buy Type Division Name,buyTypeDivNm,정산 API 조회,1,단일,✅ 핵심 UDS,buyTypeDivNm: Buy Type Division Name
+Channel ID,chnlId,정산 API 조회,1,단일,✅ 핵심 UDS,chnlId: Channel ID
+Channel Name,chnlNm,정산 API 조회,1,단일,✅ 핵심 UDS,chnlNm: Channel Name
+Cost Policy Id,cstPlcyId,정산 API 조회,1,단일,✅ 핵심 UDS,cstPlcyId: Cost Policy Id
+Criterion,critnSeq,정산 API 조회,1,단일,✅ 핵심 UDS,critnSeq: Criterion
+Dcls Std Ctg Id,stdCtgDclsId,정산 API 조회,1,단일,✅ 핵심 UDS,stdCtgDclsId: Dcls Std Ctg Id
+Dcls Std Ctg Nm,stdCtgDclsNm,정산 API 조회,1,단일,✅ 핵심 UDS,stdCtgDclsNm: Dcls Std Ctg Nm
+Delivery Company Name,delicoNm,정산 API 조회,1,단일,✅ 핵심 UDS,delicoNm: Delivery Company Name | delicoNm: Delivery Company Name
+Low Rank Vendor ID,lrnkVenId,정산 API 조회,1,단일,✅ 핵심 UDS,lrnkVenId: Low Rank Vendor ID | lrnkVenId: Low Rank Vendor ID
+Low Rank Vendor Name,lrnkVenNm,정산 API 조회,1,단일,✅ 핵심 UDS,lrnkVenNm: Low Rank Vendor Name | lrnkVenNm: Low Rank Vendor Name
+Order Cost Detail Type Code,ordCstDtlTypeCd,정산 API 조회,1,단일,✅ 핵심 UDS,ordCstDtlTypeCd: Order Cost Detail Type Code
+Order Cost Id,ordCstId,정산 API 조회,1,단일,✅ 핵심 UDS,ordCstId: Order Cost Id
+Order Cost Occurrence Code,ordCstOccCd,정산 API 조회,1,단일,✅ 핵심 UDS,ordCstOccCd: Order Cost Occurrence Code
+Original Order Cost Id,orordCstId,정산 API 조회,1,단일,✅ 핵심 UDS,orordCstId: Original Order Cost Id
+Pay Expect Date,payExpcDt,정산 API 조회,1,단일,✅ 핵심 UDS,payExpcDt: Pay Expect Date
+Sales Quantity,salesQty,정산 API 조회,1,단일,✅ 핵심 UDS,salesQty: Sales Quantity | salesQty: Sales Quantity
+Sell Fee Rate,sellFeeRt,정산 API 조회,1,단일,✅ 핵심 UDS,sellFeeRt: Sell Fee Rate | sellFeeRt: Sell Fee Rate
+Settle Vendor ID,settlVenId,정산 API 조회,1,단일,✅ 핵심 UDS,settlVenId: Settle Vendor ID | settlVenId: Settle Vendor ID
+Settle Vendor Name,settlVenNm,정산 API 조회,1,단일,✅ 핵심 UDS,settlVenNm: Settle Vendor Name | settlVenNm: Settle Vendor Name
+Std Ctg Cls Id,stdCtgSclsId,정산 API 조회,1,단일,✅ 핵심 UDS,stdCtgSclsId: Std Ctg Cls Id
+Std Ctg Cls Nm,stdCtgSclsNm,정산 API 조회,1,단일,✅ 핵심 UDS,stdCtgSclsNm: Std Ctg Cls Nm
+Std Ctg Grp ID,stdCtgGrpCd,정산 API 조회,1,단일,✅ 핵심 UDS,stdCtgGrpCd: Std Ctg Grp ID
+Std Ctg Grp Nm,stdCtgGrpNm,정산 API 조회,1,단일,✅ 핵심 UDS,stdCtgGrpNm: Std Ctg Grp Nm
+Store (Sales Store),salestrNo2,정산 API 조회,1,단일,✅ 핵심 UDS,salestrNo2: Store (Sales Store) | salestrNo2: Store (Sales Store)
+Store No (eCtax),salestrNo,정산 API 조회,1,단일,✅ 핵심 UDS,salestrNo: Store No (eCtax) | salestrNo: Store No (eCtax)
+Taxation Division Name,txnDivNm,정산 API 조회,1,단일,✅ 핵심 UDS,txnDivNm: Taxation Division Name | txnDivNm: Taxation Division Name
+The fifth parameter exchanged during an ,affP5,정산 API 조회,1,단일,✅ 핵심 UDS,affP5: The fifth parameter exchanged during an affiliate order
+The first parameter exchanged during an ,affP1,정산 API 조회,1,단일,✅ 핵심 UDS,affP1: The first parameter exchanged during an affiliate order
+The fourth parameter exchanged during an,affP4,정산 API 조회,1,단일,✅ 핵심 UDS,affP4: The fourth parameter exchanged during an affiliate order
+The second parameter exchanged during an,affP2,정산 API 조회,1,단일,✅ 핵심 UDS,affP2: The second parameter exchanged during an affiliate order
+The thrid parameter exchanged during an ,affP3,정산 API 조회,1,단일,✅ 핵심 UDS,affP3: The thrid parameter exchanged during an affiliate order
+Total Count,totalCnt,정산 API 조회,1,단일,✅ 핵심 UDS,totalCnt: Total Count | totalCnt: Total Count | totalCnt: Total Count
+ckwhere,ckwhere,정산 API 조회,1,단일,✅ 핵심 UDS,ckwhere: ckwhere
+list,ordCstInfos,정산 API 조회,1,단일,✅ 핵심 UDS,ordCstInfos: list
+ordCstAmt,ordCstAmt,정산 API 조회,1,단일,✅ 핵심 UDS,
+ordCstDtlcSeq ID/번호,ordCstDtlcSeq,정산 API 조회,1,단일,✅ 핵심 UDS,
+ordCstInfo,ordCstInfo,정산 API 조회,1,단일,✅ 핵심 UDS,ordCstInfo: ordCstInfo
+결과,result,정산 API 조회,1,단일,✅ 핵심 UDS,
+결과 데이터,resultData,정산 API 조회,1,단일,✅ 핵심 UDS,
+결과 메시지,resultMessage,정산 API 조회,1,단일,✅ 핵심 UDS,resultMessage: Result Message | resultMessage: Result Message | resultMessage: Result Message
+결과 설명,resultDesc,정산 API 조회,1,단일,✅ 핵심 UDS,resultDesc: Error Message | resultDesc: Error Message | resultDesc: Error Message
+결과코드,resultCode,정산 API 조회,1,단일,✅ 핵심 UDS,"resultCode: Result Code (00 normal, the rest error) | resultCode: Result Code (00 normal, the rest error) | resultCode: Result Code (00 normal, the rest error)"
+과세 구분코드,txnDivCd,정산 API 조회,1,단일,✅ 핵심 UDS,txnDivCd: Taxation Division Code 10 : Taxation 20 : Tax Exemption 30 : Tax for small scale business | txnDivCd: Taxation Division Code 10 : Taxation 20 : Tax Exemption 30 : Tax for small scale business | txnDivCd: Taxation Division Code 10 : Taxation 20 : Tax Exemption 30 : Tax for small scale business
+기준일자,critnDt,정산 API 조회,1,단일,✅ 핵심 UDS,critnDt: Criterion Date | critnDt: Criterion Date | critnDt: Criterion Date
+단품명,uitemNm,정산 API 조회,1,단일,✅ 핵심 UDS,uitemNm: Unit Item Name | uitemNm: Unit Item Name
+배송번호,shppNo,정산 API 조회,1,단일,✅ 핵심 UDS,shppNo: Shpping No | shppNo: Shpping No
+상품 ID,itemId,정산 API 조회,1,단일,✅ 핵심 UDS,itemId: Item ID | itemId: Item ID | itemId: item Id
+상품명,itemNm,정산 API 조회,1,단일,✅ 핵심 UDS,itemNm: Item Name | itemNm: Item Name | itemNm: Item Nm
+샘플코드에서 확인된 필드,accept,정산 API 조회,1,단일,✅ 핵심 UDS,accept: 샘플코드에서 확인된 필드 | accept: 샘플코드에서 확인된 필드 | accept: 샘플코드에서 확인된 필드
+운송장번호,wblNo,정산 API 조회,1,단일,✅ 핵심 UDS,wblNo: Waybill No | wblNo: Waybill No
+원주문번호,orordNo,정산 API 조회,1,단일,✅ 핵심 UDS,orordNo: Original Order No | orordNo: Original Order No | orordNo: Original Order ID
+원주문상품 순번,orordItemSeq,정산 API 조회,1,단일,✅ 핵심 UDS,orordItemSeq: integer | orordItemSeq: integer
+응답 형식,Accept,정산 API 조회,1,단일,✅ 핵심 UDS,Accept: application/xml application/json | Accept: application/xml application/json | Accept: application/xml application/json
+정산금액,settlAmt,정산 API 조회,1,단일,✅ 핵심 UDS,settlAmt: BigDecimal | settlAmt: BigDecimal
+정산주기 코드,settlCycleCd,정산 API 조회,1,단일,✅ 핵심 UDS,settlCycleCd: Settle Cycle Code 11 : 1Cycle 1Round 21 : 2Cycle 1Round 22 : 2Cycle 2Round 31 : 3Cycle 1Round 32 : 3Cycle 2Round 33 : 3Cycle 3Round | settlCycleCd: Settle Cycle Code 11 : 1Cycle 1Round 21 : 2Cycle 1Round 22 : 2Cycle 2Round 31 : 3Cycle 1Round 32 : 3Cycle 2Round 33 : 3Cycle 3Round
+주문번호,ordNo / orderNo,정산 API 조회,1,단일,✅ 핵심 UDS,orderNo: Order No | ordNo: Order No | orderNo: Order No
+주문상품 순번,ordItemSeq,정산 API 조회,1,단일,✅ 핵심 UDS,ordItemSeq: integer | ordItemSeq: integer
+주문수량,ordQty,정산 API 조회,1,단일,✅ 핵심 UDS,ordQty: BigDecimal
+주문자명,ordpeNm,정산 API 조회,1,단일,✅ 핵심 UDS,ordpeNm: Order Person Name | ordpeNm: Order Person Name | ordpeNm: Customer Name
+주문접수일시,ordRcpDts,정산 API 조회,1,단일,✅ 핵심 UDS,ordRcpDts: Order Date
+페이지 번호,page,정산 API 조회,1,단일,✅ 핵심 UDS,page: Page No (Default : 1) | page: Page No (Default : 1) | page: Page No (Default : 1)
+페이지 크기,pageSize,정산 API 조회,1,단일,✅ 핵심 UDS,pageSize: Page Size (Default : 1000) | pageSize: Page Size (Default : 1000) | pageSize: Page Size (Default : 1000)

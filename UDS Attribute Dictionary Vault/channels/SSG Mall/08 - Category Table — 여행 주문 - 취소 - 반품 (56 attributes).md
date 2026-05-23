@@ -1,0 +1,74 @@
+---
+title: Category Table — 여행 주문 / 취소 / 반품 (56 attributes)
+channel: SSG Mall
+type: notion-table-migration
+source_notion_page_id: 369559dfde8580d38e38d7a0019a37aa
+source_table_id: 369559df-de85-810b-9edc-c50fe970229b
+rows_including_header: 57
+csv_backup: ../../_csv/SSG Mall/08 - Category Table — 여행 주문 - 취소 - 반품 (56 attributes).csv
+---
+
+# Category Table — 여행 주문 / 취소 / 반품 (56 attributes)
+
+- Channel: [[SSG Mall Index|SSG Mall]]
+- Rows including header: **57**
+- CSV backup: `../../_csv/SSG Mall/08 - Category Table — 여행 주문 - 취소 - 반품 (56 attributes).csv`
+
+| UDS 속성명 | SSG 필드명 | API 카테고리 | 사용 API 문서 수 | 공통/반복 | UDS 필요도 | 설명 |
+| --- | --- | --- | --- | --- | --- | --- |
+| API 인증키 | Authorization | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | Authorization: Vendor API Authentication Key \| Authorization: 샘플코드에서 확인된 필드 \| Authorization: 샘플코드에서 확인된 필드 |
+| Add Option Name | addOptnNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | addOptnNm: Add Option Name \| addOptnNm: Add Option Name |
+| Add Option Value | addOptnVal | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | addOptnVal: Add Option Value \| addOptnVal: Add Option Value |
+| Claim Demand Date Time | clmDemndDts | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | clmDemndDts: Claim Demand Date Time |
+| Claim Quantity | clmQty | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | clmQty: Claim Quantity \| clmQty: Claim Quantity \| clmQty: Claim Quantity |
+| Claim Reason Code | clmRsnCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | clmRsnCd: Claim Reason Code |
+| Claim Reason Code 251( No long | clmRsnCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | clmRsnCd: Claim Reason Code 251( No longer needed ) 202( Sold out ) |
+| Claim Reason Code 351( No long | clmRsnCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | clmRsnCd: Claim Reason Code 351( No longer needed ) 353( Color didn't match or size didn't fit ) 301( Item defective or doesn't work ) 352( Return after reordering items ) |
+| Claim Reason Contents | clmRsnCntt | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | clmRsnCntt: Claim Reason Contents \| clmRsnCntt: Claim Reason Contents |
+| Member Name | mbrNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | mbrNm: Member Name \| mbrNm: Member Name |
+| N | addOptnList | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | addOptnList: N \| addOptnList: N |
+| Order Complete Date Time | ordCmplDts | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordCmplDts: Order Complete Date Time \| ordCmplDts: Order Complete Date Time |
+| Order Item Status Code | ordItemStatCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordItemStatCd: Order Item Status Code \| ordItemStatCd: Order Item Status Code |
+| Order Message Quantity | ordMsgQty | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordMsgQty: Order Message Quantity \| ordMsgQty: Order Message Quantity |
+| Order Receipt End Date | ordRcpEndDt | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordRcpEndDt: Order Receipt End Date |
+| Order Receipt Start Date | ordRcpStrtDt | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordRcpStrtDt: Order Receipt Start Date |
+| Original Order Number | rcovMthdCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | rcovMthdCd: Original Order Number |
+| Process Order Quantity | procOrdQty | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | procOrdQty: Process Order Quantity |
+| Real Order Quantity (rlordQty=ordQty-clm | rlordQty | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | rlordQty: Real Order Quantity (rlordQty=ordQty-clmQty) \| rlordQty: Real Order Quantity (rlordQty=ordQty-clmQty) |
+| Result List | resultList | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | resultList: Result List \| resultList: Result List \| resultList: Result List |
+| Return Code | returnCode | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | returnCode: Return Code |
+| Return Message | returnMsg | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | returnMsg: Return Message |
+| Shipping Cost Burden Main Code | shppcstBdnMainCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | shppcstBdnMainCd: Shipping Cost Burden Main Code |
+| Site Name | siteNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | siteNm: Site Name \| siteNm: Site Name |
+| Success YN | successYn | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | successYn: Success YN |
+| Supply Vendor Identification | splVenId | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | splVenId: Supply Vendor Identification |
+| Supply Vendor Name | splVenNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | splVenNm: Supply Vendor Name \| splVenNm: Supply Vendor Name |
+| Y | travelOrd / travelOrdItems / travelSearchCondition / travelShppCmplOrdItems | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | travelSearchCondition: Y \| travelSearchCondition: Y \| travelShppCmplOrdItems: Y |
+| claimResult | claimResult | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS |  |
+| integer | addOptnNo | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | addOptnNo: integer \| addOptnNo: integer |
+| travelClaimInfo | travelClaimInfo | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS |  |
+| 결과 | result | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS |  |
+| 결과 데이터 | resultData | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | resultData: Y |
+| 결과 메시지 | resultMessage | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | resultMessage: Result Description ( "SUCCESS" OR "No Secure Sockets Layer (SSL)" ) \| resultMessage: Result Description ( "SUCCESS" OR "No Secure Sockets Layer (SSL)" ) \| resultMessage: Result Description ( SUCCESS, msg, Server Exception ) |
+| 결과 설명 | resultDesc | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | resultDesc: Result Message( SUCCESS, FAIL ) \| resultDesc: Result Message( SUCCESS, FAIL ) \| resultDesc: Result Message( SUCCESS, FAIL ) |
+| 결과코드 | resultCode | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | resultCode: Result Code (0000 normal, the rest error) \| resultCode: Result Code (0000 normal, the rest error) \| resultCode: Result Code (00 normal, the rest error) |
+| 단품 ID | uitemId | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | uitemId: Unit Item Identification \| uitemId: Unit Item Identification \| uitemId: Unit Item Identification |
+| 단품명 | uitemNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | uitemNm: Unit Item Name \| uitemNm: Unit Item Name \| uitemNm: Unit Item Name |
+| 상품 ID | itemId | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | itemId: Item Identification \| itemId: Item Identification \| itemId: Item Identification |
+| 상품명 | itemNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | itemNm: Item Name \| itemNm: Item Name \| itemNm: Item Name |
+| 샘플코드에서 확인된 필드 | PARAMETER | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | PARAMETER: 샘플코드에서 확인된 필드 \| PARAMETER: 샘플코드에서 확인된 필드 \| PARAMETER: 샘플코드에서 확인된 필드 |
+| 수령자 휴대전화 | rcptpeHpno | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | rcptpeHpno: Receipt Person Handphone Service Number \| rcptpeHpno: Receipt Person Handphone Service Number |
+| 수령자명 | rcptpeNm | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | rcptpeNm: Receipt Person Name \| rcptpeNm: Receipt Person Name |
+| 실주문금액 | rlordAmt | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | rlordAmt: Real Order Amount \| rlordAmt: Real Order Amount |
+| 원주문번호 | orordNo | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | orordNo: Original Order No \| orordNo: Original Order No \| orordNo: Original Order No |
+| 원주문상품 순번 | orordItemSeq | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | orordItemSeq: integer |
+| 조회 시작일 | perdStrDts | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | perdStrDts: Period Start Date |
+| 조회 종료일 | perdEndDts | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | perdEndDts: Period End Date |
+| 주문번호 | ordNo | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordNo: Order No \| ordNo: Order No \| ordNo: Order Number |
+| 주문상태 코드 | ordStatCd | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordStatCd: Order Status Code \| ordStatCd: Order Status Code \| ordStatCd: Order Status Code |
+| 주문상품 순번 | ordItemSeq | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordItemSeq: Y \| ordItemSeq: Y \| ordItemSeq: Order Item Sequence |
+| 주문수량 | ordQty | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | ordQty: Order Quantity \| ordQty: Order Quantity |
+| 판매가 | sellprc | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | sellprc: Sell Price \| sellprc: Sell Price |
+| 할인금액 | dcAmt | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | dcAmt: Discount Amount \| dcAmt: Discount Amount |
+| 협력사 상품 ID | splVenItemId | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | splVenItemId: Supply Vendor Item Identification \| splVenItemId: Supply Vendor Item Identification |
+| 회원 로그인 ID | mbrLoginId | 여행 주문 / 취소 / 반품 | 1 | 단일 | ✅ 핵심 UDS | mbrLoginId: Member Login Identification \| mbrLoginId: Member Login Identification |

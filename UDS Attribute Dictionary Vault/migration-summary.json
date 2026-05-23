@@ -1,0 +1,52 @@
+[
+  {
+    "channel": "Coupang",
+    "title": "Coupang UDS Attribute",
+    "page_id": "369559dfde8580268fb8d1216cd0e1f0",
+    "tables": 1,
+    "rows_including_headers": 652,
+    "markdown_files": 3,
+    "csv_files": 1,
+    "index": "/Users/sihoonkim/Onword Lab/UDS Attribute Dictionary Vault/channels/Coupang/Coupang Index.md"
+  },
+  {
+    "channel": "Cafe24",
+    "title": "Cafe 24",
+    "page_id": "369559dfde8580d5b2c6e393b7aede0f",
+    "tables": 1,
+    "rows_including_headers": 1016,
+    "markdown_files": 3,
+    "csv_files": 1,
+    "index": "/Users/sihoonkim/Onword Lab/UDS Attribute Dictionary Vault/channels/Cafe24/Cafe24 Index.md"
+  },
+  {
+    "channel": "Naver Smart Store",
+    "title": "Naver Smart Store",
+    "page_id": "369559dfde8580759353fe2b72a6b254",
+    "tables": 1,
+    "rows_including_headers": 819,
+    "markdown_files": 3,
+    "csv_files": 1,
+    "index": "/Users/sihoonkim/Onword Lab/UDS Attribute Dictionary Vault/channels/Naver Smart Store/Naver Smart Store Index.md"
+  },
+  {
+    "channel": "Gmarket Auction",
+    "title": "지마켓",
+    "page_id": "369559dfde85804aa4f2ed4b8c66b61f",
+    "tables": 1,
+    "rows_including_headers": 2115,
+    "markdown_files": 3,
+    "csv_files": 1,
+    "index": "/Users/sihoonkim/Onword Lab/UDS Attribute Dictionary Vault/channels/Gmarket Auction/Gmarket Auction Index.md"
+  },
+  {
+    "channel": "SSG Mall",
+    "title": "SSG Mall",
+    "page_id": "369559dfde8580d38e38d7a0019a37aa",
+    "tables": 15,
+    "rows_including_headers": 2651,
+    "markdown_files": 17,
+    "csv_files": 15,
+    "index": "/Users/sihoonkim/Onword Lab/UDS Attribute Dictionary Vault/channels/SSG Mall/SSG Mall Index.md"
+  }
+]

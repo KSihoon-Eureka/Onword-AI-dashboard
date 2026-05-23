@@ -1,0 +1,130 @@
+﻿UDS 속성명,SSG 필드명,API 카테고리,사용 API 문서 수,공통/반복,UDS 필요도,설명
+API 인증키,Authorization,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,Authorization: 업체 인증키 Vendor API Authentication Key | Authorization: 샘플코드에서 확인된 필드 | Authorization: 샘플코드에서 확인된 필드
+exchangeTarget,exchangeTarget,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,
+exchangeTargets,exchangeTargets,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,
+request,request,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,
+requestConfirmRcov,requestConfirmRcov,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,
+requestExchangeTarget,requestExchangeTarget,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,
+requestRefusualReturn,requestRefusualReturn,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,
+개런티 주문여부 Y/N GuaranteeItem Ord,ordItemCertNoYn,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordItemCertNoYn: 개런티 주문여부 Y/N GuaranteeItem OrderType Yes Or No Y/N | ordItemCertNoYn: 개런티 주문여부 Y/N GuaranteeItem OrderType Yes Or No Y/N
+결과,result,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,result: 결과 Result | result: 샘플코드에서 확인된 필드 | result: 샘플코드에서 확인된 필드
+결과 메시지,resultMessage,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,resultMessage: 결과 값 Result Message | resultMessage: 샘플코드에서 확인된 필드 | resultMessage: 결과 값 Result Message
+결과 설명,resultDesc,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,resultDesc: 오류 메시지 Error Message | resultDesc: 샘플코드에서 확인된 필드 | resultDesc: 오류 메시지 Error Message
+결과코드,resultCode,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,resultCode: 결과 코드 Result Code | resultCode: 샘플코드에서 확인된 필드 | resultCode: 결과 코드 Result Code
+공급 업체 부담 할인 금액 Supply Vendor Burden Disc,splVenBdnDcAmt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,splVenBdnDcAmt: 공급 업체 부담 할인 금액 Supply Vendor Burden Discount Amount
+공급업체ID Supply Vendor ID,splVenId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,splVenId: 공급업체ID Supply Vendor ID
+공급업체명 Supply Vendor Name,shppVenNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppVenNm: 공급업체명 Supply Vendor Name
+공급업체아이디 Supply Vendor Identifi,shppVenId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppVenId: 공급업체아이디 Supply Vendor Identification
+교환 배송비용 Exchange Shipping Cost,exchShppcst,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,exchShppcst: 교환 배송비용 Exchange Shipping Cost
+귀책구분코드 10 고객 20 업체 Imputation ,imptDivCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,imptDivCd: 귀책구분코드 10 고객 20 업체 Imputation Division Code 10 Customer 20 Vendor
+귀책사유주체 10 고객 20 판매자 30 택배사 Ret,retImptMainCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retImptMainCd: 귀책사유주체 10 고객 20 판매자 30 택배사 Return Request Reason Main Code 10 Customer 20 Seller 30 Shipping Company | retImptMainCd: 귀책사유주체 10 고객 20 판매자 30 택배사 Return Request Reason Main 10 Customer 20 Seller 30 Shipping Company | retImptMainCd: 귀책사유주체 10 고객 20 판매자 30 택배사 Return Request Reason Main 10 Customer 20 Seller 30 Shipping Company
+귀책사유주체 10 고객 20 판매자 30 택배사 Return Reques,retImptMainCds,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retImptMainCds: 귀책사유주체 10 고객 20 판매자 30 택배사 Return Request Reason Main 10 Customer 20 Seller 30 Shipping Company
+귀책사유주체 Return Request Reason Main,retImptMainNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retImptMainNm: 귀책사유주체 Return Request Reason Main
+단품 ID,uitemId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,uitemId: 단품ID Unit Item Id | uitemId: 샘플코드에서 확인된 필드 | uitemId: 단품번호 Unit Item Number
+단품명,uitemNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,uitemNm: 단품명 Unit Item Name | uitemNm: 샘플코드에서 확인된 필드 | uitemNm: 단품명 Unit Item Name
+데이터,data,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,data: 샘플코드에서 확인된 필드
+메모등록자 Memo Registrant,retProcMemoRegpeId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retProcMemoRegpeId: 메모등록자 Memo Registrant
+모델명 Model Name,mdlNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,mdlNm: 모델명 Model Name
+몰 유형코드,mallTypeCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,mallTypeCd: 몰유형코드 10: 종합몰 20: 오픈마켓 Mall Type 10: general mall 20: open market | mallTypeCd: 몰유형코드 10: 종합몰 20: 오픈마켓 Mall Type 10: general mall 20: open market
+반품 배송비용 Return Shipping Cost,retShppcst,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retShppcst: 반품 배송비용 Return Shipping Cost
+반품거부 수량 Return Denied Quantity,procItemQty,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,procItemQty: 반품거부 수량 Return Denied Quantity
+반품거부메모 Return Denied Memo,retProcMemoCntt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retProcMemoCntt: 반품거부메모 Return Denied Memo
+반품거부사유 01 기간경과 02 사용상품 03 상품불량,retRefusRsnCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"retRefusRsnCd: 반품거부사유 01 기간경과 02 사용상품 03 상품불량 04 구성품누락 05 사은품누락 06 상품상이 07 상품수량상이 08 상품훼손/파손 09 케이스(BOX)파손 10 상담원과실 11 기타 Return Denied Reason Overlap permitted. Must use ',' for division. 01 Period Elapsed 02 Use Item 03 Faulty Item 04 Main Item Omitted 05 Free Gift Omitted 06 Item Incorrect 07 Item Quantity Incorrect 08 Item Damage 09 Case(Box) Damage 10 Consultant's Mistake 11 Other"
+반품거부사유 01 기간경과 02 사용상품 03 상품불량 04 구성품누락 ,retRefusRsnCds / retRefusRsnNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"retRefusRsnCds: 반품거부사유 01 기간경과 02 사용상품 03 상품불량 04 구성품누락 05 사은품누락 06 상품상이 07 상품수량상이 08 상품훼손/파손 09 케이스(BOX)파손 10 상담원과실 11 기타 Return Denied Reason Overlap permitted. Must use ',' for division. 01 Period Elapsed 02 Use Item 03 Faulty Item 04 Main Item Omitted 05 Free Gift Omitted 06 Item Incorrect 07 Item Quantity Incorrect 08 Item Damage 09 Case(Box) Damage 10 Consultant's Mistake 11 Other | retRefusRsnNm: 반품거부사유 01 기간경과 02 사용상품 03 상품불량 04 구성품누락 05 사은품누락 06 상품상이 07 상품수량상이 08 상품훼손/파손 09 케이스(BOX)파손 10 상담원과실 11 기타 Return Denied Reason Overlap permitted. Must use ',' for division. 01 Period Elapsed 02 Use Item 03 Faulty Item 04 Main Item Omitted 05 Free Gift Omitted 06 Item Incorrect 07 Item Quantity Incorrect 08 Item Damage 09 Case(Box) Damage 10 Consultant's Mistake 11 Other"
+반품거부수량 Return Denied Quantity,refusRetProcQty,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,refusRetProcQty: 반품거부수량 Return Denied Quantity
+반품거부처리메모 Return Denied Memo,retProcMemoCntt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retProcMemoCntt: 반품거부처리메모 Return Denied Memo
+반품처리상태 10 반품완료 20 반품거부 30 반품거부CS처리중 40 반,retProcStats,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retProcStats: 반품처리상태 10 반품완료 20 반품거부 30 반품거부CS처리중 40 반품거부CS처리완료 Return Process Status 10 Return Completed 20 Return Denied 30 Return Denied CS Processing 40 Return Denied CS Processing Completed
+반품처리상태 Return Process Status,retProcStatNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retProcStatNm: 반품처리상태 Return Process Status
+반품처리상태코드 10 반품완료 20 반품거부 30 반품,retProcStatCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,retProcStatCd: 반품처리상태코드 10 반품완료 20 반품거부 30 반품거부CS처리중 40 반품거부CS처리완료 50 반품확인 60 회수철회 Return Process Status Code 10 Return Completed 20 Return Denied 30 Return Denied CS Processing 40 Return Denied CS Processing Completed 50 Recollect Confirmed 60 Recollect Revoked
+배송구분상세명 Release Type Name,shppDivDtlNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppDivDtlNm: 배송구분상세명 Release Type Name
+배송구분상세코드 21 반품 22 교환 23 AS Release Type ,shppDivDtlCds,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppDivDtlCds: 배송구분상세코드 21 반품 22 교환 23 AS Release Type 21 Return 22 Exchange 23 AS
+배송번호,shppNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppNo: 회수배송번호 Recollect Shipping Number | shppNo: 샘플코드에서 확인된 필드 | shppNo: 배송번호 Shipping Number
+배송비 추가결제 Shipping Cost Additional Paymen,shppcstAddPaymtNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppcstAddPaymtNm: 배송비 추가결제 Shipping Cost Additional Payment
+배송비부담주체코드 10 고객 20 업체 Shipping,shppcstBdnMainCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppcstBdnMainCd: 배송비부담주체코드 10 고객 20 업체 Shipping Cost Payee Main Code 10 Customer 20 Vendor
+배송비부담주체코드명 Shipping Cost Payee Main Name,shppcstBdnMainNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppcstBdnMainNm: 배송비부담주체코드명 Shipping Cost Payee Main Name
+배송사 메모,memoCntt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,memoCntt: 배송업무메모 Shipping Company Memo
+배송상태 코드,shppStatCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppStatCd: 배송상태코드 10 정상 30 대기 Shipping Status Code 10 Normal 30 On Hold | shppStatCd: 샘플코드에서 확인된 필드
+배송상태코드명 Shipping Status Name,shppStatNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppStatNm: 배송상태코드명 Shipping Status Name
+배송순번,shppSeq,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppSeq: 회수배송순번 Recollect Shipping Sequence | shppSeq: 샘플코드에서 확인된 필드 | shppSeq: 배송순번 Shipping Item Sequence
+배송유형 상세코드,shppTypeDtlCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppTypeDtlCd: 배송유형상세코드 14 업체자사배송 22 업체택배배송 25 해외택배배송 31 매장방문 41 등기 91 업체프리미엄배송 Shipping Type Code 14 Vendor's In-House Shipping 22 Vendor Shipping 25 International Shipping 31 In-Store Visit 41 Mail 91 Premium Shipping | shppTypeDtlCd: 샘플코드에서 확인된 필드 | shppTypeDtlCd: 배송유형상세코드 14 업체자사배송 22 업체택배배송 25 해외택배배송 31 매장방문 41 등기 91 업체프리미엄배송 Shipping Type Detail 14 Vendor's In-House Shipping 22 Vendor Shipping 25 International Shipping 31 In-Store Visit 41 Mail 91 Premium Shipping
+배송유형상세코드 14 업체자사배송 22 업체택배배송 25 해외택배배송 3,shppTypeDtlCds,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppTypeDtlCds: 배송유형상세코드 14 업체자사배송 22 업체택배배송 25 해외택배배송 31 매장방문 41 등기 91 업체프리미엄배송 Shipping Type Detail 14 Vendor's In-House Shipping 22 Vendor Shipping 25 International Shipping 31 In-Store Visit 41 Mail 91 Premium Shipping
+배송유형상세코드명 Shipping Type Detail Name,shppTypeDtlNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppTypeDtlNm: 배송유형상세코드명 Shipping Type Detail Name
+배송주체코드 32 업체창고 41 협력업체 42 브랜드직,shppMainCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppMainCd: 배송주체코드 32 업체창고 41 협력업체 42 브랜드직배 Shipping Main Code 32 Vendor's Warehouse 41 Cooperative Company 42 Brand Direct Shipping | shppMainCd: 배송주체코드 32 업체창고 41 협력업체 42 브랜드직배 Shipping Main Code 32 Vendor's Warehouse 41 Cooperative Company 42 Brand Direct Shipping
+배송지 기본주소,shpplocBascAddr,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"shpplocBascAddr: 수취인 행정구역 + 도로명 + 건물번호 (도로명 주소가 없는 경우 지번 기본 주소) Recipient Administrative District + Street Name + Building Number (If there is no road name address, the land lot number basic address is returned.)"
+배송지 상세주소,shpplocDtlAddr,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"shpplocDtlAddr: 수취인 도로명 상세주소 (도로명 주소가 없는 경우 지번 상세 주소) Recipient Road Name Detail Address (If there is no road name address, the land lot number detail address is returned.)"
+배송지 우편번호,shpplocZipcd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shpplocZipcd: 수취인 우편번호 Recipient Postal Code | shpplocZipcd: 샘플코드에서 확인된 필드
+배송지 지번주소,shpplocAddr,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"shpplocAddr: 수취인 도로명주소 (도로명 주소가 없는 경우 지번 주소) Recipient Road Name Address (If there is no road name address, the land lot number address is returned.) | shpplocAddr: 샘플코드에서 확인된 필드"
+비용정보 Cost Information,cstInfo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,cstInfo: 비용정보 Cost Information
+"빠른조회값, 빠른조회일 경우 필수 값 If quick search, th",commValue,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"commValue: 빠른조회값, 빠른조회일 경우 필수 값 If quick search, then mandatory value."
+"빠른조회타입, 빠른조회일 경우 필수 값 01 운송장번호 02 주문번호 0",commType,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"commType: 빠른조회타입, 빠른조회일 경우 필수 값 01 운송장번호 02 주문번호 03 배송번호 If general search, then mandatory value. 01 Waybill Number 02 Order Number 03 Shipping Number"
+사은품 Free Gift,frebieNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,frebieNm: 사은품 Free Gift
+상세배송진행상태 61 회수지시 63 회수확인 64 회수완료 65 회수완료,shppProgStatDtlCds,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppProgStatDtlCds: 상세배송진행상태 61 회수지시 63 회수확인 64 회수완료 65 회수완료보류 66 회수철회 Recollect Status 61 Recollect Instructed 63 Recollect Confirmed 64 Recollect Completed 65 Recollect Completed On Hold 66 Recollect Revoked
+상위업체명 (삭제예정. 'shppVenNm'을 사용해주세요) Upper ,splVenNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"splVenNm: 상위업체명 (삭제예정. 'shppVenNm'을 사용해주세요) Upper Rank Vendor (To be deleted. Please use ""shppVenNm"".)"
+상품 ID,itemId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,itemId: 상품ID Item Number | itemId: 샘플코드에서 확인된 필드 | itemId: 상품번호 Item Number
+상품명,itemNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,itemNm: 상품명 Item Name | itemNm: 샘플코드에서 확인된 필드 | itemNm: 상품명 Item Name
+샘플코드에서 확인된 필드,accept / bfShppNo / bfShppSeq / clmRsnCd / clmRsnCntt / clmRsnNm / cnclItemQty / cstInfo / delicoVenNm / dircItemQty / exchShppcst / exchangeTarget / exchangeTargets / imptDivCd / lastShppProgStatDtlCd / lastShppProgStatDtlNm / lrnkSplVenId / lrnkSplVenNm / mdlNm / orOrdNo / ordCnclDts / ordCnfdocNo / ordItemCertNoYn / ordItemStatCd / ordItemStatNm / ordRcpMediaCd / ordRcpMediaNm / ordTypeCd06Yn / procItemQty / rcovCmplDt / rcovCnfDt / rcovDircDt / rcovMthdCd / rcovMthdNm / refundDt / refundYn / request / requestConfirmRcov / requestExchangeTarget / requestRefusualReturn / resellPsblYn / retImptMainCd / retImptMainNm / retProcMemoCntt / retProcStatCd / retProcStatNm / retRefusRsnCd / retShppcst / shpmtShppcst / shppDivDtlNm / shppLrnkVenId / shppLrnkVenNm / shppStatNm / shppTypeDtlNm / shppVenId / shppVenNm / shppcstBdnMainCd / shppcstBdnMainNm / shpplocOldZipcd / splVenBdnDcAmt / splVenId / splVenNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,accept: 샘플코드에서 확인된 필드 | accept: 샘플코드에서 확인된 필드 | accept: 샘플코드에서 확인된 필드
+선물하기 주문여부 Y/N GiftItem OrderTy,ordTypeCd06Yn,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordTypeCd06Yn: 선물하기 주문여부 Y/N GiftItem OrderType Yes Or No Y/N | ordTypeCd06Yn: 선물하기 주문여부 Y/N GiftItem OrderType Yes Or No Y/N
+수령자 전화번호,rcptpeTelno,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcptpeTelno: 수취인 집전화번호 Recipient Phone Number | rcptpeTelno: 샘플코드에서 확인된 필드
+수령자 휴대전화,rcptpeHpno,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcptpeHpno: 수취인 휴대폰번호 Recipient Mobile Phone Number | rcptpeHpno: 샘플코드에서 확인된 필드
+수령자명,rcptpeNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcptpeNm: 수취인 Recipient | rcptpeNm: 수취인 Recipient | rcptpeNm: 샘플코드에서 확인된 필드
+수취인 구우편번호(6자리) Recipient Old P,shpplocOldZipcd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shpplocOldZipcd: 수취인 구우편번호(6자리) Recipient Old Postal Code (6digits)
+실주문금액,rlordAmt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rlordAmt: 결제가 * 해당 항목은 배송을 위한 참고 정보입니다. 정산을 위해서는 정산 API를 활용해주세요. Real Order Amount * This is reference information for Shipping. Please use Settlement API for an accurate settlement. | rlordAmt: 샘플코드에서 확인된 필드
+운송장번호,wblNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,wblNo: 운송장번호 Waybill Number | wblNo: 샘플코드에서 확인된 필드 | wblNo: 운송장번호 Waybill Number
+원배송번호 Original Shipping Number,orshppNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,orshppNo: 원배송번호 Original Shipping Number
+원배송순번 Original Shipping Sequen,orshppSeq,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,orshppSeq: 원배송순번 Original Shipping Sequence
+원주문번호,orordNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"orordNo: 원주문번호조회타입, 원주문번호일 경우 필수 값 원주문번호 If Original Order Number search, then mandatory value. Original Order Number | orordNo: 원주문번호 Original Order Number | orordNo: 샘플코드에서 확인된 필드"
+"원주문번호조회타입, 옵션 값 원주문상품순번 1,2,3,",orordItemSeqs,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"orordItemSeqs: 원주문번호조회타입, 옵션 값 원주문상품순번 1,2,3,4,5 If Original Order Number search, then option value. Original Order Item Sequence's 1,2,3,4,5"
+원주문상품 순번,orordItemSeq,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,orordItemSeq: 원주문상품순번 Original Order Item Sequence | orordItemSeq: 샘플코드에서 확인된 필드 | orordItemSeq: 원주문순번 Original Order Item Sequence
+응답 형식,Accept,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,Accept: application/xml application/json application/xml application/json | Accept: application/xml application/json application/xml application/json | Accept: application/xml application/json application/xml application/json
+이전배송번호 Previous Shipping Numbe,bfShppNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,bfShppNo: 이전배송번호 Previous Shipping Number
+이전배송순번 Previous Shipping Seque,bfShppSeq,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,bfShppSeq: 이전배송순번 Previous Shipping Sequence
+이전시스템주문순번 Previous System Orde,bfOrderSeq,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,bfOrderSeq: 이전시스템주문순번 Previous System Order Sequence
+이전주문번호 Previous System Order N,bfOrderId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,bfOrderId: 이전주문번호 Previous System Order Number
+재판매가능 구분 Y 가능 N 불가능 Resell Pos,resellPsblYn,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,resellPsblYn: 재판매가능 구분 Y 가능 N 불가능 Resell Possibility Division Y Possible N Not Possible | resellPsblYn: 재판매가능 구분 Y 가능 N 불가능 Resell Possibility Division Y Possible N Not Possible | resellPsblYn: 재판매가능 구분 Y 가능 N 불가능 Resell Possibility Division Y Possible N Not Possible
+접수매체명 Receipt Media Name,ordRcpMediaNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordRcpMediaNm: 접수매체명 Receipt Media Name
+접수매체코드 10 PC웹 20 모바일웹 30 모바일앱(,ordRcpMediaCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordRcpMediaCd: 접수매체코드 10 PC웹 20 모바일웹 30 모바일앱(iOS) 40 모바일앱(안드로이드) 50 패드앱(iOS) 60 패드앱(안드로이드) 70 스마트기기 80 제휴채널 90 점포 99 콜센터 Receipt Media Code 10 PC Web 20 Mobile Web 30 Mobile App(iOS) 40 Mobile App(Android) 50 Pad App(iOS) 60 Pad App(Android) 70 Smart Device 80 Alln Channel 90 Store 99 Call Center
+조회 시작일,perdStrDts,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"perdStrDts: 기간조회타입, 기간조회일 경우 필수 값 기간시작일 yyyymmdd (기간은 7일 이내) If Period search, then mandatory value. Period start date. yyyymmdd (Period is within 7 days) | perdStrDts: 샘플코드에서 확인된 필드 | perdStrDts: 기간시작일, 일반조회일 경우 필수 값. 기간은 7일 이내 If general search, then mandatory value. Period is within 7 days"
+조회 종료일,perdEndDts,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"perdEndDts: 기간조회타입, 기간조회일 경우 필수 값 기간종료일 yyyymmdd (기간은 7일 이내) If Period search, then mandatory value. Period end date. yyyymmdd (Period is within 7 days) | perdEndDts: 샘플코드에서 확인된 필드 | perdEndDts: 기간종료일, 일반조회일 경우 필수 값. 기간은 7일 이내 If general search, then mandatory value. Period is within 7 days"
+조회기간 유형,perdType,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"perdType: 기간타입, 일반조회일 경우 필수 값 01 회수지시일 02 회수완료일 03 주문완료일(=배송지시일) 04 회수확인일 05 회수철회일 If general search, then mandatory value. 01 Recollect Instructed Date 02 Recollect Completed Date 03 Order Completed Date (= Shipping Instructed Date) 04 Recollect Confirmed Date 05 Recollect Revoked Date | perdType: 샘플코드에서 확인된 필드 | perdType: 샘플코드에서 확인된 필드"
+주문번호,ordNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordNo: 주문번호 Order Number | ordNo: 주문번호 Order Number | ordNo: 샘플코드에서 확인된 필드
+주문상품 순번,ordItemSeq,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordItemSeq: 주문상품순번 Order Item Sequence | ordItemSeq: 주문상품순번 Order Item Sequence | ordItemSeq: 샘플코드에서 확인된 필드
+주문상품상태명 Order Item Status Name,ordItemStatNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordItemStatNm: 주문상품상태명 Order Item Status Name
+주문상품상태코드 180 주문취소 Order Item S,ordItemStatCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordItemStatCd: 주문상품상태코드 180 주문취소 Order Item Status Code 180 Order Cancel
+주문자명,ordpeNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordpeNm: 주문자명 Customer Name | ordpeNm: 샘플코드에서 확인된 필드 | ordpeNm: 주문자 Customer
+주문접수일시,ordRcpDts,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordRcpDts: 주문접수일시 Order Registered Date | ordRcpDts: 샘플코드에서 확인된 필드
+주문취소일시 Cancel Order Date,ordCnclDts,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordCnclDts: 주문취소일시 Cancel Order Date
+주문확인서번호 배송주체코드가 브랜드직배일경우에만 필수 ,ordCnfdocNo,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,ordCnfdocNo: 주문확인서번호 배송주체코드가 브랜드직배일경우에만 필수 Order Confirmation Number Mandatory only when Shipping Main Code is Brand Direct Shipping. | ordCnfdocNo: 주문확인서번호 배송주체코드가 브랜드직배일경우에만 필수 Order Confirmation Number Mandatory only when Shipping Main Code is Brand Direct Shipping.
+지시수량 Instructed Quantity,dircItemQty,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,dircItemQty: 지시수량 Instructed Quantity
+지시수량(원주문단위) Order Quantity,dircItemQty,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,dircItemQty: 지시수량(원주문단위) Order Quantity
+처리수량 Recollect Quantity,procItemQty,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,procItemQty: 처리수량 Recollect Quantity | procItemQty: 처리수량 Recollect Quantity | procItemQty: 처리수량 Recollect Quantity
+최종배송상세진행상태명 Final Shipping Detail Proces,lastShppProgStatDtlNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,lastShppProgStatDtlNm: 최종배송상세진행상태명 Final Shipping Detail Process Status Name
+최종배송상세진행상태코드 61 회수지시 63 회수확인 6,lastShppProgStatDtlCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,lastShppProgStatDtlCd: 최종배송상세진행상태코드 61 회수지시 63 회수확인 64 회수완료 65 회수완료보류 66 회수철회 Final Shipping Detail Process Status Code 61 Recollect Instructed 63 Recollect Confirmed 64 Recollect Completed 65 Recollect Completed On Hold 66 Recollect Revoked
+출고배송비용 Shipment Shipping Cost,shpmtShppcst,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shpmtShppcst: 출고배송비용 Shipment Shipping Cost
+출고유형 상세코드,shppDivDtlCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppDivDtlCd: 배송구분상세코드 21 반품회수 22 교환회수 23 AS회수 Release Type 21 Return 22 Exchange 23 AS | shppDivDtlCd: 샘플코드에서 확인된 필드
+취소수량(클레임단위) Cancel Order Quantity,cnclItemQty,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,cnclItemQty: 취소수량(클레임단위) Cancel Order Quantity
+클레임사유내용 Claim Reason Contents,clmRsnCntt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,clmRsnCntt: 클레임사유내용 Claim Reason Contents
+클레임사유내용(귀책사유(세)) Claim Reason Content,clmRsnCntt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,clmRsnCntt: 클레임사유내용(귀책사유(세)) Claim Reason Content
+클레임사유명 Claim Reason Name,clmRsnNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,clmRsnNm: 클레임사유명 Claim Reason Name
+클레임사유코드 251 단순취소 252 사이즈/색상 옵션,clmRsnCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,clmRsnCd: 클레임사유코드 251 단순취소 252 사이즈/색상 옵션 변경 253 재주문 258 배송지 변경 259 최저가아님 260 배송시간변경 Claim Reason Code 251 Simple Cancel 252 Size/Color Option Change 253 ReOrder 258 Ship Address Change 259 Not Low Price 260 Ship Time Change
+클레임사유코드 Claim Reason Code,clmRsnCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,clmRsnCd: 클레임사유코드 Claim Reason Code
+클레임사유코드명 Claim Reason Name,clmRsnNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,clmRsnNm: 클레임사유코드명 Claim Reason Name
+택배사 업체 ID,delicoVenId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,delicoVenId: 택배사ID Shipping Company | delicoVenId: 샘플코드에서 확인된 필드 | delicoVenId: 택배사 Shipping Company
+택배사명 Shipping Company Name,delicoVenNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,delicoVenNm: 택배사명 Shipping Company Name
+판매가,sellprc,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,sellprc: 판매가 Sales Price | sellprc: 샘플코드에서 확인된 필드
+하위공급업체ID Low Rank Supply Vendo,lrnkSplVenId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,lrnkSplVenId: 하위공급업체ID Low Rank Supply Vendor ID
+하위공급업체명 Low Rank Supply Vendor Name,shppLrnkVenNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppLrnkVenNm: 하위공급업체명 Low Rank Supply Vendor Name
+하위공급업체아이디 Low Rank Supply Vend,shppLrnkVenId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,shppLrnkVenId: 하위공급업체아이디 Low Rank Supply Vendor Identification
+하위업체명 (삭제예정. 'shppLrnkVenNm'을 사용해주세요) Lo,lrnkSplVenNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,"lrnkSplVenNm: 하위업체명 (삭제예정. 'shppLrnkVenNm'을 사용해주세요) Low Rand Vendor (To be deleted. Please use ""shppLrnkVenNm"".)"
+할인금액,dcAmt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,dcAmt: 할인가 * 해당 항목은 배송을 위한 참고 정보입니다. 정산을 위해서는 정산 API를 활용해주세요. Discount Amount * This is reference information for Shipping. Please use Settlement API for an accurate settlement. | dcAmt: 샘플코드에서 확인된 필드
+협력사 단품 ID,uSplVenItemId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,uSplVenItemId: 협력업체단품ID Vendor Unit Item Number | uSplVenItemId: 샘플코드에서 확인된 필드
+협력사 상품 ID,splVenItemId,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,splVenItemId: 협력업체상품ID Vendor Item Number | splVenItemId: 샘플코드에서 확인된 필드
+환불여부 Y/N Refund Yes Or No Y/N,refundYn,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,refundYn: 환불여부 Y/N Refund Yes Or No Y/N
+환불완료일 Refund Completed Date,refundDt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,refundDt: 환불완료일 Refund Completed Date
+회수신청방법 20 고객직접발송 40 자동회수 45 업체자체회수 70 SS,rcovMthdCds,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovMthdCds: 회수신청방법 20 고객직접발송 40 자동회수 45 업체자체회수 70 SSG전담택배 Recollect Request Method 20 Customer Firsthand Shipping 40 Automatic Return Shipping 45 Vendor Designated Shipping 70 SSG Dedicated Shipping
+회수신청방법 Recollect Request Method,rcovMthdNm,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovMthdNm: 회수신청방법 Recollect Request Method
+회수신청방법코드 20 고객직접발송 40 자동회수 45 ,rcovMthdCd,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovMthdCd: 회수신청방법코드 20 고객직접발송 40 자동회수 45 업체자체회수 70 SSG전담택배 Recollect Request Method Code 20 Customer Firsthand Shipping 40 Automatic Return Shipping 45 Vendor Designated Shipping 70 SSG Dedicated Shipping
+회수완료보류일 Recollect Completion O,rcovCmplDeferDt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovCmplDeferDt: 회수완료보류일 Recollect Completion On Hold Date
+회수완료일 Recollect Completed Date,rcovCmplDt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovCmplDt: 회수완료일 Recollect Completed Date
+회수지시일 Recollect Instructed Dat,rcovDircDt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovDircDt: 회수지시일 Recollect Instructed Date
+회수철회일 Recollect Revoked Date,rcovRvkDt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovRvkDt: 회수철회일 Recollect Revoked Date
+회수확인일 Recollect Confirmed Date,rcovCnfDt,업체 취소/반품/교환,1,단일,✅ 핵심 UDS,rcovCnfDt: 회수확인일 Recollect Confirmed Date

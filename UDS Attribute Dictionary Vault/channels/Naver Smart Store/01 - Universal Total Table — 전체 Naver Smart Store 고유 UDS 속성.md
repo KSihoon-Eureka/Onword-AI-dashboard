@@ -1,0 +1,836 @@
+---
+title: Universal Total Table — 전체 Naver Smart Store 고유 UDS 속성
+channel: Naver Smart Store
+type: notion-table-migration
+source_notion_page_id: 369559dfde8580759353fe2b72a6b254
+source_table_id: 369559df-de85-814d-a0d3-e9e0e17bbd58
+rows_including_header: 819
+csv_backup: ../../_csv/Naver Smart Store/01 - Universal Total Table — 전체 Naver Smart Store 고유 UDS 속성.csv
+---
+
+# Universal Total Table — 전체 Naver Smart Store 고유 UDS 속성
+
+- Channel: [[Naver Smart Store Index|Naver Smart Store]]
+- Rows including header: **819**
+- CSV backup: `../../_csv/Naver Smart Store/01 - Universal Total Table — 전체 Naver Smart Store 고유 UDS 속성.csv`
+
+| UDS 속성명 | Naver 필드명 | API 영역 | 사용 문서 수 | UDS 필요도 | 설명 |
+| --- | --- | --- | --- | --- | --- |
+| 가맹점 ID (string) NULLABLE 가맹점 ID | merchantId | 부가세 내역, 정산 내역 | 4 | ✅ 핵심 UDS | merchantId 가맹점 ID (string) NULLABLE 가맹점 ID |
+| 가맹점 ID (string) REQUIRED 가맹점 ID | merchantId | 정산 내역 | 1 | ✅ 핵심 UDS | merchantId 가맹점 ID (string) REQUIRED 가맹점 ID |
+| 가맹점명 (string) NULLABLE 가맹점명 | merchantName | 부가세 내역, 정산 내역 | 4 | ✅ 핵심 UDS | merchantName 가맹점명 (string) NULLABLE 가맹점명 |
+| 가맹점명 (string) REQUIRED 가맹점명 | merchantName | 정산 내역 | 1 | ✅ 핵심 UDS | merchantName 가맹점명 (string) REQUIRED 가맹점명 |
+| 가이드 ID (integer | guideId | 판매 옵션 | 1 | ✅ 핵심 UDS | guideId 가이드 ID (integer<int64>) REQUIRED |
+| 거래 결제 수단 (string) 거래 결제 수단 Possib | paymentMethod | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | paymentMethod 거래 결제 수단 (string) 거래 결제 수단 Possible values: [CARD, DIGITAL, CASH, ETC] |
+| 거래 금액(VAT 포함) (number) REQUIRED 거 | totalAmount | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | totalAmount 거래 금액(VAT 포함) (number) REQUIRED 거래 금액(VAT 포함) |
+| 거래 모델 (string) REQUIRED 거래 모델 Pos | paymentModel | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | paymentModel 거래 모델 (string) REQUIRED 거래 모델 Possible values: [ONETIME, USAGE, MONTHLY, YEARLY, ETC] |
+| 거래 사유 | reason | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | reason string 거래 사유 Example: 정기결제 |
+| 거래 시작 일시 | paymentConfirmStartDate | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | paymentConfirmStartDate string<date-time> REQUIRED 거래 시작 일시 Example: 2023-08-18T00:00:00.000+09:00 |
+| 거래 일시 | paymentConfirmDate | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | paymentConfirmDate string<date-time> 거래 일시 Example: 2020-07-25T10:10:10.100+09:00 |
+| 거래 종료 일시 | paymentConfirmEndDate | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | paymentConfirmEndDate string<date-time> REQUIRED 거래 종료 일시 Example: 2023-08-21T00:00:00.000+09:00 |
+| 거래 타입 (string) REQUIRED 거래 타입 Pos | transactionType | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | transactionType 거래 타입 (string) REQUIRED 거래 타입 Possible values: [PAYMENT, REFUND] |
+| 거래 ID (string) REQUIRED 거래 ID | transactionId | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | transactionId 거래 ID (string) REQUIRED 거래 ID |
+| 검색 기간 시작일 (string | fromDate | 상품 목록 | 1 | ✅ 핵심 UDS | fromDate 검색 기간 시작일 (string<date>) 'yyyy-MM-dd' 형식 입력. |
+| 검색 기간 유형 (string) PROD | periodType | 상품 목록 | 1 | ✅ 핵심 UDS | periodType 검색 기간 유형 (string) PROD_REG_DAY(상품 등록일), SALE_START_DAY(판매 시작일), SALE_END_DAY(판매 종료일), PROD_MOD_DAY(최종 수정일) Possible values: [PROD_REG_DAY, SALE_START_DAY, SALE_END_DAY, PROD_MOD_DAY] |
+| 검색 기간 종료일 (string | toDate | 상품 목록 | 1 | ✅ 핵심 UDS | toDate 검색 기간 종료일 (string<date>) 'yyyy-MM-dd' 형식 입력. |
+| 검색 시작 일시 | fromDate | 상품 문의 | 1 | ✅ 핵심 UDS | fromDate string<date-time> REQUIRED 검색 시작 일시 Example: 2020-07-25T10:10:10.100Z |
+| 검색 종료 일시 | toDate | 상품 문의 | 1 | ✅ 핵심 UDS | toDate string<date-time> REQUIRED 검색 종료 일시 Example: 2020-07-25T10:10:10.100Z |
+| 검색 키워드 타입 (string) 채널 상품번호(CHANNE | searchKeywordType | 상품 목록 | 1 | ✅ 핵심 UDS | searchKeywordType 검색 키워드 타입 (string) 채널 상품번호(CHANNEL_PRODUCT_NO) 선택 시 채널 상품번호를 입력합니다. 원상품번호(PRODUCT_NO) 선택 시 채널 원상품번호를 입력합니다. 그룹상품번호(GROUP_PRODUCT_NO) 선택 시 그룹상품번호를 입력합니다. 판매자 관리 코드(SELLER_CODE) 선택 시 판매자 관리 코드를 입력합니다. Possible values: [CHANNEL_PRODUCT_NO, PRODUCT_NO, GROUP_PRODUCT_NO, SELLER_CODE] |
+| 결과를 | type | 그룹상품 | 1 | ✅ 핵심 UDS | type string 결과를 조회할 그룹상품 요청 API의 타입 CREATE(그룹상품 등록), UPDATE(그룹상품 수정), CONVERT(그룹상품 전환) Possible values: [CREATE, UPDATE, CONVERT] |
+| 결제 건수 | numPurchases | 판매 분석 | 1 | ✅ 핵심 UDS | numPurchases number<double> 결제 건수 |
+| 결제 구분 | transactionType | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | transactionType string 결제 구분 Example: PAYMENT Possible values: [FREE_TRIAL, PAYMENT, UPGRADE, DOWNGRADE, REFUND] |
+| 결제 금액 | payAmount | 마케팅 분석, 실시간 분석, 판매 분석 | 17 | ✅ 핵심 UDS | payAmount number<double> 결제 금액 |
+| 결제 상품 수량 | productQuantity | 쇼핑행동 분석, 판매 분석 | 3 | ✅ 핵심 UDS | productQuantity number<double> 결제 상품 수량 |
+| 결제 수 | numPurchases | 마케팅 분석, 판매 분석 | 12 | ✅ 핵심 UDS | numPurchases number<double> 결제 수 |
+| 결제 수단 (string) NULLABLE 결제 수단 PAY | payMeansType | 정산 내역 | 1 | ✅ 핵심 UDS | payMeansType 결제 수단 (string) NULLABLE 결제 수단 PAYMEANS_TYPE_ALL(전체) PAYMEANS_TYPE_BANK(실시간 계좌 이체) PAYMEANS_TYPE_CCARD(신용카드) PAYMEANS_TYPE_CHAMT((구)구매자충전금) PAYMEANS_TYPE_CHKAC((구)체크아웃적립금) PAYMEANS_TYPE_DON((구)네이버캐쉬) PAYMEANS_TYPE_MOBIL(휴대폰 결제) PAYMEANS_TYPE_NCASH(네이버페이 포인트·머니) PAYMEANS_TYPE_POINT(포인트 결제) PAYMEANS_TYPE_VACCT(무통장입금) PAYMEANS_TYPE_SKIP(나중에결제) PAYMEANS_TYPE_PAYLATER(후불 결제) PAYMEANS_TYPE_GIFTCARD(기프트 카드) PAYMEANS_TYPE_NONE(주결제 수단 없음) PAYMEANS_TYPE_NMP_DISCOUNT(네이버 할인지원금) PAYMEANS_TYPE_OV |
+| 결제 완료 일시 (string | paymentConfirmDate | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | paymentConfirmDate 결제 완료 일시 (string<date-time>) REQUIRED 결제 완료 일시 Example: 2024-08-21T10:00:00.001+09:00 |
+| 결제 정산 금액 (number) NULLABLE 결제 정산 | paySettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | paySettleAmount 결제 정산 금액 (number) NULLABLE 결제 정산 금액(=정산 기준 금액) |
+| 결제 정산 금액 (number) REQUIRED 결제 정산 | paySettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | paySettleAmount 결제 정산 금액 (number) REQUIRED 결제 정산 금액(=정산 기준 금액) |
+| 결제번호 | transactionId | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | transactionId string 결제번호 Example: CSP230807100017M5T074S10163 |
+| 결제일 (string | payDate | 정산 내역 | 1 | ✅ 핵심 UDS | payDate 결제일 (string<date>) NULLABLE 결제일(yyyy-MM-dd) |
+| 결제일 구분(periodType 값이 SETTLE | settleDecisionType | 정산 내역 | 2 | ✅ 핵심 UDS | settleDecisionType string 결제일 구분(periodType 값이 SETTLE_CASEBYCASE_PAY_DATE인 경우) SETTLED(정산 확정 건) UNSETTLED(정산 미확정 건) BEFORE_CANCEL(정산 전 취소 건) Possible values: [SETTLED, UNSETTLED, BEFORE_CANCEL] |
+| 결제일시 | paymentDate | 주문 조회 | 1 | ✅ 핵심 UDS | paymentDate string<date-time> 결제 일시. 45바이트 내외 Example: 2023-01-16T17:14:51.794+09:00 |
+| 결제자 수 | numUsers | 판매 분석 | 1 | ✅ 핵심 UDS | numUsers number<double> 결제자 수 |
+| 계약 번호 (string) NULLABLE 계약 번호 | contractNo | 정산 내역 | 1 | ✅ 핵심 UDS | contractNo 계약 번호 (string) NULLABLE 계약 번호 |
+| 계정 ID | accountId | 판매자 | 1 | ✅ 핵심 UDS | accountId string 계정 ID |
+| 계정 UID | accountUid | 비즈월렛 결제 내역 조회, 솔루션 사용 API, 판매자 | 5 | ✅ 핵심 UDS | accountUid string 계정 UID |
+| 계정 UID (string) REQUIRED 계정 UID | accountUid | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | accountUid 계정 UID (string) REQUIRED 계정 UID |
+| 계좌 번호 (string) NULLABLE 계좌 번호 | accountNo | 정산 내역 | 1 | ✅ 핵심 UDS | accountNo 계좌 번호 (string) NULLABLE 계좌 번호 |
+| 고객 등급 silver integer | normalGrade | 고객 데이터 | 2 | ✅ 핵심 UDS | normalGrade NormalGrade.data-insight (object) REQUIRED 고객 등급 silver integer<int64> 실버 고객 수 gold integer<int64> 골드 고객 수 vip integer<int64> VIP 고객 수 vvip integer<int64> VVIP 고객 수 |
+| 고객 수 | vip, vvip | 고객 데이터 | 2 | ✅ 핵심 UDS | vvip integer<int64> VVIP 고객 수 |
+| 골드 고객 수 | gold | 고객 데이터 | 2 | ✅ 핵심 UDS | gold integer<int64> 골드 고객 수 |
+| 공제 환급 정산 금액 (number) NULLABLE 공제 | deductionRestoreSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | deductionRestoreSettleAmount 공제 환급 정산 금액 (number) NULLABLE 공제 환급 정산 금액 |
+| 공지사항 내용 (string) REQUIRED | detailContents | 상품 공지사항 | 4 | ✅ 핵심 UDS | detailContents 공지사항 내용 (string) REQUIRED |
+| 공지사항 유형 (string) ORDINARY(일반) | postCategoryType | 상품 공지사항 | 5 | ✅ 핵심 UDS | postCategoryType 공지사항 유형 (string) ORDINARY(일반), EVENT(이벤트), DELIVERY(배송 지연), PRODUCT(상품) 미입력 시 ORDINARY(일반) 유형으로 등록됩니다. Possible values: [ORDINARY, EVENT, DELIVERY, PRODUCT] |
+| 공지사항 ID | sellerNoticeId | 상품 공지사항 | 3 | ✅ 핵심 UDS | sellerNoticeId integer<int64> REQUIRED 공지사항 ID |
+| 공지사항 ID (integer | sellerNoticeId | 상품 공지사항 | 5 | ✅ 핵심 UDS | sellerNoticeId 공지사항 ID (integer<int64>) |
+| 과세 매출 금액 (number) REQUIRED 과세 매출 | taxationSalesAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | taxationSalesAmount 과세 매출 금액 (number) REQUIRED 과세 매출 금액 |
+| 관부가세 타입 코드 (string) 관부가세 타입 코드 | customsTaxType | 그룹상품 | 3 | ✅ 핵심 UDS | customsTaxType 관부가세 타입 코드 (string) 관부가세 타입 코드입니다. 출고지 주소가 해외 주소인 경우 필수 입력 항목입니다. 코드 설명 비고 NOT_APPLICABLE 부과 대상 아님 - INCLUDED 관부가세 포함 노출 채널이 해외직구인 경우 INCLUDED만 허용 EXCLUDED 관부가세 미포함 - Possible values: [NOT_APPLICABLE, INCLUDED, EXCLUDED] |
+| 관부가세 타입 코드 (string) 관부가세 타입을 나타내기 | customsTaxType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | customsTaxType 관부가세 타입 코드 (string) 관부가세 타입을 나타내기 위해 사용하는 코드입니다. NOT_APPLICABLE(부과 대상 아님), INCLUDED(관부가세 포함), EXCLUDED(관부가세 미포함) Possible values: [NOT_APPLICABLE, INCLUDED, EXCLUDED] |
+| 관부가세 타입 코드 (string) Possible valu | customsTaxType | 그룹상품 | 1 | ✅ 핵심 UDS | customsTaxType 관부가세 타입 코드 (string) Possible values: [NOT_APPLICABLE, INCLUDED, EXCLUDED] |
+| 관심 고객 수(누적) | interestCustomer | 고객 데이터 | 2 | ✅ 핵심 UDS | interestCustomer integer<int64> 관심 고객 수(누적) |
+| 관심 고객 수(증감) | interestCustomerFluctuation | 고객 데이터 | 2 | ✅ 핵심 UDS | interestCustomerFluctuation integer<int64> 관심 고객 수(증감) |
+| 관심 고객 통계 interestCustomer integer | interestStats | 고객 데이터 | 2 | ✅ 핵심 UDS | interestStats InterestStats.data-insight (object) REQUIRED 관심 고객 통계 interestCustomer integer<int64> 관심 고객 수(누적) interestCustomerFluctuation integer<int64> 관심 고객 수(증감) notificationCustomer integer<int64> 알림 고객 수(누적) notificationCustomerFluctuation integer<int64> 알림 고객 수(증감) |
+| 교환 거부(철회) 사유 | rejectExchangeReason | 교환 | 1 | ✅ 핵심 UDS | rejectExchangeReason string REQUIRED 교환 거부(철회) 사유 Example: 착용한 상품은 교환할 수 없습니다. |
+| 교환 배송비 (integer | exchangeFee | 상품 목록 | 1 | ✅ 핵심 UDS | exchangeFee 교환 배송비 (integer<int64>) Possible values: <= 1000000 |
+| 구매 금액 | purchaseAmount | 고객 데이터 | 1 | ✅ 핵심 UDS | purchaseAmount integer<int64> REQUIRED 구매 금액 |
+| 구매 금액 비율 | purchaseAmountRatio | 고객 데이터 | 1 | ✅ 핵심 UDS | purchaseAmountRatio number<double> REQUIRED 구매 금액 비율 |
+| 구매 비율 | ratio | 고객 데이터 | 2 | ✅ 핵심 UDS | ratio number<double> 구매 비율 |
+| 구매 수량 | purchaseQuantityInfo | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | purchaseQuantityInfo 구매 수량 설정 정보 (object) 구매 수량 정보 minPurchaseQuantity 최소 구매 수량 (integer<int32>) Possible values: <= 10000 maxPurchaseQuantityPerId 1인 최대 구매 수량 (integer<int32>) Possible values: <= 99999999 maxPurchaseQuantityPerOrder 1회 최대 구매 수량 (integer<int32>) Possible values: <= 10000 |
+| 구매/리뷰 혜택 정보 요청 (object) multiPurc | purchaseBenefit | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | purchaseBenefit 구매/리뷰 혜택 정보 요청 (object) multiPurchaseDiscountPolicy 복수 구매 할인 정책 (object) purchasePointPolicy 상품 구매 포인트 정책 (object) reviewPointPolicy 구매평 포인트 정책 (object) freeInterestPolicy 무이자 할부 정책 (object) giftPolicy 사은품 정책 (object) |
+| 구매자 이름 | customerName | 고객 문의 조회 | 2 | ✅ 핵심 UDS | customerName string REQUIRED 구매자 이름 |
+| 구매자 ID | customerId | 고객 문의 조회 | 2 | ✅ 핵심 UDS | customerId string 구매자 ID |
+| 구매자명 (string) NULLABLE 구매자명 | purchaserName | 정산 내역 | 2 | ✅ 핵심 UDS | purchaserName 구매자명 (string) NULLABLE 구매자명 |
+| 구매평 포인트 정책 (object) | reviewPointPolicy | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | reviewPointPolicy 구매평 포인트 정책 (object) |
+| 권역 추가 배송비 (integer | area2extraFee, area3extraFee | 상품 배송 정보 | 1 | ✅ 핵심 UDS | area2extraFee 2권역 추가 배송비 (integer<int32>) 2권역인 경우 '제주 및 도서산간' 지역 추가 배송비. 3권역인 경우 '제주' 지역 추가 배송비. 묶음배송 가능 여부가 true인 경우 묶음배송 그룹에 설정된 값이 적용됩니다(배송 속성이 ARRIVAL_GUARANTEE인 경우 제외). Possible values: <= 200000 |
+| 그룹 전환 가능 여부 (boolean) true | canBeGrouped | 그룹상품 | 1 | ✅ 핵심 UDS | canBeGrouped 그룹 전환 가능 여부 (boolean) true: 그룹 전환 가능 false: 그룹 전환 불가능. 이 경우 그룹 전환 유효성 결과 상세에 유효성 위반 상세가 함께 전달됩니다. |
+| 그룹 전환 유효성 검사 범위 (string) 유효성 검사 범 | scope | 그룹상품 | 1 | ✅ 핵심 UDS | scope 그룹 전환 유효성 검사 범위 (string) 유효성 검사 범위를 나타냅니다. STANDARD_GROUP: 그룹 단위 조건(카테고리 일치, 출고지 구분, 노출윈도 채널, 최대 상품 수 등) PRODUCT: 상품 단위 조건(카테고리 허용 여부, 결제 여부, 판매 상태, 옵션 제한 등) |
+| 그룹 전환 유효성 결과 상세 (object) | validations | 그룹상품 | 1 | ✅ 핵심 UDS | validations 그룹 전환 유효성 결과 상세 (object)[] canBeGrouped가 false인 경우, 그룹 단위(STANDARD_GROUP) 또는 상품 단위(PRODUCT)로 구분된 유효성 위반 상세가 전달됩니다. Array [ scope 그룹 전환 유효성 검사 범위 (string) 유효성 검사 범위를 나타냅니다. STANDARD_GROUP: 그룹 단위 조건(카테고리 일치, 출고지 구분, 노출윈도 채널, 최대 상품 수 등) PRODUCT: 상품 단위 조건(카테고리 허용 여부, 결제 여부, 판매 상태, 옵션 제한 등) originProductNo 유효성 검증 대상 원상품번호 (integer<int64>) scope가 PRODUCT인 경우 해당 원상품번호가 전달되며, STANDARD_GROUP인 경우 null입니다. violations 유효성 위반 항목 (object)[] 해당 범위에서 위반된 항목의 목록입니다. Array [ type 유효성 위반 유형 (string) 유효 |
+| 그룹 해제 사유 유형 (string) 그룹 해제 사유 코드입 | releaseReasonType | 그룹상품 | 1 | ✅ 핵심 UDS | releaseReasonType 그룹 해제 사유 유형 (string) 그룹 해제 사유 코드입니다. 코드 설명 비고 GROUP_CONFIG_ERROR 그룹 오설정 - ADD_PURCHASE_OPTION 판매 옵션 추가 필요 - EDIT_PURCHASE_OPTION 판매 옵션 수정 필요 - NO_UNIT_VALUE 해당하는 단위가 없음 - NO_DESIRED_OPTION 희망하는 판매 옵션이 없음 - STOCK_SYNC_ISSUE N배송 재고 연동이 어려움 - SUSTAINING_ISSUE 운영하기가 불편함 - ETC 기타 - |
+| 그룹 해제 상세 사유 (string) 그룹 해제 사유에 대한 | releaseDetailReason | 그룹상품 | 1 | ✅ 핵심 UDS | releaseDetailReason 그룹 해제 상세 사유 (string) 그룹 해제 사유에 대한 추가 설명이 필요한 경우 입력합니다. 최대 500자까지 입력할 수 있습니다. |
+| 그룹 해제 성공 여부 (boolean) | success | 그룹상품 | 1 | ✅ 핵심 UDS | success 그룹 해제 성공 여부 (boolean) |
+| 그룹상품 (object) | specificProducts | 그룹상품 | 3 | ✅ 핵심 UDS | specificProducts 그룹상품 (object)[] REQUIRED |
+| 그룹상품 (object) 그룹상품으로 등록 | groupProduct | 상품 | 2 | ✅ 핵심 UDS | groupProduct 그룹상품 (object) 그룹상품으로 등록, 설정한 상품의 경우 조회됩니다. groupProductNo 그룹상품번호 (integer<int64>) leafCategoryId 리프 카테고리 ID (string) groupProductName 그룹상품명 (string) |
+| 그룹상품 (object) REQUIRED 그룹상품 정보 le | groupProduct | 그룹상품 | 3 | ✅ 핵심 UDS | groupProduct 그룹상품 (object) REQUIRED 그룹상품 정보 leafCategoryId 리프 카테고리 ID (string) REQUIRED 그룹상품 등록, 수정, 전환 시 필수입니다. 그룹상품 등록 판매 옵션 사용이 가능한 카테고리(GET /v2/standard-purchase-option-guides API 조회 결과에서 useOptionYn이 true인 카테고리)만 허용됩니다. 그룹상품 수정 아래 조건을 모두 만족하는 경우에만 카테고리를 수정할 수 있습니다. 그룹상품에 속한 판매 옵션 중 하나라도 등록일로부터 30일 이내이거나 카테고리 수정일로부터 30일 이내 수정하려는 카테고리에 기존 카테고리와 동일한 판매 옵션이 존재 대카테고리는 변경할 수 없습니다. 모델명 등록으로 인해 카탈로그가 연결된 경우에는 카테고리를 변경할 수 없습니다. 카테고리 수정 시에는 수정하려는 카테고리를 기준으로 판매 옵션 정보를 조회해, 해당 카테고리에서 허용하는 판매 옵션 가이드 ID와 |
+| 그룹상품 공통 상품 상세 정보 (string) | commonDetailContent | 그룹상품 | 1 | ✅ 핵심 UDS | commonDetailContent 그룹상품 공통 상품 상세 정보 (string) |
+| 그룹상품 공통 상품 상세 정보 (string) 그룹상품 하위 | commonDetailContent | 그룹상품 | 3 | ✅ 핵심 UDS | commonDetailContent 그룹상품 공통 상품 상세 정보 (string) 그룹상품 하위의 모든 원상품에 동일한 상품 상세 정보를 설정하는 경우 사용합니다. 원상품별로 다른 상품 상세 정보를 설정하려면 상품 상세 정보 임시 저장 API에서 반환된 tempId를 specificProducts 하위의 detailContentTempId에 입력해야 합니다. 그룹상품 조회 API에서는 그룹 공통으로 설정된 상품 상세 정보만 반환됩니다. 원상품별로 다른 상품 상세 정보가 설정된 경우에는 개별 상품 조회 API를 사용해야 합니다. 그룹상품 수정 API에서는 이 필드를 생략할 수 있으며, 생략 시 기존에 저장된 그룹상품 공통 상품 상세 정보가 유지됩니다. 그룹상품 전환 API에서는 이 필드를 생략할 수 있으며, 생략 시 전환 이전 상품 상세 정보가 유지됩니다. |
+| 그룹상품 단위 그룹 해제 결과 (object) | results | 그룹상품 | 1 | ✅ 핵심 UDS | results 그룹상품 단위 그룹 해제 결과 (object)[] Array [ standardGroupProductNo 그룹상품번호 (integer<int64>) originProducts 원상품 단위 그룹 해제 결과 (object)[] Array [ originProductNo 원상품번호 (integer<int64>) success 그룹 해제 성공 여부 (boolean) message 실패 메시지 (string) ] ] |
+| 그룹상품 단위 그룹 해제 요청 (object) | targets | 그룹상품 | 1 | ✅ 핵심 UDS | targets 그룹상품 단위 그룹 해제 요청 (object)[] REQUIRED 그룹 해제 대상 그룹상품 목록입니다. 한 번에 최대 10개의 그룹상품을 그룹 해제할 수 있습니다. 그룹 해제 대상 원상품번호는 총합 최대 2,000개까지 입력할 수 있습니다. Array [ standardGroupProductNo 그룹상품번호 (integer<int64>) REQUIRED 그룹 해제 대상 그룹상품번호입니다. originProductNos 원상품번호 (integer<int64>)[] 그룹 해제 대상 원상품번호 목록입니다. 원상품번호 입력 시, 그룹 내에서 해당 원상품만 그룹 해제됩니다. 이때 원상품번호는 함께 입력한 그룹상품번호(standardGroupProductNo)에 속해야 하며, 속하지 않은 경우 요청이 실패합니다. 원상품번호 미입력 시, 입력한 그룹상품번호에 속한 모든 원상품이 그룹 해제됩니다. ] |
+| 그룹상품 상품번호 응답 (object) | productNos | 그룹상품 | 4 | ✅ 핵심 UDS | productNos 그룹상품 상품번호 응답 (object)[] Array [ originProductNo 원상품번호 (integer<int64>) smartstoreChannelProductNo 스마트스토어 채널 상품번호 (integer<int64>) windowChannelProductNo 윈도 채널 상품번호 (integer<int64>) ] |
+| 그룹상품 상품별 응답 (object) | specificProducts | 그룹상품 | 1 | ✅ 핵심 UDS | specificProducts 그룹상품 상품별 응답 (object)[] |
+| 그룹상품 요청 진행 상황 (object) state 요청 결 | progress | 그룹상품 | 4 | ✅ 핵심 UDS | progress 그룹상품 요청 진행 상황 (object) state 요청 결과 (string) QUEUED: 상품 등록/수정/전환 대기 중 IN PROGRESS: 상품 등록/수정/전환 진행 중 COMPLETED: 상품 등록/수정/전환 완료 ALREADY_RESERVED: 동일 계정에서 이미 다른 요청이 진행 중 FAILED: 상품 등록/수정/전환 실패 ERROR: 시스템 오류 Possible values: [QUEUED, IN_PROGRESS, COMPLETED, ALREADY_RESERVED, ERROR, FAILED] invalidInputs 잘못된 입력값 목록 (object)[] errorMessage 잘못된 입력값 메시지 (string) progress 요청 진행률 (integer<int32>) |
+| 그룹상품 응답 (object) leafCategoryId 리 | groupProduct | 그룹상품 | 1 | ✅ 핵심 UDS | groupProduct 그룹상품 응답 (object) leafCategoryId 리프 카테고리 ID (string) REQUIRED name 그룹상품명 (string) REQUIRED guideId 판매 옵션 가이드 ID (integer<int64>) brandName 브랜드명 (string) brandId 브랜드 ID (integer<int64>) manufacturerName 제조사명 (string) itselfProductionProductYn 자체 제작 상품 여부 (boolean) taxType 부가가치세 타입 코드 (string) Possible values: [TAX, DUTYFREE, SMALL] customsTaxType 관부가세 타입 코드 (string) Possible values: [NOT_APPLICABLE, INCLUDED, EXCLUDED] saleType 상품 판매 유형 코드 (string) Possible values: [NEW, OLD] minorPur |
+| 그룹상품 판매 옵션 정보 응답 (object) | standardPurchaseOptionsIds | 그룹상품 | 4 | ✅ 핵심 UDS | standardPurchaseOptionsIds 그룹상품 판매 옵션 정보 응답 (object)[] Array [ originProductNo 원상품번호 (integer<int64>) standardPurchaseOptionsIds 판매 옵션 정보 (object)[] Array [ optionId 판매 옵션 ID (integer<int64>) valueName 판매 옵션값명 (string) ] ] |
+| 그룹상품명 (string) | groupProductName | 상품 | 2 | ✅ 핵심 UDS | groupProductName 그룹상품명 (string) |
+| 그룹상품번호 | groupProductNo | 그룹상품 | 1 | ✅ 핵심 UDS | groupProductNo integer<int64> REQUIRED 그룹상품번호 |
+| 그룹상품번호 (integer | groupProductNo, standardGroupProductNo | 그룹상품, 상품, 상품 목록 | 8 | ✅ 핵심 UDS | standardGroupProductNo 그룹상품번호 (integer<int64>) REQUIRED 그룹 해제 대상 그룹상품번호입니다. |
+| 그룹상품번호 목록 (integer | groupProductNos | 상품 목록 | 1 | ✅ 핵심 UDS | groupProductNos 그룹상품번호 목록 (integer<int64>)[] |
+| 금액 (VAT포함) | totalAmount | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | totalAmount number 금액 (VAT포함) Example: 0 |
+| 기본 그룹 여부 | baseGroup | 상품 배송 정보 | 2 | ✅ 핵심 UDS | baseGroup boolean 기본 그룹 여부 |
+| 기본 묶음배송 그룹 여부 (boolean) REQUIRED | baseGroup | 상품 배송 정보 | 5 | ✅ 핵심 UDS | baseGroup 기본 묶음배송 그룹 여부 (boolean) REQUIRED 기본 그룹으로 지정 여부. 미입력 시 false로 설정됩니다. |
+| 기본 배송비 (integer | deliveryFee | 상품 목록 | 1 | ✅ 핵심 UDS | deliveryFee 기본 배송비 (integer<int64>) Possible values: <= 100000 |
+| 기본 희망일배송 그룹 여부 (boolean) REQUIRED | baseGroup | 상품 배송 정보 | 5 | ✅ 핵심 UDS | baseGroup 기본 희망일배송 그룹 여부 (boolean) REQUIRED |
+| 기본주소 | baseAddress | 판매자 주소록 | 2 | ✅ 핵심 UDS | baseAddress string 기본 주소 |
+| 기존 고객 비율 | existCustomerRatio | 고객 데이터 | 2 | ✅ 핵심 UDS | existCustomerRatio number<double> 기존 고객 비율 |
+| 기존 고객 수 | existCustomerCount | 고객 데이터 | 2 | ✅ 핵심 UDS | existCustomerCount integer<int64> 기존 고객 수 |
+| 기존 상품 철거/수거 타입 (string) DOWN | productRemovalType | 상품 배송 정보 | 5 | ✅ 핵심 UDS | productRemovalType 기존 상품 철거/수거 타입 (string) DOWN_FIRST_FLOOR(1층까지 내림), COLLECT_SELLER(수거) Possible values: [DOWN_FIRST_FLOOR, COLLECT_SELLER] |
+| 기타 교환 비용 | extraExchangeFeeAmount | 교환 | 1 | ✅ 핵심 UDS | extraExchangeFeeAmount number 기타 교환 비용 Example: 0 |
+| 기타 금액 (number) REQUIRED 기타 금액 | otherAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | otherAmount 기타 금액 (number) REQUIRED 기타 금액 |
+| 기타 반품 비용 | extraReturnFeeAmount | 반품 | 1 | ✅ 핵심 UDS | extraReturnFeeAmount number 기타 반품 비용 Example: 0 |
+| 남성 구매 통계 ratio number | malePurchaseStats | 고객 데이터 | 2 | ✅ 핵심 UDS | malePurchaseStats malePurchaseSchema.data-insight (object) REQUIRED 남성 구매 통계 ratio number<double> 구매 비율 |
+| 내용 | content, contents | SKU, 고객 문의 조회, 그룹상품, 상품 검수, 상품 공지사항, 상품 목록, 상품 문의, 상품 배송 정보, 카탈로그 | 12 | ✅ 핵심 UDS | content 고객 문의 내용 구조체 (object)[] Array [ inquiryNo integer<int64> REQUIRED 문의 번호 category string 문의 유형. 상품, 배송, 반품, 교환, 환불, 기타가 존재합니다. title string REQUIRED 문의 제목 inquiryContent string REQUIRED 문의 내용 inquiryRegistrationDateTime string<date-time> REQUIRED 문의 등록 일시(yyyy-MM-dd'T'HH:mm:ss.SSSXXX) answerContentId integer<int64> 최근 문의 답변 ID answerContent string 최근 문의 답변 내용 answerTemplateNo integer<int64> 최근 문의 답변 템플릿 번호 answerRegistrationDateTime string<date-time> 최근 문의 답변 등록 일시(yyyy-MM-dd'T'HH:mm:ss.S |
+| 노출 순서 (integer | exposureOrder | 상품 속성 | 1 | ✅ 핵심 UDS | exposureOrder 노출 순서 (integer<int32>) |
+| 단위 (string) | unit | 판매 옵션 | 1 | ✅ 핵심 UDS | unit 단위 (string) |
+| 단위 사용 여부 (boolean) | unitUsable | 상품 속성 | 1 | ✅ 핵심 UDS | unitUsable 단위 사용 여부 (boolean) |
+| 단위가격 사용 여부 (boolean) | useUnitPrice | 판매 옵션 | 1 | ✅ 핵심 UDS | useUnitPrice 단위가격 사용 여부 (boolean) |
+| 단위가격 표기 단위 (string) | unitPriceText | 판매 옵션 | 1 | ✅ 핵심 UDS | unitPriceText 단위가격 표기 단위 (string) |
+| 단위가격 표기 용량 (integer | unitPriceValue | 판매 옵션 | 1 | ✅ 핵심 UDS | unitPriceValue 단위가격 표기 용량 (integer<int32>) |
+| 답변 내용 | answerComment | 고객 문의 답변 등록/수정 | 2 | ✅ 핵심 UDS | answerComment string REQUIRED 답변 내용 Example: 답변 내용입니다 |
+| 답변 번호 | answerContentId, inquiryCommentNo | 고객 문의 답변 등록/수정 | 2 | ✅ 핵심 UDS | answerContentId integer<int64> REQUIRED 답변 번호 |
+| 답변 여부 | answered | 상품 문의 | 1 | ✅ 핵심 UDS | answered boolean 답변 여부 |
+| 답변 템플릿 ID | answerTemplateId | 고객 문의 답변 등록/수정 | 2 | ✅ 핵심 UDS | answerTemplateId string 답변 템플릿 ID Example: 12345 |
+| 답변이 완료된 문의 여부(true/false) | answered | 고객 문의 조회 | 1 | ✅ 핵심 UDS | answered string 답변이 완료된 문의 여부(true/false). 생략 시, 답변 완료 여부에 상관없이 모든 문의를 조회합니다. |
+| 당일 배송 | basisHour, basisMinute | 판매자 오늘출발 설정 | 2 | ✅ 핵심 UDS | basisMinute integer<int32> REQUIRED 당일 배송 설정 시간 분 |
+| 대표 단위 코드 (string) | representativeUnitCode | 상품 속성 | 1 | ✅ 핵심 UDS | representativeUnitCode 대표 단위 코드 (string) |
+| 대표 사용 불가 사유 | impossibleReason | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | impossibleReason string 대표 사용 불가 사유 |
+| 대표 이미지 URL | representativeImageUrl | 판매자 | 1 | ✅ 핵심 UDS | representativeImageUrl string 대표 이미지 URL |
+| 데이터 정렬 적용 여부 (boolean) | sorted | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | sorted 데이터 정렬 적용 여부 (boolean) |
+| 도로명 주소 여부 | roadNameAddress | 판매자 주소록 | 2 | ✅ 핵심 UDS | roadNameAddress boolean 도로명 주소 여부 |
+| 등급 제외 | leaveCount | 고객 데이터 | 2 | ✅ 핵심 UDS | leaveCount integer<int64> 등급 제외 |
+| 등록일시 | registrationYmdt | SKU | 1 | ✅ 핵심 UDS | registrationYmdt string<date-time> REQUIRED SKU 등록일시. KST(UTC+09:00)로 응답. Example: 2024-01-01T11:20:50.001+09:00 |
+| 라운지 고객 등급 totalCount integer | loungeStats | 고객 데이터 | 2 | ✅ 핵심 UDS | loungeStats LoungeStats.data-insight (object) REQUIRED 라운지 고객 등급 totalCount integer<int64> 전체 등급 수 incrementCount integer<int64> 전체 등급 변동 joinCount integer<int64> 신규 등급 추가 leaveCount integer<int64> 등급 제외 level1Count integer<int64> 레벨 1 등급 수 level2Count integer<int64> 레벨 2 등급 수 level3Count integer<int64> 레벨 3 등급 수 level4Count integer<int64> 레벨 4 등급 수 level5Count integer<int64> 레벨 5 등급 수 |
+| 레벨 1 등급 수 | level1Count | 고객 데이터 | 2 | ✅ 핵심 UDS | level1Count integer<int64> 레벨 1 등급 수 |
+| 레벨 2 등급 수 | level2Count | 고객 데이터 | 2 | ✅ 핵심 UDS | level2Count integer<int64> 레벨 2 등급 수 |
+| 레벨 3 등급 수 | level3Count | 고객 데이터 | 2 | ✅ 핵심 UDS | level3Count integer<int64> 레벨 3 등급 수 |
+| 레벨 4 등급 수 | level4Count | 고객 데이터 | 2 | ✅ 핵심 UDS | level4Count integer<int64> 레벨 4 등급 수 |
+| 레벨 5 등급 수 | level5Count | 고객 데이터 | 2 | ✅ 핵심 UDS | level5Count integer<int64> 레벨 5 등급 수 |
+| 리프 카테고리 ID | categoryId | 판매 옵션 | 1 | ✅ 핵심 UDS | categoryId string REQUIRED 리프 카테고리 ID |
+| 리프 카테고리 ID (string) | leafCategoryId | 상품 | 7 | ✅ 핵심 UDS | leafCategoryId 리프 카테고리 ID (string) |
+| 리프 카테고리 ID (string) 상품 등록 시 필수 | leafCategoryId | 상품 | 3 | ✅ 핵심 UDS | leafCategoryId 리프 카테고리 ID (string) 상품 등록 시 필수입니다. 상품 수정 시 카탈로그 ID(modelId)를 입력한 경우 필수입니다. 표준형 옵션 카테고리 상품 수정 요청의 경우 CategoryId 변경 요청은 무시됩니다.(렌탈 상품은 정상 처리됨) |
+| 리프 카테고리 ID (string) REQUIRED | leafCategoryId | 그룹상품 | 1 | ✅ 핵심 UDS | leafCategoryId 리프 카테고리 ID (string) REQUIRED |
+| 리프 카테고리 ID (string) REQUIRED 그룹상품 | leafCategoryId | 그룹상품 | 3 | ✅ 핵심 UDS | leafCategoryId 리프 카테고리 ID (string) REQUIRED 그룹상품 등록, 수정, 전환 시 필수입니다. 그룹상품 등록 판매 옵션 사용이 가능한 카테고리(GET /v2/standard-purchase-option-guides API 조회 결과에서 useOptionYn이 true인 카테고리)만 허용됩니다. 그룹상품 수정 아래 조건을 모두 만족하는 경우에만 카테고리를 수정할 수 있습니다. 그룹상품에 속한 판매 옵션 중 하나라도 등록일로부터 30일 이내이거나 카테고리 수정일로부터 30일 이내 수정하려는 카테고리에 기존 카테고리와 동일한 판매 옵션이 존재 대카테고리는 변경할 수 없습니다. 모델명 등록으로 인해 카탈로그가 연결된 경우에는 카테고리를 변경할 수 없습니다. 카테고리 수정 시에는 수정하려는 카테고리를 기준으로 판매 옵션 정보를 조회해, 해당 카테고리에서 허용하는 판매 옵션 가이드 ID와 판매 옵션 정보를 입력해야 합니다. 그룹상품 전환 카테고리를 변경할 수 없습니 |
+| 마스킹된 작성자 ID (string) | maskedWriterId | 상품 문의 | 2 | ✅ 핵심 UDS | maskedWriterId 마스킹된 작성자 ID (string) |
+| 마이너스 충전금 상계 금액 (number) NULLABLE | minusChargeAmount | 정산 내역 | 1 | ✅ 핵심 UDS | minusChargeAmount 마이너스 충전금 상계 금액 (number) NULLABLE 마이너스 충전금 상계 금액 |
+| 마지막 페이지 여부 | last | SKU | 2 | ✅ 핵심 UDS | last boolean REQUIRED 마지막 페이지 여부 Example: false |
+| 마지막 페이지 여부 (boolean) | last | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | last 마지막 페이지 여부 (boolean) |
+| 매출 연동 수수료 (number) NULLABLE 매출 연동 | sellingInterlockCommissionAmount | 정산 내역 | 1 | ✅ 핵심 UDS | sellingInterlockCommissionAmount 매출 연동 수수료 (number) NULLABLE 매출 연동 수수료 |
+| 매출 연동 수수료 타입 (string) NULLABLE 매출 | sellingInterlockCommissionType | 정산 내역 | 1 | ✅ 핵심 UDS | sellingInterlockCommissionType 매출 연동 수수료 타입 (string) NULLABLE 매출 연동 수수료 타입 NAVER_SHOPPING(네이버쇼핑) TOPTOP(탑탑) EASY_BOOKING(네이버예약) ONEPLUS(원쁠딜) SEARCH_ETC(검색>기타) LENS(검색>렌즈) SHOPPING_SEARCH(검색>쇼핑검색) SHOPPING_SEARCH_CATALOG(검색>쇼핑검색카탈로그) INTEGRATED_SEARCH(검색>통합검색) INTEGRATED_SEARCH_CATALOG(검색>통합검색카탈로그) BRAND_SEARCH(광고>브랜드검색) SHOPPING_SEARCH_AD(광고>쇼핑검색) SHOPPING_BOX(광고>쇼핑박스) ONEPLUS_DEAL(광고>원쁠딜) DA(광고>DA) SA(광고>SA) NAVER(기타>네이버) NOT_NAVER(기타>네이버외) SMART_PLACE(예약) BOOK(버티컬>도서) LUXURY(버티컬>럭셔리) MR(버티컬>미스 |
+| 멀티 상품 수정 요청 단건 (object) | multiProductUpdateRequestVos | 상품 | 1 | ✅ 핵심 UDS | multiProductUpdateRequestVos 멀티 상품 수정 요청 단건 (object)[] REQUIRED Array [ originProductNo 원상품 번호 (integer<int64>) REQUIRED multiUpdateTypes 멀티 업데이트 종류 (string)[] SALE_PRICE(판매가), IMMEDIATE_DISCOUNT(기본 할인), STOCK(재고 변경), PRODUCT_STATUS_SALE(판매 중 변경), PRODUCT_STATUS_SUSPENSION(판매 중지 변경) Possible values: [SALE_PRICE, IMMEDIATE_DISCOUNT, STOCK, PRODUCT_STATUS_SALE, PRODUCT_STATUS_SUSPENSION] productSalePrice 판매가 정보 (object) 판매가 정보 salePrice 상품 판매 가격 (integer<int32>) REQUIRED immediateDiscountPolicy 판매 |
+| 멀티 업데이트 종류 (string) | multiUpdateTypes | 상품 | 1 | ✅ 핵심 UDS | multiUpdateTypes 멀티 업데이트 종류 (string)[] SALE_PRICE(판매가), IMMEDIATE_DISCOUNT(기본 할인), STOCK(재고 변경), PRODUCT_STATUS_SALE(판매 중 변경), PRODUCT_STATUS_SUSPENSION(판매 중지 변경) Possible values: [SALE_PRICE, IMMEDIATE_DISCOUNT, STOCK, PRODUCT_STATUS_SALE, PRODUCT_STATUS_SUSPENSION] |
+| 메시지 | message | OAuth 2.0, SKU, 고객 데이터, 고객 문의 답변 등록/수정, 고객 문의 조회, 교환, 그룹상품, 마케팅 분석, 반품, 발주/발송 처리, 부가세 내역, 브랜드, 비즈월렛 결제 내역 조회, 사이즈, 상품, 상품 검수, 상품 공지사항, 상품 공지사항 적용, 상품 목록, 상품 문의, 상품 배송 정보, 상품 속성, 상품 원산지 정보, 상품 이미지, 상품 일괄 수정, 상품정보제공고시, 솔루션 사용 API, 쇼핑행동 분석, 실시간 분석, 옵션, 외부 개발사 자체 결제, 정산 내역, 제조사, 주문 조회, 취소, 카탈로그, 카테고리, 태그, 판매 분석, 판매 옵션, 판매자 물류, 판매자 인증 JWE 해석, 패션모델 | 132 | ✅ 핵심 UDS | messagestring오류 메시지Example: Unknown Error - An error occurred during operation |
+| 면세 매출 금액 (number) REQUIRED 면세 매출 | taxExemptionSalesAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | taxExemptionSalesAmount 면세 매출 금액 (number) REQUIRED 면세 매출 금액 |
+| 모바일 결제 금액 | payAmountOnMobile | 판매 분석 | 2 | ✅ 핵심 UDS | payAmountOnMobile number<double> 모바일 결제 금액 |
+| 모바일 결제 상품 수량 | productQuantityOnMobile | 판매 분석 | 1 | ✅ 핵심 UDS | productQuantityOnMobile number<double> 모바일 결제 상품 수량 |
+| 모바일 결제 수 | numPurchasesOnMobile | 판매 분석 | 1 | ✅ 핵심 UDS | numPurchasesOnMobile number<double> 모바일 결제 수 |
+| 모바일 할인가 (integer | mobileDiscountedPrice | 상품 목록 | 1 | ✅ 핵심 UDS | mobileDiscountedPrice (Depecated) 모바일 할인가 (integer<int64>) DEPRECATED Possible values: <= 999999990 |
+| 무이자 할부 (integer | freeInterest | 상품 목록 | 1 | ✅ 핵심 UDS | freeInterest 무이자 할부 (integer<int32>) |
+| 무이자 할부 정책 (object) | freeInterestPolicy | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | freeInterestPolicy 무이자 할부 정책 (object) |
+| 묶음배송 가능 여부 (boolean) 묶음배송 그룹 코드가 | deliveryBundleGroupUsable | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryBundleGroupUsable 묶음배송 가능 여부 (boolean) 묶음배송 그룹 코드가 존재하는 경우 자동으로 true로 설정됩니다. 배송 속성이 HOPE_SELLER_GUARANTEE(N희망일배송)인 경우 묶음배송을 설정할 수 없습니다. |
+| 묶음배송 그룹 정보 구조체 (object) 묶음배송 그룹 정 | deliveryBundleGroup | 상품 배송 정보 | 1 | ✅ 핵심 UDS | deliveryBundleGroup 묶음배송 그룹 정보 구조체 (object) 묶음배송 그룹 정보 이 구조체는 상품의 배송 정보 중 묶음배송 그룹 정보 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 묶음배송 그룹 1개를 표현합니다. 이 구조체는 아래 API에서 사용합니다. 묶음배송 그룹 다건 조회, 묶음배송 그룹 등록, 묶음배송 그룹 단건 조회, 묶음배송 그룹 수정 이 구조체는 상품의 배송 정보 중 묶음배송 그룹 정보 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 묶음배송 그룹 1개를 표현합니다. 이 구조체는 아래 API에서 사용합니다. 묶음배송 그룹 다건 조회, 묶음배송 그룹 등록, 묶음배송 그룹 단건 조회, 묶음배송 그룹 수정 id 묶음배송 그룹 ID (integer<int64>) 등록 요청인 경우에는 입력값이 무시됩니다. name 묶음배 |
+| 묶음배송 그룹 정보 구조체 (object) REQUIRED | deliveryBundleGroup | 상품 배송 정보 | 2 | ✅ 핵심 UDS | deliveryBundleGroup 묶음배송 그룹 정보 구조체 (object) REQUIRED 묶음배송 그룹 정보 이 구조체는 상품의 배송 정보 중 묶음배송 그룹 정보 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 묶음배송 그룹 1개를 표현합니다. 이 구조체는 아래 API에서 사용합니다. 묶음배송 그룹 다건 조회, 묶음배송 그룹 등록, 묶음배송 그룹 단건 조회, 묶음배송 그룹 수정 이 구조체는 상품의 배송 정보 중 묶음배송 그룹 정보 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 묶음배송 그룹 1개를 표현합니다. 이 구조체는 아래 API에서 사용합니다. 묶음배송 그룹 다건 조회, 묶음배송 그룹 등록, 묶음배송 그룹 단건 조회, 묶음배송 그룹 수정 id 묶음배송 그룹 ID (integer<int64>) 등록 요청인 경우에는 입력값이 무시됩니다. |
+| 묶음배송 그룹 코드 (integer | deliveryBundleGroupId | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryBundleGroupId 묶음배송 그룹 코드 (integer<int64>) 묶음배송 가능이 true이고 묶음배송 그룹 코드가 null이면 기본 그룹으로 저장됩니다.(배송 속성이 ARRIVAL_GUARANTEE인 경우 제외) |
+| 묶음배송 그룹 ID | deliveryBundleGroupId | 상품 배송 정보 | 1 | ✅ 핵심 UDS | deliveryBundleGroupId integer<int64> REQUIRED 묶음배송 그룹 ID |
+| 묶음배송 그룹 ID (integer | id | 상품 배송 정보 | 5 | ✅ 핵심 UDS | id 묶음배송 그룹 ID (integer<int64>) 등록 요청인 경우에는 입력값이 무시됩니다. |
+| 문의 검색 시작일(yyyy-MM-dd) | startSearchDate | 고객 문의 조회 | 1 | ✅ 핵심 UDS | startSearchDate string REQUIRED 문의 검색 시작일(yyyy-MM-dd). 문의 검색 시작일부터 문의 검색 종료일까지의 문의를 조회합니다. |
+| 문의 검색 종료일(yyyy-MM-dd) | endSearchDate | 고객 문의 조회 | 1 | ✅ 핵심 UDS | endSearchDate string REQUIRED 문의 검색 종료일(yyyy-MM-dd). 문의 검색 시작일부터 문의 검색 종료일까지의 문의를 조회합니다. |
+| 문의 내용 | inquiryContent | 고객 문의 조회 | 2 | ✅ 핵심 UDS | inquiryContent string REQUIRED 문의 내용 |
+| 문의 내용 (string) | question | 상품 문의 | 2 | ✅ 핵심 UDS | question 문의 내용 (string) |
+| 문의 답변 여부 | answered | 고객 문의 조회 | 2 | ✅ 핵심 UDS | answered boolean REQUIRED 문의 답변 여부 |
+| 문의 등록 일시(yyyy-MM-dd | inquiryRegistrationDateTime | 고객 문의 조회 | 2 | ✅ 핵심 UDS | inquiryRegistrationDateTime string<date-time> REQUIRED 문의 등록 일시(yyyy-MM-dd'T'HH:mm:ss.SSSXXX) |
+| 문의 번호 | inquiryNo | 고객 문의 답변 등록/수정, 고객 문의 조회 | 4 | ✅ 핵심 UDS | inquiryNo integer<int64> REQUIRED 문의 번호 |
+| 문의 유형 | category | 고객 문의 조회 | 2 | ✅ 핵심 UDS | category string 문의 유형. 상품, 배송, 반품, 교환, 환불, 기타가 존재합니다. |
+| 물류사 정보 (object) | productLogistics | 상품 | 7 | ✅ 핵심 UDS | productLogistics 물류사 정보 (object)[] |
+| 물류사 정보 목록 Array | logisticsCompanies | 판매자 물류 | 1 | ✅ 핵심 UDS | logisticsCompanies LogisticsCompany.nfa (object)[] 물류사 정보 목록 Array [ logisticsCompanyId string 물류사 ID logisticsCompanyName string 물류사명 deliveryTypes string 배송 속성 목록 풀필먼트 물류사: NORMAL, TODAY, ARRIVAL_GUARANTEE 배송 물류사: SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE Possible values: [NORMAL, TODAY, ARRIVAL_GUARANTEE, SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE] ] |
+| 물류사 ID | logisticsCompanyId | 판매자 물류 | 1 | ✅ 핵심 UDS | logisticsCompanyId string 물류사 ID |
+| 물류사명 | logisticsCompanyName | 판매자 물류 | 1 | ✅ 핵심 UDS | logisticsCompanyName string 물류사명 |
+| 미성년자 구매 가능 여부 (boolean) | minorPurchasable | 그룹상품 | 1 | ✅ 핵심 UDS | minorPurchasable 미성년자 구매 가능 여부 (boolean) |
+| 미성년자 구매 가능 여부 (boolean) REQUIRED | minorPurchasable | 그룹상품 | 3 | ✅ 핵심 UDS | minorPurchasable 미성년자 구매 가능 여부 (boolean) REQUIRED 성인 카테고리인 경우 불가능으로 입력해야 합니다. |
+| 반품 거부(철회) 사유 | rejectReturnReason | 반품 | 1 | ✅ 핵심 UDS | rejectReturnReason string REQUIRED 반품 거부(철회) 사유 Example: 고객님께서 통화로 교환을 원하셨습니다. |
+| 반품 배송비 (integer | returnFee | 상품 목록 | 1 | ✅ 핵심 UDS | returnFee 반품 배송비 (integer<int64>) Possible values: <= 1000000 |
+| 반품 수량 (미 | returnQuantity | 반품 | 1 | ✅ 핵심 UDS | returnQuantity integer 반품 수량 (미입력 시 전체수량반품) |
+| 반품 택배사 우선순위 타입 (string) Possible | returnDeliveryCompanyPriorityType | 상품 배송 정보 | 2 | ✅ 핵심 UDS | returnDeliveryCompanyPriorityType 반품 택배사 우선순위 타입 (string) Possible values: [PRIMARY, SECONDARY_1, SECONDARY_2, SECONDARY_3, SECONDARY_4, SECONDARY_5, SECONDARY_6, SECONDARY_7, SECONDARY_8, SECONDARY_9] |
+| 반품 택배사 정보 구조체 (object) | returnDeliveryCompanies | 상품 배송 정보 | 1 | ✅ 핵심 UDS | returnDeliveryCompanies 반품 택배사 정보 구조체 (object)[] Array [ id ID (integer<int64>) name 이름 (string) returnDeliveryCompanyPriorityType 반품 택배사 우선순위 타입 (string) Possible values: [PRIMARY, SECONDARY_1, SECONDARY_2, SECONDARY_3, SECONDARY_4, SECONDARY_5, SECONDARY_6, SECONDARY_7, SECONDARY_8, SECONDARY_9] ] |
+| 반품안심케어 정산 금액 (number) REQUIRED 반품 | returnCareSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | returnCareSettleAmount 반품안심케어 정산 금액 (number) REQUIRED 반품안심케어 정산 금액 |
+| 발송 건수 | dispatchedCount | 판매 분석 | 1 | ✅ 핵심 UDS | dispatchedCount number<double> 발송 건수 |
+| 발송 기한 | dispatchDueDate | 발주/발송 처리 | 1 | ✅ 핵심 UDS | dispatchDueDate string<date-time> 발송 기한 Example: 2022-06-05T12:17:35.000+09:00 |
+| 발송 예정일 직접 | expectedDeliveryPeriodDirectInput | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | expectedDeliveryPeriodDirectInput 발송 예정일 직접 입력 값 (string) |
+| 발송 지연 사유 코드 | delayedDispatchReason | 발주/발송 처리 | 1 | ✅ 핵심 UDS | delayedDispatchReason delayedDispatchReason.pay-order-seller (string) 발송 지연 사유 코드. 250바이트 내외 코드 설명 비고 PRODUCT_PREPARE 상품 준비 중 CUSTOMER_REQUEST 고객 요청 CUSTOM_BUILD 주문 제작 RESERVED_DISPATCH 예약 발송 OVERSEA_DELIVERY 해외 배송 ETC 기타 Example: PRODUCT_PREPARE |
+| 발송 지연 상세 사유 | dispatchDelayedDetailedReason | 발주/발송 처리 | 1 | ✅ 핵심 UDS | dispatchDelayedDetailedReason string 발송 지연 상세 사유 Example: 상품 준비중입니다. |
+| 발송일 준수 건수 | dispatchedDueSuccessCount | 판매 분석 | 1 | ✅ 핵심 UDS | dispatchedDueSuccessCount number<double> 발송일 준수 건수 |
+| 발주상태 유형 | placeOrderStatusType | 주문 조회 | 1 | ✅ 핵심 UDS | placeOrderStatusType placeOrderStatus.pay-order-seller (string) 발주 상태. 250바이트 내외 코드 설명 비고 NOT_YET 발주 미확인 OK 발주 확인 CANCEL 발주 확인 해제 Example: NOT_YET |
+| 방문 수령 주소록 ID (integer | visitAddressId | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | visitAddressId 방문 수령 주소록 ID (integer<int64>) 방문 수령 주소 코드. 네이버 풀필먼트 상품, N희망일배송 상품은 방문 수령을 설정할 수 없습니다. |
+| 배송 그룹 ID (integer | groupId | 상품 배송 정보 | 4 | ✅ 핵심 UDS | groupId 배송 그룹 ID (integer<int64>) |
+| 배송 기간 48시간 내 건수 | deliveryCompletedWithin48HoursCount | 판매 분석 | 1 | ✅ 핵심 UDS | deliveryCompletedWithin48HoursCount number<double> 배송 기간 48시간 내 건수 |
+| 배송 방법 유형 코드 (string) REQUIRED | deliveryType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryType 배송 방법 유형 코드 (string) REQUIRED 네이버 상품 API에서 배송 방법 유형을 나타내기 위해 사용하는 코드입니다. DELIVERY(택배, 소포, 등기), DIRECT(직접배송(화물배달)) 네이버 풀필먼트 상품, 배송 속성 SELLER_GUARANTEE(N판매자배송), 배송 속성 HOPE_SELLER_GUARANTEE(N희망일배송)인 경우 배송 방법은 DELIVERY(택배, 소포, 등기)만 허용됩니다. Possible values: [DELIVERY, DIRECT] |
+| 배송 방법 코드 | collectDeliveryMethod, deliveryMethod, reDeliveryMethod | 교환, 반품, 발주/발송 처리 | 3 | ✅ 핵심 UDS | collectDeliveryMethod deliveryMethod.pay-order-seller (string) REQUIRED 배송 방법 코드. 250바이트 내외 코드 설명 비고 DELIVERY 택배, 등기, 소포 GDFW_ISSUE_SVC 굿스플로 송장 출력 VISIT_RECEIPT 방문 수령 DIRECT_DELIVERY 직접 전달 QUICK_SVC 퀵서비스 NOTHING 배송 없음 RETURN_DESIGNATED 지정 반품 택배 RETURN_DELIVERY 일반 반품 택배 RETURN_INDIVIDUAL 직접 반송 RETURN_MERCHANT 판매자 직접 수거(장보기 전용) UNKNOWN 알 수 없음(예외 처리에 사용) Example: DELIVERY |
+| 배송 속성 (string) NORMAL(일반 배송) | deliveryAttributeType | 상품 목록 | 1 | ✅ 핵심 UDS | deliveryAttributeType 배송 속성 (string) NORMAL(일반 배송), TODAY(오늘출발), OPTION_TODAY(옵션별 오늘출발), HOPE(희망일배송), TODAY_ARRIVAL(당일배송), DAWN_ARRIVAL(새벽배송) Possible values: [NORMAL, TODAY, OPTION_TODAY, HOPE, TODAY_ARRIVAL, DAWN_ARRIVAL, ARRIVAL_GUARANTEE, SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE, QUICK, PICKUP, QUICK_PICKUP] |
+| 배송 속성 목록 풀필먼트 물류사 | deliveryTypes | 판매자 물류 | 1 | ✅ 핵심 UDS | deliveryTypes string 배송 속성 목록 풀필먼트 물류사: NORMAL, TODAY, ARRIVAL_GUARANTEE 배송 물류사: SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE Possible values: [NORMAL, TODAY, ARRIVAL_GUARANTEE, SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE] |
+| 배송 속성 정보 요청 (object) deliveryAttr | deliveryAttribute | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryAttribute 배송 속성 정보 요청 (object) deliveryAttributeType 배송 속성 타입 코드 (string) REQUIRED NORMAL(일반 배송), TODAY(오늘출발), HOPE(희망일배송)-productBulkUpdateType이 'DELIVERY_HOPE'인 경우에만 설정 가능 Possible values: [NORMAL, TODAY, OPTION_TODAY, HOPE, TODAY_ARRIVAL, DAWN_ARRIVAL, ARRIVAL_GUARANTEE, SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE, QUICK, PICKUP, QUICK_PICKUP] todayStockQuantity 오늘출발 상품 재고 수량 (integer<int32>) expectedDeliveryPeriodType 주문 제작 상품 발송 예정일 타입 코드 (string) ETC는 상품 수정에만 사용 가능하며, 이미 저장된 '주문 후 예상 발 |
+| 배송 속성 타입 코드 (string) REQUIRED | deliveryAttributeType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryAttributeType 배송 속성 타입 코드 (string) REQUIRED 네이버 상품 API에서 배송 속성 타입을 나타내기 위해 사용하는 코드입니다. 네이버 풀필먼트 상품은 OPTION_TODAY(옵션별 오늘출발)을 설정할 수 없습니다. 상품 등록/수정 시: NORMAL(일반 배송), TODAY(오늘출발), OPTION_TODAY(옵션별 오늘출발), HOPE(희망일배송), TODAY_ARRIVAL(당일배송(지금배달 관련 기능)), DAWN_ARRIVAL(새벽배송(지금배달 관련 기능)), ARRIVAL_GUARANTEE(N배송), SELLER_GUARANTEE(N판매자배송), HOPE_SELLER_GUARANTEE(N희망일배송), QUICK(즉시배달(퀵커머스 관련 기능)), PICKUP(픽업(퀵커머스 관련 기능)), QUICK_PICKUP(배달,픽업(퀵커머스 관련 기능)) 상품 일괄 수정 시: NORMAL(일반 배송), TODAY(오늘출발), HOPE(희망일배송), |
+| 배송 속성 타입 코드 (string) REQUIRED NOR | deliveryAttributeType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryAttributeType 배송 속성 타입 코드 (string) REQUIRED NORMAL(일반 배송), TODAY(오늘출발), HOPE(희망일배송)-productBulkUpdateType이 'DELIVERY_HOPE'인 경우에만 설정 가능 Possible values: [NORMAL, TODAY, OPTION_TODAY, HOPE, TODAY_ARRIVAL, DAWN_ARRIVAL, ARRIVAL_GUARANTEE, SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE, QUICK, PICKUP, QUICK_PICKUP] |
+| 배송 속성 Possible values | deliveryType | 판매자 물류 | 1 | ✅ 핵심 UDS | deliveryType string 배송 속성 Possible values: [SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE] |
+| 배송 완료 건수 | deliveryCompletedCount | 판매 분석 | 1 | ✅ 핵심 UDS | deliveryCompletedCount number<double> 배송 완료 건수 |
+| 배송 완료일 준수 건수 | deliveryCompletedDueSuccessCount | 판매 분석 | 1 | ✅ 핵심 UDS | deliveryCompletedDueSuccessCount number<double> 배송 완료일 준수 건수 |
+| 배송 유형 | deliveryType | 판매 분석 | 1 | ✅ 핵심 UDS | deliveryType string 배송 유형 |
+| 배송 정보 (object) | deliveryInfo | 상품 | 7 | ✅ 핵심 UDS | deliveryInfo 배송 정보 (object) |
+| 배송 정보 (object) 배송 방식 및 배송비 등을 | deliveryInfo | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryInfo 배송 정보 (object) 배송 방식 및 배송비 등을 설정할 수 있습니다. 입력하지 않으면 배송 없는 상품으로 등록됩니다. 렌탈 또는 지금배달 상품의 경우에는 배송 정보를 필수로 입력해야 합니다. deliveryType 배송 방법 유형 코드 (string) REQUIRED 네이버 상품 API에서 배송 방법 유형을 나타내기 위해 사용하는 코드입니다. DELIVERY(택배, 소포, 등기), DIRECT(직접배송(화물배달)) 네이버 풀필먼트 상품, 배송 속성 SELLER_GUARANTEE(N판매자배송), 배송 속성 HOPE_SELLER_GUARANTEE(N희망일배송)인 경우 배송 방법은 DELIVERY(택배, 소포, 등기)만 허용됩니다. Possible values: [DELIVERY, DIRECT] deliveryAttributeType 배송 속성 타입 코드 (string) REQUIRED 네이버 상품 API에서 배송 속성 타입을 나타내기 위해 사용하는 코드입니다 |
+| 배송 희망 시간 | hopeDeliveryHm | 발주/발송 처리 | 1 | ✅ 핵심 UDS | hopeDeliveryHm string 배송 희망 시간. HHmm 형식의 시간 Example: 1500 |
+| 배송 희망시간 시작 시각 (integer | hopeGroupStartTime | 상품 배송 정보 | 5 | ✅ 핵심 UDS | hopeGroupStartTime 배송 희망시간 시작 시각 (integer<int32>) |
+| 배송 희망시간 종료 시각 (integer | hopeGroupEndTime | 상품 배송 정보 | 5 | ✅ 핵심 UDS | hopeGroupEndTime 배송 희망시간 종료 시각 (integer<int32>) |
+| 배송 희망일 | hopeDeliveryYmd | 발주/발송 처리 | 1 | ✅ 핵심 UDS | hopeDeliveryYmd string REQUIRED 배송 희망일. yyyymmdd 형식의 연월일 Example: 20221231 |
+| 배송 희망일자 목록 (object) | hopeDeliveryGroupDays | 상품 배송 정보 | 5 | ✅ 핵심 UDS | hopeDeliveryGroupDays 배송 희망일자 목록 (object)[] REQUIRED Array [ id 배송 희망일자 ID (integer<int64>) regionName 지역명 (string) REQUIRED usable 사용 여부 (boolean) REQUIRED hopeStartDay 배송 희망일자 시작일 (integer<int32>) hopeEndDay 배송 희망일자 종료일 (integer<int32>) expectationDeliveryFee 예상 배송비 (integer<int32>) Possible values: <= 100000 ] |
+| 배송 희망일자 시작일 (integer | hopeStartDay | 상품 배송 정보 | 1 | ✅ 핵심 UDS | hopeStartDay 배송 희망일자 시작일 (integer<int32>) |
+| 배송 희망일자 종료일 (integer | hopeEndDay | 상품 배송 정보 | 1 | ✅ 핵심 UDS | hopeEndDay 배송 희망일자 종료일 (integer<int32>) |
+| 배송 희망일자 ID (integer | id | 상품 배송 정보 | 1 | ✅ 핵심 UDS | id 배송 희망일자 ID (integer<int64>) |
+| 배송비 | deliveryCost | 판매 분석 | 1 | ✅ 핵심 UDS | deliveryCost number<double> 배송비 |
+| 배송비 계산 방식 코드 (string) REQUIRED 묶음 | deliveryFeeChargeMethodType | 상품 배송 정보 | 5 | ✅ 핵심 UDS | deliveryFeeChargeMethodType 배송비 계산 방식 코드 (string) REQUIRED 묶음배송 그룹 등록 시 배송비 계산 방식을 입력하기 위한 코드입니다. MIN(묶음배송 그룹에서 가장 작은 배송비로 부과), MAX(묶음배송 그룹에서 가장 큰 배송비로 부과) Possible values: [MIN, MAX] |
+| 배송비 정보 (object) REQUIRED | deliveryFee | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryFee 배송비 정보 (object) REQUIRED |
+| 배송일 | dispatchDate | 발주/발송 처리 | 1 | ✅ 핵심 UDS | dispatchDate string<date-time> 배송일 Example: 2022-04-05T12:17:35.000+09:00 |
+| 배송지 정보 변경 여부 | receiverAddressChanged | 주문 조회 | 1 | ✅ 핵심 UDS | receiverAddressChanged boolean 배송지 정보 변경 여부. 45바이트 내외 Default value: false |
+| 벌크 업데이트 종류 (string) IMMEDIATE | productBulkUpdateType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | productBulkUpdateType 벌크 업데이트 종류 (string) IMMEDIATE_DISCOUNT(기본 할인), SALE_PRICE(판매가), SALE_PERIOD(판매 기간), DELIVERY(배송 정보), DELIVERY_ATTRIBUTE(배송 속성), DELIVERY_HOPE(희망일배송), PURCHASE_BENEFIT(구매/리뷰 혜택), PURCHASE_QUANTITY_LIMIT(구매 수량 제한) Possible values: [IMMEDIATE_DISCOUNT, SALE_PRICE, SALE_PERIOD, DELIVERY, DELIVERY_ATTRIBUTE, DELIVERY_HOPE, PURCHASE_BENEFIT, PURCHASE_QUANTITY_LIMIT] |
+| 베스트 여부(윈도 채널 전용) (boolean) 미 | best | 상품 | 7 | ✅ 핵심 UDS | best 베스트 여부(윈도 채널 전용) (boolean) 미입력 시 false로 저장됩니다. |
+| 변경 금액 (integer | value | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | value 변경 금액 (integer<int32>) REQUIRED |
+| 변경 사유 | changeReason, reason | 발주/발송 처리, 솔루션 사용 API | 3 | ✅ 핵심 UDS | changeReason string REQUIRED 변경 사유. 길이 제한 1~300 |
+| 별도 설치비 유무 (boolean) 설치 여부가 false이 | installationFee | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | installationFee 별도 설치비 유무 (boolean) 설치 여부가 false이면 별도 설치비 유무는 입력한 값에 관계 없이 false로 설정됩니다. |
+| 보류 상세 사유 | holdbackExchangeDetailReason, holdbackReturnDetailReason | 교환, 반품 | 2 | ✅ 핵심 UDS | holdbackExchangeDetailReason string REQUIRED 보류 상세 사유 Example: 미입고 상태 |
+| 보류 유형 | holdbackClassType | 교환, 반품 | 2 | ✅ 핵심 UDS | holdbackClassType holdbackReason.pay-order-seller (string) REQUIRED 보류 유형. 250바이트 내외 코드 설명 비고 RETURN_DELIVERYFEE 반품 배송비 청구 EXTRAFEEE 추가 비용 청구 RETURN_DELIVERYFEE_AND_EXTRAFEEE 반품 배송비 + 추가 비용 청구 RETURN_PRODUCT_NOT_DELIVERED 반품 상품 미입고 ETC 기타 사유 EXCHANGE_DELIVERYFEE 교환 배송비 청구 EXCHANGE_EXTRAFEE 추가 교환 비용 청구 EXCHANGE_PRODUCT_READY 교환 상품 준비 중 EXCHANGE_PRODUCT_NOT_DELIVERED 교환 상품 미입고 EXCHANGE_HOLDBACK 교환 구매 확정 보류 SELLER_CONFIRM_NEED 판매자 확인 필요 PURCHASER_CONFIRM_NEED 구매자 확인 필요 SELLER_REMIT 판매자 직접 송금 ETC2 기 |
+| 복수 구매 할인 (integer | multiPurchaseDiscount | 상품 목록 | 1 | ✅ 핵심 UDS | multiPurchaseDiscount 복수 구매 할인 (integer<int64>) Possible values: <= 10000000 |
+| 복수 구매 할인 단위 (string) 복수 구매 할인 단위 | multiPurchaseDiscountUnitType | 상품 목록 | 1 | ✅ 핵심 UDS | multiPurchaseDiscountUnitType 복수 구매 할인 단위 (string) 복수 구매 할인 단위 타입. PERCENT, WON만 입력 가능합니다. PERCENT(정율), WON(정액) Possible values: [PERCENT, WON] |
+| 복수 구매 할인 정책 (object) | multiPurchaseDiscountPolicy | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | multiPurchaseDiscountPolicy 복수 구매 할인 정책 (object) |
+| 복수 선택형 속성값 최대 매칭 수 (integer | attributeValueMaxMatchingCount | 상품 속성 | 1 | ✅ 핵심 UDS | attributeValueMaxMatchingCount 복수 선택형 속성값 최대 매칭 수 (integer<int32>) |
+| 복원 요청 가능 여부 (boolean) Y 또는 N | restorationRequestAvailable | 상품 검수 | 1 | ✅ 핵심 UDS | restorationRequestAvailable 복원 요청 가능 여부 (boolean) Y 또는 N. 이미 복원 요청하여 검수 진행 중인 상품의 경우 N을 입력합니다. |
+| 부가가치세 타입 코드 (string) | taxType | 그룹상품 | 3 | ✅ 핵심 UDS | taxType 부가가치세 타입 코드 (string) 네이버 상품 API에서 부가가치세의 타입을 나타내기 위해 사용하는 코드입니다. 미입력 시 TAX(과세 상품)로 등록됩니다. TAX(과세 상품), DUTYFREE(면세 상품), SMALL(영세 상품) Possible values: [TAX, DUTYFREE, SMALL] |
+| 부가가치세 타입 코드 (string) Possible val | taxType | 그룹상품 | 1 | ✅ 핵심 UDS | taxType 부가가치세 타입 코드 (string) Possible values: [TAX, DUTYFREE, SMALL] |
+| 브랜드 인증 여부 (boolean) | brandCertificationYn | 그룹상품 | 4 | ✅ 핵심 UDS | brandCertificationYn 브랜드 인증 여부 (boolean) |
+| 브랜드 ID (integer | brandId | 그룹상품 | 4 | ✅ 핵심 UDS | brandId 브랜드 ID (integer<int64>) |
+| 브랜드명 (string) | brandName | Other, 그룹상품, 상품 목록, 카탈로그 | 8 | ✅ 핵심 UDS | brandName 브랜드명 (string) |
+| 빠른정산 금액 (number) NULLABLE 빠른정산 금액 | quickSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | quickSettleAmount 빠른정산 금액 (number) NULLABLE 빠른정산 금액 |
+| 사다리차 이용 시 | ladderTruckUseComment | 상품 배송 정보 | 5 | ✅ 핵심 UDS | ladderTruckUseComment 사다리차 이용 시 입력 사항 (string) |
+| 사업자 통관 판매 여부 (boolean) 출고지 주소가 해외 | businessCustomsClearanceSaleYn | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | businessCustomsClearanceSaleYn 사업자 통관 판매 여부 (boolean) 출고지 주소가 해외인 경우에만 적용됩니다. 미입력 시 false로 입력됩니다. |
+| 사용 상태 변경 사유 (string) REQUIRED 사용 | reason | 솔루션 사용 API | 2 | ✅ 핵심 UDS | reason 사용 상태 변경 사유 (string) REQUIRED 사용 상태 변경 사유 |
+| 사용 상태 변경 사유(관리자용) (string) REQUIR | comment | 솔루션 사용 API | 2 | ✅ 핵심 UDS | comment 사용 상태 변경 사유(관리자용) (string) REQUIRED 사용 상태 변경 사유(관리자용) |
+| 사용 여부 | usable | 상품 배송 정보 | 2 | ✅ 핵심 UDS | usable boolean 사용 여부 |
+| 사용 여부 (boolean) REQUIRED | usable | 상품 배송 정보 | 5 | ✅ 핵심 UDS | usable 사용 여부 (boolean) REQUIRED |
+| 사용 여부 (boolean) REQUIRED 기본 그룹인 경 | usable | 상품 배송 정보 | 5 | ✅ 핵심 UDS | usable 사용 여부 (boolean) REQUIRED 기본 그룹인 경우 자동으로 true로 설정됩니다. |
+| 사유 (string) | reason | 상품 검수 | 1 | ✅ 핵심 UDS | reason 사유 (string) |
+| 사유 (string) 사유 | reason | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | reason 사유 (string) 사유 |
+| 사은품 (string) | gift | 상품 목록 | 1 | ✅ 핵심 UDS | gift 사은품 (string) |
+| 사은품 정책 (object) | giftPolicy | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | giftPolicy 사은품 정책 (object) |
+| 상세 유형 (string) NULLABLE 상세 유형(결제 | detailType | 부가세 내역 | 1 | ✅ 핵심 UDS | detailType 상세 유형 (string) NULLABLE 상세 유형(결제 수단 정산, 혜택 정산, 공제/환급) VOUCH_DETAIL_PAYMENT_SETL(결제 수단 정산) VOUCH_DETAIL_COUPON_SETL(혜택 정산) VOUCH_DETAIL_PRODUCT_COUPON_SETL(혜택 정산(상품 할인)) VOUCH_DETAIL_ORDER_COUPON_SETL(혜택 정산(스토어 할인)) VOUCH_DETAIL_DLVFEE_COUPON_SETL(혜택 정산(배송비 할인)) VOUCH_DETAIL_DDTN_RSTOR(공제/환급) VOUCH_DETAIL_RTNDLV(공제/환급(반품 배송비)) VOUCH_DETAIL_ETCDLV(공제/환급(기타)) VOUCH_DETAIL_DCCNCL(공제/환급(복수구매 할인 취소)) VOUCH_DETAIL_DLVREC(공제/환급(배송비 금액 변동)) VOUCH_DETAIL_DLCNCL(공제/환급(배송비 할인 금액 변동)) Possible val |
+| 상세 정보 임시 ID (integer | detailContentTempId | 그룹상품 | 1 | ✅ 핵심 UDS | detailContentTempId 상세 정보 임시 ID (integer<int64>) 임시 ID는 1시간 동안 유효합니다. 반환받은 임시 ID는 그룹상품 등록/수정 API에서 상품별로 상품 상세 정보를 다르게 입력하는 경우에 사용합니다. |
+| 상세 주소 | detailAddress | 판매자 주소록 | 2 | ✅ 핵심 UDS | detailAddress string 상세 주소 |
+| 상태 | status | 부가세 내역, 솔루션 사용 API, 판매자 인증 JWE 해석 | 7 | ✅ 핵심 UDS | status 상태 (string) NULLABLE 상태(원주문 매출, 주문 취소, 공제/환급, 환급 취소, 수량 취소 정산(공제), 수량 취소 정산(환급)) VOUCH_PUBLICATION(원주문 매출) VOUCH_CANCEL(주문 취소) VOUCH_RSTOR_PUBLICATION(공제/환급) VOUCH_RSTOR_CANCEL(환급 취소) Possible values: [VOUCH_PUBLICATION, VOUCH_CANCEL, VOUCH_RSTOR_PUBLICATION, VOUCH_RSTOR_CANCEL] |
+| 상품 고객 혜택 정보 (object) | customerBenefit | 상품 | 3 | ✅ 핵심 UDS | customerBenefit 상품 고객 혜택 정보 (object) |
+| 상품 고객 혜택 정보 응답 (object) | customerBenefit | 상품 | 7 | ✅ 핵심 UDS | customerBenefit 상품 고객 혜택 정보 응답 (object) |
+| 상품 구매 포인트 정책 (object) | purchasePointPolicy | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | purchasePointPolicy 상품 구매 포인트 정책 (object) |
+| 상품 구매 포인트(관리자) (integer | managerPurchasePoint | 상품 목록 | 1 | ✅ 핵심 UDS | managerPurchasePoint 상품 구매 포인트(관리자) (integer<int64>) |
+| 상품 구매 포인트(판매자) (integer | sellerPurchasePoint | 상품 목록 | 1 | ✅ 핵심 UDS | sellerPurchasePoint 상품 구매 포인트(판매자) (integer<int64>) |
+| 상품 구매 포인트(판매자) 할인 단위 (string) 상품 | sellerPurchasePointUnitType | 상품 목록 | 1 | ✅ 핵심 UDS | sellerPurchasePointUnitType 상품 구매 포인트(판매자) 할인 단위 (string) 상품 구매 포인트(판매자) 할인 단위 타입. PERCENT, WON만 입력 가능합니다. PERCENT(정율), WON(정액) Possible values: [PERCENT, WON] |
+| 상품 등록일 (string | regDate | 상품 목록 | 1 | ✅ 핵심 UDS | regDate 상품 등록일 (string<date-time>) |
+| 상품 문의 답변 내용 (string) REQUIRED | commentContent | 상품 문의 | 1 | ✅ 핵심 UDS | commentContent 상품 문의 답변 내용 (string) REQUIRED |
+| 상품 문의 번호 (integer | questionId | 상품 문의 | 2 | ✅ 핵심 UDS | questionId 상품 문의 번호 (integer<int64>) |
+| 상품 문의 템플릿 유형 (string) PRODUCT(상품) | questionType | 상품 문의 | 1 | ✅ 핵심 UDS | questionType 상품 문의 템플릿 유형 (string) PRODUCT(상품), DELIVERY(배송), RETURN(반품), EXCHANGE(교환), REFUND(환불), ETC(기타) Possible values: [PRODUCT, DELIVERY, RETURN, EXCHANGE, REFUND, ETC] |
+| 상품 문의 ID | questionId | 상품 문의 | 1 | ✅ 핵심 UDS | questionId integer<int64> REQUIRED 상품 문의 ID |
+| 상품 사이즈 (object) | productSize | 그룹상품 | 4 | ✅ 핵심 UDS | productSize 상품 사이즈 (object) |
+| 상품 상세 | detailPv | 쇼핑행동 분석 | 1 | ✅ 핵심 UDS | detailPv number<double> 상품 상세 조회 수 |
+| 상품 상세 정보 (string) REQUIRED | detailContent | 상품 | 7 | ✅ 핵심 UDS | detailContent 상품 상세 정보 (string) REQUIRED |
+| 상품 상세 정보 (string) REQUIRED 상품 수정 | detailContent | 상품 | 3 | ✅ 핵심 UDS | detailContent 상품 상세 정보 (string) REQUIRED 상품 수정 시에만 생략할 수 있습니다. 이 경우 기존에 저장된 상품 상세 정보 값이 유지됩니다. |
+| 상품 이미지 (object) REQUIRED | images | 상품 | 7 | ✅ 핵심 UDS | images 상품 이미지 (object) REQUIRED |
+| 상품 주문 번호 | dispatchProductOrders | 발주/발송 처리 | 1 | ✅ 핵심 UDS | dispatchProductOrders dispatchProductOrder.pay-order-seller (object)[] Array [ productOrderId string 상품 주문 번호 Example: 2022040521691281 deliveryMethod deliveryMethod.pay-order-seller (string) 배송 방법 코드. 250바이트 내외 코드 설명 비고 DELIVERY 택배, 등기, 소포 GDFW_ISSUE_SVC 굿스플로 송장 출력 VISIT_RECEIPT 방문 수령 DIRECT_DELIVERY 직접 전달 QUICK_SVC 퀵서비스 NOTHING 배송 없음 RETURN_DESIGNATED 지정 반품 택배 RETURN_DELIVERY 일반 반품 택배 RETURN_INDIVIDUAL 직접 반송 RETURN_MERCHANT 판매자 직접 수거(장보기 전용) UNKNOWN 알 수 없음(예외 처리에 사용) Example: DELIVERY delivery |
+| 상품 주문 상태 목록 | productOrderStatuses | 주문 조회 | 1 | ✅ 핵심 UDS | productOrderStatuses productOrderStatus.pay-order-seller (string)[] 상품 주문 상태 목록. 250바이트 내외 코드 설명 비고 PAYMENT_WAITING 결제 대기 PAYED 결제 완료 DELIVERING 배송 중 DELIVERED 배송 완료 PURCHASE_DECIDED 구매 확정 EXCHANGED 교환 CANCELED 취소 RETURNED 반품 CANCELED_BY_NOPAYMENT 미결제 취소 Example: [PAYMENT_WAITING, PAYED, CANCELED] |
+| 상품 주문 옵션 | productOrderOption | 고객 문의 조회 | 2 | ✅ 핵심 UDS | productOrderOption string 상품 주문 옵션 |
+| 상품 주문 ID 목록(여러 개의 상품 주문에 대해 문의했을 | productOrderIdList | 고객 문의 조회 | 2 | ✅ 핵심 UDS | productOrderIdList string 상품 주문 ID 목록(여러 개의 상품 주문에 대해 문의했을 경우 각각의 상품 주문 ID가 ','로 구분되어 출력됨) |
+| 상품 카테고리(대) | largeCategory | 판매 분석 | 2 | ✅ 핵심 UDS | largeCategory string 상품 카테고리(대) |
+| 상품 카테고리(세) | detailCategory | 판매 분석 | 2 | ✅ 핵심 UDS | detailCategory string 상품 카테고리(세) |
+| 상품 카테고리(소) | smallCategory | 판매 분석 | 3 | ✅ 핵심 UDS | smallCategory string 상품 카테고리(소) |
+| 상품 카테고리(중) | middleCategory | 판매 분석 | 2 | ✅ 핵심 UDS | middleCategory string 상품 카테고리(중) |
+| 상품 판매 가격 (integer | salePrice | 상품 | 8 | ✅ 핵심 UDS | salePrice 상품 판매 가격 (integer<int64>) REQUIRED Possible values: <= 999999990 |
+| 상품 판매 상태 목록 (string) | productStatusTypes | 상품 목록 | 1 | ✅ 핵심 UDS | productStatusTypes 상품 판매 상태 목록 (string)[] 조회하려는 상품 판매 상태를 선택합니다. WAIT(판매 대기), SALE(판매 중), OUTOFSTOCK(품절), UNADMISSION(승인 대기), REJECTION(승인 거부), SUSPENSION(판매 중지), CLOSE(판매 종료), PROHIBITION(판매 금지) Possible values: [WAIT, SALE, OUTOFSTOCK, UNADMISSION, REJECTION, SUSPENSION, CLOSE, PROHIBITION, DELETE] |
+| 상품 판매 상태 코드 (string) REQUIRED 변경하 | statusType | 상품 | 1 | ✅ 핵심 UDS | statusType 상품 판매 상태 코드 (string) REQUIRED 변경하려는 상품 판매 상태 SALE(판매 중), OUTOFSTOCK(품절), SUSPENSION(판매 중지) 현재 상태에 따라 변경 가능한 상태는 다음과 같습니다. SALE(판매 중) → OUTOFSTOCK(품절)으로 변경(재고 수량은 0으로 변경됨) SUSPENSION(판매 중지), OUTOFSTOCK(품절) → SALE(판매 중)로 변경(품절에서 판매 중으로 변경 시 재고 수량 입력 필수) SALE(판매 중), OUTOFSTOCK(품절), WAIT(판매 대기) → SUSPENSION(판매 중지)으로 변경 상품의 재고 수량이 0인 경우 상태는 전달된 값과 무관하게 OUTOFSTCOK(품절) 상태를 유지합니다. 단, 현재 상태가 SUSPENSION(판매 중지)이면 전송된 재고 수량이 0이어도 SUSPENSION(판매 중지)으로 유지됩니다. Possible values: [WAIT, SALE, OUTOFSTOCK |
+| 상품 판매 상태 코드 (string) REQUIRED 상품 | statusType | 상품 | 3 | ✅ 핵심 UDS | statusType 상품 판매 상태 코드 (string) REQUIRED 상품 API에서 상품의 판매 상태를 나타내기 위해 사용하는 코드입니다. 상품 등록 시에는 SALE(판매 중)만 입력할 수 있으며, 상품 수정 시에는 SALE(판매 중), SUSPENSION(판매 중지)만 입력할 수 있습니다. 상품 등록 시에 SUSPENSION(판매 중지)을 입력하면 SALE(판매 중)로 등록됩니다. StockQuantity의 값이 0인 경우 상품 상태는 OUTOFSTOCK(품절)으로 등록됩니다. 품절 상태의 상품을 판매 중으로 변경하는 경우, StockQuantity(재고 수량)와 함께 statusType을 SALE(판매 중)로 입력해야 합니다. WAIT(판매 대기), SALE(판매 중), OUTOFSTOCK(품절), UNADMISSION(승인 대기), REJECTION(승인 거부), SUSPENSION(판매 중지), CLOSE(판매 종료), PROHIBITION(판매 금지) Possible  |
+| 상품 판매 상태 코드 (string) REQUIRED Pos | statusType | 상품 | 7 | ✅ 핵심 UDS | statusType 상품 판매 상태 코드 (string) REQUIRED Possible values: [WAIT, SALE, OUTOFSTOCK, UNADMISSION, REJECTION, SUSPENSION, CLOSE, PROHIBITION, DELETE] |
+| 상품 판매 상태 코드 (string) WAIT(판매 대기) | statusType | 상품 목록 | 1 | ✅ 핵심 UDS | statusType 상품 판매 상태 코드 (string) WAIT(판매 대기), SALE(판매 중), OUTOFSTOCK(품절), UNADMISSION(승인 대기), REJECTION(승인 거부), SUSPENSION(판매 중지), CLOSE(판매 종료), PROHIBITION(판매 금지) Possible values: [WAIT, SALE, OUTOFSTOCK, UNADMISSION, REJECTION, SUSPENSION, CLOSE, PROHIBITION, DELETE] |
+| 상품 판매 유형 코드 (string) 상품 API에서 상품의 | saleType | 그룹상품, 상품 | 6 | ✅ 핵심 UDS | saleType 상품 판매 유형 코드 (string) 상품 API에서 상품의 판매 유형을 나타내기 위해 사용하는 코드입니다. 미입력 시 NEW(새 상품)로 등록됩니다. NEW(새 상품), OLD(중고 상품) Possible values: [NEW, OLD] |
+| 상품 판매 유형 코드 (string) Possible val | saleType | 그룹상품, 상품 | 8 | ✅ 핵심 UDS | saleType 상품 판매 유형 코드 (string) Possible values: [NEW, OLD] |
+| 상품 행동 분석 항목 목록 Array | rows | 쇼핑행동 분석 | 1 | ✅ 핵심 UDS | rows ProductActionRow (object)[] 상품 행동 분석 항목 목록 Array [ detailPv number<double> 상품 상세 조회 수 productId string 상품 ID productName string 상품명 productQuantity number<double> 결제 상품 수량 ] |
+| 상품 ID | productId | 상품 문의, 쇼핑행동 분석, 정산 내역, 판매 분석 | 8 | ✅ 핵심 UDS | productId 상품 번호 (string) NULLABLE 상품 번호 |
+| 상품/검색 채널 분석 항목 목록 Array | rows | 판매 분석 | 1 | ✅ 핵심 UDS | rows ProductSearchReportRow (object)[] 상품/검색 채널 분석 항목 목록 Array [ channelGroup string 채널 그룹 channelName string 채널명 detailCategory string 상품 카테고리(세) largeCategory string 상품 카테고리(대) middleCategory string 상품 카테고리(중) numPurchases number<double> 결제 수 payAmount number<double> 결제 금액 productId string 상품 ID productName string 상품명 refKeyword string 키워드 smallCategory string 상품 카테고리(소) ] |
+| 상품/검색 채널 키워드별 상품 분석 항목 목록 Array | rows | 판매 분석 | 1 | ✅ 핵심 UDS | rows KeywordByProductReportRow (object)[] 상품/검색 채널 키워드별 상품 분석 항목 목록 Array [ payAmount number<double> 결제 금액 productName string 상품명 refKeyword string 키워드 ] |
+| 상품/마케팅 채널 분석 항목 목록 Array | rows | 판매 분석 | 1 | ✅ 핵심 UDS | rows ProductMarketingReportRow (object)[] 상품/마케팅 채널 분석 항목 목록 Array [ channelDetail string 채널 상세 channelGroup string 채널 그룹 channelName string 채널명 detailCategory string 상품 카테고리(세) largeCategory string 상품 카테고리(대) middleCategory string 상품 카테고리(중) numPurchases number<double> 결제 수 payAmount number<double> 결제 금액 productId string 상품 ID productName string 상품명 smallCategory string 상품 카테고리(소) ] |
+| 상품/마케팅 채널 카테고리(소)별 채널 분석 항목 목록 Ar | rows | 판매 분석 | 1 | ✅ 핵심 UDS | rows ProductCategoryChannelReportRow (object)[] 상품/마케팅 채널 카테고리(소)별 채널 분석 항목 목록 Array [ channelName string 채널명 payAmount number<double> 결제 금액 smallCategory string 상품 카테고리(소) ] |
+| 상품명 | productName | 고객 문의 조회, 부가세 내역, 상품 문의, 쇼핑행동 분석, 정산 내역, 판매 분석 | 12 | ✅ 핵심 UDS | productName 상품명 (string) NULLABLE 상품명 |
+| 상품번호 | productNo | 고객 문의 조회 | 2 | ✅ 핵심 UDS | productNo string 상품번호 |
+| 상품별 결제 금액 상위 10 Array | payAmountByProduct | 실시간 분석 | 1 | ✅ 핵심 UDS | payAmountByProduct DimensionAndMetric (object)[] 상품별 결제 금액 상위 10 Array [ dimension string 집계 필드 metric number<double> 집계 수치 rate number<double> 비율 정보. 비율 값을 전달하는 경우 해당 필드 전달 ] |
+| 상품정보제공고시 (object) | productInfoProvidedNotice | 그룹상품 | 1 | ✅ 핵심 UDS | productInfoProvidedNotice 상품정보제공고시 (object) |
+| 상품정보제공고시 (object) REQUIRED | productInfoProvidedNotice | 그룹상품 | 3 | ✅ 핵심 UDS | productInfoProvidedNotice 상품정보제공고시 (object) REQUIRED |
+| 상품정보제공고시 상품군 유형 (string) Possible | productInfoProvidedNoticeType | 상품정보제공고시 | 2 | ✅ 핵심 UDS | productInfoProvidedNoticeType 상품정보제공고시 상품군 유형 (string) Possible values: [WEAR, SHOES, BAG, FASHION_ITEMS, SLEEPING_GEAR, FURNITURE, IMAGE_APPLIANCES, HOME_APPLIANCES, SEASON_APPLIANCES, OFFICE_APPLIANCES, OPTICS_APPLIANCES, MICROELECTRONICS, CELLPHONE, NAVIGATION, CAR_ARTICLES, MEDICAL_APPLIANCES, KITCHEN_UTENSILS, COSMETIC, JEWELLERY, FOOD, GENERAL_FOOD, DIET_FOOD, KIDS, MUSICAL_INSTRUMENT, SPORTS_EQUIPMENT, BOOKS, LODGMENT_RESERVATION, TRAVEL_PACKAGE, AIRLINE_TICKET, RENT_CAR, RENTAL_HA, RENTA |
+| 상품정보제공고시 상품군 유형 상세 정보 (object) | productInfoProvidedNoticeContents | 상품정보제공고시 | 2 | ✅ 핵심 UDS | productInfoProvidedNoticeContents 상품정보제공고시 상품군 유형 상세 정보 (object)[] Array [ fieldType 상품정보제공고시 상품군 필드 타입 (string) fieldName 상품정보제공고시 상품군 필드 이름 (string) fieldDescription 상품정보제공고시 상품군 필드 설명 (string) fieldAddDescription 상품정보제공고시 상품군 필드 추가 설명 (string) fieldMaxLength 상품정보제공고시 상품군 필드 길이 (integer<int32>) ] |
+| 상품정보제공고시 상품군 유형 Possible values | productInfoProvidedNoticeType | 상품정보제공고시 | 1 | ✅ 핵심 UDS | productInfoProvidedNoticeType string REQUIRED 상품정보제공고시 상품군 유형 Possible values: [WEAR, SHOES, BAG, FASHION_ITEMS, SLEEPING_GEAR, FURNITURE, IMAGE_APPLIANCES, HOME_APPLIANCES, SEASON_APPLIANCES, OFFICE_APPLIANCES, OPTICS_APPLIANCES, MICROELECTRONICS, CELLPHONE, NAVIGATION, CAR_ARTICLES, MEDICAL_APPLIANCES, KITCHEN_UTENSILS, COSMETIC, JEWELLERY, FOOD, GENERAL_FOOD, DIET_FOOD, KIDS, MUSICAL_INSTRUMENT, SPORTS_EQUIPMENT, BOOKS, LODGMENT_RESERVATION, TRAVEL_PACKAGE, AIRLINE_TICKET, RENT_CAR, RENTAL_HA |
+| 상품정보제공고시 상품군 유형명 (string) | productInfoProvidedNoticeTypeName | 상품정보제공고시 | 2 | ✅ 핵심 UDS | productInfoProvidedNoticeTypeName 상품정보제공고시 상품군 유형명 (string) |
+| 상품정보제공고시 상품군 필드 길이 (integer | fieldMaxLength | 상품정보제공고시 | 2 | ✅ 핵심 UDS | fieldMaxLength 상품정보제공고시 상품군 필드 길이 (integer<int32>) |
+| 상품정보제공고시 상품군 필드 설명 (string) | fieldDescription | 상품정보제공고시 | 2 | ✅ 핵심 UDS | fieldDescription 상품정보제공고시 상품군 필드 설명 (string) |
+| 상품정보제공고시 상품군 필드 이름 (string) | fieldName | 상품정보제공고시 | 2 | ✅ 핵심 UDS | fieldName 상품정보제공고시 상품군 필드 이름 (string) |
+| 상품정보제공고시 상품군 필드 추가 설명 (string) | fieldAddDescription | 상품정보제공고시 | 2 | ✅ 핵심 UDS | fieldAddDescription 상품정보제공고시 상품군 필드 추가 설명 (string) |
+| 상품정보제공고시 상품군 필드 타입 (string) | fieldType | 상품정보제공고시 | 2 | ✅ 핵심 UDS | fieldType 상품정보제공고시 상품군 필드 타입 (string) |
+| 상품주문번호 | productOrderId | 교환, 반품, 발주/발송 처리, 부가세 내역, 정산 내역, 주문 조회, 취소 | 19 | ✅ 핵심 UDS | productOrderId 상품 주문 번호 (string) NULLABLE 상품 주문 번호, 배송비 번호, 기타 비용 번호 |
+| 상품주문번호 목록 | productOrderIds | 발주/발송 처리, 주문 조회 | 2 | ✅ 핵심 UDS | productOrderIds string[] REQUIRED |
+| 상품주문상태 | productOrderStatus | 주문 조회 | 1 | ✅ 핵심 UDS | productOrderStatus productOrderStatus.pay-order-seller (string) 상품 주문 상태. 250바이트 내외 코드 설명 비고 PAYMENT_WAITING 결제 대기 PAYED 결제 완료 DELIVERING 배송 중 DELIVERED 배송 완료 PURCHASE_DECIDED 구매 확정 EXCHANGED 교환 CANCELED 취소 RETURNED 반품 CANCELED_BY_NOPAYMENT 미결제 취소 |
+| 상품쿠폰 | productCouponDiscountAmount | 판매 분석 | 1 | ✅ 핵심 UDS | productCouponDiscountAmount number<double> 상품쿠폰 |
+| 색상칩 사용 여부 (boolean) REQUIRED 색상 코 | colorCodeYn | 판매 옵션 | 1 | ✅ 핵심 UDS | colorCodeYn 색상칩 사용 여부 (boolean) REQUIRED 색상 코드 입력이 가능한 판매 옵션 여부를 표시합니다. 그룹상품 등록/수정/전환 API로 전달되는 hex 코드(#000000 형식)가 색상칩으로 사용됩니다. |
+| 생성 일시 (string | createDate | 상품 문의 | 2 | ✅ 핵심 UDS | createDate 생성 일시 (string<date-time>) Example: 2025-02-03T22:36:42.008+09:00 |
+| 선물 수락 상태 구분 | giftReceivingStatus | 주문 조회 | 1 | ✅ 핵심 UDS | giftReceivingStatus giftReceivingStatus.pay-order-seller (string) 선물 수락 상태 구분. 250바이트 내외 코드 설명 비고 WAIT_FOR_RECEIVING 수락 대기(배송지 입력 대기) RECEIVED 수락 완료 |
+| 선택한 계정에 보유한 매니저 권한 타입 Possible va | roleGroupType | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | roleGroupType string 선택한 계정에 보유한 매니저 권한 타입 Possible values: [REPRESENT, MANAGER_GROUP, ACCOUNT, ACCOUNT_SUB] |
+| 선택한 계정에 보유한 매니저 세부 권한 타입 Possible | roleGroupDetailType | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | roleGroupDetailType string 선택한 계정에 보유한 매니저 세부 권한 타입 Possible values: [INFLUENCER, AGENCY, LOGISTICS_MANAGEMENT] |
+| 설치 여부 (boolean) 배송 속성이 HOPE | installation | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | installation 설치 여부 (boolean) 배송 속성이 HOPE_SELLER_GUARANTEE(N희망일배송)인 경우에만 필수. 미입력 시 false로 설정됩니다. 그 외 배송 속성에 입력한 경우 무시됩니다. |
+| 세금 신고 기준일 (string | taxReturnDate | 정산 내역 | 1 | ✅ 핵심 UDS | taxReturnDate 세금 신고 기준일 (string<date>) NULLABLE 세금 신고 기준일(yyyy-MM-dd) |
+| 속성 구분 코드명 (string) | attributeClassificationCodeName | 상품 속성 | 1 | ✅ 핵심 UDS | attributeClassificationCodeName 속성 구분 코드명 (string) |
+| 속성 구분 타입 (string) Possible values | attributeClassificationType | 상품 속성 | 1 | ✅ 핵심 UDS | attributeClassificationType 속성 구분 타입 (string) Possible values: [SINGLE_SELECT, MULTI_SELECT, RANGE] |
+| 속성 색상 코드 (string) | attributeColorCode | 옵션 | 1 | ✅ 핵심 UDS | attributeColorCode 속성 색상 코드 (string) |
+| 속성 유형 코드명 (string) | attributeTypeCodeName | 상품 속성 | 1 | ✅ 핵심 UDS | attributeTypeCodeName 속성 유형 코드명 (string) |
+| 속성 유형 타입 (string) Possible values | attributeType | 상품 속성 | 1 | ✅ 핵심 UDS | attributeType 속성 유형 타입 (string) Possible values: [PRIMARY, OPTIONAL] |
+| 속성 ID (integer | attributeId, attributeSeq | 상품 속성, 옵션 | 3 | ✅ 핵심 UDS | attributeSeq 속성 ID (integer<int64>) REQUIRED |
+| 속성값 단위 코드 (string) REQUIRED | id | 상품 속성 | 1 | ✅ 핵심 UDS | id 속성값 단위 코드 (string) REQUIRED |
+| 속성값 단위명 (string) REQUIRED | unitCodeName | 상품 속성 | 1 | ✅ 핵심 UDS | unitCodeName 속성값 단위명 (string) REQUIRED |
+| 속성값 이름 (string) REQUIRED | attributeValueName | 옵션 | 1 | ✅ 핵심 UDS | attributeValueName 속성값 이름 (string) REQUIRED |
+| 속성값 ID (integer | attributeValueId, attributeValueSeq | 상품 속성, 옵션 | 2 | ✅ 핵심 UDS | attributeValueSeq 속성값 ID (integer<int64>) REQUIRED |
+| 속성명 (string) | attributeName | 상품 속성 | 1 | ✅ 핵심 UDS | attributeName 속성명 (string) |
+| 솔루션 사용 승인 가능 여부 | approveSubscriptionYn | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | approveSubscriptionYn boolean 솔루션 사용 승인 가능 여부 |
+| 솔루션 ID | solutionId | 비즈월렛 결제 내역 조회, 솔루션 사용 API, 판매자 인증 JWE 해석 | 8 | ✅ 핵심 UDS | solutionId string 솔루션 ID Example: ZF75IAECnPGeZbwTPvmmN |
+| 솔루션 ID (string) REQUIRED 솔루션 ID | solutionId | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | solutionId 솔루션 ID (string) REQUIRED 솔루션 ID |
+| 솔루션명 | solutionName | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | solutionName string 솔루션명 Example: 클로바 |
+| 솔루션사 거래 ID (string) REQUIRED 솔루션사 | paymentId | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | paymentId 솔루션사 거래 ID (string) REQUIRED 솔루션사 거래 ID |
+| 쇼핑윈도 채널상품 정보 구조체 (object) 이 구조체는 | windowChannelProduct | 상품 | 5 | ✅ 핵심 UDS | windowChannelProduct 쇼핑윈도 채널상품 정보 구조체 (object) 이 구조체는 상품 정보 중 쇼핑윈도 채널상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 쇼핑윈도 채널상품 정보를 표현합니다. 상품 단위별로 쇼핑윈도 채널상품 정보는 단일 구조체로만 포함되나 계층 구조상 자매 개체로 원상품 구조체 혹은 스마트스토어 채널상품 구조체와 함께 사용할 수 있습니다. 이 구조체는 아래 API에서 사용합니다. 상품 등록, 채널 상품 조회, 채널 상품 수정, 원상품 조회, 원상품 수정 등 이 구조체는 상품 정보 중 쇼핑윈도 채널상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 쇼핑윈도 채널상품 정보를 표현합니다. 상품 단위별로 쇼핑윈도 채널상품 정보는 단일  |
+| 수거 송장 번호 | collectTrackingNumber | 반품 | 1 | ✅ 핵심 UDS | collectTrackingNumber string 수거 송장 번호 Example: D2485799470 |
+| 수급 상품번호 (integer | injectProductNo | 상품 목록 | 1 | ✅ 핵심 UDS | injectProductNo 수급 상품번호 (integer<int64>) |
+| 수량클레임 변경사항 개발 대응 완료 여부 (수량클레임 변경사 | quantityClaimCompatibility | 주문 조회 | 2 | ✅ 핵심 UDS | quantityClaimCompatibility boolean 수량클레임 변경사항 개발 대응 완료 여부 (수량클레임 변경사항에 대한 개발 대응 완료 시 true 값으로 호출) Example: true |
+| 수수료 금액 (number) REQUIRED 수수료 금액 | commissionAmount | 정산 내역 | 1 | ✅ 핵심 UDS | commissionAmount 수수료 금액 (number) REQUIRED 수수료 금액 |
+| 수수료 기준 금액 (number) REQUIRED 수수료 기 | commissionBasisAmount | 정산 내역 | 1 | ✅ 핵심 UDS | commissionBasisAmount 수수료 기준 금액 (number) REQUIRED 수수료 기준 금액 |
+| 수수료 정산 금액 (number) NULLABLE 수수료 정 | commissionSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | commissionSettleAmount 수수료 정산 금액 (number) NULLABLE 수수료 정산 금액 |
+| 수수료 타입 (string) REQUIRED 수수료 타입 S | commissionType | 정산 내역 | 1 | ✅ 핵심 UDS | commissionType 수수료 타입 (string) REQUIRED 수수료 타입 SALE_COMMISSION((구)판매 수수료) PAY_COMMISSION(Npay 수수료) CHNL_COMMISSION(채널 수수료) ISTLM_COMMISSION(무이자 할부 수수료) PUBLISHING_COMMISSION(퍼블리싱 수수료) INFLOW_COMMISSION(유입 수수료) SERVICE_COMMISSION(솔루션 사용료) CONTRACT_COMMISSION(계약 수수료) PACKAGE_COMMISSION(패키지 사용료) PARTNER_COMMISSION(제휴 사용료) PURCHASER_COMMISSION(구매자 수수료) PRICE_COMPARISON_COMMISSION(가격비교 수수료) PLATFORM_COMMISSION(판매 수수료) VERTICAL_COMMISSION(버티컬 사용료) Possible values: [SALE_COMMISSION, PAY_COMMISSION, CHN |
+| 수정 가능 여부 (boolean) REQUIRED | realValueUsable | 옵션 | 1 | ✅ 핵심 UDS | realValueUsable value 수정 가능 여부 (boolean) REQUIRED |
+| 수정일시 | modificationYmdt, modifiedDate | SKU, 상품 목록 | 2 | ✅ 핵심 UDS | modificationYmdt string<date-time> REQUIRED SKU 수정일시. KST(UTC+09:00)로 응답. Example: 2024-01-01T11:20:50.001+09:00 |
+| 스마트스토어 그룹상품 공통 채널 정보 (object) | smartstoreGroupChannel | 그룹상품 | 4 | ✅ 핵심 UDS | smartstoreGroupChannel 스마트스토어 그룹상품 공통 채널 정보 (object) |
+| 스마트스토어 채널 상품 (object) channelProd | smartstoreChannelProduct | 상품 | 4 | ✅ 핵심 UDS | smartstoreChannelProduct 스마트스토어 채널 상품 (object) channelProductName 채널 상품 전용 상품명 (string) 채널 상품 전용 상품명을 사용하는 경우 입력합니다. 미입력 시 원상품명으로 적용됩니다. bbsSeq 콘텐츠 게시글 일련번호 (integer<int64>) 공지사항 storeKeepExclusiveProduct 알림받기 동의 회원 전용 상품 여부 (boolean) 미입력 시 false로 저장됩니다. naverShoppingRegistration 네이버 쇼핑 등록 여부 (boolean) REQUIRED 네이버 쇼핑 광고주가 아닌 경우에는 false로 저장됩니다. channelProductDisplayStatusType 전시 상태 코드(스마트스토어 채널 전용) (string) REQUIRED ON, SUSPENSION만 입력 가능합니다. WAIT(전시 대기), ON(전시 중), SUSPENSION(전시 중지) Possible valu |
+| 스마트스토어 채널 상품번호 (integer | smartstoreChannelProductNo | 그룹상품, 상품 | 8 | ✅ 핵심 UDS | smartstoreChannelProductNo 스마트스토어 채널 상품번호 (integer<int64>) |
+| 스마트스토어 채널상품 정보 구조체 (object) 이 구조체 | smartstoreChannelProduct | 상품 | 3 | ✅ 핵심 UDS | smartstoreChannelProduct 스마트스토어 채널상품 정보 구조체 (object) 이 구조체는 상품 정보 중 스마트스토어 채널상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 스마트스토어 채널상품 정보를 표현합니다. 상품 단위별로 스마트스토어 채널상품 정보는 단일 구조체로만 포함되나 계층 구조상 자매 개체로 원상품 구조체 혹은 쇼핑윈도 채널상품 구조체와 함께 사용할 수 있습니다. 이 구조체는 아래 API에서 사용합니다. 상품 등록, 채널 상품 조회, 채널 상품 수정, 원상품 조회, 원상품 수정 등 이 구조체는 상품 정보 중 스마트스토어 채널상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 스마트스토어 채널상품 정보를 표현합니다. 상품 단위별로 스마트 |
+| 스마트스토어 채널상품 정보 구조체 (object) REQUI | smartstoreChannelProduct | 상품 | 2 | ✅ 핵심 UDS | smartstoreChannelProduct 스마트스토어 채널상품 정보 구조체 (object) REQUIRED 이 구조체는 상품 정보 중 스마트스토어 채널상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 스마트스토어 채널상품 정보를 표현합니다. 상품 단위별로 스마트스토어 채널상품 정보는 단일 구조체로만 포함되나 계층 구조상 자매 개체로 원상품 구조체 혹은 쇼핑윈도 채널상품 구조체와 함께 사용할 수 있습니다. 이 구조체는 아래 API에서 사용합니다. 상품 등록, 채널 상품 조회, 채널 상품 수정, 원상품 조회, 원상품 수정 등 이 구조체는 상품 정보 중 스마트스토어 채널상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 스마트스토어 채널상품 정보를 표현합니다. 상품 |
+| 스토어 프로필 섬네일 URL | representImageUrl | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | representImageUrl string 스토어 프로필 섬네일 URL |
+| 스토어명(대표 채널명) | channelName | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | channelName string 스토어명(대표 채널명) |
+| 시간별 결제 금액 Array | payAmountByHour | 실시간 분석 | 1 | ✅ 핵심 UDS | payAmountByHour DimensionAndMetric (object)[] 시간별 결제 금액 Array [ dimension string 집계 필드 metric number<double> 집계 수치 rate number<double> 비율 정보. 비율 값을 전달하는 경우 해당 필드 전달 ] |
+| 시작일 | startDate | 정산 내역 | 1 | ✅ 핵심 UDS | startDate string<date> REQUIRED 시작일 Example: 2022-01-01 |
+| 신규 고객 비율 | newCustomerRatio | 고객 데이터 | 2 | ✅ 핵심 UDS | newCustomerRatio number<double> 신규 고객 비율 |
+| 신규 고객 수 | newCustomerCount | 고객 데이터 | 2 | ✅ 핵심 UDS | newCustomerCount integer<int64> 신규 고객 수 |
+| 신규 등급 추가 | joinCount | 고객 데이터 | 2 | ✅ 핵심 UDS | joinCount integer<int64> 신규 등급 추가 |
+| 신용카드 금액 (number) REQUIRED 신용카드 금액 | creditCardAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | creditCardAmount 신용카드 금액 (number) REQUIRED 신용카드 금액 |
+| 실버 고객 수 | silver | 고객 데이터 | 2 | ✅ 핵심 UDS | silver integer<int64> 실버 고객 수 |
+| 알림 고객 수(누적) | notificationCustomer | 고객 데이터 | 2 | ✅ 핵심 UDS | notificationCustomer integer<int64> 알림 고객 수(누적) |
+| 알림 고객 수(증감) | notificationCustomerFluctuation | 고객 데이터 | 2 | ✅ 핵심 UDS | notificationCustomerFluctuation integer<int64> 알림 고객 수(증감) |
+| 알림받기 동의 회원 리뷰 추가 적립 포인트 (integer | regularCustomerPoint | 상품 목록 | 1 | ✅ 핵심 UDS | regularCustomerPoint 알림받기 동의 회원 리뷰 추가 적립 포인트 (integer<int64>) |
+| 알림받기 동의 회원 전용 상품 여부 (boolean) 미 | storeKeepExclusiveProduct | 상품 | 8 | ✅ 핵심 UDS | storeKeepExclusiveProduct 알림받기 동의 회원 전용 상품 여부 (boolean) 미입력 시 false로 저장됩니다. |
+| 에 연결된 판매상품의 수 | nsMappingCount | SKU | 1 | ✅ 핵심 UDS | nsMappingCount integer<int32> REQUIRED SKU ID에 연결된 판매상품의 수 |
+| 여성 구매 통계 ratio number | femalePurchaseStats | 고객 데이터 | 2 | ✅ 핵심 UDS | femalePurchaseStats femalePurchaseSchema.data-insight (object) REQUIRED 여성 구매 통계 ratio number<double> 구매 비율 |
+| 연동일시 | allianceLinkedYmdt | SKU | 1 | ✅ 핵심 UDS | allianceLinkedYmdt string<date-time> REQUIRED 연동일시. 물류사 SKU정보 연동일시 KST(UTC+09:00)로 응답 Example: 2024-01-01T11:20:50.001+09:00 |
+| 연락처 1 | phoneNumber1 | 판매자 주소록 | 2 | ✅ 핵심 UDS | phoneNumber1 string 연락처 1 |
+| 연락처 2 | phoneNumber2 | 판매자 주소록 | 2 | ✅ 핵심 UDS | phoneNumber2 string 연락처 2 |
+| 연령대별 구매 통계 teenage teenagePurchas | agePurchaseStats | 고객 데이터 | 2 | ✅ 핵심 UDS | agePurchaseStats AgePurchaseStats.data-insight (object) REQUIRED 연령대별 구매 통계 teenage teenagePurchaseSchema.data-insight (object) early20s early20sPurchaseSchema.data-insight (object) late20s late20sPurchaseSchema.data-insight (object) early30s early30sPurchaseSchema.data-insight (object) late30s late30sPurchaseSchema.data-insight (object) early40s early40sPurchaseSchema.data-insight (object) late40s late40sPurchaseSchema.data-insight (object) early50s early50sPurchaseSchema.data-insight (object)  |
+| 예금주 (string) NULLABLE 예금주 | depositorName | 정산 내역 | 1 | ✅ 핵심 UDS | depositorName 예금주 (string) NULLABLE 예금주 |
+| 예상 배송비 (integer | expectationDeliveryFee | 상품 배송 정보 | 1 | ✅ 핵심 UDS | expectationDeliveryFee 예상 배송비 (integer<int32>) Possible values: <= 100000 |
+| 오늘출발 상품 재고 수량 (integer | todayStockQuantity | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | todayStockQuantity 오늘출발 상품 재고 수량 (integer<int32>) |
+| 오류 발생 원인 | invalidInputs | 고객 문의 조회 | 1 | ✅ 핵심 UDS | invalidInputs InputViolation.pay-user (object)[]API 오류 발생 원인. 4001 API 오류 코드 발생 시 전달되는 정보입니다.Array [namestringrequiredmessagestringrequired] |
+| 오류 타입 | type | 부가세 내역, 정산 내역 | 5 | ✅ 핵심 UDS | typestringrequired오류 타입 |
+| 옵션 그룹명 (string) (예 | groupName | 옵션 | 1 | ✅ 핵심 UDS | groupName 옵션 그룹명 (string) (예: 사이즈, 색상) |
+| 옵션 재고 수량 관리 사용 여부 (boolean) false | useStockManagement | 상품 | 1 | ✅ 핵심 UDS | useStockManagement 옵션 재고 수량 관리 사용 여부 (boolean) false로 설정하면 수량이 9,999로 설정됩니다(표준형 옵션). |
+| 옵션 정보 (object) REQUIRED 옵션 재고 및 옵 | optionInfo | 상품 | 1 | ✅ 핵심 UDS | optionInfo 옵션 정보 (object) REQUIRED 옵션 재고 및 옵션가 설정이 가능한 옵션 설정 상품에 대해 수정이 가능합니다. 옵션 타입 및 옵션명, 옵션값 수정이 필요한 경우 상품 수정 API를 이용해주세요. optionCombinations 조합형 옵션 (object)[] optionStandards 표준형 옵션 (object)[] useStockManagement 옵션 재고 수량 관리 사용 여부 (boolean) false로 설정하면 수량이 9,999로 설정됩니다(표준형 옵션). |
+| 옵션 ID | optionId | SKU | 1 | ✅ 핵심 UDS | optionId string NULLABLE 옵션 ID. SKU와 연결된 옵션 ID. |
+| 옵션명 | optionName | 판매 옵션 | 1 | ✅ 핵심 UDS | optionName 판매 옵션명 (string) REQUIRED |
+| 옵션명 (string) REQUIRED 옵션 속성명(예 | attributeName | 옵션 | 1 | ✅ 핵심 UDS | attributeName 옵션명 (string) REQUIRED 옵션 속성명(예: 색상, 사이즈(공통), 사이즈(미국)) |
+| 요금제 ID | planId | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | planId string 요금제 ID Example: 6xyk6Ml2kDHnCi92p2DoqF |
+| 요금제 ID (string) 요금제 ID | planId | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | planId 요금제 ID (string) 요금제 ID |
+| 요금제 ID(솔루션 사용 중일 때만 존재) | planId | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | planId string 요금제 ID(솔루션 사용 중일 때만 존재) |
+| 요청 결과 (string) QUEUED | state | 그룹상품 | 4 | ✅ 핵심 UDS | state 요청 결과 (string) QUEUED: 상품 등록/수정/전환 대기 중 IN PROGRESS: 상품 등록/수정/전환 진행 중 COMPLETED: 상품 등록/수정/전환 완료 ALREADY_RESERVED: 동일 계정에서 이미 다른 요청이 진행 중 FAILED: 상품 등록/수정/전환 실패 ERROR: 시스템 오류 Possible values: [QUEUED, IN_PROGRESS, COMPLETED, ALREADY_RESERVED, ERROR, FAILED] |
+| 요청 진행률 (integer | progress | 그룹상품 | 4 | ✅ 핵심 UDS | progress 요청 진행률 (integer<int32>) |
+| 요청 ID (string) 요청을 식별하기 위한 고유 ID입 | requestId | 그룹상품 | 4 | ✅ 핵심 UDS | requestId 요청 ID (string) 요청을 식별하기 위한 고유 ID입니다. 처리 상태와 진행 상황을 조회할 수 있습니다. |
+| 우대 수수료 환급 금액 (number) NULLABLE 우대 | preferentialCommissionAmount | 정산 내역 | 1 | ✅ 핵심 UDS | preferentialCommissionAmount 우대 수수료 환급 금액 (number) NULLABLE 우대 수수료 환급 금액 |
+| 우편번호 | postalCode | 판매자 주소록 | 2 | ✅ 핵심 UDS | postalCode string 우편번호 |
+| 운송장번호 | trackingNumber | 발주/발송 처리 | 1 | ✅ 핵심 UDS | trackingNumber string 송장 번호 Example: |
+| 원거래 ID (string) 원거래 ID | originalPaymentId | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | originalPaymentId 원거래 ID (string) 원거래 ID |
+| 원결제번호 | originalTransactionId | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | originalTransactionId string 원결제번호 Example: CSP230807100017M5T074S10163 |
+| 원상품 (object) 응답용 원상품 정보 | originProduct | 상품 | 4 | ✅ 핵심 UDS | originProduct 원상품 (object) 응답용 원상품 정보. 원상품에 속한 채널 상품은 모두 상품 공통 속성을 참고합니다. statusType 상품 판매 상태 코드 (string) REQUIRED Possible values: [WAIT, SALE, OUTOFSTOCK, UNADMISSION, REJECTION, SUSPENSION, CLOSE, PROHIBITION, DELETE] saleType 상품 판매 유형 코드 (string) Possible values: [NEW, OLD] leafCategoryId 리프 카테고리 ID (string) name 상품명 (string) REQUIRED detailContent 상품 상세 정보 (string) REQUIRED images 상품 이미지 (object) REQUIRED saleStartDate 판매 시작 일시 (string<date-time>) 'yyyy-MM-dd'T'HH:mm[:ss][.SSS]XXX' 형식으로 입력합 |
+| 원상품 (object) REQUIRED 상품 공통 속성 | originProduct | 상품 | 3 | ✅ 핵심 UDS | originProduct 원상품 (object) REQUIRED 상품 공통 속성. 원상품에 속한 채널 상품은 모두 상품 공통 속성을 참고하게 됩니다. statusType 상품 판매 상태 코드 (string) REQUIRED 상품 API에서 상품의 판매 상태를 나타내기 위해 사용하는 코드입니다. 상품 등록 시에는 SALE(판매 중)만 입력할 수 있으며, 상품 수정 시에는 SALE(판매 중), SUSPENSION(판매 중지)만 입력할 수 있습니다. 상품 등록 시에 SUSPENSION(판매 중지)을 입력하면 SALE(판매 중)로 등록됩니다. StockQuantity의 값이 0인 경우 상품 상태는 OUTOFSTOCK(품절)으로 등록됩니다. 품절 상태의 상품을 판매 중으로 변경하는 경우, StockQuantity(재고 수량)와 함께 statusType을 SALE(판매 중)로 입력해야 합니다. WAIT(판매 대기), SALE(판매 중), OUTOFSTOCK(품절), UNADMISSION(승인  |
+| 원상품 단위 그룹 해제 결과 (object) | originProducts | 그룹상품 | 1 | ✅ 핵심 UDS | originProducts 원상품 단위 그룹 해제 결과 (object)[] Array [ originProductNo 원상품번호 (integer<int64>) success 그룹 해제 성공 여부 (boolean) message 실패 메시지 (string) ] |
+| 원상품 상세 속성 (object) REQUIRED | detailAttribute | 상품 | 3 | ✅ 핵심 UDS | detailAttribute 원상품 상세 속성 (object) REQUIRED |
+| 원상품 상세속성 정보 (object) customsTaxTy | detailAttribute | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | detailAttribute 원상품 상세속성 정보 (object) customsTaxType 관부가세 타입 코드 (string) 관부가세 타입을 나타내기 위해 사용하는 코드입니다. NOT_APPLICABLE(부과 대상 아님), INCLUDED(관부가세 포함), EXCLUDED(관부가세 미포함) Possible values: [NOT_APPLICABLE, INCLUDED, EXCLUDED] |
+| 원상품 정보 구조체 (object) 응답용 원상품 정보 | originProduct | 상품 | 2 | ✅ 핵심 UDS | originProduct 원상품 정보 구조체 (object) 응답용 원상품 정보. 원상품에 속한 채널 상품은 모두 상품 공통 속성을 참고합니다. 이 구조체는 상품 정보 중 원상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 원상품 정보를 표현합니다. 상품 단위별로 원상품 정보는 단일 구조체로만 포함되나 계층 구조상 자매 개체로 스마트스토어 채널상품 구조체 혹은 쇼핑윈도 채널상품 구조체와 함께 사용할 수 있습니다. 이 구조체는 아래 API에서 사용합니다. 상품 등록, 채널 상품 조회, 채널 상품 수정, 원상품 조회, 원상품 수정 등 이 구조체는 상품 정보 중 원상품 속성에 해당하는 상품 데이터를 표현하는 구조체입니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 상품 1개에 대한 원상품 정보를 표현합니다. 상품 단위별로 원상품 정보는 |
+| 원상품번호 | originProductNo | 그룹상품, 상품, 상품 목록 | 15 | ✅ 핵심 UDS | originProductNo 유효성 검증 대상 원상품번호 (integer<int64>) scope가 PRODUCT인 경우 해당 원상품번호가 전달되며, STANDARD_GROUP인 경우 null입니다. |
+| 원상품번호 (integer | originProductNos | 그룹상품, 상품 일괄 수정 | 3 | ✅ 핵심 UDS | originProductNos 원상품번호 (integer<int64>)[] 그룹 해제 대상 원상품번호 목록입니다. 원상품번호 입력 시, 그룹 내에서 해당 원상품만 그룹 해제됩니다. 이때 원상품번호는 함께 입력한 그룹상품번호(standardGroupProductNo)에 속해야 하며, 속하지 않은 경우 요청이 실패합니다. 원상품번호 미입력 시, 입력한 그룹상품번호에 속한 모든 원상품이 그룹 해제됩니다. |
+| 원상품번호 목록 (integer | originProductNos | 상품 목록 | 1 | ✅ 핵심 UDS | originProductNos 원상품번호 목록 (integer<int64>)[] |
+| 윈도 그룹상품 채널 정보 (object) | windowGroupChannel | 그룹상품 | 4 | ✅ 핵심 UDS | windowGroupChannel 윈도 그룹상품 채널 정보 (object) |
+| 윈도 채널 상품 (object) channelProductN | windowChannelProduct | 상품 | 4 | ✅ 핵심 UDS | windowChannelProduct 윈도 채널 상품 (object) channelProductName 채널 상품 전용 상품명 (string) 채널 상품 전용 상품명을 사용하는 경우 입력합니다. 미입력 시 원상품명으로 적용됩니다. bbsSeq 콘텐츠 게시글 일련번호 (integer<int64>) 공지사항 storeKeepExclusiveProduct 알림받기 동의 회원 전용 상품 여부 (boolean) 미입력 시 false로 저장됩니다. naverShoppingRegistration 네이버 쇼핑 등록 여부 (boolean) REQUIRED 네이버 쇼핑 광고주가 아닌 경우에는 false로 저장됩니다. channelNo 윈도 채널 상품 채널 번호 (integer<int64>) REQUIRED 전시할 윈도 채널 선택 best 베스트 여부(윈도 채널 전용) (boolean) 미입력 시 false로 저장됩니다. channelProductDisplayStatusType 전시 상태 코드(윈도 채 |
+| 윈도 채널 상품 채널 번호 (integer | channelNo | 상품 | 7 | ✅ 핵심 UDS | channelNo 윈도 채널 상품 채널 번호 (integer<int64>) REQUIRED 전시할 윈도 채널 선택 |
+| 윈도 채널 상품번호 (integer | windowChannelProductNo | 그룹상품, 상품 | 8 | ✅ 핵심 UDS | windowChannelProductNo 윈도 채널 상품번호 (integer<int64>) |
+| 유입 고객 수 | numUsers, pv | 마케팅 분석, 쇼핑행동 분석 | 6 | ✅ 핵심 UDS | numUsers number<double> 유입 고객 수 |
+| 유효성 검사 오류 400(Bad Request) 상태 코드와 | invalidInputs | 비즈월렛 결제 내역 조회, 솔루션 사용 API, 외부 개발사 자체 결제, 판매자 인증 JWE 해석 | 8 | ✅ 핵심 UDS | invalidInputs InvalidInput.merchant (object)[]유효성 검사 오류 400(Bad Request) 상태 코드와 함께 활용 Array [namestring유효성 검사 오류가 발생한 필드/경로 변수/파라미터 이름messagestring유효성 검사 메시지] |
+| 유효성 위반 유형 (string) 유효성 위반 오류 코드 | type | 그룹상품 | 1 | ✅ 핵심 UDS | type 유효성 위반 유형 (string) 유효성 위반 오류 코드 |
+| 유효성 위반 항목 (object) | violations | 그룹상품 | 1 | ✅ 핵심 UDS | violations 유효성 위반 항목 (object)[] 해당 범위에서 위반된 항목의 목록입니다. Array [ type 유효성 위반 유형 (string) 유효성 위반 오류 코드 message 유효성 위반 메시지 (string) 유효성 위반 메시지 ] |
+| 유효하지 않은 | invalidInputs | SKU, 판매자 물류 | 5 | ✅ 핵심 UDS | invalidInputs InvalidInput.nfa (object)[]유효하지 않은 입력 목록. 400(Bad Request) 상태 코드와 함께 활용.Array [namestring유효성 검사 오류가 발생한 필드/경로 변수/파라미터 이름Example: namemessagestring유효성 검사 메시지Example: 반드시 값이 존재하고 길이 혹은 크기가 0보다 커야 합니다.] |
+| 은행 (string) NULLABLE 은행 KDB(산업은행) | bankType | 정산 내역 | 1 | ✅ 핵심 UDS | bankType 은행 (string) NULLABLE 은행 KDB(산업은행) IBK(기업은행) KB(KB국민은행) KEB_OLD(외환은행) SUHYUP(수협은행) KOREAEXIM(수출입은행) NH(NH농협은행) LNH(지역농.축협) WOORI(우리은행) SC(SC제일은행) CITI(한국씨티은행) IM(iM뱅크) BUSAN(부산은행) KWANGJU(광주은행) JEJU(제주은행) JEONBUK(전북은행) KYONGNAM(경남은행) SAEMAUL(새마을금고) SHINHYUP(신협) FSB(저축은행) HSBC(HSBC은행) BOA(BOA은행) NFCF(산림조합중앙회) POST(우체국) KEB_HANA(하나은행) SHINHAN(신한은행) KBANK(케이뱅크) KKOBANK(카카오뱅크) TOSS(토스뱅크) DAISHIN_BANK(대신저축은행) SBISB(에스비아이저축은행) HK_BANK(에이치케이저축은행) WELCOME_BANK(웰컴저축은행) SHINHAN_SAVING(신한저축은행) DONG |
+| 응답 데이터 | data | OAuth 2.0, 고객 문의 답변 등록/수정, 교환, 그룹상품, 반품, 발주/발송 처리, 상품, 상품 검수, 상품 공지사항 적용, 상품 일괄 수정, 주문 조회, 취소, 패션모델 | 34 | ✅ 핵심 UDS | data InquiryAnswerId.pay-merchant (object) inquiryNo integer<int64> 문의 번호 inquiryCommentNo integer<int64> 답변 번호 |
+| 의무 배송 완료 건수 | obligationDeliveryCompletedCount | 판매 분석 | 1 | ✅ 핵심 UDS | obligationDeliveryCompletedCount number<double> 의무 배송 완료 건수 |
+| 이름 | name, nsName | Other, SKU, 고객 데이터, 고객 문의 조회, 그룹상품, 부가세 내역, 브랜드, 비즈월렛 결제 내역 조회, 사이즈, 상품, 상품 검수, 상품 공지사항, 상품 공지사항 적용, 상품 목록, 상품 문의, 상품 배송 정보, 상품 속성, 상품 원산지 정보, 상품 이미지, 상품 일괄 수정, 상품정보제공고시, 솔루션 사용 API, 옵션, 외부 개발사 자체 결제, 정산 내역, 제조사, 카탈로그, 카테고리, 태그, 판매 옵션, 판매자, 판매자 물류, 판매자 인증 JWE 해석, 판매자 주소록, 패션모델 | 97 | ✅ 핵심 UDS | name string 원산지 상세 지역명. code를 입력하지 않은 경우 필수. 아래와 같은 형식으로 입력하면 전체 이름에 매칭되는 원산지가 반환됩니다. 국산: 광역시도 > 시구군 수입산: 대륙 > 국가명 원양산: 해역명 기타: 상세 설명에 표시/직접 입력 마지막 항목(시구군, 국가명, 해역명)으로 조회하면 LIKE '마지막항목%'으로 검색됩니다. |
+| 이미지 (object) | images | 상품 이미지 | 1 | ✅ 핵심 UDS | images 이미지 (object)[] Array [ url 이미지 URL (string) REQUIRED ] |
+| 이미지 (object) url 이미지 URL (string) | modelImage, representativeImage | 상품 목록, 패션모델 | 4 | ✅ 핵심 UDS | representativeImage 이미지 (object) url 이미지 URL (string) REQUIRED |
+| 이미지 등록 가능 여부 (boolean) REQUIRED | imageRegistrationUsable | 옵션 | 1 | ✅ 핵심 UDS | imageRegistrationUsable 이미지 등록 가능 여부 (boolean) REQUIRED |
+| 이미지 URL (string) REQUIRED | url | 상품 목록, 상품 이미지, 패션모델 | 5 | ✅ 핵심 UDS | url 이미지 URL (string) REQUIRED |
+| 인 최대 구매 수량 (integer | maxPurchaseQuantityPerId | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | maxPurchaseQuantityPerId 1인 최대 구매 수량 (integer<int32>) Possible values: <= 99999999 |
+| 일반 정산 금액 (number) NULLABLE 일반 정산 | normalSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | normalSettleAmount 일반 정산 금액 (number) NULLABLE 일반 정산 금액 |
+| 일할 계산된 금액 대신 솔루션 개발사가 직접 | amount | 솔루션 사용 API | 1 | ✅ 핵심 UDS | amount number 일할 계산된 금액 대신 솔루션 개발사가 직접 입력한 금액을 환불하는 경우 환불 금액. refundType에 PARTIAL을 설정한 경우에만 설정합니다. 환불 금액은 다음 조건을 만족해야 합니다. 다음 회차를 결제한 경우: 다음 회차 결제 금액 <= amount <= 전체 결제 금액 다음 회차를 결제하지 않은 경우: 1 <= amount <= 전체 결제 금액 |
+| 자체 제작 상품 여부 (boolean) | itselfProductionProductYn | 그룹상품 | 1 | ✅ 핵심 UDS | itselfProductionProductYn 자체 제작 상품 여부 (boolean) |
+| 자체 제작 상품 여부 (boolean) 미 | itselfProductionProductYn | 그룹상품 | 3 | ✅ 핵심 UDS | itselfProductionProductYn 자체 제작 상품 여부 (boolean) 미입력 시 false로 저장됩니다. |
+| 잘못 | invalidInputs | 부가세 내역, 정산 내역 | 5 | ✅ 핵심 UDS | invalidInputs InvalidInput.pay-settle (object)[]잘못 입력된 필드 값Array [namestringrequired필드명messagestringrequired메시지typestringrequired오류 타입] |
+| 잘못된 | errorMessage, invalidInputs | 그룹상품, 브랜드, 사이즈, 상품, 상품 검수, 상품 공지사항 적용, 상품 목록, 상품 배송 정보, 상품 속성, 상품 원산지 정보, 상품 이미지, 상품 일괄 수정, 상품정보제공고시, 옵션, 제조사, 카탈로그, 카테고리, 태그, 판매 옵션, 패션모델 | 59 | ✅ 핵심 UDS | invalidInputs 잘못된 입력값 목록 (object)[]Array [namestringtypestringmessagestring] |
+| 재고 수량 (integer | stockQuantity | 상품, 상품 목록 | 10 | ✅ 핵심 UDS | stockQuantity 재고 수량 (integer<int32>) 상품 등록 시 필수. 상품 수정 시 재고 수량을 입력하지 않으면 스마트스토어 데이터베이스에 저장된 현재 재고 값이 변하지 않습니다. 수정 시 재고 수량이 0으로 입력되면 StatusType으로 전달된 항목은 무시되며 상품 상태는 OUTOFSTOCK(품절)으로 저장됩니다. Possible values: <= 99999999 |
+| 재구매 금액 | repurchaseAmount | 고객 데이터 | 1 | ✅ 핵심 UDS | repurchaseAmount integer<int64> REQUIRED 재구매 금액 |
+| 재구매 금액 비율 | repurchaseAmountRatio | 고객 데이터 | 1 | ✅ 핵심 UDS | repurchaseAmountRatio number<double> REQUIRED 재구매 금액 비율 |
+| 재배송 송장 번호 | reDeliveryTrackingNumber | 교환 | 1 | ✅ 핵심 UDS | reDeliveryTrackingNumber string 재배송 송장 번호 Example: 1111111115 |
+| 전시 상태 코드(스마트스토어 채널 전용) (string) R | channelProductDisplayStatusType | 상품 | 7 | ✅ 핵심 UDS | channelProductDisplayStatusType 전시 상태 코드(스마트스토어 채널 전용) (string) REQUIRED ON, SUSPENSION만 입력 가능합니다. WAIT(전시 대기), ON(전시 중), SUSPENSION(전시 중지) Possible values: [WAIT, ON, SUSPENSION] |
+| 전시 상태 코드(윈도 채널 읽기 전용) (string) WA | channelProductDisplayStatusType | 상품 | 7 | ✅ 핵심 UDS | channelProductDisplayStatusType 전시 상태 코드(윈도 채널 읽기 전용) (string) WAIT(전시 대기), ON(전시 중), SUSPENSION(전시 중지) Possible values: [WAIT, ON, SUSPENSION] |
+| 전시 시작 일시 (string | displayStartDate | 상품 공지사항 | 5 | ✅ 핵심 UDS | displayStartDate 전시 시작 일시 (string<date-time>) 공지사항 등록/수정 시: 입력한 시각의 00분으로 설정됩니다. 미입력 시 현재 시각의 00분으로 저장됩니다.(예: 2022-09-02 16:00:00) 공지사항 조회 시: KST 기준으로 출력됩니다. Example: 2023-04-18T14:25:05.143+09:00 |
+| 전시 종료 일시 (string | displayEndDate | 상품 공지사항 | 5 | ✅ 핵심 UDS | displayEndDate 전시 종료 일시 (string<date-time>) 공지사항 등록/수정 시: 입력한 시각의 59분으로 설정됩니다. 공지사항 조회 시: KST 기준으로 출력됩니다. Example: 2023-04-18T14:25:05.144+09:00 |
+| 전체 개수 (integer | totalElements | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | totalElements 전체 개수 (integer<int64>) |
+| 전체 고객 수 | customerCount | 고객 데이터 | 2 | ✅ 핵심 UDS | customerCount integer<int64> 전체 고객 수 |
+| 전체 공지사항 여부 (boolean) 전체 공지사항으로 등록 | wholeNotice | 상품 공지사항 | 5 | ✅ 핵심 UDS | wholeNotice 전체 공지사항 여부 (boolean) 전체 공지사항으로 등록 가능합니다. 단, 기존에 설정되어 있던 전체 공지사항은 해제됩니다(1건만 등록 가능). 미입력 시 false로 저장됩니다. |
+| 전체 등급 변동 | incrementCount | 고객 데이터 | 2 | ✅ 핵심 UDS | incrementCount integer<int64> 전체 등급 변동 |
+| 전체 등급 수 | totalCount | 고객 데이터 | 2 | ✅ 핵심 UDS | totalCount integer<int64> 전체 등급 수 |
+| 전체 연결상품 수 Possible values | totalElements | SKU | 1 | ✅ 핵심 UDS | totalElements integer<int64> REQUIRED 전체 연결상품 수 Possible values: >= 0 |
+| 전체 주문 건수 | purchaseCount | 고객 데이터 | 2 | ✅ 핵심 UDS | purchaseCount integer<int64> 전체 주문 건수 |
+| 전체 카테고리 ID (string) | wholeCategoryId | 상품 목록 | 1 | ✅ 핵심 UDS | wholeCategoryId 전체 카테고리 ID (string) |
+| 전체 카테고리명 (string) | wholeCategoryName | Other, 상품 목록, 카탈로그 | 4 | ✅ 핵심 UDS | wholeCategoryName 전체 카테고리명 (string) |
+| 전체 페이지 수 | totalPage | 판매자 주소록 | 1 | ✅ 핵심 UDS | totalPage integer<int32> 전체 페이지 수 |
+| 전체 페이지 수 (integer | totalPages | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | totalPages 전체 페이지 수 (integer<int32>) |
+| 전체 페이지 수 Possible values | totalPages | SKU | 2 | ✅ 핵심 UDS | totalPages integer<int32> REQUIRED 전체 페이지 수 Possible values: >= 0 |
+| 전체 환불 건수 | refundCount | 고객 데이터 | 2 | ✅ 핵심 UDS | refundCount integer<int64> 전체 환불 건수 |
+| 정기구독 결제 금액 | subscriptionPayAmount | 판매 분석 | 1 | ✅ 핵심 UDS | subscriptionPayAmount number<double> 정기구독 결제 금액 |
+| 정기휴무 요일 목록 (string) | regularHolidays | 상품 배송 정보 | 5 | ✅ 핵심 UDS | regularHolidays 정기휴무 요일 목록 (string)[] SUNDAY(일요일), MONDAY(월요일), TUESDAY(화요일), WEDNESDAY(수요일), THURSDAY(목요일), FRIDAY(금요일), SATURDAY(토요일) Possible values: [SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY] |
+| 정렬 기준 (string) NO(상품번호순) | orderType | 상품 목록 | 1 | ✅ 핵심 UDS | orderType 정렬 기준 (string) NO(상품번호순), REG_DATE(등록일순), MOD_DATE(수정일순), NAME(상품명순), SELLER_CODE(판매자 상품코드순), LOW_PRICE(판매가 낮은순), HIGH_PRICE(판매가 높은순), POPULARITY(인기도순), ACCUMULATE_SALE(누적판매건수순), LOW_DISCOUNT_PRICE(할인가 낮은순), SALE_START(판매시작일순), SALE_END(판매종료일순) Possible values: [NO, NAME, SELLER_CODE, LOW_PRICE, HIGH_PRICE, REG_DATE, MOD_DATE, SALE_START, SALE_END, POPULARITY, ACCUMULATE_SALE, LOW_DISCOUNT_PRICE, TOTAL_REVIEW_COUNT, AVERAGE_REVIEW_SCORE] |
+| 정렬 적용 필드 정보 (object) | fields | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | fields 정렬 적용 필드 정보 (object)[] |
+| 정렬 정보 (object) 정렬 정보 sorted 데이터 정 | sort | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | sort 정렬 정보 (object) 정렬 정보 sorted 데이터 정렬 적용 여부 (boolean) fields 정렬 적용 필드 정보 (object)[] |
+| 정보 (object) | afterServiceInfo, seoInfo | 그룹상품 | 4 | ✅ 핵심 UDS | seoInfo SEO(Search engine optimization) 정보 (object) |
+| 정보 (object) REQUIRED | afterServiceInfo | 그룹상품 | 3 | ✅ 핵심 UDS | afterServiceInfo A/S 정보 (object) REQUIRED |
+| 정보가 등록된 최초 일시 KST(UTC | registrationYmdt | SKU | 1 | ✅ 핵심 UDS | registrationYmdt string<date-time> REQUIRED SKU 정보가 등록된 최초 일시 KST(UTC+09:00)로 응답 Example: 2024-01-01T11:20:50.001+09:00 |
+| 정보가 변경된 최종 일시 KST(UTC | modificationYmdt | SKU | 1 | ✅ 핵심 UDS | modificationYmdt string<date-time> REQUIRED SKU 정보가 변경된 최종 일시 KST(UTC+09:00)로 응답 Example: 2024-01-01T11:20:50.001+09:00 |
+| 정산 구분 NORMAL | settleType | 정산 내역 | 2 | ✅ 핵심 UDS | settleType string 정산 구분 NORMAL_SETTLE_ORIGINAL(일반정산) NORMAL_SETTLE_AFTER_CANCEL(정산 후 취소) NORMAL_SETTLE_BEFORE_CANCEL(정산 전 취소) QUICK_SETTLE_ORIGINAL(빠른정산) QUICK_SETTLE_CANCEL(빠른정산 회수) QUANTITY_CANCEL_DEDUCTION(수량 취소 정산(공제)) QUANTITY_CANCEL_RESTORE(수량 취소 정산(환급)) PURCHASE_CONFIRM(구매 확정) Possible values: [NORMAL_SETTLE_ORIGINAL, NORMAL_SETTLE_AFTER_CANCEL, NORMAL_SETTLE_BEFORE_CANCEL, QUICK_SETTLE_ORIGINAL, QUICK_SETTLE_CANCEL, QUANTITY_CANCEL_DEDUCTION, QUANTITY_CANCEL_RESTORE] |
+| 정산 금액 (number) NULLABLE 정산 금액 | settleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | settleAmount 정산 금액 (number) NULLABLE 정산 금액 |
+| 정산 기준 시작일 (string | elements, settleBasisStartDate | 정산 내역 | 1 | ✅ 핵심 UDS | elements CommerceDailySettle.pay-settle (object)[] REQUIRED Array [ settleBasisStartDate 정산 기준 시작일 (string<date>) NULLABLE 정산 기준 시작일(yyyy-MM-dd) settleBasisEndDate 정산 기준 종료일 (string<date>) NULLABLE 정산 기준 종료일(yyyy-MM-dd) settleExpectDate 정산 예정일 (string<date>) NULLABLE 정산 예정일(yyyy-MM-dd) settleCompleteDate 정산 완료일 (string<date>) NULLABLE 정산 완료일(yyyy-MM-dd) settleAmount 정산 금액 (number) NULLABLE 정산 금액 paySettleAmount 결제 정산 금액 (number) NULLABLE 결제 정산 금액(=정산 기준 금액) commissionSettleAmount 수수료 정산 금액 (numb |
+| 정산 기준 종료일 (string | settleBasisEndDate | 정산 내역 | 1 | ✅ 핵심 UDS | settleBasisEndDate 정산 기준 종료일 (string<date>) NULLABLE 정산 기준 종료일(yyyy-MM-dd) |
+| 정산 기준일 (string | elements, settleBasisDate | 부가세 내역, 정산 내역 | 4 | ✅ 핵심 UDS | elements CommerceDailyVatDeclaration.pay-settle (object)[] REQUIRED Array [ settleBasisDate 정산 기준일 (string<date>) 정산 기준일(yyyy-MM-dd) totalSalesAmount 총 매출 금액 (number) REQUIRED 총 매출 금액 taxationSalesAmount 과세 매출 금액 (number) REQUIRED 과세 매출 금액 taxExemptionSalesAmount 면세 매출 금액 (number) REQUIRED 면세 매출 금액 creditCardAmount 신용카드 금액 (number) REQUIRED 신용카드 금액 cashInComeDeductionAmount 현금영수증 소득공제 금액 (number) REQUIRED 현금영수증 소득공제 금액 cashOutGoingEvidenceAmount 현금영수증 지출 증빙 금액 (number) REQUIRED 현금영수증 지출 증빙 금액 ca |
+| 정산 대상 구분 (string) NULLABLE 정산 대상 | productOrderType | 부가세 내역 | 1 | ✅ 핵심 UDS | productOrderType 정산 대상 구분 (string) NULLABLE 정산 대상 구분(상품 주문, 배송비, 기타 비용) PROD_ORDER(상품 주문) DELIVERY(배송비) EXTRAFEE(기타 비용) WITHDRAW(결제 수단 출금) REFUND(구매자 환불) PL_REFUND(후불 결제 환불) DEDUCTION_RESTORE(기타 공제 환급) PROD_PAY(상품 결제) PURCHASE_REVIEW(텍스트 리뷰) PREMIUM_PURCHASE_REVIEW(포토/동영상 리뷰) REGULAR_PURCHASE_REVIEW(알림받기 동의 회원 리뷰 추가 적립) ONE_MONTH_PURCHASE_REVIEW(한 달 사용 텍스트 리뷰) ONE_MONTH_PREMIUM_PURCHASE_REVIEW(한 달 사용 포토/동영상 리뷰) REVIEW(리뷰 적립) ETC_COUPON(기타 할인) QUICK_SETTLE(빠른정산) QUANTITY_CANCEL(수량 취소) DIFFERENCE_ |
+| 정산 대상 구분 (string) REQUIRED 정산 대상 | productOrderType | 정산 내역 | 2 | ✅ 핵심 UDS | productOrderType 정산 대상 구분 (string) REQUIRED 정산 대상 구분(상품 주문, 배송비, 기타 비용) PROD_ORDER(상품 주문) DELIVERY(배송비) EXTRAFEE(기타 비용) WITHDRAW(결제 수단 출금) REFUND(구매자 환불) PL_REFUND(후불 결제 환불) DEDUCTION_RESTORE(기타 공제 환급) PROD_PAY(상품 결제) PURCHASE_REVIEW(텍스트 리뷰) PREMIUM_PURCHASE_REVIEW(포토/동영상 리뷰) REGULAR_PURCHASE_REVIEW(알림받기 동의 회원 리뷰 추가 적립) ONE_MONTH_PURCHASE_REVIEW(한 달 사용 텍스트 리뷰) ONE_MONTH_PREMIUM_PURCHASE_REVIEW(한 달 사용 포토/동영상 리뷰) REVIEW(리뷰 적립) ETC_COUPON(기타 할인) QUICK_SETTLE(빠른정산) QUANTITY_CANCEL(수량 취소) DIFFERENCE_ |
+| 정산 방법 (string) NULLABLE 정산 방법(계좌 | settleMethodType | 정산 내역 | 1 | ✅ 핵심 UDS | settleMethodType 정산 방법 (string) NULLABLE 정산 방법(계좌 이체, 충전금) ACCOUNT(계좌 이체) CHARGE_AMT(충전금) Possible values: [ACCOUNT, CHARGE_AMT] |
+| 정산 상태 (string) NULLABLE 정산 상태 구분( | settleType | 정산 내역 | 1 | ✅ 핵심 UDS | settleType 정산 상태 (string) NULLABLE 정산 상태 구분(정산, 정산 전 취소, 정산 후 취소) NORMAL_SETTLE_ORIGINAL(일반정산) NORMAL_SETTLE_AFTER_CANCEL(정산 후 취소) NORMAL_SETTLE_BEFORE_CANCEL(정산 전 취소) QUICK_SETTLE_ORIGINAL(빠른정산) QUICK_SETTLE_CANCEL(빠른정산 회수) QUANTITY_CANCEL_DEDUCTION(수량 취소 정산(공제)) QUANTITY_CANCEL_RESTORE(수량 취소 정산(환급)) PURCHASE_CONFIRM(구매 확정) Possible values: [NORMAL_SETTLE_ORIGINAL, NORMAL_SETTLE_AFTER_CANCEL, NORMAL_SETTLE_BEFORE_CANCEL, QUICK_SETTLE_ORIGINAL, QUICK_SETTLE_CANCEL, QUANTITY_CANCEL_DEDUCTION, QUA |
+| 정산 상태 (string) REQUIRED 정산 상태 구분( | settleType | 정산 내역 | 1 | ✅ 핵심 UDS | settleType 정산 상태 (string) REQUIRED 정산 상태 구분(정산, 정산 전 취소, 정산 후 취소) NORMAL_SETTLE_ORIGINAL(일반정산) NORMAL_SETTLE_AFTER_CANCEL(정산 후 취소) NORMAL_SETTLE_BEFORE_CANCEL(정산 전 취소) QUICK_SETTLE_ORIGINAL(빠른정산) QUICK_SETTLE_CANCEL(빠른정산 회수) QUANTITY_CANCEL_DEDUCTION(수량 취소 정산(공제)) QUANTITY_CANCEL_RESTORE(수량 취소 정산(환급)) PURCHASE_CONFIRM(구매 확정) Possible values: [NORMAL_SETTLE_ORIGINAL, NORMAL_SETTLE_AFTER_CANCEL, NORMAL_SETTLE_BEFORE_CANCEL, QUICK_SETTLE_ORIGINAL, QUICK_SETTLE_CANCEL, QUANTITY_CANCEL_DEDUCTION, QUA |
+| 정산 예정 금액 (number) REQUIRED 정산 예정 | settleExpectAmount | 정산 내역 | 1 | ✅ 핵심 UDS | settleExpectAmount 정산 예정 금액 (number) REQUIRED 정산 예정 금액 |
+| 정산 예정일 (string | settleExpectDate | 정산 내역 | 3 | ✅ 핵심 UDS | settleExpectDate 정산 예정일 (string<date>) NULLABLE 정산 예정일(yyyy-MM-dd) |
+| 정산 완료일 (string | settleCompleteDate | 정산 내역 | 3 | ✅ 핵심 UDS | settleCompleteDate 정산 완료일 (string<date>) NULLABLE 정산 완료일(yyyy-MM-dd) |
+| 제목 | title | 고객 문의 조회, 상품 공지사항 | 7 | ✅ 핵심 UDS | title 공지사항 제목 (string) REQUIRED |
+| 제목 (string) | subject | 상품 문의 | 1 | ✅ 핵심 UDS | subject 제목 (string) |
+| 제조사명 (string) | manufacturerName | Other, 그룹상품, 상품 목록, 카탈로그 | 8 | ✅ 핵심 UDS | manufacturerName 제조사명 (string) |
+| 조치 사항 (string) | action | 상품 검수 | 1 | ✅ 핵심 UDS | action 조치 사항 (string) |
+| 조합형 옵션 (object) | optionCombinations | 상품 | 1 | ✅ 핵심 UDS | optionCombinations 조합형 옵션 (object)[] |
+| 조회 기준일시 타입 | rangeType | 주문 조회 | 1 | ✅ 핵심 UDS | rangeType rangeType.pay-order-seller (string) 조회 기준 유형. 생략 시 PAYED_DATETIME(결제 일시)으로 자동 지정됩니다. 250바이트 내외 코드 설명 비고 PAYED_DATETIME 결제일시 ORDERED_DATETIME 주문일시 DISPATCHED_DATETIME 발송처리일시 PURCHASE_DECIDED_DATETIME 구매확정일시 CLAIM_REQUESTED_DATETIME 클레임요청일시 CLAIM_COMPLETED_DATETIME 클레임완료일시 COLLECT_COMPLETED_DATETIME 수거완료일시 GIFT_RECEIVED_DATETIME 선물수락일시 HOPE_DELIVERY_INFO_CHANGED_DATETIME 배송희망일변경일시 Example: PAYED_DATETIME |
+| 조회 시작일시 | from | 주문 조회 | 1 | ✅ 핵심 UDS | from string<date-time> REQUIRED 조회 기준의 시작 일시(inclusive) Example: 2024-06-07T19:00:00.000+09:00 |
+| 조회 제한 건수 | limitCount | 주문 조회 | 1 | ✅ 핵심 UDS | limitCount integer 조회 응답 개수 제한. 생략하거나 300을 초과하는 값을 입력하면 최대 300개의 내역을 제공합니다. |
+| 조회 종료일시 | to | 주문 조회 | 1 | ✅ 핵심 UDS | to string<date-time> 조회 기준의 종료 일시(inclusive). 생략 시 from으로부터 24시간 후로 자동 지정됩니다. Example: 2024-06-08T19:00:00.000+09:00 |
+| 종료일 | endDate | 정산 내역 | 1 | ✅ 핵심 UDS | endDate string<date> REQUIRED 종료일 Example: 2022-02-01 |
+| 주문 고객 통계 customerCount integer | purchaseStats | 고객 데이터 | 2 | ✅ 핵심 UDS | purchaseStats CustomerPurchaseStats.data-insight (object) REQUIRED 주문 고객 통계 customerCount integer<int64> 전체 고객 수 newCustomerCount integer<int64> 신규 고객 수 existCustomerCount integer<int64> 기존 고객 수 newCustomerRatio number<double> 신규 고객 비율 existCustomerRatio number<double> 기존 고객 비율 purchaseCount integer<int64> 전체 주문 건수 refundCount integer<int64> 전체 환불 건수 |
+| 주문 번호 (string) REQUIRED 주문 번호 | orderNo | 정산 내역 | 1 | ✅ 핵심 UDS | orderNo 주문 번호 (string) REQUIRED 주문 번호 |
+| 주문 번호 (string) REQUIRED 주문 번호 pro | elements | 정산 내역 | 1 | ✅ 핵심 UDS | elements CommerceCommissionDetail.pay-settle (object)[] REQUIRED Array [ orderNo 주문 번호 (string) REQUIRED 주문 번호 productOrderId 상품 주문 번호 (string) REQUIRED 상품 주문 번호, 배송비 번호, 기타 비용 번호 productOrderType 정산 대상 구분 (string) REQUIRED 정산 대상 구분(상품 주문, 배송비, 기타 비용) PROD_ORDER(상품 주문) DELIVERY(배송비) EXTRAFEE(기타 비용) WITHDRAW(결제 수단 출금) REFUND(구매자 환불) PL_REFUND(후불 결제 환불) DEDUCTION_RESTORE(기타 공제 환급) PROD_PAY(상품 결제) PURCHASE_REVIEW(텍스트 리뷰) PREMIUM_PURCHASE_REVIEW(포토/동영상 리뷰) REGULAR_PURCHASE_REVIEW(알림받기 동의 회원 리뷰 추가 적립 |
+| 주문 제작 상품 발송 예정일 타입 코드 (string) ET | expectedDeliveryPeriodType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | expectedDeliveryPeriodType 주문 제작 상품 발송 예정일 타입 코드 (string) ETC는 상품 수정에만 사용 가능하며, 이미 저장된 '주문 후 예상 발송 기간' 값이 존재하거나 '직접 입력형'인 경우 설정 가능합니다. ETC(직접 입력형), TWO(선택형: 2일), THREE(선택형: 3일), FOUR(선택형: 4일), FIVE(선택형: 5일), SIX(선택형: 6일), SEVEN(선택형: 7일), EIGHT(선택형: 8일), NINE(선택형: 9일), TEN(선택형: 10일), ELEVEN(선택형: 11일), TWELVE(선택형: 12일), THIRTEEN(선택형: 13일 ), FOURTEEN(선택형: 14일) Possible values: [ETC, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE, THIRTEEN, FOURTEEN] |
+| 주문 쿠폰 | orderCouponDiscountAmount | 판매 분석 | 1 | ✅ 핵심 UDS | orderCouponDiscountAmount number<double> 주문 쿠폰 |
+| 주문 확인 후 제작 상품 여부 (boolean) | customProductAfterOrderYn | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | customProductAfterOrderYn 주문 확인 후 제작 상품 여부 (boolean) |
+| 주문당 출고수량 | pickingQuantityPerOrder | SKU | 1 | ✅ 핵심 UDS | pickingQuantityPerOrder integer<int32> NULLABLE 주문당 출고수량. 주문당 SKU의 출고수량. |
+| 주문번호 | orderId | 고객 문의 조회, 부가세 내역, 정산 내역, 주문 조회 | 7 | ✅ 핵심 UDS | orderId string REQUIRED 주문 번호 Example: 2021123115350911 |
+| 주소 | address | 판매자 주소록 | 2 | ✅ 핵심 UDS | address string 전체 주소 |
+| 주소록 목록 Array | addressBooks | 판매자 주소록 | 1 | ✅ 핵심 UDS | addressBooks ExternalAddressBookVO.sellers (object)[] 주소록 목록 Array [ addressBookNo integer<int64> 주소록 번호 name string 이름 addressType AddressBookType.sellers (string) 주소록 유형 REPRESENTATIVE: 사업장 BUSINESS: 추가 사업장 GENERAL: 일반 RELEASE: 출고지 REFUND_OR_EXCHANGE: 반품/교환지 LOGISTICS_CENTER_RELEASE: 물류센터 출고지 LOGISTICS_CENTER_REFUND_OR_EXCHANGE: 물류센터 반품/교환지 OVERSEAS_BANK: 해외 정산 계좌 은행 Possible values: [REPRESENTATIVE, BUSINESS, GENERAL, RELEASE, REFUND_OR_EXCHANGE, LOGISTICS_CENTER_RELEASE, LOGISTICS_CENTER_REF |
+| 주소록 번호 | addressBookNo | 판매자 주소록 | 2 | ✅ 핵심 UDS | addressBookNo integer<int64> REQUIRED 주소록 번호 |
+| 주소록 유형 REPRESENTATIVE | addressType | 판매자 주소록 | 2 | ✅ 핵심 UDS | addressType AddressBookType.sellers (string) 주소록 유형 REPRESENTATIVE: 사업장 BUSINESS: 추가 사업장 GENERAL: 일반 RELEASE: 출고지 REFUND_OR_EXCHANGE: 반품/교환지 LOGISTICS_CENTER_RELEASE: 물류센터 출고지 LOGISTICS_CENTER_REFUND_OR_EXCHANGE: 물류센터 반품/교환지 OVERSEAS_BANK: 해외 정산 계좌 은행 Possible values: [REPRESENTATIVE, BUSINESS, GENERAL, RELEASE, REFUND_OR_EXCHANGE, LOGISTICS_CENTER_RELEASE, LOGISTICS_CENTER_REFUND_OR_EXCHANGE, OVERSEAS_BANK] |
+| 중요 공지 시작 일시 (string | importantNoticeStartDate | 상품 공지사항 | 5 | ✅ 핵심 UDS | importantNoticeStartDate 중요 공지 시작 일시 (string<date-time>) 공지사항 등록/수정 시: 입력한 시각의 00분으로 설정됩니다. 중요 공지사항 여부를 true로 설정 후 입력이 가능 합니다. 공지사항 조회 시: KST 기준으로 출력됩니다. Example: 2023-04-18T14:25:05.140+09:00 |
+| 중요 공지 종료 일시 (string | importantNoticeEndDate | 상품 공지사항 | 5 | ✅ 핵심 UDS | importantNoticeEndDate 중요 공지 종료 일시 (string<date-time>) 공지사항 등록/수정 시: 입력한 시각의 59분으로 설정됩니다. 중요 공지사항 여부를 true로 설정 후 입력이 가능 합니다. 공지사항 조회 시: KST 기준으로 출력됩니다. Example: 2023-04-18T14:25:05.141+09:00 |
+| 중요 공지사항 여부 (boolean) 중요 공지사항으로 등록 | importantNotice | 상품 공지사항 | 5 | ✅ 핵심 UDS | importantNotice 중요 공지사항 여부 (boolean) 중요 공지사항으로 등록 가능합니다. 미입력 시 false로 저장됩니다. |
+| 지급 보류 금액 (number) NULLABLE 지급 보류 | payHoldbackAmount | 정산 내역 | 1 | ✅ 핵심 UDS | payHoldbackAmount 지급 보류 금액 (number) NULLABLE 지급 보류 금액 |
+| 지역 | region | 발주/발송 처리 | 1 | ✅ 핵심 UDS | region string 지역. 길이 제한 1~30 |
+| 지역명 (string) REQUIRED | regionName | 상품 배송 정보 | 1 | ✅ 핵심 UDS | regionName 지역명 (string) REQUIRED |
+| 지역별 추가 배송비 (object) | deliveryFeeByArea | 상품 배송 정보 | 4 | ✅ 핵심 UDS | deliveryFeeByArea 지역별 추가 배송비 (object) |
+| 지역별 추가 배송비 (object) 지역별 추가 배송비 de | deliveryFeeByArea | 상품 배송 정보 | 1 | ✅ 핵심 UDS | deliveryFeeByArea 지역별 추가 배송비 (object) 지역별 추가 배송비 deliveryAreaType 지역별 추가 배송비 권역 코드 (string) REQUIRED 묶음배송 그룹 등록 시 지역별 추가 배송비 권역을 입력하기 위한 코드입니다. 묶음배송 가능 여부가 true인 경우 묶음배송 그룹에 설정된 값이 적용됩니다(배송 속성이 ARRIVAL_GUARANTEE인 경우 제외). AREA_2(내륙/제주 및 도서산간 지역으로 구분(2권역)), AREA_3(내륙/제주/제주 외 도서산간 지역으로 구분(3권역)) Possible values: [AREA_2, AREA_3] area2extraFee 2권역 추가 배송비 (integer<int32>) 2권역인 경우 '제주 및 도서산간' 지역 추가 배송비. 3권역인 경우 '제주' 지역 추가 배송비. 묶음배송 가능 여부가 true인 경우 묶음배송 그룹에 설정된 값이 적용됩니다(배송 속성이 ARRIVAL_GUARANTEE인 경우 제외). |
+| 지역별 추가 배송비 권역 코드 (string) REQUIRE | deliveryAreaType | 상품 배송 정보 | 1 | ✅ 핵심 UDS | deliveryAreaType 지역별 추가 배송비 권역 코드 (string) REQUIRED 묶음배송 그룹 등록 시 지역별 추가 배송비 권역을 입력하기 위한 코드입니다. 묶음배송 가능 여부가 true인 경우 묶음배송 그룹에 설정된 값이 적용됩니다(배송 속성이 ARRIVAL_GUARANTEE인 경우 제외). AREA_2(내륙/제주 및 도서산간 지역으로 구분(2권역)), AREA_3(내륙/제주/제주 외 도서산간 지역으로 구분(3권역)) Possible values: [AREA_2, AREA_3] |
+| 집계 기간 | periodType | 고객 데이터 | 3 | ✅ 핵심 UDS | periodType string REQUIRED 집계 기간. weekly, daily. |
+| 집계일 | aggregateDate | 고객 데이터 | 3 | ✅ 핵심 UDS | aggregateDate string REQUIRED 집계일. yyyy-MM-dd 형식. |
+| 차액 정산 금액 (number) NULLABLE 차액 정산 | differenceSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | differenceSettleAmount 차액 정산 금액 (number) NULLABLE 차액 정산 금액 |
+| 창고 ID | outboundLocationId | 판매자 물류 | 1 | ✅ 핵심 UDS | outboundLocationId string 창고 ID |
+| 창고명 | outboundLocationName | 판매자 물류 | 1 | ✅ 핵심 UDS | outboundLocationName string 창고명 |
+| 창고에 대해 주문 마감 시각 | mappings | 판매자 물류 | 1 | ✅ 핵심 UDS | mappings SellerDeliveryOutboundLocationMappingDto.nfa (object)[] 창고에 대해 주문 마감 시각, CAPA, 휴무 정보가 설정된 택배사, 배송 속성 목록. (판매자센터 매핑 DB) 창고 ID를 포함하는 판매자센터 매핑 ID 목록을 응답합니다. Array [ allianceId string 택배사 ID allianceName string 택배사명 deliveryType string 배송 속성 Possible values: [SELLER_GUARANTEE, HOPE_SELLER_GUARANTEE] ] |
+| 채널 번호 | channelNo | 판매자 | 1 | ✅ 핵심 UDS | channelNo integer<int64> 채널 번호 |
+| 채널 상품 목록 (object) | channelProducts | 상품 목록 | 1 | ✅ 핵심 UDS | channelProducts 채널 상품 목록 (object)[] Array [ groupProductNo 그룹상품번호 (integer<int64>) originProductNo 원상품번호 (integer<int64>) channelProductNo 채널 상품번호 (integer<int64>) channelServiceType 채널 서비스 타입 (string) Possible values: [STOREFARM, WINDOW, AFFILIATE] injectProductNo 수급 상품번호 (integer<int64>) categoryId 카테고리 ID (string) name 상품명 (string) sellerManagementCode 판매자 관리 코드 (string) statusType 상품 판매 상태 코드 (string) WAIT(판매 대기), SALE(판매 중), OUTOFSTOCK(품절), UNADMISSION(승인 대기), REJECTION(승인 거부), SUSPENSION(판 |
+| 채널 상품 전시 상태 (string) Possible val | channelProductDisplayStatusType | 상품 목록 | 1 | ✅ 핵심 UDS | channelProductDisplayStatusType 채널 상품 전시 상태 (string) Possible values: [WAIT, ON, SUSPENSION] |
+| 채널 상품 전용 상품명 (string) 채널 상품 전용 상품 | channelProductName | 상품 | 8 | ✅ 핵심 UDS | channelProductName 채널 상품 전용 상품명 (string) 채널 상품 전용 상품명을 사용하는 경우 입력합니다. 미입력 시 원상품명으로 적용됩니다. |
+| 채널 상품 ID | channelProductId | SKU | 1 | ✅ 핵심 UDS | channelProductId string NULLABLE 채널 상품 ID. SKU와 연결된 채널 상품 ID. |
+| 채널 상품번호 (integer | channelProductNos | 상품 공지사항 적용 | 1 | ✅ 핵심 UDS | channelProductNos 채널 상품번호 (integer<int64>)[] REQUIRED |
+| 채널 상품번호 목록 (integer | channelProductNos | 상품 목록 | 1 | ✅ 핵심 UDS | channelProductNos 채널 상품번호 목록 (integer<int64>)[] |
+| 채널 서비스 타입 (string) Possible value | channelServiceType | 상품 목록 | 1 | ✅ 핵심 UDS | channelServiceType 채널 서비스 타입 (string) Possible values: [STOREFARM, WINDOW, AFFILIATE] |
+| 채널 유형 Possible values | channelType | 판매자 | 1 | ✅ 핵심 UDS | channelType string 채널 유형 Possible values: [STOREFARM, WINDOW] |
+| 채널 URL | url | 판매자 | 1 | ✅ 핵심 UDS | url string 채널 URL |
+| 채널상품번호 | channelProductNo | 상품, 상품 검수, 상품 목록 | 6 | ✅ 핵심 UDS | channelProductNo integer<int64> REQUIRED 채널 상품번호 |
+| 첫 번째 페이지 여부 | first | SKU | 2 | ✅ 핵심 UDS | first boolean REQUIRED 첫 번째 페이지 여부 Example: true |
+| 첫 번째 페이지 여부 (boolean) | first | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | first 첫 번째 페이지 여부 (boolean) |
+| 총 | totalPayCommissionAmount | 정산 내역 | 1 | ✅ 핵심 UDS | totalPayCommissionAmount 총 네이버페이 관리 수수료 금액 (number) NULLABLE 총 네이버페이 관리 수수료 금액 |
+| 총 매출 금액 (number) REQUIRED 총 매출 금액 | totalSalesAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | totalSalesAmount 총 매출 금액 (number) REQUIRED 총 매출 금액 |
+| 총 배송 기간(ms) | totalDeliveryTime | 판매 분석 | 1 | ✅ 핵심 UDS | totalDeliveryTime number<double> 총 배송 기간(ms) |
+| 최근 문의 답변 내용 | answerContent | 고객 문의 조회 | 2 | ✅ 핵심 UDS | answerContent string 최근 문의 답변 내용 |
+| 최근 문의 답변 등록 일시(yyyy-MM-dd | answerRegistrationDateTime | 고객 문의 조회 | 2 | ✅ 핵심 UDS | answerRegistrationDateTime string<date-time> 최근 문의 답변 등록 일시(yyyy-MM-dd'T'HH:mm:ss.SSSXXX) |
+| 최근 문의 답변 템플릿 번호 | answerTemplateNo | 고객 문의 조회 | 2 | ✅ 핵심 UDS | answerTemplateNo integer<int64> 최근 문의 답변 템플릿 번호 |
+| 최근 문의 답변 ID | answerContentId | 고객 문의 조회 | 2 | ✅ 핵심 UDS | answerContentId integer<int64> 최근 문의 답변 ID |
+| 최대 10개까지 등록 가능 | imageFiles | 상품 이미지 | 1 | ✅ 핵심 UDS | imageFiles string<binary>[] REQUIRED 최대 10개까지 등록 가능. 업로드할 수 있는 이미지의 형식은 JPG, GIF, PNG, BMP입니다. |
+| 최대 과금 매출 연동 수수료 금액 (number) 최대 과금 | maximumSellingInterlockCommissionAmount | 정산 내역 | 1 | ✅ 핵심 UDS | maximumSellingInterlockCommissionAmount 최대 과금 매출 연동 수수료 금액 (number) 최대 과금 매출 연동 수수료 금액 |
+| 최대 속성값 (string) | maxAttributeValue | 상품 속성 | 1 | ✅ 핵심 UDS | maxAttributeValue 최대 속성값 (string) |
+| 최대 속성값 단위 코드 (string) | maxAttributeValueUnitCode | 상품 속성 | 1 | ✅ 핵심 UDS | maxAttributeValueUnitCode 최대 속성값 단위 코드 (string) |
+| 최소 구매 수량 (integer | minPurchaseQuantity | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | minPurchaseQuantity 최소 구매 수량 (integer<int32>) Possible values: <= 10000 |
+| 최소 속성값 (string) | minAttributeValue | 상품 속성 | 1 | ✅ 핵심 UDS | minAttributeValue 최소 속성값 (string) |
+| 최소 속성값 단위 코드 (string) | minAttributeValueUnitCode | 상품 속성 | 1 | ✅ 핵심 UDS | minAttributeValueUnitCode 최소 속성값 단위 코드 (string) |
+| 최종 변경 시작일시 | lastChangedFrom | 주문 조회 | 1 | ✅ 핵심 UDS | lastChangedFrom string<date-time> REQUIRED 조회 시작 일시(inclusive) Example: 2022-04-11T15:21:44.000+09:00 |
+| 최종 변경 유형 | lastChangedType | 주문 조회 | 2 | ✅ 핵심 UDS | lastChangedType lastChangedType.pay-order-seller (string) 최종 변경 구분. 250바이트 내외 코드 설명 비고 PAY_WAITING 결제 대기 PAYED 결제 완료 EXCHANGE_OPTION 옵션 변경 선물하기 DELIVERY_ADDRESS_CHANGED 배송지 변경 GIFT_RECEIVED 선물 수락 선물하기 CLAIM_REJECTED 클레임 철회 DISPATCHED 발송 처리 CLAIM_REQUESTED 클레임 요청 COLLECT_DONE 수거 완료 CLAIM_COMPLETED 클레임 완료 PURCHASE_DECIDED 구매 확정 HOPE_DELIVERY_INFO_CHANGED 배송 희망일 변경 CLAIM_REDELIVERING 교환 재배송처리 |
+| 최종 변경일시 | lastChangedDate | 주문 조회 | 1 | ✅ 핵심 UDS | lastChangedDate string<date-time> 최종 변경 일시. 45바이트 내외 Example: 2023-01-16T17:14:51.794+09:00 |
+| 추가 상품 정보 (object) | supplementProductInfo | 그룹상품 | 4 | ✅ 핵심 UDS | supplementProductInfo 추가 상품 정보 (object) |
+| 추가 조회 시퀀스 | moreSequence | 주문 조회 | 1 | ✅ 핵심 UDS | moreSequence string moreSequence 사용법은 API 설명을 참고합니다. 임의의 값 입력 시 예기치 않은 결과가 제공될 수 있습니다. |
+| 추적 ID | traceId | SKU, 고객 데이터, 고객 문의 답변 등록/수정, 고객 문의 조회, 교환, 마케팅 분석, 반품, 발주/발송 처리, 부가세 내역, 비즈월렛 결제 내역 조회, 상품 공지사항, 상품 문의, 솔루션 사용 API, 쇼핑행동 분석, 실시간 분석, 외부 개발사 자체 결제, 정산 내역, 주문 조회, 취소, 판매 분석, 판매자 물류, 판매자 인증 JWE 해석 | 74 | ✅ 핵심 UDS | traceIdstringAPI 오류 추적용 ID. 5000 API 오류 코드 발생으로 인한 문의 시 함께 전달 부탁드립니다. |
+| 취소 상세 사유 | cancelDetailedReason | 취소 | 1 | ✅ 핵심 UDS | cancelDetailedReason string 취소 상세 사유. 500자 제한 |
+| 취소 수량 (미 | cancelQuantity | 취소 | 1 | ✅ 핵심 UDS | cancelQuantity integer 취소 수량 (미입력 시 전체수량취소) |
+| 카탈로그 ID (integer | id, modelId | Other, 상품 목록, 카탈로그 | 4 | ✅ 핵심 UDS | modelId 카탈로그 ID (integer<int64>) |
+| 카탈로그명 (string) | modelName | 상품 목록 | 1 | ✅ 핵심 UDS | modelName 카탈로그명 (string) |
+| 카테고리 ID | categoryId | 상품 속성, 상품정보제공고시, 옵션, 카테고리 | 6 | ✅ 핵심 UDS | categoryId string REQUIRED 카테고리 ID |
+| 카테고리 ID (string) | categoryId | Other, 상품 목록, 카탈로그 | 4 | ✅ 핵심 UDS | categoryId 카테고리 ID (string) |
+| 카테고리별 표준형 옵션 상세 속성 (object) | standardOptionAttributes | 옵션 | 1 | ✅ 핵심 UDS | standardOptionAttributes 카테고리별 표준형 옵션 상세 속성 (object)[] Array [ attributeId 속성 ID (integer<int64>) REQUIRED attributeValueId 속성값 ID (integer<int64>) REQUIRED attributeValueName 속성값 이름 (string) REQUIRED attributeColorCode 속성 색상 코드 (string) imageUrls 표준형 옵션에서 사용할 이미지 URL (string)[] ] |
+| 커머스API 사용 가능 여부(계정 인증 여부) | accountAuthentication | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | accountAuthentication boolean 커머스API 사용 가능 여부(계정 인증 여부) |
+| 코드 | code, originAreaCodeNames, subOriginAreaCodeNames | OAuth 2.0, SKU, 고객 데이터, 고객 문의 답변 등록/수정, 고객 문의 조회, 교환, 그룹상품, 마케팅 분석, 반품, 발주/발송 처리, 부가세 내역, 브랜드, 비즈월렛 결제 내역 조회, 사이즈, 상품, 상품 검수, 상품 공지사항, 상품 공지사항 적용, 상품 목록, 상품 문의, 상품 배송 정보, 상품 속성, 상품 원산지 정보, 상품 이미지, 상품 일괄 수정, 상품정보제공고시, 솔루션 사용 API, 쇼핑행동 분석, 실시간 분석, 옵션, 외부 개발사 자체 결제, 정산 내역, 제조사, 주문 조회, 취소, 카탈로그, 카테고리, 태그, 판매 분석, 판매 옵션, 판매자 물류, 판매자 인증 JWE 해석, 패션모델 | 132 | ✅ 핵심 UDS | codeerrorCode.pay-order-seller (string)오류 코드 정의 코드설명비고4000잘못된 요청 파라미터오류 유형.객체명.필드명9999기타정의되지 않은 오류 코드100001상품 주문을 찾을 수 없음100003주문을 찾을 수 없음101009처리 권한이 없는 상품 주문 번호를 요청101011직계약 상품은 물류사만 발주확인 가능104105발송 기한 입력 범위 초과104116배송 방법 변경 필요(배송 없음 주문)104117배송 방법 변경 필요104118택배사 미입력104119택배사 코드 확인104120송장 번호 미입력104121배송 송장 오류(기사용 송장)104122배송 송장 오류(비유효 송장)104131상품 주문 번호 중복104133잘못된 요청104417교환 상태 확인 필요(재배송 처리 불가능 주문 상태)104139조회 가능한 날짜 범위를 초과104441희망일배송 상품 또는 N희망일배송 상품이 아님104442상품 주문 상태 확인 필요104443발주 상태 확인 필요104 |
+| 콘텐츠 게시글 일련번호 (integer | bbsSeq | 상품 | 8 | ✅ 핵심 UDS | bbsSeq 콘텐츠 게시글 일련번호 (integer<int64>) 공지사항 |
+| 퀵서비스 배송 지역 코드 | quickServiceAreas | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | quickServiceAreas string[] 퀵서비스 배송 지역 코드입니다. 네이버 풀필먼트 상품, N희망일배송 상품은 퀵서비스를 설정할 수 없습니다. SEOUL(서울 전지역), GYEONGGI(경기 전지역), GOYANG(경기 고양), GOCHON(경기 고촌), GONJIAM(경기 곤지암), GWACHEON(경기 과천), GWANGMYEONG(경기 광명), GYEONGGIGWANGJU(경기 광주), GYOMUN(경기 교문리), GURI(경기 구리), GUSEONG(경기 구성), GUNPO(경기 군포), GIMPO(경기 김포), BUCHEON(경기 부천), BUNDANG(경기 분당), SEONGNAM(경기 성남), SUWON(경기 수원), SUJI(경기 수지), SIHEUNG(경기 시흥), ANSAN(경기 안산), ANYANG(경기 안양), YONGIN(경기 용인), UIWANG(경기 의왕), UIJEONGBU(경기 의정부), ICHEON(경기 이천), ILSAN(경기 일산),  |
+| 클레임 상태 | claimStatus | 주문 조회 | 1 | ✅ 핵심 UDS | claimStatus claimStatus.pay-order-seller (string) 클레임 상태. 250바이트 내외 코드 설명 비고 CANCEL_REQUEST 취소 요청 CANCELING 취소 처리 중 CANCEL_DONE 취소 처리 완료 CANCEL_REJECT 취소 철회 RETURN_REQUEST 반품 요청 EXCHANGE_REQUEST 교환 요청 COLLECTING 수거 처리 중 COLLECT_DONE 수거 완료 EXCHANGE_REDELIVERING 교환 재배송 중 RETURN_DONE 반품 완료 EXCHANGE_DONE 교환 완료 RETURN_REJECT 반품 철회 EXCHANGE_REJECT 교환 철회 PURCHASE_DECISION_HOLDBACK 구매 확정 보류 PURCHASE_DECISION_REQUEST 구매 확정 요청 PURCHASE_DECISION_HOLDBACK_RELEASE 구매 확정 보류 해제 ADMIN_CANCELING 직권 취소 중 ADMIN_CA |
+| 클레임 상태 목록 | claimStatuses | 주문 조회 | 1 | ✅ 핵심 UDS | claimStatuses claimStatus.pay-order-seller (string)[] 클레임 상태 목록. 250바이트 내외 코드 설명 비고 CANCEL_REQUEST 취소 요청 CANCELING 취소 처리 중 CANCEL_DONE 취소 처리 완료 CANCEL_REJECT 취소 철회 RETURN_REQUEST 반품 요청 EXCHANGE_REQUEST 교환 요청 COLLECTING 수거 처리 중 COLLECT_DONE 수거 완료 EXCHANGE_REDELIVERING 교환 재배송 중 RETURN_DONE 반품 완료 EXCHANGE_DONE 교환 완료 RETURN_REJECT 반품 철회 EXCHANGE_REJECT 교환 철회 PURCHASE_DECISION_HOLDBACK 구매 확정 보류 PURCHASE_DECISION_REQUEST 구매 확정 요청 PURCHASE_DECISION_HOLDBACK_RELEASE 구매 확정 보류 해제 ADMIN_CANCELING 직권 취소 중 A |
+| 클레임 요청 사유 | cancelReason, returnReason | 반품, 취소 | 2 | ✅ 핵심 UDS | returnReason requestReturnClaimReason.pay-order-seller (string) REQUIRED 클레임 요청 사유. 250바이트 내외 코드 설명 비고 INTENT_CHANGED 구매 의사 취소 COLOR_AND_SIZE 색상 및 사이즈 변경 WRONG_ORDER 다른 상품 잘못 주문 PRODUCT_UNSATISFIED 서비스 불만족 DELAYED_DELIVERY 배송 지연 SOLD_OUT 상품 품절 DROPPED_DELIVERY 배송 누락 BROKEN 상품 파손 INCORRECT_INFO 상품 정보 상이 WRONG_DELIVERY 오배송 WRONG_OPTION 색상 등 다른 상품 잘못 배송 |
+| 클레임 유형 | claimType | 주문 조회 | 1 | ✅ 핵심 UDS | claimType claimType.pay-order-seller (string) 클레임 구분. 250바이트 내외 코드 설명 비고 CANCEL 취소 RETURN 반품 EXCHANGE 교환 PURCHASE_DECISION_HOLDBACK 구매 확정 보류 ADMIN_CANCEL 직권 취소 |
+| 클레임(반품/교환) 정보 (object) REQUIRED | claimDeliveryInfo | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | claimDeliveryInfo 클레임(반품/교환) 정보 (object) REQUIRED |
+| 타임스탬프 | timestamp | OAuth 2.0, SKU, 고객 데이터, 고객 문의 답변 등록/수정, 고객 문의 조회, 교환, 그룹상품, 마케팅 분석, 반품, 발주/발송 처리, 부가세 내역, 브랜드, 비즈월렛 결제 내역 조회, 사이즈, 상품, 상품 검수, 상품 공지사항, 상품 공지사항 적용, 상품 목록, 상품 문의, 상품 배송 정보, 상품 속성, 상품 원산지 정보, 상품 이미지, 상품 일괄 수정, 상품정보제공고시, 솔루션 사용 API, 쇼핑행동 분석, 실시간 분석, 옵션, 외부 개발사 자체 결제, 정산 내역, 제조사, 주문 조회, 취소, 카탈로그, 카테고리, 태그, 판매 분석, 판매 옵션, 판매자 물류, 판매자 인증 JWE 해석, 패션모델 | 134 | ✅ 핵심 UDS | timestamp integer<int64> REQUIRED 전자서명 생성 시 사용된 밀리초(millisecond) 단위의 Unix 시간. 5분간 유효 Example: 1706671059230 |
+| 태그 ID (integer | sellerTags | 상품 목록 | 1 | ✅ 핵심 UDS | sellerTags KrExternalApiTagInfoVo.product (object)[] Array [ code 태그 ID (integer<int64>) 태그 ID는 추천 태그 조회 API를 통해 확인할 수 있습니다. 입력한 태그 ID와 태그명이 일치하지 않는 경우 요청은 실패합니다. 추천 태그가 아닌 직접 입력 태그의 경우 태그 ID(code)는 입력하지 않습니다. text 태그명 (string) REQUIRED ] |
+| 태그명 (string) REQUIRED | text | 상품 목록, 태그 | 2 | ✅ 핵심 UDS | text 태그명 (string) REQUIRED |
+| 택배사 | deliveryCompany | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | deliveryCompany 택배사 (string) DELIVERY(택배, 소포, 등기)일 때 필수 입력 주문 > 발주/발송 처리 > 발송 처리 API의 택배사 코드(deliveryCompanyCode)를 참고하여 코드값을 입력합니다. 배송 속성이 SELLER_GUARANTEE(N판매자배송), HOPE_SELLER_GUARANTEE(N희망일배송)인 경우 판매자정보 > 판매자 물류 > 물류사 연동 정보 조회 API에서 해당하는 deliveryTypes(배송 속성)의 logisticsCompanyId(물류사 ID)를 상품 API의 deliveryCompany(택배사)에 입력합니다. |
+| 택배사 코드 | collectDeliveryCompany, deliveryCompanyCode, reDeliveryCompany | 교환, 반품, 발주/발송 처리 | 3 | ✅ 핵심 UDS | deliveryCompanyCode deliveryCompanyCode.pay-order-seller (string) 택배사 코드. 250바이트 내외 코드 설명 비고 CJGLS CJ대한통운 HYUNDAI 롯데택배 HANJIN 한진택배 KGB 로젠택배 EPOST 우체국택배 MTINTER 엠티인터내셔널 1004HOME 1004HOME TWOFASTEXPRESS 2FAST익스프레스 ACE ACEexpress ACIEXPRESS ACI ADCAIR ADC항운택배 AIRWAY AIRWAY익스프레스 APEX APEX ARAMEX ARAMEX ARGO ARGO AIRBOY AirboyExpress KOREXG CJ대한통운(국제택배) CUPARCEL CU편의점택배 CWAYEXPRESS CwayExpress DHL DHL DHLDE DHL(독일) DHLGLOBALMAIL DHLGlobalMail DPD DPD ECMSEXPRESS ECMSExpress EFS EFS EMS EMS EZUSA EZUS |
+| 택배사 ID | allianceId | 판매자 물류 | 1 | ✅ 핵심 UDS | allianceId string 택배사 ID |
+| 택배사명 | allianceName | 판매자 물류 | 1 | ✅ 핵심 UDS | allianceName string 택배사명 |
+| 텍스트 리뷰 포인트 (integer | textReviewPoint | 상품 목록 | 1 | ✅ 핵심 UDS | textReviewPoint 텍스트 리뷰 포인트 (integer<int64>) |
+| 톡톡 계정 아이디 채널에 연결된 톡톡 채널이 노출 상태인 경 | talkTalkAccountId | 판매자 | 1 | ✅ 핵심 UDS | talkTalkAccountId string 톡톡 계정 아이디 채널에 연결된 톡톡 채널이 노출 상태인 경우 톡톡 계정 아이디를 제공합니다. |
+| 통계 제공 여부 | isNotProvided | 고객 데이터 | 2 | ✅ 핵심 UDS | isNotProvided boolean REQUIRED 통계 제공 여부. 집계 고객 수가 10건 미만인 경우 미제공 |
+| 판매 기간 변경 사항 (object) 판매 기간 정보 sal | productSalePeriod | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | productSalePeriod 판매 기간 변경 사항 (object) 판매 기간 정보 saleStartDate 판매 시작 일시 (string<date-time>) 매 시각 00분으로만 설정 가능합니다. 'yyyy-MM-dd'T'HH:mm[:ss][.SSS]XXX' 형식으로 입력합니다. saleEndDate 판매 종료 일시 (string<date-time>) 매 시각 59분으로만 설정 가능합니다. 'yyyy-MM-dd'T'HH:mm[:ss][.SSS]XXX' 형식으로 입력합니다. |
+| 판매 시작 일시 (string | saleStartDate | 상품, 상품 목록, 상품 일괄 수정 | 10 | ✅ 핵심 UDS | saleStartDate 판매 시작 일시 (string<date-time>) 매 시각 00분으로만 설정 가능합니다. 'yyyy-MM-dd'T'HH:mm[:ss][.SSS]XXX' 형식으로 입력합니다. |
+| 판매 옵션 (object) | standardPurchaseOptions | 판매 옵션 | 1 | ✅ 핵심 UDS | standardPurchaseOptions 판매 옵션 (object)[] REQUIRED 가이드에 포함되는 옵션 목록입니다. Array [ optionId 판매 옵션 ID (integer<int64>) REQUIRED optionName 판매 옵션명 (string) REQUIRED modelOptionYn 네이버 가격비교 서비스 노출 기준 (boolean) REQUIRED 네이버 가격비교 서비스 노출 기준이 되는 판매 옵션 여부를 표시합니다. 예를 들어, optionName이 '용량'인 판매 옵션의 modelOptionYn 값이 True이면, 그룹 내 상품이 용량 값을 기준으로 묶여 가격비교 서비스에 노출됩니다. 이 값이 True인 판매 옵션이 존재하지 않으면, 묶음 없이 그룹상품 단위 그대로 노출됩니다. colorCodeYn 색상칩 사용 여부 (boolean) REQUIRED 색상 코드 입력이 가능한 판매 옵션 여부를 표시합니다. 그룹상품 등록/수정/전환 API로 전달되는 hex  |
+| 판매 옵션 가이드 (object) | optionGuides | 판매 옵션 | 1 | ✅ 핵심 UDS | optionGuides 판매 옵션 가이드 (object)[] 판매 옵션 사용 가능 카테고리의 경우, 판매 옵션 가이드를 설정해야 합니다. Array [ guideId 가이드 ID (integer<int64>) REQUIRED standardPurchaseOptions 판매 옵션 (object)[] REQUIRED 가이드에 포함되는 옵션 목록입니다. Array [ optionId 판매 옵션 ID (integer<int64>) REQUIRED optionName 판매 옵션명 (string) REQUIRED modelOptionYn 네이버 가격비교 서비스 노출 기준 (boolean) REQUIRED 네이버 가격비교 서비스 노출 기준이 되는 판매 옵션 여부를 표시합니다. 예를 들어, optionName이 '용량'인 판매 옵션의 modelOptionYn 값이 True이면, 그룹 내 상품이 용량 값을 기준으로 묶여 가격비교 서비스에 노출됩니다. 이 값이 True인 판매 옵션이 존재하지 않으면, |
+| 판매 옵션 가이드 ID (integer | guideId | 그룹상품 | 4 | ✅ 핵심 UDS | guideId 판매 옵션 가이드 ID (integer<int64>) REQUIRED 판매 옵션 가이드(판매 옵션의 조합)의 ID를 입력합니다. 카테고리에서 사용 가능한 판매 옵션 가이드는 카테고리별 판매 옵션 정보 조회 API로 확인할 수 있으며, 카테고리에서 허용하지 않는 가이드 ID는 사용할 수 없습니다. 카테고리 수정 시에는 수정 후의 카테고리에서 허용하는 판매 옵션 가이드 ID를 입력해야 합니다. 수정 가능 조건: 그룹상품에 속한 판매 옵션 중 하나라도 등록일로부터 30일 이내이거나 카테고리 수정일로부터 30일 이내인 경우. 가장 최근 판매 옵션 등록일 혹은 가장 최근 카테고리 수정일 기준 31일째부터는 수정 실패합니다. |
+| 판매 옵션 단위 (object) | optionUsableUnits | 판매 옵션 | 1 | ✅ 핵심 UDS | optionUsableUnits 판매 옵션 단위 (object)[] 단위 목록이 존재하는 판매 옵션의 경우 판매 옵션값명에 단위가 사용되어야 합니다. 목록에 존재하지 않는 단위는 사용할 수 없습니다. Array [ unit 단위 (string) ] |
+| 판매 옵션 사용 가능 카테고리 여부 (boolean) tru | useOptionYn | 판매 옵션 | 1 | ✅ 핵심 UDS | useOptionYn 판매 옵션 사용 가능 카테고리 여부 (boolean) true인 카테고리에 대해서만 그룹상품 설정이 가능합니다. |
+| 판매 옵션 상세 설명 (object) 판매자가 판매 옵션의 | optionInfo | 판매 옵션 | 1 | ✅ 핵심 UDS | optionInfo 판매 옵션 상세 설명 (object) 판매자가 판매 옵션의 개념을 이해하고 정확한 값을 입력할 수 있도록 가이드하기 위해, 판매 옵션에 대해 설명하는 문구입니다. 상품 등록 화면에서 판매 옵션값 입력 창이나 툴팁, 도움말 등에 활용할 수 있습니다. tooltip 입력 가이드 문구 정보 (string) 판매 옵션별 툴팁, 도움말 등에 표시되는 문구입니다. placeHolder 플레이스홀더 문구 정보 (string) 판매 옵션별로 판매 옵션값 입력 창에 표시되는 문구입니다. |
+| 판매 옵션 유형 (string) REQUIRED 단위가 존재 | optionType | 판매 옵션 | 1 | ✅ 핵심 UDS | optionType 판매 옵션 유형 (string) REQUIRED 단위가 존재하는 숫자형 판매 옵션의 경우 판매 옵션값명을 숫자+단위 형식으로 입력해야 하며, 단위는 판매 옵션 사용 가능 단위 목록에 있는 값만 사용할 수 있습니다. NUMBER(숫자형), TEXT(문자형) Possible values: [NUMBER, TEXT] |
+| 판매 옵션 정보 (object) | standardPurchaseOptionsIds | 그룹상품 | 4 | ✅ 핵심 UDS | standardPurchaseOptionsIds 판매 옵션 정보 (object)[] Array [ optionId 판매 옵션 ID (integer<int64>) valueName 판매 옵션값명 (string) ] |
+| 판매 옵션 ID (integer | optionId | 그룹상품, 판매 옵션 | 5 | ✅ 핵심 UDS | optionId 판매 옵션 ID (integer<int64>) REQUIRED |
+| 판매 옵션값 (object) | optionValues | 판매 옵션 | 1 | ✅ 핵심 UDS | optionValues 판매 옵션값 (object)[] REQUIRED ID가 등록되어 있는 판매 옵션값의 목록으로, 판매 옵션값 입력 창에 자동 완성으로 제공하여 정확한 입력을 돕습니다. 목록에 존재하지 않는 판매 옵션값명은 직접 입력할 수 있습니다. Array [ valueName string REQUIRED 판매 옵션값명 ] |
+| 판매 옵션값명 | valueName | 판매 옵션 | 1 | ✅ 핵심 UDS | valueName string REQUIRED 판매 옵션값명 |
+| 판매 옵션값명 (string) | valueName | 그룹상품 | 4 | ✅ 핵심 UDS | valueName 판매 옵션값명 (string) |
+| 판매 종료 일시 (string | saleEndDate | 상품, 상품 목록, 상품 일괄 수정 | 10 | ✅ 핵심 UDS | saleEndDate 판매 종료 일시 (string<date-time>) 매 시각 59분으로만 설정 가능합니다. 'yyyy-MM-dd'T'HH:mm[:ss][.SSS]XXX' 형식으로 입력합니다. |
+| 판매가 (integer | salePrice | 상품 목록 | 1 | ✅ 핵심 UDS | salePrice 판매가 (integer<int64>) REQUIRED Possible values: <= 999999990 |
+| 판매가 단위 타입 (string) REQUIRED PERCE | productSalePriceChangerUnitType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | productSalePriceChangerUnitType 판매가 단위 타입 (string) REQUIRED PERCENT, WON만 입력 가능합니다. PERCENT(정율), WON(정액) |
+| 판매가 변경 사항 (object) 판매가 변경 사항 valu | productSalePrice | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | productSalePrice 판매가 변경 사항 (object) 판매가 변경 사항 value 변경 금액 (integer<int32>) REQUIRED productSalePriceChangerType 판매가 변경 타입 (string) REQUIRED Possible values: [UP, DOWN, TO] productSalePriceChangerUnitType 판매가 단위 타입 (string) REQUIRED PERCENT, WON만 입력 가능합니다. PERCENT(정율), WON(정액) |
+| 판매가 변경 타입 (string) REQUIRED Possi | productSalePriceChangerType | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | productSalePriceChangerType 판매가 변경 타입 (string) REQUIRED Possible values: [UP, DOWN, TO] |
+| 판매가 정보 (object) 판매가 정보 salePrice | productSalePrice | 상품 | 2 | ✅ 핵심 UDS | productSalePrice 판매가 정보 (object) 판매가 정보 salePrice 상품 판매 가격 (integer<int32>) REQUIRED |
+| 판매자 계정 UID | accountUid | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | accountUid string 판매자 계정 UID |
+| 판매자 공지사항 번호 (integer | sellerNoticeId | 상품 공지사항 적용 | 1 | ✅ 핵심 UDS | sellerNoticeId 판매자 공지사항 번호 (integer<int64>) |
+| 판매자 관리코드 | sellerManagementCode | 상품 목록 | 1 | ✅ 핵심 UDS | sellerManagementCode 판매자 관리 코드 (string) |
+| 판매자 기본 할인 정책 (object) mobileDisco | immediateDiscountPolicy | 상품, 상품 일괄 수정 | 3 | ✅ 핵심 UDS | immediateDiscountPolicy 판매자 기본 할인 정책 (object) mobileDiscountMethod로 설정한 값은 무시됩니다. 추후 오류 응답이 반환될 수 있으므로 discountMethod를 사용하세요. discountMethod 할인 혜택 (object) |
+| 판매자 답변 내용(여러 개면 최초 답변을 반환) (strin | answer | 상품 문의 | 2 | ✅ 핵심 UDS | answer 판매자 답변 내용(여러 개면 최초 답변을 반환) (string) |
+| 판매자 답변 여부 (boolean) | answered | 상품 문의 | 2 | ✅ 핵심 UDS | answered 판매자 답변 여부 (boolean) |
+| 판매자 등급 | grade | 판매자 | 1 | ✅ 핵심 UDS | grade string 판매자 등급 |
+| 판매자 등급 Possible values | actionGrade | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | actionGrade string 판매자 등급 Possible values: [ZERO, FIRST, SECOND, THIRD, FOURTH, FIFTH] |
+| 판매자 부담 무이자 할부 수수료 (number) NULLAB | freeInstallmentCommissionAmount | 정산 내역 | 1 | ✅ 핵심 UDS | freeInstallmentCommissionAmount 판매자 부담 무이자 할부 수수료 (number) NULLABLE 판매자 부담 무이자 할부 수수료 |
+| 판매자 유형 Possible values | representType | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | representType string 판매자 유형 Possible values: [DOMESTIC_PERSONAL, DOMESTIC_BUSINESS, OVERSEAS_PERSONAL, OVERSEAS_BUSINESS] |
+| 판매자 창고 ID (string) 배송 속성이 SELLER | outboundLocationId | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | outboundLocationId 판매자 창고 ID (string) 배송 속성이 SELLER_GURANTEE(N판매자배송), HOPE_SELLER_GUARANTEE(N희망일배송)인 경우 필수. 그 밖의 배송 속성에 입력된 판매자 창고 ID값은 무시됩니다. 판매자정보 > 판매자물류 > 판매자 창고 정보 조회 API에서 해당하는 deliveryType(배송 속성)의 창고 ID를 입력합니다. |
+| 판매자 특이 사항 (string) | sellerCommentContent | 그룹상품 | 1 | ✅ 핵심 UDS | sellerCommentContent 판매자 특이 사항 (string) |
+| 판매자 특이 사항 (string) 판매자 특이 사항이 있는 | sellerCommentContent | 그룹상품 | 3 | ✅ 핵심 UDS | sellerCommentContent 판매자 특이 사항 (string) 판매자 특이 사항이 있는 경우 입력합니다. |
+| 판매자 휴무일 목록 | sellerHolidays | 판매자 오늘출발 설정 | 2 | ✅ 핵심 UDS | sellerHolidays string[] 판매자 휴무일 목록 |
+| 판매자 ID | sellerId | 판매자 오늘출발 설정 | 1 | ✅ 핵심 UDS | sellerId string 설정 대상 계정 ID |
+| 팝업 시작 일시 (string | popupStartDate | 상품 공지사항 | 4 | ✅ 핵심 UDS | popupStartDate 팝업 시작 일시 (string<date-time>) 공지사항 등록/수정 시: 입력한 시각의 00분으로 설정됩니다. 팝업 여부를 true로 설정 후 팝업 시작 일시 미입력 시 현재 시각의 00분으로 저장됩니다.(예: 2022-09-02 16:00:00) 공지사항 조회 시: KST 기준으로 출력됩니다. Example: 2023-04-18T14:25:05.145+09:00 |
+| 팝업 여부 (boolean) 스토어의 팝업 여부를 나타냅니다 | popup | 상품 공지사항 | 4 | ✅ 핵심 UDS | popup 팝업 여부 (boolean) 스토어의 팝업 여부를 나타냅니다. 단, 기존에 설정되어 있던 팝업 공지사항은 해제됩니다(1건만 등록 가능). 미입력 시 false로 저장됩니다. |
+| 팝업 종료 일시 (string | popupEndDate | 상품 공지사항 | 4 | ✅ 핵심 UDS | popupEndDate 팝업 종료 일시 (string<date-time>) 공지사항 등록/수정 시: 입력한 시각의 59분으로 설정됩니다. 팝업 여부를 true로 설정 후 팝업 종료 일시 미입력 시 일주일 후 현재 시각의 59분으로 저장됩니다.(예: 2022-09-09 16:59:59) 공지사항 조회 시: KST 기준으로 출력됩니다. Example: 2023-04-18T14:25:05.146+09:00 |
+| 페이지 번호 | page, pageNumber | SKU, 고객 문의 조회, 부가세 내역, 상품 검수, 상품 공지사항, 상품 목록, 상품 문의, 상품 배송 정보, 정산 내역, 주문 조회, 카탈로그, 판매자 주소록 | 17 | ✅ 핵심 UDS | page integer<int32> 페이지 번호 (1부터 시작). 최대 조회 가능 개수는 10만 건을 초과할 수 없습니다. Default value: 1 Example: 1 Possible values: >= 1 |
+| 페이지 수 | pv | 마케팅 분석 | 5 | ✅ 핵심 UDS | pv number<double> 페이지 수 |
+| 페이지 크기 | pageSize, size | SKU, 고객 문의 조회, 부가세 내역, 상품 검수, 상품 공지사항, 상품 문의, 상품 배송 정보, 정산 내역, 주문 조회, 카탈로그 | 14 | ✅ 핵심 UDS | size number NULLABLE 페이지 크기. 페이지당 최대 500건까지 조회할 수 있습니다. 최대 조회 가능 개수는 10만 건을 초과할 수 없습니다. Possible values: >= 1 and <= 500 |
+| 페이지 크기 (1-500) | size | SKU | 1 | ✅ 핵심 UDS | size integer<int32> 페이지 크기 (1-500). 최대 조회 가능 개수는 10만 건을 초과할 수 없습니다. Default value: 50 Example: 50 |
+| 페이지 크기 (integer | size | 상품 목록, 상품 배송 정보, 카탈로그 | 4 | ✅ 핵심 UDS | size 페이지 크기 (integer<int32>) 페이지당 최대 500건까지 조회할 수 있습니다. Default value: 50 |
+| 페이지 크기 Possible values | size | SKU | 1 | ✅ 핵심 UDS | size integer<int32> REQUIRED 페이지 크기 Possible values: >= 0 |
+| 페이지 URL | url | 쇼핑행동 분석 | 1 | ✅ 핵심 UDS | url string 페이지 URL |
+| 페이지별 행동 항목 목록 Array | rows | 쇼핑행동 분석 | 1 | ✅ 핵심 UDS | rows PageActionReportRow (object)[] 페이지별 행동 항목 목록 Array [ pv number<double> 유입 고객 수 timeOnPage number<double> 체류 시간(ms) url string 페이지 URL ] |
+| 포토/동영상 리뷰 포인트 (integer | photoVideoReviewPoint | 상품 목록 | 1 | ✅ 핵심 UDS | photoVideoReviewPoint 포토/동영상 리뷰 포인트 (integer<int64>) |
+| 포함 여부 | hasLocation | 판매자 주소록 | 2 | ✅ 핵심 UDS | hasLocation boolean Location 포함 여부 |
+| 표준형 옵션 (object) | optionStandards | 상품 | 1 | ✅ 핵심 UDS | optionStandards 표준형 옵션 (object)[] |
+| 표준형 옵션 그룹 (object) | standardOptionCategoryGroups | 옵션 | 1 | ✅ 핵심 UDS | standardOptionCategoryGroups 표준형 옵션 그룹 (object)[] Array [ attributeId 속성 ID (integer<int64>) attributeName 옵션명 (string) REQUIRED 옵션 속성명(예: 색상, 사이즈(공통), 사이즈(미국)) groupName 옵션 그룹명 (string) (예: 사이즈, 색상) imageRegistrationUsable 이미지 등록 가능 여부 (boolean) REQUIRED realValueUsable value 수정 가능 여부 (boolean) REQUIRED optionSetRequired 표준형 옵션 세트 필수 여부 (boolean) REQUIRED standardOptionAttributes 카테고리별 표준형 옵션 상세 속성 (object)[] Array [ attributeId 속성 ID (integer<int64>) REQUIRED attributeValueId 속성값 ID (integer<i |
+| 표준형 옵션 사용 여부 (boolean) | useStandardOption | 옵션 | 1 | ✅ 핵심 UDS | useStandardOption 표준형 옵션 사용 여부 (boolean) |
+| 표준형 옵션 세트 필수 여부 (boolean) REQUIRE | optionSetRequired | 옵션 | 1 | ✅ 핵심 UDS | optionSetRequired 표준형 옵션 세트 필수 여부 (boolean) REQUIRED |
+| 표준형 옵션에서 사용할 이미지 URL (string) | imageUrls | 옵션 | 1 | ✅ 핵심 UDS | imageUrls 표준형 옵션에서 사용할 이미지 URL (string)[] |
+| 풀필먼트 배송여부 값 설명 비고 null 풀필먼트 | fulfillment | 주문 조회 | 1 | ✅ 핵심 UDS | fulfillment boolean 풀필먼트 배송여부 값 설명 비고 null 풀필먼트 설정된 상품 여부를 구분하지 않고 상품주문 상세내역을 조회합니다. false 풀필먼트 설정이 되지 않은 상품의 상품주문 상세내역을 조회합니다. true 풀필먼트 설정된 상품의 상품주문 상세내역을 조회합니다. Example: true |
+| 플레이스홀더 문구 정보 (string) 판매 옵션별로 판매 | placeHolder | 판매 옵션 | 1 | ✅ 핵심 UDS | placeHolder 플레이스홀더 문구 정보 (string) 판매 옵션별로 판매 옵션값 입력 창에 표시되는 문구입니다. |
+| 한 페이지 당 항목 수 Possible values | size | SKU | 1 | ✅ 핵심 UDS | size integer<int32> REQUIRED 한 페이지 당 항목 수 Possible values: >= 0 |
+| 한도 보류/해제 금액 (number) NULLABLE 한도 | settlementLimitAmount | 정산 내역 | 1 | ✅ 핵심 UDS | settlementLimitAmount 한도 보류/해제 금액 (number) NULLABLE 한도 보류/해제 금액 |
+| 할인 혜택 (object) | discountMethod | 상품, 상품 일괄 수정 | 3 | ✅ 핵심 UDS | discountMethod 할인 혜택 (object) |
+| 할인가 (integer | discountedPrice | 상품 목록 | 1 | ✅ 핵심 UDS | discountedPrice 할인가 (integer<int64>) Possible values: <= 999999990 |
+| 해외 주소 여부 | overseasAddress | 판매자 주소록 | 2 | ✅ 핵심 UDS | overseasAddress boolean 해외 주소 여부 |
+| 해지/취소일 | endDate | 솔루션 사용 API | 2 | ✅ 핵심 UDS | endDate string<date-time> 해지/취소일 Example: 2023-08-18T00:00:00.000+09:00 |
+| 헤택 금액 (number) REQUIRED 혜택 정산 금액 | benefitSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | benefitSettleAmount 헤택 금액 (number) REQUIRED 혜택 정산 금액 |
+| 현금영수증 발행 제외 금액 (number) REQUIRED | cashExclusionIssuanceAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | cashExclusionIssuanceAmount 현금영수증 발행 제외 금액 (number) REQUIRED 현금영수증 발행 제외 금액 |
+| 현금영수증 소득공제 금액 (number) REQUIRED 현 | cashInComeDeductionAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | cashInComeDeductionAmount 현금영수증 소득공제 금액 (number) REQUIRED 현금영수증 소득공제 금액 |
+| 현금영수증 지출 증빙 금액 (number) REQUIRED | cashOutGoingEvidenceAmount | 부가세 내역 | 2 | ✅ 핵심 UDS | cashOutGoingEvidenceAmount 현금영수증 지출 증빙 금액 (number) REQUIRED 현금영수증 지출 증빙 금액 |
+| 현재 회차 (integer | round | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | round 현재 회차 (integer<int32>) 현재 회차 |
+| 현재 회차 시작일 (string | roundStartDate | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | roundStartDate 현재 회차 시작일 (string<date-time>) 현재 회차 시작일 Example: 2024-08-21T10:00:00.001+09:00 |
+| 현재 회차 종료일 (string | roundEndDate | 외부 개발사 자체 결제 | 1 | ✅ 핵심 UDS | roundEndDate 현재 회차 종료일 (string<date-time>) 현재 회차 종료일 Example: 2024-08-22T10:00:00.001+09:00 |
+| 혜택 정산 금액 (number) NULLABLE 혜택 정산 | benefitSettleAmount | 정산 내역 | 1 | ✅ 핵심 UDS | benefitSettleAmount 혜택 정산 금액 (number) NULLABLE 혜택 정산 금액 |
+| 환불 건수 | refundNumPurchases | 판매 분석 | 2 | ✅ 핵심 UDS | refundNumPurchases number<double> 환불 건수 |
+| 환불 금액 | refundPayAmount | 판매 분석 | 2 | ✅ 핵심 UDS | refundPayAmount number<double> 환불 금액 |
+| 환불 수량 | refundProductQuantity | 판매 분석 | 2 | ✅ 핵심 UDS | refundProductQuantity number<double> 환불 수량 |
+| 환불 유형 | refundType | 솔루션 사용 API | 1 | ✅ 핵심 UDS | refundType string 환불 유형. 일할 계산된 금액 대신 솔루션 개발사가 직접 입력한 금액을 환불하는 경우에만 PARTIAL을 설정합니다. Possible values: [PARTIAL] |
+| 환불금액 | refundAmount | 솔루션 사용 API | 1 | ✅ 핵심 UDS | refundAmount number 총 환불 금액 Example: 10000 |
+| 회 최대 구매 수량 (integer | maxPurchaseQuantityPerOrder | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | maxPurchaseQuantityPerOrder 1회 최대 구매 수량 (integer<int32>) Possible values: <= 10000 |
+| 회차 순번 | round | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | round integer<int32> 회차 순번 Example: 1 |
+| 회차 시작일 | roundStartDate | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | roundStartDate string<date-time> 회차 시작일 |
+| 회차 정보 round integer | round | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | round RoundDto.merchant (object) 회차 정보 round integer<int32> 회차 순번 Example: 1 roundStartDate string<date-time> 회차 시작일 roundEndDate string<date-time> 회차 종료일 |
+| 회차 종료일 | roundEndDate | 판매자 인증 JWE 해석 | 1 | ✅ 핵심 UDS | roundEndDate string<date-time> 회차 종료일 |
+| 휴무 요일 MONDAY | holidayOfTheWeek | 판매자 오늘출발 설정 | 2 | ✅ 핵심 UDS | holidayOfTheWeek WeekDayType.sellers (string) 휴무 요일 MONDAY: 월요일 TUESDAY: 화요일 WEDNESDAY: 수요일 THURSDAY: 목요일 FRIDAY: 금요일 Possible values: [SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY] |
+| 희망일배송 그룹 번호 (integer | hopeDeliveryGroupId | 상품 일괄 수정 | 1 | ✅ 핵심 UDS | hopeDeliveryGroupId 희망일배송 그룹 번호 (integer<int64>) 배송 속성 타입 코드가 희망일배송이고 희망일배송 그룹 번호가 Null이면 기본 그룹으로 저장됩니다. |
+| 희망일배송 그룹 정보 구조체 (object) 희망일배송 그룹 | hopeDeliveryGroup | 상품 배송 정보 | 1 | ✅ 핵심 UDS | hopeDeliveryGroup 희망일배송 그룹 정보 구조체 (object) 희망일배송 그룹 이 구조체는 상품의 배송 정보 중 희망일배송 그룹 정보 데이터를 표현하는 구조체입니다. 희망일배송 그룹 정보는 희망일배송 설정 상품에만 적용 가능하며 희망일배송 설정은 일부 판매자에 한하여 지정 조건에서만 설정이 가능합니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 희망일배송 그룹 1개를 표현합니다. 이 구조체는 아래 API에서 사용합니다. 희망일배송 그룹 다건 조회, 희망일배송 그룹 등록, 희망일배송 그룹 단건 조회, 희망일배송 그룹 수정 이 구조체는 상품의 배송 정보 중 희망일배송 그룹 정보 데이터를 표현하는 구조체입니다. 희망일배송 그룹 정보는 희망일배송 설정 상품에만 적용 가능하며 희망일배송 설정은 일부 판매자에 한하여 지정 조건에서만 설정이 가능합니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는  |
+| 희망일배송 그룹 정보 구조체 (object) REQUIRED | hopeDeliveryGroup | 상품 배송 정보 | 2 | ✅ 핵심 UDS | hopeDeliveryGroup 희망일배송 그룹 정보 구조체 (object) REQUIRED 희망일배송 그룹 이 구조체는 상품의 배송 정보 중 희망일배송 그룹 정보 데이터를 표현하는 구조체입니다. 희망일배송 그룹 정보는 희망일배송 설정 상품에만 적용 가능하며 희망일배송 설정은 일부 판매자에 한하여 지정 조건에서만 설정이 가능합니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체의 객체 1개는 희망일배송 그룹 1개를 표현합니다. 이 구조체는 아래 API에서 사용합니다. 희망일배송 그룹 다건 조회, 희망일배송 그룹 등록, 희망일배송 그룹 단건 조회, 희망일배송 그룹 수정 이 구조체는 상품의 배송 정보 중 희망일배송 그룹 정보 데이터를 표현하는 구조체입니다. 희망일배송 그룹 정보는 희망일배송 설정 상품에만 적용 가능하며 희망일배송 설정은 일부 판매자에 한하여 지정 조건에서만 설정이 가능합니다. 이 구조체는 API 호출에 대한 요청/응답 모두에서 사용합니다. 구조체 |
+| 희망일배송 그룹 ID | hopeDeliveryGroupId | 상품 배송 정보 | 1 | ✅ 핵심 UDS | hopeDeliveryGroupId integer<int64> REQUIRED 희망일배송 그룹 ID |
+| 희망일배송 그룹 ID (integer | id | 상품 배송 정보 | 5 | ✅ 핵심 UDS | id 희망일배송 그룹 ID (integer<int64>) |
+| accountNo | accountNo | 고객 데이터 | 1 | ✅ 핵심 UDS | accountNo integer<int64> REQUIRED |
+| channelNo | channelNo | 고객 데이터, 마케팅 분석, 쇼핑행동 분석, 실시간 분석, 판매 분석 | 21 | ✅ 핵심 UDS | channelNo string REQUIRED 조회 채널 번호 |
+| debugMessage | debugMessage | 고객 데이터 | 3 | ✅ 핵심 UDS | debugMessagestringrequired |
+| deliveryBundleGroupId | deliveryBundleGroupId | 상품 배송 정보 | 1 | ✅ 핵심 UDS | deliveryBundleGroupId integer<int64> REQUIRED |
+| detailAttribute | detailAttribute | 상품 | 7 | ✅ 핵심 UDS | detailAttribute 조회용 원상품 상세 속성 (object) REQUIRED |
+| early20s | early20s | 고객 데이터 | 2 | ✅ 핵심 UDS | early20s early20sPurchaseSchema.data-insight (object) |
+| early30s | early30s | 고객 데이터 | 2 | ✅ 핵심 UDS | early30s early30sPurchaseSchema.data-insight (object) |
+| early40s | early40s | 고객 데이터 | 2 | ✅ 핵심 UDS | early40s early40sPurchaseSchema.data-insight (object) |
+| early50s | early50s | 고객 데이터 | 2 | ✅ 핵심 UDS | early50s early50sPurchaseSchema.data-insight (object) |
+| empty | empty | 고객 문의 조회 | 1 | ✅ 핵심 UDS | empty boolean |
+| endDate | endDate | 고객 데이터, 마케팅 분석, 쇼핑행동 분석, 판매 분석 | 22 | ✅ 핵심 UDS | endDate string<yyyy-MM-dd> REQUIRED 조회 종료일. 최소 1일 전. Example: 2023-01-01 |
+| fields | fields | 상품 공지사항, 상품 문의 | 2 | ✅ 핵심 UDS | fields PagedResultSortOrder.contents (object)[] |
+| first | first | 고객 문의 조회, 상품 검수, 상품 공지사항, 상품 문의 | 4 | ✅ 핵심 UDS | first boolean |
+| groupProductNo | groupProductNo | 그룹상품 | 2 | ✅ 핵심 UDS | groupProductNo integer<int64> REQUIRED |
+| hopeDeliveryGroupId | hopeDeliveryGroupId | 상품 배송 정보 | 1 | ✅ 핵심 UDS | hopeDeliveryGroupId integer<int64> REQUIRED |
+| id | id | 상품 배송 정보, 솔루션 사용 API | 3 | ✅ 핵심 UDS | id ID (integer<int64>) |
+| invalidInputs | invalidInputs | 고객 데이터, 상품 공지사항, 상품 문의 | 11 | ✅ 핵심 UDS | invalidInputs GWInvalidDetail.data-insight (object)[]requiredArray [namestringrequiredmessagestringrequiredtypestringrequired] |
+| knowledgeShoppingProductRegistration | knowledgeShoppingProductRegistration | 상품 목록 | 1 | ✅ 핵심 UDS | knowledgeShoppingProductRegistration 네이버쇼핑 등록 (boolean) |
+| last | last | 고객 문의 조회, 상품 검수, 상품 공지사항, 상품 문의 | 4 | ✅ 핵심 UDS | last boolean |
+| lastChangedTo | lastChangedTo | 주문 조회 | 1 | ✅ 핵심 UDS | lastChangedTo string<date-time> 조회 종료 일시(inclusive). 생략 시 lastChangedFrom으로부터 24시간 후로 자동 지정됩니다. |
+| late20s | late20s | 고객 데이터 | 2 | ✅ 핵심 UDS | late20s late20sPurchaseSchema.data-insight (object) |
+| late30s | late30s | 고객 데이터 | 2 | ✅ 핵심 UDS | late30s late30sPurchaseSchema.data-insight (object) |
+| late40s | late40s | 고객 데이터 | 2 | ✅ 핵심 UDS | late40s late40sPurchaseSchema.data-insight (object) |
+| late50s | late50s | 고객 데이터 | 2 | ✅ 핵심 UDS | late50s late50sPurchaseSchema.data-insight (object) |
+| modelOptionYn | modelOptionYn | 판매 옵션 | 1 | ✅ 핵심 UDS | modelOptionYn 네이버 가격비교 서비스 노출 기준 (boolean) REQUIRED 네이버 가격비교 서비스 노출 기준이 되는 판매 옵션 여부를 표시합니다. 예를 들어, optionName이 '용량'인 판매 옵션의 modelOptionYn 값이 True이면, 그룹 내 상품이 용량 값을 기준으로 묶여 가격비교 서비스에 노출됩니다. 이 값이 True인 판매 옵션이 존재하지 않으면, 묶음 없이 그룹상품 단위 그대로 노출됩니다. |
+| naverShoppingRegistration | naverShoppingRegistration | 상품 | 8 | ✅ 핵심 UDS | naverShoppingRegistration 네이버 쇼핑 등록 여부 (boolean) REQUIRED 네이버 쇼핑 광고주가 아닌 경우에는 false로 저장됩니다. |
+| number | number | 고객 문의 조회 | 1 | ✅ 핵심 UDS | number integer<int32> |
+| numberOfElements | numberOfElements | 고객 문의 조회 | 1 | ✅ 핵심 UDS | numberOfElements integer<int32> |
+| object | object | 판매자, 판매자 오늘출발 설정, 판매자 주소록 | 6 | ✅ 핵심 UDS | objectobject |
+| offset | offset | 고객 문의 조회 | 1 | ✅ 핵심 UDS | offset integer<int64> |
+| pageable | pageable | 고객 문의 조회 | 1 | ✅ 핵심 UDS | pageable PageableObject.pay-user (object) pageNumber integer<int32> pageSize integer<int32> sort SortObject.pay-user (object) paged boolean unpaged boolean offset integer<int64> |
+| paged | paged | 고객 문의 조회 | 1 | ✅ 핵심 UDS | paged boolean |
+| pageNumber | pageNumber | 고객 문의 조회 | 1 | ✅ 핵심 UDS | pageNumber integer<int32> |
+| pagination | pagination | 부가세 내역, 정산 내역 | 5 | ✅ 핵심 UDS | pagination Pagination.pay-settle (object) REQUIRED page integer<int32> size integer<int32> totalPages integer<int32> totalElements integer<int64> |
+| periodType | periodType | 정산 내역 | 2 | ✅ 핵심 UDS | periodType string 조회 기간 기준 SETTLE_CASEBYCASE_SETTLE_SCHEDULE_DATE(정산 예정일) SETTLE_CASEBYCASE_SETTLE_BASIS_DATE(정산 기준일) SETTLE_CASEBYCASE_SETTLE_COMPLETE_DATE(정산 완료일) SETTLE_CASEBYCASE_PAY_DATE(결제일) SETTLE_CASEBYCASE_TAXRETURN_BASIS_DATE(세금 신고 기준일) Possible values: [SETTLE_CASEBYCASE_SETTLE_SCHEDULE_DATE, SETTLE_CASEBYCASE_SETTLE_BASIS_DATE, SETTLE_CASEBYCASE_SETTLE_COMPLETE_DATE, SETTLE_CASEBYCASE_PAY_DATE, SETTLE_CASEBYCASE_TAXRETURN_BASIS_DATE] |
+| purchaseCustomerCount | purchaseCustomerCount | 고객 데이터 | 1 | ✅ 핵심 UDS | purchaseCustomerCount integer<int64> REQUIRED |
+| purchaseCustomerRatio | purchaseCustomerRatio | 고객 데이터 | 1 | ✅ 핵심 UDS | purchaseCustomerRatio number<double> REQUIRED |
+| reason | reason | 판매자 오늘출발 설정 | 2 | ✅ 핵심 UDS | reason string REQUIRED 설정 사유 |
+| repurchaseCustomerCount | repurchaseCustomerCount | 고객 데이터 | 1 | ✅ 핵심 UDS | repurchaseCustomerCount integer<int64> REQUIRED |
+| repurchaseCustomerRatio | repurchaseCustomerRatio | 고객 데이터 | 1 | ✅ 핵심 UDS | repurchaseCustomerRatio number<double> REQUIRED |
+| requestId | requestId | 그룹상품 | 1 | ✅ 핵심 UDS | requestId string 조회할 요청 ID requestId를 입력한 경우, 요청 type과 무관하게 requestId의 작업 결과가 조회됩니다.(1일간 보관) requestId를 입력하지 않은 경우, 가장 최근의 작업 결과가 조회됩니다.(5분간 보관) |
+| searchDate | searchDate | 정산 내역 | 2 | ✅ 핵심 UDS | searchDate string<date> 조회일 Example: 2022-01-01 |
+| senior | senior | 고객 데이터 | 2 | ✅ 핵심 UDS | senior seniorPurchaseSchema.data-insight (object) |
+| size | size | 고객 문의 조회, 부가세 내역, 상품 검수, 상품 공지사항, 상품 문의, 정산 내역 | 9 | ✅ 핵심 UDS | size integer<int32> |
+| sort | sort | 고객 문의 조회, 상품 공지사항, 상품 문의, 판매 분석 | 4 | ✅ 핵심 UDS | sort string sort Possible values: [numPurchase, payAmount, productQuantity, refundNumPurchase, refundPayAmount, refundProductQuantity] |
+| sorted | sorted | 고객 문의 조회, 상품 공지사항, 상품 문의 | 3 | ✅ 핵심 UDS | sorted boolean |
+| startDate | startDate | 고객 데이터, 마케팅 분석, 쇼핑행동 분석, 판매 분석 | 22 | ✅ 핵심 UDS | startDate string<yyyy-MM-dd> REQUIRED 조회 시작일. 최대 18개월 전. Example: 2023-01-01 |
+| string | string | 고객 문의 조회 | 1 | ✅ 핵심 UDS | stringstring |
+| teenage | teenage | 고객 데이터 | 2 | ✅ 핵심 UDS | teenage teenagePurchaseSchema.data-insight (object) |
+| token | token | 솔루션 사용 API, 판매자 인증 JWE 해석 | 2 | ✅ 핵심 UDS | token string REQUIRED |
+| tooltip | tooltip | 판매 옵션 | 1 | ✅ 핵심 UDS | tooltip 입력 가이드 문구 정보 (string) 판매 옵션별 툴팁, 도움말 등에 표시되는 문구입니다. |
+| totalElements | totalElements | 고객 문의 조회, 부가세 내역, 상품 검수, 상품 공지사항, 상품 문의, 정산 내역 | 9 | ✅ 핵심 UDS | totalElements integer<int64> |
+| totalPages | totalPages | 고객 문의 조회, 부가세 내역, 상품 검수, 상품 공지사항, 상품 문의, 정산 내역 | 9 | ✅ 핵심 UDS | totalPages integer<int32> |
+| transactionType | transactionType | 비즈월렛 결제 내역 조회 | 1 | ✅ 핵심 UDS | transactionType string Possible values: [FREE_TRIAL, PAYMENT, UPGRADE, DOWNGRADE, REFUND] |
+| type | type | 고객 데이터, 그룹상품, 브랜드, 사이즈, 상품, 상품 검수, 상품 공지사항, 상품 공지사항 적용, 상품 목록, 상품 문의, 상품 배송 정보, 상품 속성, 상품 원산지 정보, 상품 이미지, 상품 일괄 수정, 상품정보제공고시, 솔루션 사용 API, 옵션, 제조사, 카탈로그, 카테고리, 태그, 판매 옵션, 패션모델 | 71 | ✅ 핵심 UDS | type string Possible values: [UNSUBSCRIPTION, DOWNGRADE] |
+| unpaged | unpaged | 고객 문의 조회 | 1 | ✅ 핵심 UDS | unpaged boolean |
+| unsorted | unsorted | 고객 문의 조회 | 1 | ✅ 핵심 UDS | unsorted boolean |
+| 가로 길이 (cm) | pieceWidth | SKU | 1 | 🟡 후보 | pieceWidth number NULLABLE SKU 가로 길이 (cm). |
+| 검색 기간 시작일 | fromDate | SKU | 1 | 🟡 후보 | fromDate string NULLABLE 검색 기간 시작일. 'yyyy-mm-dd' 형식으로 입력. |
+| 검색 기간 유형 | periodType | SKU | 1 | 🟡 후보 | periodType string NULLABLE 검색 기간 유형. 조회하고자 하는 날짜 기준 SKU_REG_DAY 선택 시, SKU 등록일을 입력합니다. SKU_MOD_DAY 선택 시, SKU 수정일을 입력합니다. |
+| 검색 기간 종료일 | toDate | SKU | 1 | 🟡 후보 | toDate string NULLABLE 검색 기간 종료일. 'yyyy-mm-dd' 형식으로 입력. |
+| 검색 채널 키워드 항목 Array | rows | 마케팅 분석 | 1 | 🟡 후보 | rows SearchChannelKeywordReportRow (object)[] 검색 채널 키워드 항목 Array [ numInteractions number<double> 유입 수 numPurchases number<double> 결제 수 payAmount number<double> 결제 금액 refKeyword string 키워드 ] |
+| 검색 채널 항목 Array | rows | 마케팅 분석 | 1 | 🟡 후보 | rows SearchChannelReportRow (object)[] 검색 채널 항목 Array [ channelGroup string 채널 그룹 channelName string 채널명 deviceCategory string 채널 속성 numInteractions number<double> 유입 수 numPurchases number<double> 결제 수 numUsers number<double> 유입 고객 수 payAmount number<double> 결제 금액 pv number<double> 페이지 수 refKeyword string 키워드 ] |
+| 검색 키워드 타입 | searchKeywordType | SKU | 1 | 🟡 후보 | searchKeywordType string NULLABLE 검색 키워드 타입. 조회하고자 하는 검색 키워드 NS_ID 선택 시, SKU ID를 입력합니다. BARCODE 선택 시, 바코드를 입력합니다. |
+| 높이 (cm) | pieceHeight | SKU | 1 | 🟡 후보 | pieceHeight number NULLABLE SKU 높이 (cm). |
+| 대카테고리 | largeCategory | 판매 분석 | 1 | 🟡 후보 | largeCategory string 대카테고리 |
+| 로트번호 관리 여부 | lotNoManagement | SKU | 2 | 🟡 후보 | lotNoManagement boolean NULLABLE SKU 로트번호 관리 여부. |
+| 리프 카테고리 여부 (boolean) REQUIRED | last | 카테고리 | 3 | 🟡 후보 | last 리프 카테고리 여부 (boolean) REQUIRED |
+| 리프 카테고리만 | last | 카테고리 | 1 | 🟡 후보 | last boolean 리프 카테고리만 조회 여부 Default value: false |
+| 목록 | nsIds | SKU | 1 | 🟡 후보 | nsIds string[] NULLABLE SKU ID 목록. 조회하고자 하는 SKU의 관리 코드. 재고 구분을 위해 네이버에서 채번한 고유 SKU 값입니다. 영문/숫자 조합, 영문 대/소문자 구분, SKU ID 당 최대 20자 구성. 복수 입력 가능 |
+| 무게 (kg) | pieceWeight | SKU | 1 | 🟡 후보 | pieceWeight number NULLABLE SKU 무게 (kg). |
+| 물류사 | allianceId | SKU | 1 | 🟡 후보 | allianceId string REQUIRED 물류사. SKU정보가 연동된 물류사. Example: CJ |
+| 바코드 | nsBarcode, nsBarcodes | SKU | 2 | 🟡 후보 | nsBarcodes string[] NULLABLE SKU 바코드. 조회하고자 하는 SKU의 바코드번호. SKU에 부착된 바코드 값입니다. 영문/숫자/공백/하이픈(-)/언더스코어(_)/온점(.) 조합 가능, 영문 대/소문자 구분, 최대 100자 구성. 복수 입력 가능 |
+| 병행수입 면제 대상 여부 (boolean) | kcParallelImportExemptionObject | 카테고리 | 1 | 🟡 후보 | kcParallelImportExemptionObject KC 병행수입 면제 대상 여부 (boolean) |
+| 보관온도 | storageTemperature | SKU | 1 | 🟡 후보 | storageTemperature string NULLABLE SKU 보관온도. Possible values: [DRY, WET, FROZEN] |
+| 브랜드 코드 (integer | brandCode | Other, 카탈로그 | 3 | 🟡 후보 | brandCode 브랜드 코드 (integer<int64>) 브랜드 ID |
+| 브랜드나 제조사 등의 ID 값 | id | 브랜드, 제조사 | 2 | 🟡 후보 | id ID (integer<int64>) 브랜드나 제조사 등의 ID 값 |
+| 비필수 여부(인증번호 없음) (boolean) | nonEssential | 카테고리 | 1 | 🟡 후보 | nonEssential 비필수 여부(인증번호 없음) (boolean) |
+| 세로 길이 (cm) | pieceLength | SKU | 1 | 🟡 후보 | pieceLength number NULLABLE SKU 세로 길이 (cm). |
+| 세카테고리 | detailCategory | 판매 분석 | 1 | 🟡 후보 | detailCategory string 세카테고리 |
+| 세카테고리 largeCategory string 대카테고리 | productUnitReport | 판매 분석 | 1 | 🟡 후보 | productUnitReport ProductUnitRow (object)[] Array [ detailCategory string 세카테고리 largeCategory string 대카테고리 middleCategory string 중카테고리 numPurchases number<double> 결제 수 orderCouponDiscountAmount number<double> 주문 쿠폰 payAmount number<double> 결제 금액 payAmountOnMobile number<double> 모바일 결제 금액 productCouponDiscountAmount number<double> 상품쿠폰 productId string 상품 ID productName string 상품명 productQuantity number<double> 결제 상품 수량 productQuantityOnMobile number<double> 모바일 결제 상품 수량 refundNumPurchases number |
+| 소비기한 관리 여부 | shelfLifeManagement | SKU | 1 | 🟡 후보 | shelfLifeManagement boolean 소비기한 관리 여부 |
+| 소비기한 관리여부 | shelfLifeManagement | SKU | 1 | 🟡 후보 | shelfLifeManagement boolean NULLABLE SKU 소비기한 관리여부. |
+| 소카테고리 | smallCategory | 판매 분석 | 1 | 🟡 후보 | smallCategory string 소카테고리 |
+| 연동 물류사 목록 Array | linkedAlliances | SKU | 1 | 🟡 후보 | linkedAlliances SkuLinkedAlliance.nfa (object)[] 연동 물류사 목록 Array [ allianceId string REQUIRED 물류사. SKU정보가 연동된 물류사. Example: CJ allianceLinkedYmdt string<date-time> REQUIRED 연동일시. 물류사 SKU정보 연동일시 KST(UTC+09:00)로 응답 Example: 2024-01-01T11:20:50.001+09:00 ] |
+| 예외 카테고리 목록 (string) | exceptionalCategories | 카테고리 | 1 | 🟡 후보 | exceptionalCategories 예외 카테고리 목록 (string)[] E_COUPON(E쿠폰), ADULT(성인), MARINE_PRODUCTS(수산물), REVIEW_UNEXPOSE(구매평 미노출), CHILD_CERTIFICATION(어린이제품 인증 대상), ORIGINAREA_PRODUCTS(원산지 입력 대상), GREEN_PRODUCTS(친환경 인증 대상), KC_CERTIFICATION(KC 인증 대상), SAFE_CRITERION(안전기준준수대상), AFFILIATE(어필리에이트), TRADITIONAL_ALCOHOL(전통주), OPTION_PRICE(옵션가 제한 예외 카테고리), BOOK(도서_일반), BOOK_EBOOK(도서_E북), BOOK_AUDIO(도서_오디오북), BOOK_MAGAZINE(도서_잡지), BOOK_USED(도서_중고), BOOK_OVERSEAS(도서_해외), BOOK_FREE(도서_정가제free), PERFORMANCE(문화비_소득공제), |
+| 웹사이트 채널 항목 Array | rows | 마케팅 분석 | 2 | 🟡 후보 | rows WebsiteChannelReportRow (object)[] 웹사이트 채널 항목 Array [ deviceCategory string 채널 속성 numInteractions number<double> 유입 수 numPurchases number<double> 결제 수 numUsers number<double> 유입 고객 수 payAmount number<double> 결제 금액 pv number<double> 페이지 수 refDomain string 채널 상세 ] |
+| 유형 | nsType | SKU | 1 | 🟡 후보 | nsType string NULLABLE SKU 유형. Possible values: [MAIN, FREEBIE] |
+| 인증 상호 사용 여부 (boolean) | companyName | 카테고리 | 1 | 🟡 후보 | companyName 인증 상호 사용 여부 (boolean) |
+| 인증 일자 사용 여부 (boolean) | certificationDate | 카테고리 | 1 | 🟡 후보 | certificationDate 인증 일자 사용 여부 (boolean) |
+| 인증 정보 (object) | certificationInfos | 카테고리 | 1 | 🟡 후보 | certificationInfos 인증 정보 (object)[] Array [ id 인증 카테고리 ID (integer<int64>) REQUIRED name 인증명 (string) REQUIRED kindTypes 인증 종류 목록 (string)[] REQUIRED KC_CERTIFICATION(KC 인증 대상), CHILD_CERTIFICATION(어린이제품 인증 대상), GREEN_PRODUCTS(친환경 인증 대상), PARALLEL_IMPORT(병행수입), OVERSEAS(구매대행), ETC(기타 인증 유형) Possible values: [KC_CERTIFICATION, CHILD_CERTIFICATION, GREEN_PRODUCTS, PARALLEL_IMPORT, OVERSEAS, ETC] green 친환경농산물 여부 (boolean) REQUIRED certificationMarkType 인증마크 타입 (string) Possible values: [KC, ORGANIC |
+| 인증 종류 목록 (string) | kindTypes | 카테고리 | 1 | 🟡 후보 | kindTypes 인증 종류 목록 (string)[] REQUIRED KC_CERTIFICATION(KC 인증 대상), CHILD_CERTIFICATION(어린이제품 인증 대상), GREEN_PRODUCTS(친환경 인증 대상), PARALLEL_IMPORT(병행수입), OVERSEAS(구매대행), ETC(기타 인증 유형) Possible values: [KC_CERTIFICATION, CHILD_CERTIFICATION, GREEN_PRODUCTS, PARALLEL_IMPORT, OVERSEAS, ETC] |
+| 인증 카테고리 ID (integer | id | 카테고리 | 1 | 🟡 후보 | id 인증 카테고리 ID (integer<int64>) REQUIRED |
+| 인증마크 타입 (string) Possible values | certificationMarkType | 카테고리 | 1 | 🟡 후보 | certificationMarkType 인증마크 타입 (string) Possible values: [KC, ORGANIC_AGRICULTURAL_PROD, ORGANIC_ANIMAL_PROD, NON_PESTICIDE, NON_ANTIBIOTIC, LOW_PESTICIDE, GAP, AGRICULTURAL_TRACEABILITY, PROCESSED_FOOD_KS, TRADITIONAL_FOOD, ORGANIC_PROCESSED_FOOD, QUALITY_SEAFOOD, ECO_SEAFOOD, HACCP, GMP, SAFETY, SIX_INDUSTRY, ANIMAL_WELFARE, FOOD_MASTER, ECO_PROCESSED_FOOD, ECO_ORGANIC_ANIMAL_PROD, TRADITIONAL_SEAFOOD, SOCIAL_ENTERPRISE, VILLAGE_ENTERPRISE, SPECIAL_SEAFOOD, SEA_ORGANIC_PROCESSED_FOOD, SEA_ORGAN |
+| 일별 채널별 유입 수 항목 목록 Array | rows | 마케팅 분석 | 1 | 🟡 후보 | rows AllChannelDailyReportRow (object)[] 일별 채널별 유입 수 항목 목록 Array [ channelName string 채널명 date string 날짜 numInteractions number<double> 유입 수 payAmount number<double> 결제 금액 ] |
+| 재고 구분을 위해 | nsId | SKU | 1 | 🟡 후보 | nsId string REQUIRED SKU ID. 재고 구분을 위해 네이버에서 채번한 고유 SKU 값입니다. 영문/숫자 조합, 영문 대/소문자 구분, SKU ID 당 최대 20자 구성 |
+| 재고 보관 온도 코드 설명 DRY 상온 WET 냉장 FROZ | storageTemperature | SKU | 1 | 🟡 후보 | storageTemperature string 재고 보관 온도 코드 설명 DRY 상온 WET 냉장 FROZEN 냉동 Possible values: [DRY, WET, FROZEN] |
+| 전체 채널 항목 목록 Array | rows | 마케팅 분석 | 1 | 🟡 후보 | rows AllChannelReportRow (object)[] 전체 채널 항목 목록 Array [ channelDetail string 채널 상세 channelGroup string 채널 그룹 channelName string 채널명 cost number<double> 광고 비용 deviceCategory string 채널 속성 numInteractions number<double> 유입 수 numPurchases number<double> 결제 수 numUsers number<double> 유입 고객 수 payAmount number<double> 결제 금액 pv number<double> 페이지 수 ] |
+| 전체 카테고리명 (string) REQUIRED | wholeCategoryName | 카테고리 | 3 | 🟡 후보 | wholeCategoryName 전체 카테고리명 (string) REQUIRED |
+| 전체 SKU 수 Possible values | totalElements | SKU | 1 | 🟡 후보 | totalElements integer<int64> REQUIRED 전체 SKU 수 Possible values: >= 0 |
+| 정렬 기준 | orderType | SKU | 1 | 🟡 후보 | orderType string NULLABLE 정렬 기준. MODIFICATION(SKU 수정일순), REGISTRATION(SKU 등록일순). |
+| 정렬 기준 코드 설명 MODIFICATION SKU 수정 일 | sort | SKU | 1 | 🟡 후보 | sort string REQUIRED 정렬 기준 코드 설명 MODIFICATION SKU 수정 일시 REGISTRATION SKU 등록 일시 Example: MODIFICATION |
+| 제조사 코드 (integer | manufacturerCode | Other, 카탈로그 | 3 | 🟡 후보 | manufacturerCode 제조사 코드 (integer<int64>) 제조사 ID |
+| 중카테고리 | middleCategory | 판매 분석 | 1 | 🟡 후보 | middleCategory string 중카테고리 |
+| 채널 그룹 | channelGroup | 마케팅 분석, 판매 분석 | 5 | 🟡 후보 | channelGroup string 채널 그룹 |
+| 채널 상세 | channelDetail, refDomain | 마케팅 분석, 판매 분석 | 4 | 🟡 후보 | channelDetail string 채널 상세 |
+| 채널 속성 | deviceCategory | 마케팅 분석 | 5 | 🟡 후보 | deviceCategory string 채널 속성 |
+| 채널명 | channelName | 마케팅 분석, 판매 분석 | 7 | 🟡 후보 | channelName string 채널명 |
+| 채널별 유입 수 Array | numInteractionsByChannel | 실시간 분석 | 1 | 🟡 후보 | numInteractionsByChannel DimensionAndMetric (object)[] 채널별 유입 수 Array [ dimension string 집계 필드 metric number<double> 집계 수치 rate number<double> 비율 정보. 비율 값을 전달하는 경우 해당 필드 전달 ] |
+| 친환경농산물 여부 (boolean) REQUIRED | green | 카테고리 | 1 | 🟡 후보 | green 친환경농산물 여부 (boolean) REQUIRED |
+| 카테고리 ID (string) REQUIRED | id | 카테고리 | 3 | 🟡 후보 | id 카테고리 ID (string) REQUIRED |
+| 커스텀 채널 항목 Array | rows | 마케팅 분석 | 2 | 🟡 후보 | rows CustomChannelDetailReportRow (object)[] 커스텀 채널 항목 Array [ deviceCategory string 채널 속성 ntDetail string nt_detail ntKeyword string nt_keyword ntMedium string nt_medium ntSource string nt_source numInteractions number<double> 유입 수 numPurchases number<double> 결제 수 numUsers number<double> 유입 고객 수 payAmount number<double> 결제 금액 pv number<double> 페이지 수 ] |
+| nsId | nsId | SKU | 3 | 🟡 후보 | nsId string REQUIRED SKU ID. 조회하고자 하는 SKU의 관리 코드. 재고 구분을 위해 네이버에서 채번한 고유 SKU 값입니다. 영문/숫자 조합, 영문 대/소문자 구분, SKU ID 당 최대 20자 구성. Possible values: non-empty and <= 20 characters |
+| nsName | nsName | SKU | 1 | 🟡 후보 | nsName string SKU 명 |
+| 강제 업그레이드 여부 | forceUpgrade | 솔루션 사용 API | 2 | ⚪ 선택 | forceUpgrade boolean 강제 업그레이드 여부 Example: true |
+| 검색할 카탈로그 ID | id | 카탈로그 | 1 | ⚪ 선택 | id integer<int64> REQUIRED 검색할 카탈로그 ID |
+| 검색할 키워드 | keyword | 태그 | 1 | ⚪ 선택 | keyword string REQUIRED 검색할 키워드 |
+| 계정 매핑 ID (string) 솔루션 개발사에서 자체 관리 | accountMappingId | 솔루션 사용 API | 2 | ⚪ 선택 | accountMappingId 계정 매핑 ID (string) 솔루션 개발사에서 자체 관리하는 계정 매핑 ID |
+| 계정 인증 여부 | accountAuthentication | 솔루션 사용 API | 2 | ⚪ 선택 | accountAuthentication boolean 계정 인증 여부 Example: true |
+| 계정 인증일 | accountAuthenticatedDate | 솔루션 사용 API | 2 | ⚪ 선택 | accountAuthenticatedDate string<date-time> 계정 인증일 Example: 2023-08-18T00:00:00.000+09:00 |
+| 계정 UID (string) 계정 UID | accountUid | 솔루션 사용 API | 3 | ⚪ 선택 | accountUid 계정 UID (string) 계정 UID |
+| 광고 비용 | cost | 마케팅 분석 | 1 | ⚪ 선택 | cost number<double> 광고 비용 |
+| 날짜 | date | 마케팅 분석, 판매 분석 | 4 | ⚪ 선택 | date string 날짜 |
+| 날짜 deliveryCompletedCount number | deliveryReport | 판매 분석 | 1 | ⚪ 선택 | deliveryReport DeliveryReportRow (object)[] Array [ date string 날짜 deliveryCompletedCount number<double> 배송 완료 건수 deliveryCompletedDueSuccessCount number<double> 배송 완료일 준수 건수 deliveryCompletedWithin48HoursCount number<double> 배송 기간 48시간 내 건수 deliveryType string 배송 유형 dispatchedCount number<double> 발송 건수 dispatchedDueSuccessCount number<double> 발송일 준수 건수 numPurchases number<double> 결제 건수 obligationDeliveryCompletedCount number<double> 의무 배송 완료 건수 payAmount number<double> 결제 금액 totalDeliveryTime n |
+| 비율 정보 | rate | 실시간 분석 | 1 | ⚪ 선택 | rate number<double> 비율 정보. 비율 값을 전달하는 경우 해당 필드 전달 |
+| 사이즈 값 타입 (object) | sizeValueTypes | 사이즈 | 2 | ⚪ 선택 | sizeValueTypes 사이즈 값 타입 (object)[] REQUIRED Array [ id 사이즈 값 타입 번호 (integer<int64>) REQUIRED name 사이즈 값 타입 이름 (string) REQUIRED exposureOrder 순서 (integer<int32>) REQUIRED ] |
+| 사이즈 값 타입 번호 (integer | id | 사이즈 | 2 | ⚪ 선택 | id 사이즈 값 타입 번호 (integer<int64>) REQUIRED |
+| 사이즈 타입 번호 | sizeTypeId | 사이즈 | 1 | ⚪ 선택 | sizeTypeId integer<int64> REQUIRED 사이즈 타입 번호 |
+| 사이즈 타입 번호 (integer | id | 사이즈 | 2 | ⚪ 선택 | id 사이즈 타입 번호 (integer<int64>) REQUIRED |
+| 솔루션 개발사에서 자체 관리하는 계정 매핑 ID | accountMappingId | 솔루션 사용 API | 3 | ⚪ 선택 | accountMappingId string 솔루션 개발사에서 자체 관리하는 계정 매핑 ID |
+| 솔루션 신청일(생성일) | requestDate | 솔루션 사용 API | 2 | ⚪ 선택 | requestDate string<date-time> 솔루션 신청일(생성일) Example: 2023-08-18T00:00:00.000+09:00 |
+| 순서 (integer | exposureOrder | 사이즈 | 2 | ⚪ 선택 | exposureOrder 순서 (integer<int32>) REQUIRED |
+| 시간 | hour | 판매 분석 | 1 | ⚪ 선택 | hour string 시간 |
+| 시간대 | hour | 마케팅 분석 | 2 | ⚪ 선택 | hour string 시간대 |
+| 시간대별 항목 Array | rows | 마케팅 분석 | 2 | ⚪ 선택 | rows HourlyChannelRow (object)[] 시간대별 항목 Array [ channelDetail string 채널 상세 channelGroup string 채널 그룹 channelName string 채널명 dayOfWeek string 요일 deviceCategory string 채널 속성 hour string 시간대 numInteractions number<double> 유입 수 numPurchases number<double> 결제 수 numUsers number<double> 유입 고객 수 payAmount number<double> 결제 금액 pv number<double> 페이지 수 ] |
+| 시간별 유입 수 Array | numInteractionsByHour | 실시간 분석 | 1 | ⚪ 선택 | numInteractionsByHour DimensionAndMetric (object)[] 시간별 유입 수 Array [ dimension string 집계 필드 metric number<double> 집계 수치 rate number<double> 비율 정보. 비율 값을 전달하는 경우 해당 필드 전달 ] |
+| 시작일(전월 말일까지 | startDate | 부가세 내역 | 2 | ⚪ 선택 | startDate string<date> REQUIRED 시작일(전월 말일까지 조회 가능) Example: 2022-01-01 |
+| 시작일(조건부 사용 타입의 경우 사용 요청일과 사용 시작일이 | startDate | 솔루션 사용 API | 2 | ⚪ 선택 | startDate string<date-time> 시작일(조건부 사용 타입의 경우 사용 요청일과 사용 시작일이 다름) Example: 2023-08-18T00:00:00.000+09:00 |
+| 예약 사항 (object) | reserve | 솔루션 사용 API | 1 | ⚪ 선택 | reserve 예약 사항 (object) |
+| 예약 사항 (object) 예약 사항 type string | reserve | 솔루션 사용 API | 1 | ⚪ 선택 | reserve 예약 사항 (object) 예약 사항 type string Possible values: [UNSUBSCRIPTION, DOWNGRADE] plan PlanProjection.merchant (object) |
+| 요일 | dayOfWeek | 마케팅 분석 | 1 | ⚪ 선택 | dayOfWeek string 요일 |
+| 유입 수 | numInteraction, numInteractions | 마케팅 분석, 실시간 분석 | 11 | ⚪ 선택 | numInteractions number<double> 유입 수 |
+| 제한 태그 여부 (boolean) 제한 태그인 경우 값이 t | restricted | 태그 | 1 | ⚪ 선택 | restricted 제한 태그 여부 (boolean) 제한 태그인 경우 값이 true입니다. |
+| 종료일(전월 말일까지 | endDate | 부가세 내역 | 2 | ⚪ 선택 | endDate string<date> REQUIRED 종료일(전월 말일까지 조회 가능) Example: 2022-02-01 |
+| 집계 수치 | metric | 실시간 분석 | 1 | ⚪ 선택 | metric number<double> 집계 수치 |
+| 집계 필드 | dimension | 실시간 분석 | 1 | ⚪ 선택 | dimension string 집계 필드 |
+| 체류 시간(ms) | timeOnPage | 쇼핑행동 분석 | 1 | ⚪ 선택 | timeOnPage number<double> 체류 시간(ms) |
+| 최근 솔루션 사용 ID | subscriptionId | 솔루션 사용 API | 2 | ⚪ 선택 | subscriptionId string 최근 솔루션 사용 ID |
+| 측정 방법 (string) REQUIRED Possible | sizeMeasurementType | 사이즈 | 2 | ⚪ 선택 | sizeMeasurementType 측정 방법 (string) REQUIRED Possible values: [SECTION, ROUND] |
+| 치수 단위 (string) REQUIRED Possible | sizeUnitType | 사이즈 | 2 | ⚪ 선택 | sizeUnitType 치수 단위 (string) REQUIRED Possible values: [CM, INCH, MM] |
+| 키워드 | refKeyword | 마케팅 분석, 판매 분석 | 4 | ⚪ 선택 | refKeyword string 키워드 |
+| 태그 (string) | tag | 태그 | 1 | ⚪ 선택 | tag 태그 (string) |
+| 판매 분석 항목 목록 Array | rows | 판매 분석 | 1 | ⚪ 선택 | rows SalesHourlyReportRow (object)[] 판매 분석 항목 목록 Array [ date string 날짜 deliveryCost number<double> 배송비 hour string 시간 numPurchases number<double> 결제 수 numPurchasesOnMobile number<double> 모바일 결제 수 numUsers number<double> 결제자 수 payAmount number<double> 결제 금액 payAmountOnMobile number<double> 모바일 결제 금액 productQuantity number<double> 결제 상품 수량 refundNumPurchases number<double> 환불 건수 refundPayAmount number<double> 환불 금액 refundProductQuantity number<double> 환불 수량 subscriptionPayAmount number<double> 정기 |
+| 패션모델 몸무게 (integer | weight | 패션모델 | 3 | ⚪ 선택 | weight 패션모델 몸무게 (integer<int32>) |
+| 패션모델 상의 사이즈 (string) | top | 패션모델 | 3 | ⚪ 선택 | top 패션모델 상의 사이즈 (string) |
+| 패션모델 신발 사이즈 (string) | shoe | 패션모델 | 3 | ⚪ 선택 | shoe 패션모델 신발 사이즈 (string) |
+| 패션모델 키 (integer | height | 패션모델 | 3 | ⚪ 선택 | height 패션모델 키 (integer<int32>) |
+| 패션모델 하의 사이즈 (string) | bottom | 패션모델 | 3 | ⚪ 선택 | bottom 패션모델 하의 사이즈 (string) |
+| 패션모델 ID | fashionModelId | 패션모델 | 2 | ⚪ 선택 | fashionModelId integer<int64> REQUIRED 패션모델 ID |
+| 패션모델 ID (integer | id | 패션모델 | 3 | ⚪ 선택 | id 패션모델 ID (integer<int64>) |
+| 해지 요청일 | requestUnsubscriptionDate | 솔루션 사용 API | 2 | ⚪ 선택 | requestUnsubscriptionDate string<date-time> 해지 요청일 Example: 2023-08-18T00:00:00.000+09:00 |
+| 현재 회차 | round | 솔루션 사용 API | 2 | ⚪ 선택 | round integer<int32> 현재 회차 Example: 1 |
+| 현재 회차 시작일 | roundStartDate | 솔루션 사용 API | 2 | ⚪ 선택 | roundStartDate string<date-time> 현재 회차 시작일 Example: 2023-08-18T00:00:00.000+09:00 |
+| 현재 회차 종료(예상)일 | roundEndDate | 솔루션 사용 API | 2 | ⚪ 선택 | roundEndDate string<date-time> 현재 회차 종료(예상)일 Example: 2023-08-18T00:00:00.000+09:00 |
+| accountUid | accountUid | 솔루션 사용 API | 4 | ⚪ 선택 | accountUid string REQUIRED |
+| additionalInfo | additionalInfo | 솔루션 사용 API | 1 | ⚪ 선택 | additionalInfo object |
+| grade | grade | 솔루션 사용 API | 1 | ⚪ 선택 | grade string REQUIRED Possible values: [DEFAULT, FREE, START, PLUS, PRO] |
+| ntDetail | ntDetail | 마케팅 분석 | 1 | ⚪ 선택 | ntDetail string nt_detail |
+| ntKeyword | ntKeyword | 마케팅 분석 | 1 | ⚪ 선택 | ntKeyword string nt_keyword |
+| ntMedium | ntMedium | 마케팅 분석 | 2 | ⚪ 선택 | ntMedium string nt_medium |
+| ntSource | ntSource | 마케팅 분석 | 2 | ⚪ 선택 | ntSource string nt_source |
+| plan | plan | 솔루션 사용 API | 2 | ⚪ 선택 | plan PlanProjection.merchant (object) id string REQUIRED grade string REQUIRED Possible values: [DEFAULT, FREE, START, PLUS, PRO] name string REQUIRED additionalInfo object |
+| tags | tags | 태그 | 1 | ⚪ 선택 | tags string[] REQUIRED |
+| 액세스 토큰 | access_token | OAuth 2.0 | 1 | ⚪ 낮음 | access_token string 인증 토큰 |
+| 유효하지 않은 항목 목록 | invalidInputs | OAuth 2.0 | 1 | ⚪ 낮음 | invalidInputsInvalidInput.sellers-auth (object)[]유효하지 않은 항목 목록. 400(Bad Request), 403(Forbidden) 상태 코드와 함께 활용. |
+| 이 SELLER인 경우 | account_id | OAuth 2.0 | 1 | ⚪ 낮음 | account_id string type이 SELLER인 경우 입력해야 하는 판매자 ID 혹은 판매자 UID Example: ncp_2sRZTWJVbDtHPoz9OXXXX |
+| 인증 방식 | grant_type | OAuth 2.0 | 1 | ⚪ 낮음 | grant_type string REQUIRED OAuth2 인증 방식. - 고정값 client_credentials 사용 Example: client_credentials Possible values: [client_credentials] |
+| 인증 유효 기간(초) | expires_in | OAuth 2.0 | 1 | ⚪ 낮음 | expires_in integer<int64> 인증 유효 기간(초) |
+| 인증 토큰 발급 타입 | type | OAuth 2.0 | 1 | ⚪ 낮음 | type string REQUIRED 인증 토큰 발급 타입. SELF인 경우 자기 자신의 리소스, SELLER인 경우 관련 판매자의 리소스에 대한 발급. Example: SELLER Possible values: [SELLER, SELF] |
+| 인증 토큰 종류 | token_type | OAuth 2.0 | 1 | ⚪ 낮음 | token_type string 인증 토큰 종류 |
+| 전자서명 생성 방법을 따라 생성된 전자서명 | client_secret_sign | OAuth 2.0 | 1 | ⚪ 낮음 | client_secret_sign string REQUIRED 전자서명 생성 방법을 따라 생성된 전자서명 Example: JDJhJDA0JFFLTG5vdTFEMmNTSDE5UGlhMzBiY3VNbE5FSGVCaHhUS3Uuajc0VmZ3TlNiOFhxVzNhXXXX |
+| 클라이언트 ID | client_id | OAuth 2.0 | 1 | ⚪ 낮음 | client_id string REQUIRED 제공된 애플리케이션 ID Example: 7dMvteboKNHwyRremLXXXX |

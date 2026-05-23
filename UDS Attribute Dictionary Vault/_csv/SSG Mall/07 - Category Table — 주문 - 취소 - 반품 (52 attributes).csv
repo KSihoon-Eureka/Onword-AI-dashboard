@@ -1,0 +1,53 @@
+﻿UDS 속성명,SSG 필드명,API 카테고리,사용 API 문서 수,공통/반복,UDS 필요도,설명
+API 인증키,Authorization,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,Authorization: Vendor API Authentication Key | Authorization: 샘플코드에서 확인된 필드 | Authorization: 샘플코드에서 확인된 필드
+Cancellation Requested Date,clmDemndDts,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,clmDemndDts: Cancellation Requested Date
+Claim Reason Code,clmRsnCd,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,clmRsnCd: Claim Reason Code
+Claim Reason Code 351( No long,clmRsnCd,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,clmRsnCd: Claim Reason Code 351( No longer needed ) 353( Color didn't match or size didn't fit ) 310( Product or shipping box damaged ) 303( The wrong item was sent ) 301( Item defective or doesn't work ) 352( Return after reordering items )
+Claim Reason Contents,clmRsnCntt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,clmRsnCntt: Claim Reason Contents | clmRsnCntt: Claim Reason Contents
+Collecting Method 20 : Custome,rcovMthdCd,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,rcovMthdCd: Collecting Method 20 : Customer Firsthand Shipping 40 : Automatic Return Shipping 45 : Vendor Designated Shipping 70 : SSG Dedicated Shipping 90 : No Recollection required
+"Confirm Goods Received ( Y, N ",purchDcsnYn,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"purchDcsnYn: Confirm Goods Received ( Y, N )"
+Customer name,mbrNm,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,mbrNm: Customer name
+Customer request Date,orordRcpDts,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,orordRcpDts: Customer request Date
+Instructed Quantity[ Order Quantity - ( ,dircQty,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,dircQty: Instructed Quantity[ Order Quantity - ( Canceled Quantity + Return Quantity ) ]
+Last Date(yyyyMMdd),searchEndDt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,searchEndDt: Last Date(yyyyMMdd)
+Option identification to be ex,exchTgtUitemId,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,exchTgtUitemId: Option identification to be exchanged
+Order Item Status Order 110(Waiting for ,ordItemStat,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordItemStat: Order Item Status Order 110(Waiting for Deposit) 120(Order Confirmation) 130(Shipping Instructed) 140(Picking Completed) 160(Out for Delivery) 170(In Transit) Cancellation 180(Order Cancellation) Return 230(Recollect) 235(Recollect Confirmed) 246(Recollect Completed on Hold) 250(Receive the Item) 260(Refund on Hold) 270(Refund Completed) 299(Return Withdrawal) Exchange 330(Recollect) 335(Recollect Confirmed) 336(Recollect Completed on Hold) 340(Receive the Item) 350(Release Items) 360(Picking Co
+Requested Quantity,procOrdQty,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,procOrdQty: Requested Quantity
+Shipping Cost Payee Main ( 10 ,shppcstBdnMainCd,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"shppcstBdnMainCd: Shipping Cost Payee Main ( 10 : Customer, 20 : Seller )"
+Start Date(yyyyMMdd),searchStartDt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,searchStartDt: Start Date(yyyyMMdd)
+Status 10 : Counsel wait 50 : Counsel ca,ordProcDemndStatNm,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordProcDemndStatNm: Status 10 : Counsel wait 50 : Counsel cancel 90 : Counsel complete
+"Status code (Separator: ,) 10 : Counsel ",ordProcDemndStatCds,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"ordProcDemndStatCds: Status code (Separator: ,) 10 : Counsel wait 50 : Counsel cancel 90 : Counsel complete"
+Status code 10 : Counsel wait ,ordProcDemndStatCd,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordProcDemndStatCd: Status code 10 : Counsel wait 50 : Counsel cancel 90 : Counsel complete
+The Quantity to request returns,procOrdQty,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,procOrdQty: The Quantity to request returns
+"imptDivCd, which represents th",imptDivCd,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"imptDivCd: imptDivCd, which represents the person who has direct responsibility, should be aligned with the reason for submitting return requests 10 : Customer ( clmRsnCd : 351, 353, 352 ) 20 : Seller ( clmRsnCd : 310, 303, 301 )"
+결과,result,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,
+결과 데이터,resultData,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,resultData: Result Data Details ( Please refer to the sample )
+결과 메시지,resultMessage,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"resultMessage: Result Message( SUCCESS, FAIL ) | resultMessage: Result Message( SUCCESS, FAIL ) | resultMessage: Result Description ( SUCCESS, msg, Server Exception )"
+결과 설명,resultDesc,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"resultDesc: Result Description ( SUCCESS, msg, Server Exception ) | resultDesc: Result Description ( SUCCESS, msg, Server Exception ) | resultDesc: Result Message( SUCCESS, FAIL )"
+결과코드,resultCode,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"resultCode: Result Code (00 normal, the rest error) | resultCode: Result Code (00 normal, the rest error) | resultCode: Result Code (00 normal, the rest error)"
+결제완료일시,paymtCmplDt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,paymtCmplDt: Payment Completion Date ( yyyy-mm-dd HH:mm:ss )
+단품 ID,uitemId,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,uitemId: Item Option Identification | uitemId: Item Option Identification
+단품명,uitemNm,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,uitemNm: Item Option Name | uitemNm: Item Option Name | uitemNm: Item option name
+상품 ID,itemId,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,itemId: Item Identification | itemId: Item Identification | itemId: Item Id
+상품명,itemNm,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,itemNm: Item Name | itemNm: Item Name | itemNm: Item name
+샘플코드에서 확인된 필드,PARAMETER / URL / accept,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,URL: 샘플코드에서 확인된 필드 | accept: 샘플코드에서 확인된 필드 | URL: 샘플코드에서 확인된 필드
+수령자 휴대전화,rcptpeHpno,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,rcptpeHpno: Cell phone number
+수령자명,rcptpeNm,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,rcptpeNm: Recipient
+운송장번호,wblNo,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,wblNo: Waybill Number
+원주문번호,orordNo,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,orordNo: original order number | orordNo: Original Order Number | orordNo: Order No
+원주문상품 순번,orordItemSeq,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,orordItemSeq: Original Order Item Sequence | orordItemSeq: Order item sequence
+조회 시작일,perdStrDts,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"perdStrDts: If Period search, then mandatory value. Period start date. yyyymmdd (Period is within 7 days)"
+조회 종료일,perdEndDts,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"perdEndDts: If Period search, then mandatory value. Period end date. yyyymmdd (Period is within 7 days)"
+주문 배송메모,ordMemoCntt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordMemoCntt: Customer request memo
+주문금액,ordAmt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordAmt: Order Amount ( selling price * order qauntity )
+주문번호,ordNo,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordNo: Order Number | ordNo: Order Number | ordNo: Order Number
+주문상품 구분,ordItemDiv,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordItemDiv: Order Item Division Code 011 : Order 021 : Cancellation 031 : Return 041 : Return exchange order 042 : Exchange Release 112 : Partial Release 062 : Option Change Release
+주문상품 순번,ordItemSeq,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordItemSeq: Order Item Sequence | ordItemSeq: Order Item Sequence | ordItemSeq: Order Item Sequence
+주문수량,ordQty,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordQty: Order Quantity
+주문자명,ordpeNm,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordpeNm: Customer
+주문확정일시,ordCmplDt,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,ordCmplDt: Order Confirmation Date ( yyyy-mm-dd HH:mm:ss )
+출고수량,shpmtQty,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,shpmtQty: Shipped Quantity
+취소수량,cnclQty,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,cnclQty: Canceled Quantity
+택배사 업체 ID,delicoVenId,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,"delicoVenId: Return Collection Courier 0000033012 CJ대한통운(CJGLS) 0000033036 로젠택배 0000033033 드림택배(동부택배, 옐로우캡) 0000033052 우체국택배 0000033071 한진택배 0000033073 롯데택배(구현대택배) 0000033017 KGB택배 0000033014 GTX로지스 0000033030 대신택배 0000033057 일양로지스 0000033027 경동택배 0000038977 합동택배 0000033062 천일택배 0000033013 CVS편의점택배"
+회원 ID,mbrId,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,mbrId: User ID Number
+회원 로그인 ID,mbrLoginId,주문 / 취소 / 반품,1,단일,✅ 핵심 UDS,mbrLoginId: Login Id
