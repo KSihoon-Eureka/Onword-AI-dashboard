@@ -48,5 +48,17 @@
     "markdown_files": 17,
     "csv_files": 15,
     "index": "/Users/sihoonkim/Onword Lab/UDS Attribute Dictionary Vault/channels/SSG Mall/SSG Mall Index.md"
+  },
+  {
+    "channel": "Auction Open API",
+    "title": "Auction Open API",
+    "page_id": null,
+    "source": "legacy SOAP/XML API docs extraction",
+    "tables": 1,
+    "rows_including_headers": 1610,
+    "markdown_files": 3,
+    "csv_files": 1,
+    "index": "/Users/sihoonkim/Onword Lab/Onword-AI-dashboard/UDS Attribute Dictionary Vault/channels/Auction Open API/Auction Open API Index.md",
+    "note": "Supplementary Auction-only legacy Open API table; primary modern Gmarket/Auction reference remains ESM Trading API."
   }
 ]

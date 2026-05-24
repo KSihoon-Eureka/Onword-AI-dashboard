@@ -11,8 +11,14 @@ Migrated at: 2026-05-24T04:43:21
 - [[channels/Naver Smart Store/Naver Smart Store Index|Naver Smart Store]] — 1 tables, 819 rows including headers
 - [[channels/Gmarket Auction/Gmarket Auction Index|Gmarket Auction]] — 1 tables, 2115 rows including headers
 - [[channels/SSG Mall/SSG Mall Index|SSG Mall]] — 15 tables, 2651 rows including headers
+- [[channels/Auction Open API/Auction Open API Index|Auction Open API]] — 1 tables, 1610 rows including headers
 
 ## Notes
 
 - Markdown table notes are split by table to reduce lag.
 - CSV backups are in `_csv/` and are better for spreadsheet/database import.
+
+
+## Additional extraction notes
+
+- Auction Open API was extracted directly from legacy SOAP/XML WSDL + operation pages on 2026-05-24. Treat it as supplementary to the primary Gmarket/Auction ESM dictionary.
